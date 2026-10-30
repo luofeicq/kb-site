@@ -48,7 +48,7 @@ _build/build_site.py    构建脚本：补锚点 id、注入切换条、生成�
 ## 修改与发布
 
 ```bash
-cd H:/BaiduSyncdisk/kb-site
+cd H:/kb-site
 
 # 1. 改内容：知识点直接改 *-knowledge.html，错题改 data/mistakes-*.js
 # 2. 重新构建索引与错题页（幂等，可反复执行）

@@ -3,7 +3,7 @@
    换顶栏、换页头、接入新搜索、去掉旧外壳。"""
 import os, re, sys, io
 
-D = r'H:/BaiduSyncdisk/kb-site'
+D = r'H:/kb-site'
 
 SUBJ = {
     'physics': dict(

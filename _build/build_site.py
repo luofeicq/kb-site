@@ -109,7 +109,9 @@ def fix_knowledge(k):
             changed.append('注入切换条')
 
     # 1.3 顶栏统一为本站点导航
-    s = re.sub(r'<header class="sitebar">.*?</header>', sitebar(k, 'knowledge'), s, count=1, flags=re.S)
+    # 替换顶栏时去掉结尾换行，否则每跑一次就多一个空行
+    s = re.sub(r'<header class="sitebar">.*?</header>',
+               sitebar(k, 'knowledge').rstrip('\n'), s, count=1, flags=re.S)
 
     open(p, 'w', encoding='utf-8').write(s)
     return changed
