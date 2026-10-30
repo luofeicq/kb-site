@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学错题练习 · 高中学习台</title>
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/mistakes.css">
+<style>:root{--accent:#2563eb;--accent-s:#eaf1fe}</style>
+</head>
+<body>
+<header class="sitebar"><div class="sb-inner">
+  <a class="sb-brand" href="index.html"><span class="mk">学</span><span class="tx">高中学习台</span></a>
+  <nav class="sb-nav"><a href="math-mistakes.html">数学</a><a href="physics-mistakes.html">物理</a><a href="bio-mistakes.html">生物</a><a href="chem-mistakes.html" class="on">化学</a><a href="chinese-mistakes.html">语文</a><a href="english-mistakes.html">英语</a></nav>
+  <div class="sb-right">
+    <button class="sb-btn" data-search-open type="button" aria-label="搜索">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <span class="bt">搜索</span><kbd>/</kbd>
+    </button>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="pagehead">
+    <div class="crumb"><a href="index.html">首页</a><span>/</span><a href="chem-knowledge.html">化学</a><span>/</span>错题练习</div>
+    <div class="subjtab"><a href="chem-knowledge.html">知识点学习</a><a href="chem-mistakes.html" class="on">错题练习</a></div>
+    
+    <h1>化学错题练习<span class="badge">8 道</span></h1>
+    <p class="lead">离子反应、氧化还原、物质的量、化学平衡、电化学、离子平衡、沉淀溶解平衡、实验各一题，都是过程分最容易丢的地方。</p>
+    <div class="inline-search" data-search-open>
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <div class="ph">在本页搜索错题（题干、考点、解析）</div><kbd>/</kbd>
+    </div>
+  </div>
+
+  <div class="mstats">
+    <div class="mstat"><div class="k">错题总数</div><div class="v" id="mTotal">0</div></div>
+    <div class="mstat hl"><div class="k">已掌握</div><div class="v" id="mDone">0</div></div>
+    <div class="mstat"><div class="k">待攻克</div><div class="v" id="mTodo">0</div></div>
+    <div class="mstat"><div class="k">完成度</div><div class="v" id="mPct">0%</div></div>
+  </div>
+
+  <div class="mprog">
+    <div class="track"><div class="fill" id="mBar"></div></div>
+    <div class="txt">「已掌握」状态保存在本机浏览器，换设备不跟随。</div>
+  </div>
+
+  <div class="mtools">
+    <div class="mrow1">
+      <label class="msearch">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="mSearch" type="text" placeholder="搜题干、考点或解析里的关键词" autocomplete="off">
+      </label>
+      <label class="monly"><input type="checkbox" id="mOnly">只看未掌握</label>
+      <button class="mreset" id="mReset" type="button">清空记录</button>
+      <span class="mcount" id="mCount">0 题</span>
+    </div>
+    <div class="mchips" id="mChips"></div>
+  </div>
+
+  <div class="mnote">
+    <b>怎么用：</b>点「重做一次」会收起答案、把卡片滚到屏幕中间，先自己在纸上做一遍；
+    做完再点「看答案与解析」对照。<b>判断能不能算掌握，看两点</b>：一是重做时思路是自己想出来的，
+    不是回忆起答案；二是同类的变式题也能上手。两条都满足再点「标记为已掌握」。
+  </div>
+
+  <div id="mList"></div>
+</div>
+
+<footer class="sitefoot" style="max-width:1000px">
+  <div>题目标注「典型例题」，为按高考常见命题方向自拟的练习题，非原卷摘录。</div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/search.js"></script>
+<script src="data/mistakes-chem.js"></script>
+<script src="assets/mistakes.js"></script>
+<script>
+(function(){
+  /* 把错题并入本页搜索 */
+  window.__kbSearchItems = function(list){
+    KB.search.setItems(list.map(function(d){
+      return {
+        g: d.topic,
+        n: (d.q || '').replace(/\s+/g, ' ').slice(0, 50),
+        d: (d.answer || '') + '　' + (d.analysis || '').slice(0, 150),
+        u: '#q-' + d.id,
+        tag: '错题'
+      };
+    }));
+  };
+  KB.search.init({
+    items: [],
+    scope: '化学',
+    placeholder: '在本页搜索错题',
+    tip: '在<b>化学错题</b>里查找，可搜题干、考点与解析关键词。'
+  });
+})();
+</script>
+</body>
+</html>

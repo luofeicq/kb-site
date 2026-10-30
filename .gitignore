@@ -1,0 +1,9 @@
+# 自检产生的临时页面
+_chk*.html
+_if*.html
+_bd*.html
+_rs*.html
+_t*.html
+_shot_*.png
+_dump.js
+_chk.js

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>高二物理薄弱点 · 专题精讲（交互版）</title>
+<link rel="stylesheet" href="assets/base.css">
 <style>
 :root{
   --bg:#f5f6f8; --panel:#fff; --text:#1b1f24; --muted:#5d646d;
@@ -152,167 +153,27 @@ footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:#
   h2.topic{page-break-after:avoid}
 }
 
-/* ===== 站点外壳 ===== */
-/* ============================================================
-   站点统一外壳：顶栏 / 搜索 / 进度条 / 返回顶部
-   由 build_site.py 注入，三个学科页共用
-   ============================================================ */
-:root{
-  --phy:#7c3aed; --chem:#2563eb; --bio:#15803d;
-  --bar-h:56px;
-}
-body{padding-top:var(--bar-h)!important;}
-
-/* ---------- 顶栏 ---------- */
-.sitebar{
-  position:fixed;top:0;left:0;right:0;height:var(--bar-h);z-index:900;
-  background:rgba(255,255,255,.9);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.sb-inner{
-  max-width:1300px;margin:0 auto;height:100%;padding:0 24px;
-  display:flex;align-items:center;gap:26px;
-}
-.sb-brand{
-  display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);
-  font-weight:750;font-size:15.5px;letter-spacing:-.2px;flex:0 0 auto;
-}
-.sb-brand .mk{
-  width:24px;height:24px;border-radius:7px;display:grid;place-items:center;
-  background:linear-gradient(135deg,#7c3aed,#2563eb 55%,#15803d);
-  color:#fff;font-size:12px;font-weight:800;letter-spacing:-1px;
-}
-.sb-brand:hover{opacity:.78}
-.sb-sub{font-size:11.5px;color:#a3abb6;font-weight:500;margin-left:2px}
-
-.sb-nav{display:flex;align-items:center;gap:4px;flex:0 0 auto}
-.sb-nav a{
-  text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:600;
-  padding:6px 13px;border-radius:8px;transition:.15s;position:relative;
-}
-.sb-nav a:hover{background:var(--soft);color:var(--text)}
-.sb-nav a.on{color:#fff}
-.sb-nav a.on.phy{background:var(--phy)}
-.sb-nav a.on.chem{background:var(--chem)}
-.sb-nav a.on.bio{background:var(--bio)}
-
-.sb-right{margin-left:auto;display:flex;align-items:center;gap:10px}
-.sb-btn{
-  display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;
-  border-radius:9px;padding:6px 12px 6px 10px;cursor:pointer;font-family:inherit;
-  font-size:13px;color:var(--muted);transition:.15s;
-}
-.sb-btn:hover{border-color:#c3cede;color:var(--text);box-shadow:0 1px 4px rgba(16,24,40,.06)}
-.sb-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.sb-btn kbd{
-  font-family:ui-monospace,Consolas,monospace;font-size:10.5px;color:#9aa3ae;
-  border:1px solid #e3e7ee;border-bottom-width:2px;border-radius:4px;padding:0 4px;background:#fafbfc;
-}
-@media (max-width:860px){ .sb-btn kbd,.sb-sub{display:none} .sb-inner{gap:12px;padding:0 14px} }
-
-/* ---------- 顶部进度条 ---------- */
-.pgbar{
-  position:fixed;top:0;left:0;height:2px;width:0;z-index:901;
-  background:linear-gradient(90deg,#7c3aed,#2563eb,#15803d);
-  transition:width .1s linear;
-}
-
-/* ---------- 吸顶侧栏让位 ---------- */
-.side{top:var(--bar-h)!important;max-height:calc(100vh - var(--bar-h))!important;}
-
-/* ---------- 锚点不被顶栏遮住 ---------- */
-h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
-[id^="t"]:target,[id^="c"]:target,[id^="b"]:target,li:target{scroll-margin-top:calc(var(--bar-h) + 16px);}
-
-/* ---------- 命中锚点后的闪烁提示 ---------- */
-@keyframes hitFlash{
-  0%{background:rgba(250,204,21,.30)}
-  100%{background:transparent}
-}
-.hit-flash{animation:hitFlash 1.8s ease-out;border-radius:10px;}
-
-/* ---------- 搜索面板 ---------- */
-.kbs{
-  position:fixed;inset:0;z-index:1000;display:none;
-  background:rgba(23,27,33,.40);
-  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
-  padding:0 16px;
-}
-.kbs.on{display:block}
-.kbs-box{
-  max-width:680px;margin:11vh auto 0;background:#fff;border-radius:15px;
-  box-shadow:0 24px 70px rgba(16,24,40,.28);overflow:hidden;
-  display:flex;flex-direction:column;max-height:70vh;
-}
-.kbs-head{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line)}
-.kbs-head svg{width:17px;height:17px;stroke:#98a0aa;fill:none;stroke-width:2;stroke-linecap:round;flex:0 0 auto}
-.kbs-input{
-  flex:1;border:none;outline:none;font-size:16px;font-family:inherit;color:var(--text);
-  background:transparent;line-height:1.6;
-}
-.kbs-input::placeholder{color:#b0b8c2}
-.kbs-close{
-  border:none;background:var(--soft);color:var(--muted);border-radius:7px;
-  padding:3px 9px;font-size:11.5px;cursor:pointer;font-family:inherit;flex:0 0 auto;
-}
-.kbs-close:hover{background:#e6eaf1;color:var(--text)}
-.kbs-body{overflow:auto;padding:6px 8px 10px}
-.kbs-tip{padding:16px 12px;font-size:13px;color:#a3abb6;line-height:1.9}
-.kbs-tip b{color:var(--muted);font-weight:600}
-.kbs-grp{font-size:11.5px;color:#a3abb6;padding:11px 12px 5px;letter-spacing:.5px}
-.kbs-item{
-  display:block;text-decoration:none;color:inherit;padding:9px 12px;border-radius:9px;
-  transition:.12s;cursor:pointer;
-}
-.kbs-item:hover,.kbs-item.sel{background:var(--soft)}
-.kbs-item .r1{display:flex;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap}
-.kbs-tag{
-  font-size:10.5px;font-weight:700;color:#fff;border-radius:5px;padding:1.5px 6px;flex:0 0 auto;
-}
-.kbs-tag.phy{background:var(--phy)}
-.kbs-tag.chem{background:var(--chem)}
-.kbs-tag.bio{background:var(--bio)}
-.kbs-item .nm{font-size:14px;font-weight:650;color:var(--text);line-height:1.5}
-.kbs-item .r2{font-size:12px;color:#98a0aa;line-height:1.6;
-  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.kbs-item mark{background:#fef3c7;color:inherit;border-radius:2px;padding:0 1px}
-.kbs-foot{
-  border-top:1px solid var(--line);padding:8px 16px;font-size:11.5px;color:#a3abb6;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;
-}
-.kbs-foot span b{color:var(--muted)}
-
-/* ---------- 返回顶部 ---------- */
-.totop{
-  position:fixed;right:24px;bottom:26px;z-index:880;width:42px;height:42px;border-radius:50%;
-  border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;
-  box-shadow:0 4px 16px rgba(16,24,40,.12);opacity:0;visibility:hidden;transition:.22s;
-}
-.totop.on{opacity:1;visibility:visible}
-.totop:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,24,40,.18)}
-.totop svg{width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:860px){ .totop{right:14px;bottom:16px} }
-
-/* ---------- 页脚站点信息 ---------- */
-.sitefoot{
-  margin-top:70px;padding:26px 0 34px;border-top:1px solid var(--line);
-  color:#98a0aa;font-size:12.5px;line-height:1.9;
-}
-.sitefoot a{color:var(--muted);text-decoration:none;margin-right:14px}
-.sitefoot a:hover{color:var(--blue);text-decoration:underline}
-
-
-@media print{
-  .sitebar,.totop,.pgbar,.kbs{display:none!important}
-  body{padding-top:0!important}
-  .side{display:none!important}
-}
+</style>
+<style>
+:root{--accent:#7c3aed;--accent-s:#f3ecfd;--blue:#7c3aed;}
+.side{top:var(--bar-h);max-height:calc(100vh - var(--bar-h))}
+h2.topic{scroll-margin-top:calc(var(--bar-h) + 18px)}
+.layout{max-width:1240px}
 </style>
 </head>
 <body>
-<header class="sitebar"><div class="sb-inner"><a class="sb-brand" href="index.html"><span class="mk">知</span>高中知识库<span class="sb-sub">复习 · 查知识点</span></a><nav class="sb-nav"><a href="physics.html" class="phy on">物理</a><a href="chem.html" class="chem">化学</a><a href="bio.html" class="bio">生物</a></nav><div class="sb-right"><button class="sb-btn" data-kbs-open type="button"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>搜索知识点<kbd>/</kbd></button></div></div></header>
+<header class="sitebar"><div class="sb-inner">
+  <a class="sb-brand" href="index.html"><span class="mk">学</span><span class="tx">高中学习台</span></a>
+  <nav class="sb-nav"><a href="math-knowledge.html">数学</a><a href="physics-knowledge.html" class="on">物理</a><a href="bio-knowledge.html">生物</a><a href="chem-knowledge.html">化学</a><a href="chinese-knowledge.html">语文</a><a href="english-knowledge.html">英语</a></nav>
+  <div class="sb-right">
+    <button class="sb-btn" data-search-open type="button" aria-label="搜索">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <span class="bt">搜索</span><kbd>/</kbd>
+    </button>
+  </div>
+</div></header>
+
+
 <div class="layout">
 
 <aside class="side">
@@ -333,17 +194,17 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 
 <main>
 
-<div class="hero">
-  <h1>高二物理薄弱点 · 专题精讲</h1>
-  <p>对着错题写的一份材料。每个专题都走同一条路：先弄明白这题在考什么，再用大白话把原理说通，然后看命题人的套路和固定的解题动作，最后重做原题。</p>
-  <div class="flow">
-    <span><b>1</b>这题在考什么</span>
-    <span><b>2</b>用人话讲</span>
-    <span><b>3</b>出题人的套路</span>
-    <span><b>4</b>解题固定动作</span>
-    <span><b>5</b>原题复盘</span>
-    <span><b>6</b>练习与解析</span>
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">首页</a><span>/</span><a href="physics-knowledge.html">物理</a><span>/</span>知识点学习</div>
+  
+    <div class="subjtab"><a href="physics-knowledge.html" class="on">知识点学习</a><a href="physics-mistakes.html">错题练习</a></div>
+    <h1>物理知识点 · 专题精讲<span class="badge">6 专题</span></h1>
+  <p class="lead">按错题诊断排出的六个专题。每个专题都从「这题在考什么」起步，用大白话讲原理，再给出题套路与解题固定动作，最后重做原题。带标记的图可以直接拖动、点击。</p>
+  <div class="inline-search" data-search-open>
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <div class="ph">在本页搜索物理知识点</div><kbd>/</kbd>
   </div>
+  <div class="quick" style="margin-top:14px"><a href="#t1">波的图像与多解</a><a href="#t2">两个等量点电荷的电场</a><a href="#t3">库仑力 + 圆弧轨道的综合题（压轴）</a><a href="#t4">单摆（理论 + 实验）</a><a href="#t5">弹簧振子与简谐运动</a><a href="#t6">静电基础概念</a><a href="#apx1">通用解题检查清单</a><a href="#apx2">两周学习计划</a><a href="physics-mistakes.html">→ 本科错题练习</a></div>
 </div>
 
 <div class="callout blue">
@@ -355,24 +216,24 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 <h2 class="topic" id="t1"><span class="no">专题一</span>波的图像与多解</h2>
 <p class="topic-meta">对应错题：第 11、14 题（两个时刻的波形图）、第 12 题（两个波源）。这是重复出错次数最多的考点。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-1">一、这道题在考什么</h3>
 <p>给你两张“波形照片”，问你中间这段时间发生了什么。</p>
 <p>照片只有两张，中间过去的时间你并不知道挪了几个完整的波。所以答案天然是一族、不是一个。<strong>能不能把所有可能都想到，就是这类题的区分点。</strong></p>
 
-<h3>二、用人话讲</h3>
-<h4>波到底在干什么</h4>
+<h3 id="physics-h3-2">二、用人话讲</h3>
+<h4 id="physics-h4-1">波到底在干什么</h4>
 <p>想象运动会看台上的人浪。一波人依次站起来又坐下，那个“站起来”的鼓包在往前跑，但每个人自己没挪位置——他一直坐在自己的座位上。</p>
 <p>波就是这样：跑的是波形（那个鼓包），也带着能量跑；质点自己只在座位附近上下晃，绝不跟着跑。</p>
 <p>所以“波传播多远”和“质点走了多远”完全是两码事。这是第一个必须钉死的地方，考试里“质点随波迁移”就是专门用来骗人的错项。</p>
 
-<h4>多解从哪来</h4>
+<h4 id="physics-h4-2">多解从哪来</h4>
 <p>你在 t₁ 拍一张照片（实线），t₂ 再拍一张（虚线）。你看到虚线整体往右挪了一小段，比如挪了 λ/4。</p>
 <p>问题是：在你看不见的这段时间里，它到底挪了几个整圈？挪 0 圈再挪 λ/4 是一个可能；先挪 1 整圈再挪 λ/4 也是可能；2 圈、3 圈全都说得通。照片上看起来一模一样，因为整圈挪完波形长得跟原来完全重合。</p>
 <p>就像你只看分针的位置猜时间：分针从“指 12”转到“指 3”，可能是过了 15 分钟，也可能是 1 小时 15 分、2 小时 15 分。只凭“指 3”这一条，你只能答“15 分钟加若干小时”。</p>
 <p>物理上这个“若干整圈”就写成 nλ（n = 0, 1, 2, …）。<strong>这个 n，就是多解的全部来源。</strong></p>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 1-1　同一张照片，对应多少种可能</h4><span class="badge">拖动滑块看看</span></div>
+  <div class="whead"><h4 id="physics-h4-3">交互图 1-1　同一张照片，对应多少种可能</h4><span class="badge">拖动滑块看看</span></div>
   <p class="cap">上半部分是你眼睛看到的“波形照片”，下半部分是实际经过的时间。把 n 从 0 拖到 3——<strong>上面的图一点没变，下面的时间轴越拉越长</strong>。这就是多解。</p>
   <canvas id="cv-wave"></canvas>
   <div class="ctrl">
@@ -390,11 +251,11 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
   </div>
 </div>
 
-<h4>方向的麻烦</h4>
+<h4 id="physics-h4-4">方向的麻烦</h4>
 <p>还有个雪上加霜的地方：你不知道波是往左跑还是往右跑。</p>
 <p>因为波形左右对称，往左挪 3λ/4 和往右挪 λ/4，落在纸上是同一张图。所以题目不说方向的时候，左右两个方向各有一族解，一共两族。这就是为什么第 11、14 题会做漏——只算了一个方向。</p>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-3">三、出题人的套路</h3>
 <p>这类题十几年没怎么变，就三种长相。</p>
 <table class="tbl">
   <tr><th>长相</th><th>具体是这么出的</th></tr>
@@ -412,13 +273,13 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
   <tr><td>把“峰峰间距”当周期</td><td>波形图上相邻两个波峰的距离是 λ，不是 T；振动图（F–t、x–t）上相邻峰间隔才可能是 T/2</td></tr>
 </table>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-4">四、解题固定动作</h3>
 <p>拿到题别急着算，按这四步走。这套动作练到闭眼能做，这类题就不会再丢分。</p>
 
-<h4>第 1 步：量出“多挪了多少”</h4>
+<h4 id="physics-h4-5">第 1 步：量出“多挪了多少”</h4>
 <p>找到实线的某个特征点（比如波峰），再看虚线最近的那个同位特征点，量出中间差了多大一段 x₀，折算成 λ 的几分之几。</p>
 
-<h4>第 2 步：两个方向各摆一族</h4>
+<h4 id="physics-h4-6">第 2 步：两个方向各摆一族</h4>
 <table class="tbl">
   <tr><th>假设方向</th><th>时间关系 / 周期通式</th></tr>
   <tr><td>沿 +x</td><td>Δt = (n + x₀/λ)·T　→　T = Δt / (n + x₀/λ)</td></tr>
@@ -431,7 +292,7 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 沿 −x：T = 4Δt / (4n+3)　，　v = λ(4n+3) / (4Δt)
 </div>
 
-<h4>第 3 步：拿限制条件筛 n</h4>
+<h4 id="physics-h4-7">第 3 步：拿限制条件筛 n</h4>
 <table class="tbl">
   <tr><th>题目给了什么</th><th>怎么筛</th></tr>
   <tr><td>T &gt; Δt</td><td>逐族取 n=0 算，看哪个满足，通常只留一个</td></tr>
@@ -439,11 +300,11 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
   <tr><td>已知 v 求方向</td><td>两个通式各解一次 n，哪个能解出非负整数 n，方向就是哪个</td></tr>
 </table>
 
-<h4>第 4 步：判断方向有个不推公式的捷径</h4>
+<h4 id="physics-h4-8">第 4 步：判断方向有个不推公式的捷径</h4>
 <p>如果是问“某个质点在往哪动”，用上下坡法：沿着波的传播方向看过去，处在“上坡”的质点往下走，处在“下坡”的质点往上走。</p>
 <div class="callout"><span class="tag">记法</span>上坡下、下坡上。上坡的人累得往下走。</div>
 
-<h4>双波源的题另有一套，但也只有三行</h4>
+<h4 id="physics-h4-9">双波源的题另有一套，但也只有三行</h4>
 <ol>
   <li>算波长 λ = vT（先由 ω 求 T = 2π/ω）；</li>
   <li>算两列波到该点的波程差 Δr，换成“几个 λ”；</li>
@@ -451,8 +312,8 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 </ol>
 <div class="callout"><span class="tag">提醒</span>“波程差等于整数个波长就加强”只对同相波源成立。波源本身初相不一样，必须两项都算。第 12 题就是靠这个设的陷阱——波程差是 λ/2（按套路该减弱），但波源本身反相，合起来反而加强。</div>
 
-<h3>五、原题复盘</h3>
-<h4>原题 14（第五周，解答题）</h4>
+<h3 id="physics-h3-5">五、原题复盘</h3>
+<h4 id="physics-h4-10">原题 14（第五周，解答题）</h4>
 <p>实线为某时刻波形，0.25 s 后为虚线，λ = 24 cm，虚线相对实线沿 −x 平移 λ/4 = 6 cm。</p>
 <p><strong>第 1 步</strong>：x₀ = λ/4。</p>
 <p><strong>第 2 步</strong>：两族摆出来。</p>
@@ -470,13 +331,13 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 </ul>
 <p>(3) v = 2.16 m/s 时波往哪传。把速度通式摆出来（4Δt = 1 s）：</p>
 <ul>
-  <li>沿 −x：v = 0.24(4n+1)。令 0.24(4n+1) = 2.16 → 4n+1 = 9 → <strong>n = 2，整数 ✓</strong></li>
-  <li>沿 +x：v = 0.24(4n+3)。4n+3 = 9 → n = 1.5，<strong>不是整数 ✗</strong></li>
+  <li>沿 +x：v = 0.24(4n+1)。令 0.24(4n+1) = 2.16 → 4n+1 = 9 → <strong>n = 2，整数 ✓</strong></li>
+  <li>沿 −x：v = 0.24(4n+3)。4n+3 = 9 → n = 1.5，<strong>不是整数 ✗</strong></li>
 </ul>
-<p><strong>结论：波沿 x 轴负方向传播。</strong></p>
+<p><strong>结论：波沿 x 轴正方向传播。</strong>（也可以直接看距离：d = vΔt = 2.16×0.25 = 0.54 m = 2.25λ，也就是 2 个整波长再加 λ/4，小数部分是 1/4，对应正向。）</p>
 <div class="callout"><span class="tag">这题的教训</span>第 3 问最省事的做法不是“猜方向再验算”，而是“两族都算，n 能取整的那个就是答案”。这样不可能漏。</div>
 
-<h4>原题 11（第五周，多选题，答案 BC）</h4>
+<h4 id="physics-h4-11">原题 11（第五周，多选题，答案 BC）</h4>
 <p>t=0 实线、t=0.5 s 虚线，λ = 4 m，A = 2 cm，虚线相对实线沿 +x 平移 1 m，T &gt; 0.5 s。</p>
 <ul>
   <li>x₀ = 1 m = λ/4</li>
@@ -491,7 +352,7 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
   <li><strong>A：振动方程 y = 2sin(πt/4)</strong>　对应周期 2π ÷ (π/4) = 8 s，两个方向都弄不出 8 s，✗</li>
 </ul>
 
-<h4>原题 12（第五周，多选题，答案 BC）</h4>
+<h4 id="physics-h4-12">原题 12（第五周，多选题，答案 BC）</h4>
 <p>S₁(−3√3, 0)、S₂(3√3, 0)、Q(−3√3, 6)；z₁ = 0.1sin(10πt/3 + π/3)，z₂ = 0.1sin(10πt/3 − 2π/3)，v = 20 m/s。</p>
 <ol>
   <li><strong>周期波长先算</strong>：ω = 10π/3 → T = 2π/ω = 0.6 s，λ = vT = 20×0.6 = 12 m。</li>
@@ -509,8 +370,8 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
   </li>
 </ol>
 
-<h3>六、变式与练习</h3>
-<h4>变式（先做，别急着看解）</h4>
+<h3 id="physics-h3-6">六、变式与练习</h3>
+<h4 id="physics-h4-13">变式（先做，别急着看解）</h4>
 <p>一列简谐横波沿 x 轴传播，t=0 与 t=0.2 s 的波形为实线、虚线，虚线相对实线沿 +x 平移了 1 m，λ = 4 m。求：(1) 若波沿 +x 传播，周期是多少；(2) 若 T &gt; 0.2 s，波速是多少；(3) 若波速为 25 m/s，往哪个方向传。</p>
 <details><summary>看这个变式的解析</summary><div class="inner">
 <p><strong>① 定零头</strong>：x₀ = λ/4。</p>
@@ -524,7 +385,7 @@ h2.topic{scroll-margin-top:calc(var(--bar-h) + 16px);}
 <p>25 只在 +x 那族里出现（n=1）→ <strong>波沿 +x 传播</strong>。</p>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-14">练习</h4>
 <p><strong>基础 1</strong>（多选）一列简谐横波沿 x 轴传播，t=0 与 t=0.1 s 的波形分别为实线、虚线，虚线相对实线沿 +x 平移 1 m，λ = 4 m，周期大于 0.1 s。波速可能为（　）<br>A. 10 m/s　B. 20 m/s　C. 30 m/s　D. 40 m/s</p>
 <p><strong>基础 2</strong>（解答）一列简谐横波沿 +x 传播，某质点在 t=0 时位于平衡位置且向上振动，振幅 4 cm，周期 0.4 s。(1) 写出该质点的振动方程；(2) 求 0～1 s 内通过的路程；(3) 若波长为 2 m，求波速。</p>
 <p><strong>提升 1</strong>（解答）均匀介质中 S₁、S₂ 为同相相干波源，位于 x 轴上相距 8 m（S₁ 在原点），频率 2 Hz，波速 8 m/s。(1) 求波长；(2) 判断 x 轴上 x=6 m 与 x=5 m 两点是加强点还是减弱点；(3) 若两波源变为反相，结论如何变化？</p>
@@ -555,7 +416,7 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 <p>(3) 速度通式：沿 −x 为 v = 2(4n+1)/0.05 = 10(4n+1) = 10, <strong>50</strong>, 90…（n=1 取到 50 ✓）；沿 +x 为 10(4n+3) = 30, 70…（没有 50）。→ <strong>波沿 −x 传播</strong>，此时 T = 0.2/5 = 0.04 s（该问没限周期，合法）。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-7">七、一页纸小结</h3>
 <ul>
   <li>波跑，质点不跑。</li>
   <li>多解 = 看不见的整圈数 n，<strong>方向不定就有两族</strong>。</li>
@@ -571,17 +432,17 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 <h2 class="topic" id="t2"><span class="no">专题二</span>两个等量点电荷的电场</h2>
 <p class="topic-meta">对应错题：第 1 题。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-8">一、这道题在考什么</h3>
 <p>两个一模一样的电荷摆在那儿，中间那一带的电场长什么样。</p>
 <p>它不考你算某个具体点的场强，考的是整片空间的分布规律：哪里为零、哪里最大、方向朝哪、往外走是变大还是变小。</p>
 
-<h3>二、用人话讲</h3>
-<h4>先建立画面：两个正电荷，像两口泉眼</h4>
+<h3 id="physics-h3-9">二、用人话讲</h3>
+<h4 id="physics-h4-15">先建立画面：两个正电荷，像两口泉眼</h4>
 <p>泉眼往外喷水（电场线向外发散）。两口泉正中间那个位置，两股水正好对撞、互相抵消，所以中点 O 处场强恰好为 0。走远了，两个泉眼在你眼里合成一个，“水压”也变小，所以远处场强也趋近 0。</p>
 <p>那中间呢？中间某处最猛。因为靠近某一个泉眼时，它近、另一个远；走远了两个都显得弱。所以从 O 往远处走，场强是先变大、后变小，存在一个最大值点。</p>
 <div class="callout"><span class="tag">这就是第 1 题 A 选项的全部内容</span>题目说“从 P 到 O 加速度一定减小”——错在“一定”。如果 P 恰好站在最大值点外面，往 O 走的这段路上场强还先涨了一段，加速度是先变大后变小。</div>
 
-<h4>中垂线为什么要单独说</h4>
+<h4 id="physics-h4-16">中垂线为什么要单独说</h4>
 <p>两个电荷的连线是对称轴，中垂线是另一条对称轴。在这条线上，两边的拉扯左右对称抵消，所以：</p>
 <ul>
   <li><strong>两个同种正电荷</strong>：中垂线上的场强沿着中垂线、背离 O 向外。因为两个正电荷都把它往外推，推的方向合起来就是往外。</li>
@@ -590,7 +451,7 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 <p>这两种情况方向完全不同，是考试最爱混的地方。</p>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 2-1　把试探点沿中垂线拖一拖</h4><span class="badge">切换同种 / 异种</span></div>
+  <div class="whead"><h4 id="physics-h4-17">交互图 2-1　把试探点沿中垂线拖一拖</h4><span class="badge">切换同种 / 异种</span></div>
   <p class="cap">红色箭头是两个电荷各自产生的场强，绿色是它们的合成。往左推就是靠近 O、往右推就是远离。看绿色箭头：<strong>同种电荷在中点被抵消为零，异种电荷在中点反而最猛</strong>。</p>
   <canvas id="cv-field"></canvas>
   <div class="ctrl">
@@ -608,7 +469,7 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
   </div>
 </div>
 
-<h4>电势和场强不是一回事</h4>
+<h4 id="physics-h4-18">电势和场强不是一回事</h4>
 <p>这是本节最大的一个观念坎：</p>
 <div class="callout blue"><span class="tag">一句话分清</span>场强是“坡有多陡”，电势是“海拔多高”。坡陡的地方海拔不一定高，坡平的地方海拔也不一定低。</div>
 <p>所以：</p>
@@ -619,12 +480,12 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 <p>第 1 题的 D 选项也在这里：中垂面是个等势面，但它对负电荷来说，合场强是指向圆心的，所以只要给负电荷一个合适的侧向初速度，它就能在这个面上绕着 O 做匀速圆周运动。题目说“不可能”，就错了。</p>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 2-2　场强随距离怎么变</h4><span class="badge">看曲线的形状</span></div>
+  <div class="whead"><h4 id="physics-h4-19">交互图 2-2　场强随距离怎么变</h4><span class="badge">看曲线的形状</span></div>
   <p class="cap">横轴是离 O 的距离，纵轴是合成场强。粗线是当前模式，细线是另一种模式作对照。同种电荷的曲线会鼓起来一个包（先增后减），异种电荷从 O 点一路往下掉。</p>
   <canvas id="cv-curve"></canvas>
 </div>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-10">三、出题人的套路</h3>
 <p>这类题在选择题里很稳，主要四个问法。</p>
 <ol>
   <li>“O 点场强、电势是多少” —— 考场强为零、电势不一定为零。</li>
@@ -640,7 +501,7 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
   <tr><td>只看纸面，忽略立体</td><td>同种电荷周围有旋转对称性，中垂面里可以有匀速圆周运动</td></tr>
 </table>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-11">四、解题固定动作</h3>
 <p><strong>第 1 步：先确定是同种还是异种。</strong>这一步决定了后面所有结论，看错一个字全盘皆错。</p>
 <p><strong>第 2 步：把这张表默出来。</strong></p>
 <table class="tbl">
@@ -663,8 +524,8 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 <p>经验：对称轴上，垂直于轴的分量一定抵消，只剩沿轴的分量。所以只算沿轴分量、乘以 2 就行，不用真的分解两次。</p>
 <p><strong>第 4 步：问做功，先看是不是等势线。</strong>中垂线（异种电荷）上移动，做功为零；其他路径老老实实算 W = qU。</p>
 
-<h3>五、原题复盘</h3>
-<h4>原题 1（第七周，答案 B）</h4>
+<h3 id="physics-h3-12">五、原题复盘</h3>
+<h4 id="physics-h4-20">原题 1（第七周，答案 B）</h4>
 <p>M、N 为等量同种正点电荷，中垂线上 P 点由静止释放负电荷 q（不计重力）。</p>
 <p>先定性：负电荷在两个正电荷的场里会被吸过去（负电荷受力与场强反向，而中垂线上场强背离 O，所以受力指向 O）。</p>
 <ul>
@@ -675,8 +536,8 @@ x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱<
 </ul>
 <div class="callout"><span class="tag">这题真正考的是</span>能不能想到三维。大多数人脑子的图是“纸上的一个点上下晃”，所以把 D 判错。</div>
 
-<h3>六、变式与练习</h3>
-<h4>变式</h4>
+<h3 id="physics-h3-13">六、变式与练习</h3>
+<h4 id="physics-h4-21">变式</h4>
 <p>（多选）M、N 为等量异种点电荷，M 带 +Q、N 带 −Q，相距 d，O 为中点。下列说法正确的是（　）</p>
 <p>A. O 点场强大小为 8kQ/d²，方向由 M 指向 N<br>
 B. 中垂线上各点电势均为零<br>
@@ -689,7 +550,7 @@ D. 沿中垂线由 O 向无穷远，场强先增大后减小</p>
 <p><strong>D ✗</strong>：“先增后减”是同种电荷的规律；异种电荷是单调减小。</p>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-22">练习</h4>
 <p><strong>基础 1</strong>（单选）真空中两个等量同种正点电荷相距 d，O 为连线中点。下列说法正确的是（　）<br>
 A. O 点场强为零，电势也为零<br>
 B. 中垂线上 O 点场强最大<br>
@@ -729,7 +590,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <p>(2) P 在中垂线上 → 到两电荷等距、电荷等量异号 → <strong>电势为零</strong>。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-14">七、一页纸小结</h3>
 <ul>
   <li>先分清同种还是异种，一切结论从这里分岔。</li>
   <li>同种：中点 E = 0、电势最高；中垂线场强先增后减。</li>
@@ -745,12 +606,12 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <h2 class="topic" id="t3"><span class="no">专题三</span>库仑力 + 圆弧轨道的综合题（压轴）</h2>
 <p class="topic-meta">对应错题：第 4、15 题——两道压轴大题。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-15">一、这道题在考什么</h3>
 <p>把一个带电小球放在固定电荷的势力范围里，让它沿轨道跑，问你各点的速度、受力、做功。</p>
 <p>它之所以放在压轴，不是因为知识点多，而是因为步骤多、容易漏项。但步骤其实是固定的：四步，一步不多一步不少。</p>
 
-<h3>二、用人话讲</h3>
-<h4>库仑力像一根看不见的橡皮筋</h4>
+<h3 id="physics-h3-16">二、用人话讲</h3>
+<h4 id="physics-h4-23">库仑力像一根看不见的橡皮筋</h4>
 <p>一端拴在圆心 O 的电荷上，另一端拴在跑动的小球上。</p>
 <ul>
   <li>小球要是沿着以 O 为圆心的圆弧跑，橡皮筋的长度一直没变，它不伸不缩，<strong>不做功</strong>。这是白送的条件，遇到就划掉。</li>
@@ -759,7 +620,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <div class="callout green"><span class="tag">记住这句</span>绕圈不干活，进出才干活。第 4 题、第 15 题的圆弧段，库仑力做功全都直接写 0，一分力气不花。</div>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 3-1　绕圈不干活，进出才干活</h4><span class="badge">两种模式对比</span></div>
+  <div class="whead"><h4 id="physics-h4-24">交互图 3-1　绕圈不干活，进出才干活</h4><span class="badge">两种模式对比</span></div>
   <p class="cap">左键切模式。<strong>沿圆弧</strong>：小球绕圈走，红色库仑力永远和蓝色速度垂直，夹角 90°，做功累计一直是 0。<strong>沿半径</strong>：小球直线往里走，力和速度同向，做功一下就上去了。</p>
   <canvas id="cv-arc"></canvas>
   <div class="ctrl">
@@ -777,21 +638,21 @@ D. 微粒运动过程中电势能先减小后增大</p>
   </div>
 </div>
 
-<h4>摩擦力和重力、库仑力不是一类东西</h4>
+<h4 id="physics-h4-25">摩擦力和重力、库仑力不是一类东西</h4>
 <ul>
   <li>重力、库仑力、弹簧力这类（叫<strong>保守力</strong>）有个好性质：从 A 到 B 和从 B 回 A，做功刚好抵消。走一圈回原地，净功为零。</li>
   <li>摩擦力不行。摩擦力永远和运动方向反着来，不管你往哪走它都做负功。所以<strong>来回一趟，摩擦功是去程加回程，两份都算，绝不抵消</strong>。</li>
 </ul>
 <div class="callout"><span class="tag">压轴题最大的失分点</span>第 4 题 A→C 再 C→A，摩擦热是 2W₂，写成 0 就全错了。</div>
 
-<h4>C 点为什么不在圆弧上</h4>
+<h4 id="physics-h4-26">C 点为什么不在圆弧上</h4>
 <p>这是纯几何的坑。题目说“最高到 C 点，∠COB = 30°”，很多人下意识以为 C 也在那段圆弧上，于是认为 OC = R。</p>
 <p>但圆弧只到 B 就结束、后面接的是倾斜直杆，C 在那根直杆上。所以 C 到圆心的距离是</p>
 <div class="formula">OC = R / cos∠COB　（斜边比邻边）</div>
 <p>这个数大于 R（R/cos30° = 2√3R/3 ≈ 1.15R）。库仑力按 1/r² 衰减，距离变了力就变了，所以这一步绝不能想当然。</p>
 <div class="callout"><span class="tag">怎么避免</span>画图。把 O、B、C 三个点画出来，看清楚 C 到底在圆弧上还是直杆上。压轴题值得多花 1 分钟画图。</div>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-17">三、出题人的套路</h3>
 <p>压轴题的问法十几年不变，就这四个：</p>
 <table class="tbl">
   <tr><th>问法</th><th>考什么 / 用什么工具</th></tr>
@@ -808,7 +669,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
   <tr><td>“对轨道的压力”只算竖直分量</td><td>漏了水平方向的库仑力，压力值偏小</td></tr>
 </table>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-18">四、解题固定动作</h3>
 <p><strong>第 1 步：几何还原。</strong>把角度、边长全部翻译成“高度差”和“距离”。</p>
 <ul>
   <li>圆弧上任意一点到圆心的距离 = R（这是圆弧的定义，白送）；</li>
@@ -829,8 +690,8 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <p><strong>第 4 步：牛顿第三定律收尾。</strong>题目问的是“球对杆或管道的压力”，你算出来的是“杆对球的力”，方向必须反过来写一句，这句是过程分。</p>
 <div class="callout blue"><span class="tag">通用技巧</span>先求速度，再求力。因为 mv²/R 需要 v，v 需要能量账。顺序反了会卡住。</div>
 
-<h3>五、原题复盘</h3>
-<h4>原题 4（第七周，压轴大题）</h4>
+<h3 id="physics-h3-19">五、原题复盘</h3>
+<h4 id="physics-h4-27">原题 4（第七周，压轴大题）</h4>
 <p>竖直面内 1/6 光滑圆弧（半径 R，圆心 O 处固定 +Q），与水平杆切于 A、与粗糙倾斜杆切于 B；带负电小球 m 从水平杆以 v = √(8gR/3) 过 A，最高到 C（∠COB = 30°，OC 平行于水平杆）；第一次过 A 后瞬间对杆向下弹力 8mg/3；A 至 C 克服库仑力做功 W₁ = (2−√3)/2·mgR。</p>
 <p><strong>先理清几何</strong>：A 在圆弧最低点（圆弧与水平杆相切，所以 OA 竖直）；B 在圆弧上，OB 与 OA 夹角 60°（1/6 圆弧 = 60°），所以 B 比 A 高出 R − R·cos60° = R/2。C 在倾斜直杆上，OC 平行于水平杆，说明 C 和 O 一样高，比 A 高 R。</p>
 
@@ -859,7 +720,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <p>方向为正，说明杆对球的力向上。由牛顿第三定律，<strong>球对杆的弹力大小为 2(8−3√3)mg/3，方向向下</strong>。</p>
 <div class="callout"><span class="tag">这一问的三个检查点</span>① 摩擦功出现了两次（W₂ 前后各一次，没抵消）；② 库仑力去程做负功、回程做正功（对称，各算一次）；③ 最后一句方向必须写“向下”。</div>
 
-<h4>原题 15（第五周，压轴大题）</h4>
+<h4 id="physics-h4-28">原题 15（第五周，压轴大题）</h4>
 <p>竖直绝缘管道，AB 为半径 R 光滑圆弧、BCD 为水平光滑直管道，切于 B；水平面内 M、N、B 构成边长 L 的等边三角形，MN 过 C 且垂直于 BCD，M 处 +Q、N 处 −Q；小球 (m, +q) 从 A 静止释放。</p>
 
 <p><strong>(1) B 处库仑力</strong></p>
@@ -881,8 +742,8 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <div class="formula">F_N = √[(8kQq·cos³θ/L²)² + (mg)²]</div>
 <p>θ 从 60°（B 点）减到 0°（C 点）。</p>
 
-<h3>六、变式与练习</h3>
-<h4>变式</h4>
+<h3 id="physics-h3-20">六、变式与练习</h3>
+<h4 id="physics-h4-29">变式</h4>
 <p>光滑绝缘竖直圆环（半径 R，圆心 O）上套一个质量 m、带电 −q 的小球，O 处固定 +Q。小球从最高点 A 由静止滑下。求：(1) A 到最低点 B 过程中库仑力做的功；(2) B 点速度；(3) B 点球对杆的弹力；(4) 若改从 A 点以初速度 v₀ 滑下，B 点球对杆弹力多大。</p>
 <details><summary>看解析</summary><div class="inner">
 <p><strong>(1)</strong> 小球一直在圆环上，到 O 距离恒为 R → 橡皮筋没伸缩 → <strong>库仑力做功为零</strong>。</p>
@@ -894,7 +755,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <div class="formula">N = m(v₀² + 4gR)/R + mg − kQq/R²</div>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-30">练习</h4>
 <p><strong>基础 1</strong>（解答）真空中固定点电荷 +Q，一个质量 m、带电 −q 的粒子绕它做半径 r 的匀速圆周运动。(1) 求线速度；(2) 库仑力做多少功？(3) 若轨道半径增大为原来的 2 倍，线速度如何变化？</p>
 <p><strong>基础 2</strong>（解答）竖直平面内固定光滑绝缘圆弧杆（半径 R，圆心 O 处固定 +Q），圆弧从“与 O 等高的 A 点”一直到最低点 B。带电 −q、质量 m 的小球穿在杆上，从 A 由静止滑到 B。已知 kQq/R² &lt; 3mg。求 B 点小球对杆弹力的大小和方向。</p>
 <p><strong>提升 1</strong>（解答，压轴）光滑绝缘细杆弯成半径 R 的竖直圆环，圆心 O 固定 +Q，质量 m、带电 −q 的小球穿在杆上。小球在最低点 A 获得沿杆向上的初速度 v₀ = 2√(gR)，恰好到达最高点 B。求：(1) 说明“恰好到达”的含义并验证；(2) B 点刚到达瞬间小球对杆的弹力；(3) 小球返回 A 点时对杆的弹力。</p>
@@ -923,7 +784,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <p>A 点径向（向上为正）：N′ + kQq/R² − mg = 4mg → N′ = 5mg − kQq/R²（题设保证为正）→ <strong>球对杆弹力 5mg − kQq/R²，方向向下</strong>。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-21">七、一页纸小结</h3>
 <ul>
   <li>绕圈不干活，进出才干活（等半径库仑力不做功）。</li>
   <li>摩擦力往返不抵消，保守力往返抵消——这是压轴题第一杀手。</li>
@@ -940,23 +801,23 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <h2 class="topic" id="t4"><span class="no">专题四</span>单摆（理论 + 实验）</h2>
 <p class="topic-meta">对应错题：第 3 题（理论大题）、第 13 题（实验题）。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-22">一、这道题在考什么</h3>
 <p>荡秋千这一件事，能出两道题：一道问“绳子最紧最松时各是什么状态”，一道问“怎么把 g 测准”。</p>
 
-<h3>二、用人话讲</h3>
-<h4>先想秋千</h4>
+<h3 id="physics-h3-23">二、用人话讲</h3>
+<h4 id="physics-h4-31">先想秋千</h4>
 <p>你荡到最低点时，速度最快，绳子被拉得最紧——这时候绳子既要托住你的体重，还得多掏一份力来让你拐弯（向心力）。所以：</p>
 <div class="formula">最低点　F_max = mg + mv²/L</div>
 <p>你荡到最高点时，速度为零，不用拐弯了，绳子只承担体重的一个分量（因为绳子是斜的），所以最松：</p>
 <div class="formula">最高点　F_min = mg·cosθ</div>
 <p>一松一紧，一高一低，正好对应。这就是第 3 题 F–t 图的两个读数。</p>
 
-<h4>峰和峰的间隔不是周期</h4>
+<h4 id="physics-h4-32">峰和峰的间隔不是周期</h4>
 <p>一个来回（一个周期）里，秋千两次经过最低点——一次往这边、一次往那边。绳子每次经过最低点都被拉到最紧一次，所以：</p>
 <div class="callout"><span class="tag">最容易错的一点</span>一个周期里拉力出现两个峰，相邻两个峰之间只隔了半个周期（T/2）。同理，两个谷（最高点）之间也是 T/2。<br><strong>记法：一周期过最低点两次，所以峰峰间隔是半个周期。</strong>这一步错，后面所有计算连锁全错。</div>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 4-1　一边荡一边画 F–t 图</h4><span class="badge">看峰峰之间的箭头</span></div>
+  <div class="whead"><h4 id="physics-h4-33">交互图 4-1　一边荡一边画 F–t 图</h4><span class="badge">看峰峰之间的箭头</span></div>
   <p class="cap">左边是摆，右边是绳拉力随时间的变化。注意虚线的标注：<strong>相邻两个峰之间只隔半个周期</strong>，一个完整周期里有两个峰。拖动摆长看周期怎么变，拖动摆角看拉力峰值怎么变。</p>
   <canvas id="cv-pend"></canvas>
   <div class="ctrl">
@@ -972,17 +833,17 @@ D. 微粒运动过程中电势能先减小后增大</p>
   </div>
 </div>
 
-<h4>为什么周期只跟摆长和 g 有关</h4>
+<h4 id="physics-h4-34">为什么周期只跟摆长和 g 有关</h4>
 <div class="formula">T = 2π√(L/g)</div>
 <p>里面没有 m，也没有振幅——这叫等时性：同一个单摆，荡得高一点低一点（只要角度小），快慢完全一样。伽利略在教堂看吊灯晃就是这个发现。</p>
 <div class="callout"><span class="tag">选择题里会反复出现</span>“振幅变小，周期变不变？”——不变（只要还是小角度）。</div>
 
-<h4>实验其实只有一个核心问题：摆长从哪量到哪</h4>
+<h4 id="physics-h4-35">实验其实只有一个核心问题：摆长从哪量到哪</h4>
 <p>答案：从悬点，量到球心。也就是</p>
 <div class="formula">L = 线长 + 球半径</div>
 <p>绝大多数人错在这里：要么只量了线长（少了半径），要么量了球直径（多了半径）。这就是第 13 题那个截距的来源。</p>
 
-<h4>那个 T²–L 图的截距，怎么一眼看出测大还是测小</h4>
+<h4 id="physics-h4-36">那个 T²–L 图的截距，怎么一眼看出测大还是测小</h4>
 <p>图像法是把 T² = (4π²/g)·L 画成一条过原点的直线，斜率 = 4π²/g。但如果摆长量错了，直线就不过原点了：</p>
 <ul>
   <li>如果量多了（比如把直径当半径加进去了），你以为的 L 比真实的大，画出来的点在图上偏右，直线往左延伸到 L 轴时会有个<strong>正的截距</strong>。</li>
@@ -991,7 +852,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
 <div class="callout green"><span class="tag">一句话记法</span>截距落在 L 轴正半轴 → 摆长量大了；截距落在 T² 轴正半轴 → 摆长量小了。</div>
 <p>第 13 题就是“L 轴正截距”这种情况 → 量大了 → 把直径当半径加了 → 选 C。</p>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-24">三、出题人的套路</h3>
 <p><strong>理论题</strong>常见三问：</p>
 <ol>
   <li>给 F–t 图，读周期和摆长（峰峰间隔是 T/2）；</li>
@@ -1013,7 +874,7 @@ D. 微粒运动过程中电势能先减小后增大</p>
   <tr><td>数周期数错</td><td>从平衡位置第一次经过时开始计时，之后每两次过平衡位置算一个周期，数够 30～50 个再停</td></tr>
 </table>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-25">四、解题固定动作</h3>
 <p><strong>遇到 F–t 图：</strong></p>
 <ol>
   <li><strong>先乘 2</strong>：读出相邻峰（或相邻谷）的间隔，×2 得周期 T。</li>
@@ -1030,8 +891,8 @@ D. 微粒运动过程中电势能先减小后增大</p>
   <li>有图像就看截距，判量大还是量小。</li>
 </ol>
 
-<h3>五、原题复盘</h3>
-<h4>原题 3（第七周，理论大题）</h4>
+<h3 id="physics-h3-26">五、原题复盘</h3>
+<h4 id="physics-h4-37">原题 3（第七周，理论大题）</h4>
 <p>测力传感器测摆线拉力，F–t 图相邻峰间隔 0.2π s，F_min = 0.495 N，F_max = 0.510 N，g = 10 m/s²。</p>
 <p><strong>(1) 周期和摆长</strong>。峰峰间隔 0.2π s，这是一半的周期：</p>
 <div class="formula">T = 2 × 0.2π = 0.4π s<br>
@@ -1048,14 +909,14 @@ L = gT²/(4π²) = 10 × (0.4π)² / (4π²) = 10 × 0.16π² / (4π²) = 0.4 m<
 <p><strong>(3) 最大速度</strong>（在最低点）：</p>
 <div class="formula">v² = 2gL(1−cosθ) = 2 × 10 × 0.4 × 0.01 = 0.08　→　v ≈ 0.28 m/s</div>
 
-<h4>原题 13（第五周，实验题）</h4>
+<h4 id="physics-h4-38">原题 13（第五周，实验题）</h4>
 <p><strong>(1) 磁感应强度最大的时刻</strong> —— 传感器测的是磁场强弱，小球离传感器最近时最强。摆球离悬点（传感器所在处）最近的位置就是最低点。</p>
 <p><strong>(2) 周期</strong> —— 5 s 到 15 s 共 10 s，内有 5 个周期 → T = 2 s。</p>
 <p><strong>(3) 算 g</strong> —— g = 4π²L/T²，取 π² = 9.87、L ≈ 0.995 m → g = 4 × 9.87 × 0.995 / 4 = 9.82 m/s²。</p>
 <p><strong>(4) 截距分析</strong> —— T²–L 图线的延长线在 L 轴正半轴有截距 → 说明测出来的 L 比真实的大 → 把“线长 + 球直径”当成了摆长 → <strong>选 C</strong>。</p>
 
-<h3>六、变式与练习</h3>
-<h4>变式</h4>
+<h3 id="physics-h3-27">六、变式与练习</h3>
+<h4 id="physics-h4-39">变式</h4>
 <p>单摆摆长 1 m，地面附近 g = π² ≈ 9.87 m/s²，测得周期 T₀。(1) 求 T₀；(2) 移到 g′ = g/4 的高空，周期多大？(3) 放入以 a = g/2 竖直向上加速的电梯，周期多大？</p>
 <details><summary>看解析</summary><div class="inner">
 <p><strong>(1)</strong> T₀ = 2π√(L/g) = 2π√(1/π²) = <strong>2 s</strong>。</p>
@@ -1064,7 +925,7 @@ L = gT²/(4π²) = 10 × (0.4π)² / (4π²) = 10 × 0.16π² / (4π²) = 0.4 m<
 <div class="callout"><span class="tag">电梯口诀</span>往上加速 g 变大、周期变短；往下加速 g 变小、周期变长。</div>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-40">练习</h4>
 <p><strong>基础 1</strong>（解答）单摆摆线拉力 F–t 图中，相邻两个拉力峰值间隔 0.5 s。取 g = π² m/s²。(1) 求周期；(2) 若摆长 0.25 m，用周期公式求 g，验证是否一致。</p>
 <p><strong>基础 2</strong>（多选）关于单摆周期，下列说法正确的是（　）<br>
 A. 周期与摆球质量成正比<br>
@@ -1098,7 +959,7 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
 <p>→ 摆长测少了 2 cm，最可能的原因：只量了摆线长度，漏加球半径（球半径 2 cm）。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-28">七、一页纸小结</h3>
 <ul>
   <li>秋千：最低点最紧（F = mg + mv²/L），最高点最松（F = mg·cosθ）。</li>
   <li>峰峰间隔 = T/2，别忘乘 2。</li>
@@ -1115,12 +976,12 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
 <h2 class="topic" id="t5"><span class="no">专题五</span>弹簧振子与简谐运动</h2>
 <p class="topic-meta">对应错题：第 10 题。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-29">一、这道题在考什么</h3>
 <p>挂着弹簧上下晃的球，晃到什么程度弹簧会受不了。</p>
 <p>核心只有一个观念：<strong>振幅是相对“平衡位置”量的，不是相对“原长”量的。</strong></p>
 
-<h3>二、用人话讲</h3>
-<h4>先把三个位置分清楚，这是本节全部的难点</h4>
+<h3 id="physics-h3-30">二、用人话讲</h3>
+<h4 id="physics-h4-41">先把三个位置分清楚，这是本节全部的难点</h4>
 <p>一根弹簧上端挂在天花板 O，下端挂个球：</p>
 <ol>
   <li><strong>弹簧原长</strong>：什么都没挂时，弹簧自然地那么长。</li>
@@ -1130,7 +991,7 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
 <div class="callout"><span class="tag">关键</span>振动永远绕“平衡位置”对称，不是绕“原长位置”。量振幅必须从平衡位置量到最远点；量到原长就多算了 x₀，全错。</div>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 5-1　三种位置别搞混</h4><span class="badge">拖动振幅看边界</span></div>
+  <div class="whead"><h4 id="physics-h4-42">交互图 5-1　三种位置别搞混</h4><span class="badge">拖动振幅看边界</span></div>
   <p class="cap">灰色虚线是<strong>原长</strong>，绿线是<strong>平衡位置</strong>（比原长低 x₀ = mg/k）。橙色的上下两条线是振动的<strong>边界</strong>，它们是以绿线为中心对称的，不是以灰线为中心。把振幅拖大，看下方弹力条什么时候超红线。</p>
   <canvas id="cv-spring"></canvas>
   <div class="ctrl">
@@ -1145,20 +1006,20 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
   </div>
 </div>
 
-<h4>那弹簧最大被拉多长</h4>
+<h4 id="physics-h4-43">那弹簧最大被拉多长</h4>
 <p>从平衡位置往下最多走 A（振幅），而平衡位置本身已经在原长下面 x₀ 了，所以：</p>
 <div class="formula">最大伸长量 = x₀ + A　　最大弹力 = k(x₀ + A) = mg + kA</div>
 <p>这个式子要刻进脑子：mg + kA。第一部分 mg 是“托住球不掉的力”，第二部分 kA 是“让它拐弯回头”的力。</p>
 
-<h4>“弹簧会不会掉”怎么算</h4>
+<h4 id="physics-h4-44">“弹簧会不会掉”怎么算</h4>
 <p>题目说“O 处受力超过 2mg 弹簧就脱落”。O 处受的力就是弹簧的弹力（弹簧的拉力处处相等），最大出现在最低点，就是 mg + kA。所以：</p>
 <div class="formula">不脱落 ⇔ mg + kA ≤ 2mg ⇔ A ≤ mg/k</div>
 <div class="callout"><span class="tag">为什么不是 A ≤ 2mg/k</span>因为 2mg 这个上限里，已经有 mg 被“托住球”用掉了，只剩 mg 可以用来晃。能晃的幅度就是 mg/k。这个“扣掉本钱再看余量”的思路，是这类题的精髓。</div>
 
-<h4>球向上晃到最高点时，弹簧是被拉长还是被压缩</h4>
+<h4 id="physics-h4-45">球向上晃到最高点时，弹簧是被拉长还是被压缩</h4>
 <p>看 A 和 x₀ 谁大：A &lt; x₀ 时最高点还没到原长，弹簧仍然是伸长的；A &gt; x₀ 时最高点超过了原长，弹簧被压缩了（两端接着的弹簧是可以压的）。第 10 题的 D 选项就卡在这里。</p>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-31">三、出题人的套路</h3>
 <p>这类题在选择题里就三种问法：</p>
 <ol>
   <li>“以下说法正确的是”——选项里埋“振幅等于最大伸长量”“不做简谐运动”“加速度方向”这类判断。</li>
@@ -1174,7 +1035,7 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
   <tr><td>半个周期走 4A</td><td>2A；4A 是一个周期</td></tr>
 </table>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-32">四、解题固定动作</h3>
 <ol>
   <li><strong>先把三个位置在纸上标出来</strong>——原长、平衡位置（下方 x₀ = mg/k 处）、振动范围（平衡位置上下各 A）。</li>
   <li><strong>算 x₀ = mg/k</strong>。这一步永远要做，后面全靠它。</li>
@@ -1183,8 +1044,8 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
   <li><strong>问“最高点弹簧状态”，比较 A 和 x₀</strong>。A &lt; x₀ 伸长，A &gt; x₀ 压缩，A = x₀ 恰好原长。</li>
 </ol>
 
-<h3>五、原题复盘</h3>
-<h4>原题 10（第五周，多选题，答案 BD）</h4>
+<h3 id="physics-h3-33">五、原题复盘</h3>
+<h4 id="physics-h4-46">原题 10（第五周，多选题，答案 BD）</h4>
 <p>质量 m 的小球经劲度系数 k 的轻弹簧连接上端 O，静止后竖直下拉释放。O 处拉力大于 2mg 时弹簧脱落。</p>
 <ul>
   <li><strong>A ✗</strong>：“释放后不做简谐运动”。错。挂上重物静止时的位置就是新的平衡位置，从这里下拉释放，回复力依然满足 F = −kx（x 是相对平衡位置的位移），所以照样是简谐运动。“竖直的、有重力的”不影响简谐性，只改变平衡位置。</li>
@@ -1194,8 +1055,8 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
 </ul>
 <div class="callout"><span class="tag">错的人是怎么想的</span>他们写 k·A_max = 2mg → A = 2mg/k。错在把“弹簧最大弹力 2mg”直接对应到了“振幅”，忘了平衡位置本身已经让弹簧伸长了 mg/k。</div>
 
-<h3>六、变式与练习</h3>
-<h4>变式</h4>
+<h3 id="physics-h3-34">六、变式与练习</h3>
+<h4 id="physics-h4-47">变式</h4>
 <p>水平弹簧振子：k = 100 N/m，m = 0.25 kg，振幅 A = 0.05 m。求：(1) 周期；(2) 最大速度；(3) 最大加速度；(4) 一个周期与半个周期的路程。</p>
 <details><summary>看解析</summary><div class="inner">
 <p>(1) ω = √(k/m) = √(100/0.25) = √400 = 20 rad/s → T = 2π/ω = 0.1π ≈ <strong>0.31 s</strong>。</p>
@@ -1204,7 +1065,7 @@ D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
 <p>(4) 一个周期 <strong>4A = 0.2 m</strong>；半个周期 <strong>2A = 0.1 m</strong>。</p>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-48">练习</h4>
 <p><strong>基础 1</strong>（多选）关于简谐运动，下列说法正确的是（　）<br>
 A. 回复力大小保持恒定<br>
 B. 加速度与位移大小成正比、方向相反<br>
@@ -1234,7 +1095,7 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
 <p>(4) 脱落条件：k(x₀ + A) &gt; 15 → x₀ + A &gt; 0.3 m → A &gt; 0.2 m。即至少要从平衡位置<strong>下拉超过 20 cm</strong>。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-35">七、一页纸小结</h3>
 <ul>
   <li>振动绕平衡位置，不绕原长；平衡位置在下方 x₀ = mg/k 处。</li>
   <li>最大弹力 = mg + kA（这是最高频的公式）。</li>
@@ -1250,18 +1111,18 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
 <h2 class="topic" id="t6"><span class="no">专题六</span>静电基础概念</h2>
 <p class="topic-meta">对应错题：第 9 题（摩擦起电）、第 2 题（静电的应用）。</p>
 
-<h3>一、这道题在考什么</h3>
+<h3 id="physics-h3-36">一、这道题在考什么</h3>
 <p>不下计算的纯概念题，考的是“物理图景对不对”。</p>
 <p>这类题不难，但特别容易因为想当然丢分。它们的共同特点是：选项听起来都很顺耳，只有一个在物理上站不住。</p>
 
-<h3>二、用人话讲</h3>
-<h4>摩擦起电到底发生了什么</h4>
+<h3 id="physics-h3-37">二、用人话讲</h3>
+<h4 id="physics-h4-49">摩擦起电到底发生了什么</h4>
 <p>想象两个原子，一个把电子抓得紧，一个抓得松。把它们贴在一起蹭，抓得紧的就把对方的电子抢过来几个。</p>
 <p>所以：被抢走的那个少了电子，带正电；抢到的那个多了电子，带负电。</p>
 <div class="callout"><span class="tag">关键</span>跑掉的只有电子。原子核（质子）死死待在原地，绝对不会跑到另一个物体上去。这一点是最高频的错项来源——“玻璃棒带正电是因为得到了质子”是错的，带正电从来都是“失去电子”。</div>
 
 <div class="widget">
-  <div class="whead"><h4>交互图 6-1　摩擦的时候，到底谁在动</h4><span class="badge">点一下试试</span></div>
+  <div class="whead"><h4 id="physics-h4-50">交互图 6-1　摩擦的时候，到底谁在动</h4><span class="badge">点一下试试</span></div>
   <p class="cap">点“摩擦一次”，看电子从毛皮跑到橡胶棒。注意两件事：<strong>飞过去的只有带负号的小圆点（电子），方块本身没动</strong>；摩擦前后，两边的电荷加起来始终是 0。</p>
   <canvas id="cv-static"></canvas>
   <div class="ctrl">
@@ -1276,15 +1137,15 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
   </div>
 </div>
 
-<h4>创造电荷是绝对错的</h4>
+<h4 id="physics-h4-51">创造电荷是绝对错的</h4>
 <p>电荷不能凭空产生，只能搬家。摩擦前后，两个物体上的总电荷量还是零，只是重新分配了一下。这就叫电荷守恒。</p>
 
-<h4>电荷还是“论个”的</h4>
+<h4 id="physics-h4-52">电荷还是“论个”的</h4>
 <p>一个电子带电 e = 1.6×10⁻¹⁹ C。任何带电体的电荷量只能是 e 的整数倍——1 个、2 个、3 个电子的电量，但不能是半个电子。</p>
 <p>所以“某物体带 0.8×10⁻¹⁹ C”这种选项一定是错的，因为 0.8×10⁻¹⁹ = e/2，半个电子不存在。这叫电荷量子化。</p>
 <div class="callout green"><span class="tag">一条实用判据</span>把一个电荷量除以 1.6×10⁻¹⁹，能除尽就是合法的，除不尽就一定是错的。</div>
 
-<h4>生活中的静电装置，各自在用什么原理</h4>
+<h4 id="physics-h4-53">生活中的静电装置，各自在用什么原理</h4>
 <p>先自己猜一下，点开卡片看答案。</p>
 <div class="cards" id="st-cards">
   <div class="card"><h5>超高压带电作业服</h5><div class="k">工人摸几十万伏的电线为什么没事？</div><div class="ans">静电屏蔽。衣服是导电材料织的，把人体包成一个等势体，身上各处电势相同 → 没有电势差 → 没有电流过身体。是导电服，不是绝缘服。</div><div class="hint">点击看答案</div></div>
@@ -1295,7 +1156,7 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
 </div>
 <div class="callout"><span class="tag">最后这张卡是第 2 题 D 项的坑</span>很多人看到“静电”两个字就往上套“除尘”，实际上铁链是导走静电，不是利用静电。</div>
 
-<h3>三、出题人的套路</h3>
+<h3 id="physics-h3-38">三、出题人的套路</h3>
 <p>这类题基本上就是“四选一挑错”，套路高度固定。四个必考判断：</p>
 <ol>
   <li>摩擦起电是“产生电荷”还是“转移电荷”？→ 转移，只有电子动。</li>
@@ -1304,7 +1165,7 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
   <li>各装置用的什么原理？→ 查上表，最容易错的是“高压作业穿绝缘服”和“拖地铁链当除尘”。</li>
 </ol>
 
-<h3>四、解题固定动作</h3>
+<h3 id="physics-h3-39">四、解题固定动作</h3>
 <ol>
   <li><strong>圈出题干里的关键词</strong>。是“摩擦起电”还是“静电应用”？是问“正确的”还是“不正确的”？（“不正确”三个字每年都坑人）</li>
   <li><strong>摩擦起电题，只盯三件事</strong>：谁失去电子（带正）、谁得到电子（带负）；两个物体带的是等量异种电荷；总电荷量不变。</li>
@@ -1313,8 +1174,8 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
   <li><strong>绝对化的词要警惕</strong>。“一定”“不可能”“任意”“都”——这类词出现，八成就是错的。</li>
 </ol>
 
-<h3>五、原题复盘</h3>
-<h4>原题 9（第五周，答案 B）</h4>
+<h3 id="physics-h3-40">五、原题复盘</h3>
+<h4 id="physics-h4-54">原题 9（第五周，答案 B）</h4>
 <p>梳子摩擦起电。</p>
 <ul>
   <li><strong>A ✗</strong>：“摩擦创造了电荷”。违反电荷守恒——电荷只能转移，不能无中生有。</li>
@@ -1323,7 +1184,7 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
   <li><strong>D ✗</strong>：电荷量是量子化的，只能是 e 的整数倍，不能取任意值。</li>
 </ul>
 
-<h4>原题 2（第七周，答案 BC）</h4>
+<h4 id="physics-h4-55">原题 2（第七周，答案 BC）</h4>
 <p>电学联系生活。</p>
 <ul>
   <li><strong>A ✗</strong>：超高压带电作业应穿导电材料的屏蔽服（让人体和导线等电势），而不是绝缘服。</li>
@@ -1332,8 +1193,8 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
   <li><strong>D ✗</strong>：静电喷漆中工件与漆滴带异种电荷相互吸引（同种电荷会互相排斥，漆根本喷不上去）。</li>
 </ul>
 
-<h3>六、变式与练习</h3>
-<h4>变式</h4>
+<h3 id="physics-h3-41">六、变式与练习</h3>
+<h4 id="physics-h4-56">变式</h4>
 <p>两个完全相同的金属小球，甲带 +q、乙带 −3q，相距 r（远大于球半径）。(1) 接触后分开，各带多少电荷？(2) 接触前后库仑力的大小之比、方向如何变化？</p>
 <details><summary>看解析</summary><div class="inner">
 <p><strong>(1)</strong> 接触时先算总电荷：q + (−3q) = −2q。两个球完全相同 → 平分 → 各带 <strong>−q</strong>。</p>
@@ -1341,7 +1202,7 @@ D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</
 <p>大小之比 F₂/F₁ = <strong>1/3</strong>，方向由吸引变为排斥。</p>
 </div></details>
 
-<h4>练习</h4>
+<h4 id="physics-h4-57">练习</h4>
 <p><strong>基础 1</strong>（单选）关于摩擦起电，下列说法正确的是（　）<br>
 A. 摩擦使物体产生了新的电荷<br>
 B. 玻璃棒与丝绸摩擦后带正电，是因为玻璃棒失去了电子<br>
@@ -1372,7 +1233,7 @@ D. 印染车间保持空气潮湿是为了防止静电积累</p>
 <p>(3) 摩擦前：都是中性，总电荷量 <strong>0</strong>。摩擦后：(+3.2×10⁻⁹) + (−3.2×10⁻⁹) = <strong>0</strong>。系统总电荷量始终为零。</p>
 </div></details>
 
-<h3>七、一页纸小结</h3>
+<h3 id="physics-h3-42">七、一页纸小结</h3>
 <ul>
   <li>摩擦起电：只搬电子，原子核不动。</li>
   <li>带正电 = 失去电子；带负电 = 得到电子；两者等量异种。</li>
@@ -1427,7 +1288,7 @@ D. 印染车间保持空气潮湿是为了防止静电积累</p>
   <tr><td>第 13–14 天</td><td>对照诊断报告逐条自测：每个易错点能不能用自己的话讲给同学听</td></tr>
 </table>
 
-<h4>判定“真的会了”的标准</h4>
+<h4 id="physics-h4-58">判定“真的会了”的标准</h4>
 <p>不是“看懂了解答”。要同时满足三条：</p>
 <ol>
   <li>遮住答案，能独立、完整地写出过程；</li>
@@ -2459,8 +2320,13 @@ function roundRect(g,x,y,w,h,r){
   onScroll();
 })();
 </script>
-<script>window.__KBPAGE="physics.html";</script>
-<script src="kb-index.js"></script>
-<script src="shell.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/search.js"></script>
+<script>
+(function(){
+  var items = KB.search.buildFromDoc();
+  KB.search.init({items:items, scope:'物理', placeholder:'在本页搜索物理知识点'});
+})();
+</script>
 </body>
 </html>

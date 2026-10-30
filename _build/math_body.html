@@ -1,0 +1,326 @@
+<h2 id="m1"><span class="no">第 1 章</span>集合与常用逻辑用语</h2>
+<p>高考选择题第一题的位置，5 分。看着简单，但每年都有人栽在"空集"和"端点取舍"上。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th>概念</th><th>要点</th><th>易错</th></tr>
+<tr><td>集合的三性</td><td>确定性、互异性、无序性</td><td>求出参数后必须回代检验互异性，否则会出现两个相同元素</td></tr>
+<tr><td>子集个数</td><td>含 n 个元素的集合有 2ⁿ 个子集、2ⁿ−1 个真子集</td><td>空集是任何集合的子集，讨论 B⊆A 时容易漏掉 B=∅</td></tr>
+<tr><td>交集 / 并集 / 补集</td><td>A∩B 取公共，A∪B 取全部，∁ᵤA 取剩下的</td><td>数轴上端点是否取到，看原集合是开区间还是闭区间</td></tr>
+<tr><td>四种命题</td><td>原命题、逆命题、否命题、逆否命题；原命题与逆否命题等价</td><td>"否命题"和"命题的否定"是两回事，前者否定条件也否定结论</td></tr>
+<tr><td>充要条件</td><td>p⇒q 则 p 是 q 的充分条件；p⇐q 则 p 是必要条件</td><td>"p 是 q 的充分不必要条件"和"q 是 p 的…"方向容易说反</td></tr>
+<tr><td>量词</td><td>∀ 全称，∃ 存在；否定要"换量词、否结论"</td><td>∀x&gt;0, x²&gt;0 的否定是 ∃x₀&gt;0, x₀²≤0，不是 ∀x&gt;0, x²≤0</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>集合运算求参数范围</strong>：用数轴画图，注意"能否取等号"。判据是把端点代进去看是否满足题意。</li>
+<li><strong>集合与不等式结合</strong>：先解不等式化简集合，再做交并补。一元二次不等式解集要写成区间或集合形式。</li>
+<li><strong>充要条件判断</strong>：小范围能推出大范围（小⇒大），大范围推不出小范围。所以若 A 是 B 的真子集，则 A 是 B 的充分不必要条件。</li>
+<li><strong>命题真假与参数</strong>：含参命题为真求范围，先按"恒成立"或"有解"转化。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>容易混的一对</th><th>关键区别</th></tr>
+<tr><td>∅ 与 {∅}</td><td>∅ 没有元素，元素个数 0；{∅} 有一个元素（那个元素是空集），元素个数 1</td></tr>
+<tr><td>∈ 与 ⊆</td><td>∈ 连接"元素与集合"，⊆ 连接"集合与集合"。写 1∈{1,2} 对，写 1⊆{1,2} 错</td></tr>
+<tr><td>充分条件与充分不必要条件</td><td>"充分条件"允许也必要；"充分不必要"强调推不回来</td></tr>
+<tr><td>命题的否定与否命题</td><td>否定只否结论（∀x, p(x) → ∃x, ¬p(x)）；否命题条件结论都否</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　已知集合 A = {x | x² − 3x + 2 = 0}，B = {x | ax − 2 = 0}，若 B ⊆ A，求实数 a 的取值集合。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">a ∈ {0, 1, 2}</p>
+<p>A = {1, 2}。分三种情况：</p>
+<p>① <strong>B = ∅</strong>：此时 a = 0，方程 0·x = 2 无解，满足 ∅ ⊆ A。</p>
+<p>② <strong>B = {1}</strong>：则 a·1 − 2 = 0，a = 2。</p>
+<p>③ <strong>B = {2}</strong>：则 a·2 − 2 = 0，a = 1。</p>
+<p>综上 a ∈ {0, 1, 2}。<em>最常见错误是只讨论 ②③，漏掉 a = 0 时 B 为空集的情况</em>——这是含参集合问题的头号陷阱。</p>
+</div></details>
+</div>
+
+<h2 id="m2"><span class="no">第 2 章</span>函数与导数</h2>
+<p>整个高中数学的主干，占分最高。导数题是压轴，但前三问往往是基础分，拿稳比死磕最后一问划算。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th>模块</th><th>核心内容</th></tr>
+<tr><td>函数三要素</td><td>定义域、值域、对应关系。定义域优先：一切讨论都要先写定义域</td></tr>
+<tr><td>单调性</td><td>定义法、导数法。增函数：x₁&lt;x₂ ⇒ f(x₁)&lt;f(x₂)</td></tr>
+<tr><td>奇偶性</td><td>奇函数 f(−x)=−f(x)，图象关于原点对称；偶函数 f(−x)=f(x)，关于 y 轴对称。前提是定义域关于原点对称</td></tr>
+<tr><td>周期性</td><td>f(x+T)=f(x)。常见：f(x+a)=−f(x) ⇒ T=2a</td></tr>
+<tr><td>指数对数</td><td>aˣ 与 logₐx 互为反函数；logₐ(MN)=logₐM+logₐN</td></tr>
+<tr><td>导数几何意义</td><td>f′(x₀) 是曲线在 x₀ 处切线的斜率</td></tr>
+<tr><td>导数与单调性</td><td>f′(x)&gt;0 ⇒ 增；f′(x)&lt;0 ⇒ 减；f′(x₀)=0 且左右异号 ⇒ 极值点</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>切线方程</strong>：设切点 (x₀, f(x₀))，斜率 k=f′(x₀)，写 y−f(x₀)=f′(x₀)(x−x₀)。注意"过某点"与"在某点"的区别。</li>
+<li><strong>含参单调性讨论</strong>：求导后通分、因式分解，按导函数零点是否落在定义域内分类。分类标准要写清。</li>
+<li><strong>恒成立求参数</strong>：a ≥ f(x) 恒成立 ⇔ a ≥ f(x)ₘₐₓ；a ≤ f(x) 恒成立 ⇔ a ≤ f(x)ₘᵢₙ。</li>
+<li><strong>零点问题</strong>：转化为两函数图象交点，或用零点存在定理（端点异号）+ 单调性确认唯一。</li>
+<li><strong>极值最值</strong>：极值是局部概念，最值是整体概念。闭区间上最值在极值点和端点中比较。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>f′(x₀)=0 就是极值点？</td><td>不一定，还要看左右两侧导数是否异号。f(x)=x³ 在 x=0 处 f′=0 但不是极值点</td></tr>
+<tr><td>单调递增 ⇔ f′(x)&gt;0？</td><td>递增是 f′(x) ≥ 0（允许个别点等于 0），严格递增才是 &gt;0</td></tr>
+<tr><td>"在某点"与"过某点"的切线</td><td>在某点：该点就是切点；过某点：该点可能不是切点，要设切点再解</td></tr>
+<tr><td>定义域忘写</td><td>含 ln x 的题定义域是 x&gt;0，讨论单调性时区间不能跨过 0</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　已知函数 f(x) = x³ − 3x² + 2，求 f(x) 的极值，并求 f(x) 在区间 [−1, 3] 上的最大值与最小值。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">极大值 f(0)=2，极小值 f(2)=−2；最大值 2，最小值 −2</p>
+<p><strong>求导：</strong>f′(x) = 3x² − 6x = 3x(x − 2)，令 f′(x)=0 得 x=0 或 x=2。</p>
+<p><strong>判号：</strong>x&lt;0 时 f′&gt;0；0&lt;x&lt;2 时 f′&lt;0；x&gt;2 时 f′&gt;0。</p>
+<p>所以 x=0 是极大值点，f(0)=2；x=2 是极小值点，f(2)=8−12+2=−2。</p>
+<p><strong>闭区间最值：</strong>比较极值与端点值 f(−1)=−1−3+2=−2，f(3)=27−27+2=2。</p>
+<p>最大值为 2（在 x=0 和 x=3 处取到），最小值为 −2（在 x=−1 和 x=2 处取到）。</p>
+<p>注意：<em>最小值在端点 x=−1 和极小值点 x=2 处都取到</em>，答"最小值 −2"即可，不必纠结哪一点。</p>
+</div></details>
+</div>
+
+<h2 id="m3"><span class="no">第 3 章</span>三角函数与解三角形</h2>
+<p>公式多，但考法固定。解三角形是必考大题，正弦定理与余弦定理的选用判断是关键。</p>
+
+<h3>一、知识主线</h3>
+<div class="eq">
+同角关系：sin²α + cos²α = 1，tanα = sinα / cosα<br>
+诱导公式：奇变偶不变，符号看象限<br>
+和差角：sin(α±β) = sinαcosβ ± cosαsinβ，cos(α±β) = cosαcosβ ∓ sinαsinβ<br>
+二倍角：sin2α = 2sinαcosα，cos2α = cos²α − sin²α = 2cos²α − 1 = 1 − 2sin²α<br>
+正弦定理：a/sinA = b/sinB = c/sinC = 2R<br>
+余弦定理：a² = b² + c² − 2bc·cosA
+</div>
+
+<table class="tbl">
+<tr><th>题型</th><th>解法</th></tr>
+<tr><td>给两角一边</td><td>用正弦定理（已知两角，第三角可求）</td></tr>
+<tr><td>给两边夹角</td><td>用余弦定理求第三边</td></tr>
+<tr><td>给三边</td><td>用余弦定理求角</td></tr>
+<tr><td>给两边及一边对角</td><td>正弦定理，但要注意可能有两解（SSA 情形）</td></tr>
+<tr><td>求面积</td><td>S = ½ab·sinC，配余弦定理联立</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>y = Asin(ωx+φ) 的图象与性质</strong>：A 定振幅，ω 定周期 T=2π/ω，φ 定平移。求解析式时用最值点代入。</li>
+<li><strong>三角函数化简求值</strong>：目标是化成"一个角一个函数"，常用辅助角公式 asinx+bcosx = √(a²+b²)sin(x+φ)。</li>
+<li><strong>解三角形综合</strong>：常与面积、周长、中线、角平分线结合，核心是"边角互化"——要么全化边，要么全化角。</li>
+<li><strong>判断三角形形状</strong>：把条件化成只含边或只含角，再判断。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>SSA 一定唯一？</td><td>不一定。已知 a、b 和 A，若 b·sinA &lt; a &lt; b，有两解；a = b·sinA 一解；a &gt; b 一解</td></tr>
+<tr><td>sinA &gt; sinB ⇒ A &gt; B？</td><td>在同一个三角形中成立（大边对大角）；但在一般角中不成立，如 sin150° &gt; sin60°</td></tr>
+<tr><td>平移方向</td><td>y=sin(2x) 左移 π/6 得 y=sin(2x+π/3)，不是 y=sin(2x+π/6)——要提取 ω</td></tr>
+<tr><td>周期公式</td><td>y=Asin(ωx+φ) 的周期是 2π/|ω|，忘绝对值会出错</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　在 △ABC 中，a = 2，b = √6，A = 45°，求角 B。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">B = 60° 或 B = 120°（两解）</p>
+<p>正弦定理：a/sinA = b/sinB，即 2/sin45° = √6/sinB。</p>
+<p>sinB = √6·sin45°/2 = √6·(√2/2)/2 = √3/2。</p>
+<p>所以 B = 60° 或 B = 120°。</p>
+<p><strong>两个解都成立吗？</strong>检验：A+B &lt; 180°。取 B=60° 时 C=75°，成立；取 B=120° 时 C=15°，也成立。</p>
+<p>所以本题<em>有两解</em>。这就是 SSA 情形的典型陷阱——只写 60° 会丢一半分。</p>
+</div></details>
+</div>
+
+<h2 id="m4"><span class="no">第 4 章</span>数列</h2>
+<p>等差等比的定义与通项是基础，难点在递推数列求通项和求和方法的选用。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th></th><th>等差数列</th><th>等比数列</th></tr>
+<tr><td>定义</td><td>aₙ₊₁ − aₙ = d（常数）</td><td>aₙ₊₁ / aₙ = q（常数，q≠0）</td></tr>
+<tr><td>通项</td><td>aₙ = a₁ + (n−1)d</td><td>aₙ = a₁·qⁿ⁻¹</td></tr>
+<tr><td>求和</td><td>Sₙ = n(a₁+aₙ)/2 = na₁ + n(n−1)d/2</td><td>q=1 时 Sₙ = na₁；q≠1 时 Sₙ = a₁(1−qⁿ)/(1−q)</td></tr>
+<tr><td>中项</td><td>2aₙ = aₙ₋₁ + aₙ₊₁</td><td>aₙ² = aₙ₋₁·aₙ₊₁（各项同号）</td></tr>
+<tr><td>性质</td><td>m+n = p+q ⇒ aₘ+aₙ = aₚ+a_q</td><td>m+n = p+q ⇒ aₘ·aₙ = aₚ·a_q</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>aₙ 与 Sₙ 的关系</strong>：a₁=S₁；n≥2 时 aₙ = Sₙ − Sₙ₋₁。<em>务必单独验证 n=1 是否满足通式</em>。</li>
+<li><strong>递推求通项</strong>：累加法（aₙ₊₁−aₙ=f(n)）、累乘法（aₙ₊₁/aₙ=f(n)）、构造法（aₙ₊₁=paₙ+q 构造等比）。</li>
+<li><strong>求和方法</strong>：公式法、错位相减（等差×等比）、裂项相消（1/[n(n+1)] = 1/n − 1/(n+1)）、分组求和、倒序相加。</li>
+<li><strong>数列不等式</strong>：常与放缩结合，证明 Sₙ &lt; 某常数。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>等比求和忘分类</td><td>q=1 时不能用 a₁(1−qⁿ)/(1−q)，必须单独讨论</td></tr>
+<tr><td>aₙ = Sₙ − Sₙ₋₁ 的适用范围</td><td>只在 n≥2 时成立，n=1 要单独算并验证</td></tr>
+<tr><td>等比中项的正负</td><td>aₙ² = aₙ₋₁aₙ₊₁ 只说明平方关系，aₙ 的符号由原数列决定</td></tr>
+<tr><td>错位相减的末项</td><td>相减后是"等比求和 + 最后一项"，容易漏写最后一项</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　已知数列 {aₙ} 的前 n 项和 Sₙ = n² + 2n，求 aₙ 的通项公式。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">aₙ = 2n + 1</p>
+<p><strong>n=1：</strong>a₁ = S₁ = 1 + 2 = 3。</p>
+<p><strong>n≥2：</strong>aₙ = Sₙ − Sₙ₋₁ = (n²+2n) − [(n−1)²+2(n−1)] = n²+2n − (n²−2n+1+2n−2) = 2n+1。</p>
+<p><strong>验证 n=1：</strong>代入 2×1+1 = 3，与 a₁=3 一致，所以通项对所有 n≥1 都成立。</p>
+<p>aₙ = 2n + 1。</p>
+<p>这题 n=1 恰好吻合；如果算出来是 aₙ = 2n+2 之类，就必须分段写：a₁=3，n≥2 时 aₙ=2n+2。<em>验证这一步不能省</em>。</p>
+</div></details>
+</div>
+
+<h2 id="m5"><span class="no">第 5 章</span>立体几何</h2>
+<p>空间想象 + 向量计算两条路。建系能算的题尽量别靠"看出来"，向量法更稳。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th>模块</th><th>要点</th></tr>
+<tr><td>平行判定</td><td>线面平行：平面外一条直线与平面内一条直线平行；面面平行：一个平面内两条相交直线都平行于另一平面</td></tr>
+<tr><td>垂直判定</td><td>线面垂直：直线垂直于平面内两条相交直线；面面垂直：一个平面过另一个平面的一条垂线</td></tr>
+<tr><td>空间角</td><td>线线角 [0°, 90°]；线面角 [0°, 90°]；二面角 [0°, 180°]</td></tr>
+<tr><td>空间距离</td><td>点到平面距离、异面直线距离，用向量投影算最稳</td></tr>
+<tr><td>表面积体积</td><td>柱 V=Sh；锥 V=Sh/3；球 V=4πR³/3，S=4πR²</td></tr>
+</table>
+<div class="eq">
+设 n 为平面法向量：线面角 sinθ = |a·n| / (|a||n|)；<br>
+二面角 cosθ = ± n₁·n₂ / (|n₁||n₂|)，正负由图形判断
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>建系三原则</strong>：找三条两两垂直的线作坐标轴；没有现成的就作辅助线构造；原点常选在直角顶点或底面中心。</li>
+<li><strong>证平行与垂直</strong>：几何法要写清"面内、面外、相交"三个条件；向量法算方向向量与法向量的关系。</li>
+<li><strong>二面角的余弦值符号</strong>：算出的是法向量夹角的余弦，二面角可能是它的相反数，要看图判断锐钝。</li>
+<li><strong>外接球问题</strong>：找球心（到各顶点距离相等），常用"补形法"把三棱锥补成长方体，球心即体对角线中点。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>线面平行判定漏条件</td><td>必须写"直线在平面外"，否则直线在面内也"平行于面内某直线"，但结论不成立</td></tr>
+<tr><td>面面垂直 ⇔ 线面垂直？</td><td>不能直接互推，要通过"一个平面内垂直于交线的直线"过渡</td></tr>
+<tr><td>二面角当成法向量夹角</td><td>法向量夹角可能是二面角的补角，必须结合图形判断</td></tr>
+<tr><td>体积公式漏 1/3</td><td>锥体是柱体的三分之一，这是最高频的粗心失分</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　正方体 ABCD-A₁B₁C₁D₁ 中，棱长为 2，求直线 A₁B 与平面 ABCD 所成角的正弦值。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">√2 / 2，即 45°</p>
+<p><strong>几何法：</strong>A₁ 在底面的射影是 A，所以 ∠A₁BA 就是所求线面角。</p>
+<p>在直角 △A₁AB 中，A₁A = 2（棱长），AB = 2，所以 tan∠A₁BA = A₁A/AB = 1，∠A₁BA = 45°，sin45° = √2/2。</p>
+<p><strong>向量法：</strong>以 A 为原点建系，A(0,0,0)，B(2,0,0)，A₁(0,0,2)。</p>
+<p>方向向量 A₁B = (2, 0, −2)，平面 ABCD 法向量 n = (0,0,1)。</p>
+<p>sinθ = |A₁B·n| / (|A₁B||n|) = |−2| / (2√2 × 1) = √2/2。</p>
+<p>两种方法结果一致。<em>线面角用 sin，二面角用 cos</em>，这个对应关系记牢可以免掉一半错误。</p>
+</div></details>
+</div>
+
+<h2 id="m6"><span class="no">第 6 章</span>解析几何</h2>
+<p>计算量大，是拉开差距的题。核心是"设而不求"与"联立韦达"。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th>曲线</th><th>标准方程</th><th>关键性质</th></tr>
+<tr><td>圆</td><td>(x−a)² + (y−b)² = r²</td><td>圆心 (a,b)，半径 r；一般式 x²+y²+Dx+Ey+F=0 需 D²+E²−4F&gt;0</td></tr>
+<tr><td>椭圆</td><td>x²/a² + y²/b² = 1（a&gt;b&gt;0）</td><td>c²=a²−b²，离心率 e=c/a ∈ (0,1)</td></tr>
+<tr><td>双曲线</td><td>x²/a² − y²/b² = 1</td><td>c²=a²+b²，e=c/a &gt; 1，渐近线 y=±(b/a)x</td></tr>
+<tr><td>抛物线</td><td>y² = 2px（p&gt;0）</td><td>焦点 (p/2, 0)，准线 x=−p/2，e=1</td></tr>
+</table>
+<div class="eq">
+弦长公式：|AB| = √(1+k²)·|x₁−x₂| = √(1+k²)·√[(x₁+x₂)²−4x₁x₂]
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>联立 + 韦达定理</strong>：直线代入曲线，得一元二次方程，写出 x₁+x₂ 与 x₁x₂，再用弦长、面积、向量条件表达。</li>
+<li><strong>判别式先行</strong>：联立后必须写 Δ&gt;0，很多题要靠它求参数范围。</li>
+<li><strong>中点弦</strong>：用"点差法"，两式相减得斜率与中点坐标关系，比联立快得多。</li>
+<li><strong>定点定值问题</strong>：设直线 y=kx+m，用条件消去一个参数，看剩下的表达式是否与 k 无关。</li>
+<li><strong>离心率求法</strong>：由几何条件建立 a、b、c 的齐次式，再化成一元方程解 e。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>椭圆与双曲线的 a、b、c 关系</td><td>椭圆 c²=a²−b²（c 最小）；双曲线 c²=a²+b²（c 最大）。记反则离心率全错</td></tr>
+<tr><td>抛物线焦半径</td><td>y²=2px 上点 (x₀,y₀) 到焦点距离是 x₀+p/2，不是 x₀</td></tr>
+<tr><td>斜率不存在的情形</td><td>设 y=kx+m 会漏掉垂直于 x 轴的直线，需单独讨论</td></tr>
+<tr><td>弦长公式忘开方</td><td>|AB| = √(1+k²)·|x₁−x₂|，两个根号不能合并成一个</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　已知椭圆 x²/4 + y² = 1，直线 l：y = x + m 与椭圆交于 A、B 两点，若 |AB| = 2，求 m 的值。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">m = ±√30/4</p>
+<p><strong>联立：</strong>把 y = x + m 代入 x²/4 + y² = 1，两边乘 4 得 x² + 4y² = 4，再代入：</p>
+<p>x² + 4(x+m)² = 4　⇒　5x² + 8mx + 4m² − 4 = 0</p>
+<p><strong>判别式（先行，圈定 m 范围）：</strong></p>
+<p>Δ = 64m² − 4×5×(4m²−4) = 64m² − 80m² + 80 = 80 − 16m²</p>
+<p>令 Δ &gt; 0，得 m² &lt; 5。这个范围最后要回头检验。</p>
+<p><strong>韦达定理：</strong>x₁+x₂ = −8m/5，x₁x₂ = (4m²−4)/5。</p>
+<p><strong>代入弦长公式：</strong></p>
+<p>(x₁−x₂)² = (x₁+x₂)² − 4x₁x₂ = 64m²/25 − 16(m²−1)/5 = (80 − 16m²)/25</p>
+<p>|AB| = √(1+k²)·|x₁−x₂| = √2 · √(80−16m²)/5</p>
+<p><strong>解方程：</strong>令 √2·√(80−16m²)/5 = 2，得 √(80−16m²) = 5√2，两边平方：80 − 16m² = 50，m² = 15/8。</p>
+<p>m = ±√(15/8) = ±√30/4 ≈ ±1.37。</p>
+<p><strong>回验 Δ&gt;0：</strong>m² = 15/8 = 1.875 &lt; 5，符合。</p>
+<p>所以 m = ±√30/4。</p>
+<p><em>这题的固定动作是「联立 → 先写 Δ&gt;0 → 用韦达表达弦长 → 解出参数 → 回验 Δ」。最后一步回验不能省：如果解出的 m 落在 Δ≤0 的范围内，说明该弦长在给定椭圆里根本取不到。</em></p>
+</div></details>
+</div>
+
+<h2 id="m7"><span class="no">第 7 章</span>概率与统计</h2>
+<p>难度中等但分值不低，属于"会做就必须拿到"的题。审题时先分清排列组合、古典概型还是独立重复试验。</p>
+
+<h3>一、知识主线</h3>
+<table class="tbl">
+<tr><th>模块</th><th>核心公式</th></tr>
+<tr><td>排列</td><td>Aₙᵐ = n(n−1)…(n−m+1) = n!/(n−m)!</td></tr>
+<tr><td>组合</td><td>Cₙᵐ = n!/[m!(n−m)!]，Cₙᵐ = Cₙⁿ⁻ᵐ</td></tr>
+<tr><td>古典概型</td><td>P(A) = A 包含的基本事件数 / 总基本事件数</td></tr>
+<tr><td>互斥与对立</td><td>P(A∪B)=P(A)+P(B)（互斥）；P(Ā)=1−P(A)</td></tr>
+<tr><td>独立事件</td><td>P(AB) = P(A)P(B)</td></tr>
+<tr><td>条件概率</td><td>P(B|A) = P(AB)/P(A)</td></tr>
+<tr><td>二项分布</td><td>P(X=k) = Cₙᵏ pᵏ(1−p)ⁿ⁻ᵏ，E(X)=np，D(X)=np(1−p)</td></tr>
+<tr><td>正态分布</td><td>X~N(μ,σ²)，图象关于 x=μ 对称，σ 越小越"瘦高"</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>分布列与期望</strong>：先列出所有可能取值，逐个算概率，验证概率和为 1，再算 E(X)。</li>
+<li><strong>统计图表</strong>：频率分布直方图中，频率 = 面积 = 高 × 组距；平均数用组中值加权。</li>
+<li><strong>回归与独立性检验</strong>：记住公式形式与 K² 的判读阈值（3.841、6.635 等）。</li>
+<li><strong>排列组合的"分组分配"</strong>：均匀分组要除以组数的阶乘，避免重复计数。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>互斥与独立</td><td>互斥指不能同时发生（P(AB)=0）；独立指一个发生不影响另一个（P(AB)=P(A)P(B)）。两个事件互斥且概率都大于 0 时，必定不独立</td></tr>
+<tr><td>有放回与无放回</td><td>有放回是独立重复（二项分布）；无放回是超几何分布，概率要用组合算</td></tr>
+<tr><td>排列还是组合</td><td>看"顺序"是否影响结果：排队、编号是排列；选人、抽样是组合</td></tr>
+<tr><td>直方图纵轴含义</td><td>纵轴是"频率/组距"，不是频率。求频率要乘组距</td></tr>
+</table>
+
+<div class="q">
+<p class="qh">例　袋中有 3 个红球、2 个白球，不放回地依次取出 2 个球。求取出的 2 个球中恰有 1 个红球的概率。</p>
+<details><summary>看解析</summary><div class="inner">
+<p class="ans">3/5</p>
+<p><strong>组合法（推荐）：</strong>总取法 C₅² = 10；恰有 1 红 1 白的取法 = C₃¹ × C₂¹ = 6。</p>
+<p>P = 6/10 = 3/5。</p>
+<p><strong>分步法验证：</strong>先红后白 = (3/5)×(2/4) = 3/10；先白后红 = (2/5)×(3/4) = 3/10。合计 3/10 + 3/10 = 3/5。</p>
+<p>两法一致。<em>无放回要用组合或分步乘法，千万别当成二项分布</em>——这是本题唯一的坑。</p>
+</div></details>
+</div>
