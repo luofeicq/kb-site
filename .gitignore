@@ -8,3 +8,5 @@ _shot_*.png
 _dump.js
 _chk.js
 *.baiduyun.*
+__pycache__/
+*.pyc
