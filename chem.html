@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高中化学 · 知识点与考点精讲（交互版）</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --text:#1b1f24; --muted:#5d646d;
+  --line:#e3e6ec; --soft:#f1f4f8; --soft2:#e9eef6;
+  --blue:#2563eb; --red:#c93a3a; --green:#0f8a5f; --amber:#b45309; --violet:#7c3aed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.9 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.layout{display:flex;max-width:1260px;margin:0 auto;gap:40px;padding:0 24px}
+.side{
+  width:224px;flex:0 0 224px;position:sticky;top:0;align-self:flex-start;
+  max-height:100vh;overflow:auto;padding:32px 0 40px;font-size:14px;
+}
+.side .brand{font-weight:700;font-size:15px;letter-spacing:.3px;color:var(--text);margin-bottom:4px}
+.side .sub{font-size:12px;color:var(--muted);margin-bottom:16px}
+.side nav a{
+  display:block;padding:5px 10px;border-radius:7px;color:var(--muted);
+  text-decoration:none;line-height:1.55;margin-bottom:1px;border-left:2px solid transparent;font-size:13.5px;
+}
+.side nav a:hover{background:var(--soft);color:var(--text)}
+.side nav a.on{background:var(--soft2);color:var(--blue);font-weight:600;border-left-color:var(--blue)}
+.side .grp{font-size:11.5px;color:#98a0aa;margin:14px 0 5px;padding-left:10px;letter-spacing:.6px}
+main{flex:1;min-width:0;padding:32px 0 120px}
+.hero{background:linear-gradient(155deg,#fff 0%,#eef3fc 100%);border:1px solid var(--line);border-radius:16px;padding:28px 32px;margin-bottom:30px}
+.hero h1{font-size:26px;margin:0 0 10px;letter-spacing:-.2px;line-height:1.35}
+.hero p{margin:0;color:var(--muted);font-size:15px}
+.hero .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero .flow span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 13px;font-size:13px;color:var(--muted)}
+.hero .flow span b{color:var(--blue);margin-right:5px}
+
+h2.topic{font-size:22px;margin:62px 0 8px;padding-left:14px;border-left:4px solid var(--blue);line-height:1.5;letter-spacing:-.2px}
+h2.topic .no{color:var(--blue);font-weight:800;margin-right:8px;font-size:15px;display:block;letter-spacing:1px;margin-bottom:-4px}
+.topic-meta{color:var(--muted);font-size:13.5px;padding-left:18px;margin:0 0 6px}
+h3{font-size:16.5px;margin:32px 0 10px;color:var(--text);position:relative;padding-left:16px}
+h3::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--blue);opacity:.55}
+h4{font-size:15px;margin:20px 0 6px;color:#2c333b}
+p{margin:11px 0}
+strong{font-weight:650}
+em{font-style:normal;color:var(--amber);font-weight:600}
+ul,ol{margin:10px 0;padding-left:26px}
+li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:52px 0}
+code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:14px;font-family:ui-monospace,Consolas,monospace}
+.eq{
+  background:var(--soft);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:10px 16px;margin:12px 0;font-family:"Cambria Math","Times New Roman",Georgia,serif;
+  font-size:16px;overflow-x:auto;line-height:1.95;letter-spacing:.3px;
+}
+.callout{background:#fdf7ec;border:1px solid #f0dfc0;border-radius:10px;padding:13px 18px;margin:15px 0;font-size:15px}
+.callout.blue{background:#eff5ff;border-color:#d3e2fb}
+.callout.green{background:#eefaf4;border-color:#c9ecdd}
+.callout.red{background:#fdf0f0;border-color:#f2d2d2}
+.callout .tag{font-weight:700;font-size:13px;letter-spacing:.4px;color:var(--amber);display:block;margin-bottom:3px}
+.callout.blue .tag{color:var(--blue)}
+.callout.green .tag{color:var(--green)}
+.callout.red .tag{color:var(--red)}
+.mnemonic{
+  background:linear-gradient(180deg,#f8f4ff,#fbf9ff);border:1px dashed #d6c9f5;border-radius:10px;
+  padding:12px 18px;margin:15px 0;font-size:15px;
+}
+.mnemonic .tag{font-weight:700;font-size:12.5px;color:var(--violet);letter-spacing:.6px;display:block;margin-bottom:3px}
+.mnemonic b{color:var(--violet)}
+
+table.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+table.tbl th{background:var(--soft);text-align:left;padding:9px 13px;font-weight:650;font-size:14px;border-bottom:1px solid var(--line)}
+table.tbl td{padding:8px 13px;border-bottom:1px solid #eff2f6;vertical-align:top;line-height:1.7}
+table.tbl tr:last-child td{border-bottom:none}
+table.tbl td:first-child{color:#333c46;font-weight:600}
+table.tbl.compact td:first-child{width:26%}
+
+.widget{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px 15px;margin:22px 0;box-shadow:0 1px 3px rgba(16,24,40,.045)}
+.widget .whead{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.widget .whead h4{margin:0;font-size:15px;color:var(--text)}
+.widget .whead .badge{font-size:11.5px;background:#eaf1fe;color:var(--blue);border-radius:20px;padding:2px 9px;font-weight:600}
+.widget .cap{font-size:13.5px;color:var(--muted);margin:2px 0 12px;line-height:1.7}
+canvas{display:block;border-radius:9px;background:#fbfcfd;border:1px solid #eef1f5;max-width:100%}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;margin-top:14px;font-size:14px;color:#39424d}
+.ctrl label{display:flex;align-items:center;gap:9px}
+.ctrl input[type=range]{width:150px;accent-color:var(--blue);cursor:pointer}
+.ctrl .val{display:inline-block;min-width:56px;font-variant-numeric:tabular-nums;color:var(--blue);font-weight:650}
+.seg{display:inline-flex;background:var(--soft);border-radius:8px;padding:2px;gap:2px}
+.seg button{border:none;background:transparent;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:13.5px;color:var(--muted);font-family:inherit;transition:.15s}
+.seg button.on{background:#fff;color:var(--blue);font-weight:650;box-shadow:0 1px 2px rgba(16,24,40,.1)}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:9px;margin-top:13px}
+.readout div{background:var(--soft);border-radius:9px;padding:8px 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.readout b{display:block;font-size:16.5px;color:var(--blue);font-variant-numeric:tabular-nums;font-weight:650;margin-top:1px;letter-spacing:-.3px}
+.readout div.warn b{color:var(--red)}
+.readout div.ok b{color:var(--green)}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 15px;cursor:pointer;font-size:13.5px;font-family:inherit;color:#39424d;transition:.15s}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#1d4fd8}
+.btn.primary:disabled{background:#a9bde8;border-color:#a9bde8;cursor:default}
+
+details{border:1px solid var(--line);border-radius:10px;background:#fff;margin:14px 0;overflow:hidden}
+details summary{cursor:pointer;padding:10px 16px;font-size:14px;font-weight:600;color:var(--blue);background:var(--soft);list-style:none;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"\25B8  ";font-size:12px}
+details[open] summary::before{content:"\25BE  "}
+details .inner{padding:6px 16px 12px}
+kbd{background:#fff;border:1px solid #cfd6e0;border-bottom-width:2px;border-radius:4px;padding:0 5px;font-size:12px;font-family:inherit}
+
+.q{border-left:3px solid #cfd9e8;padding:2px 0 2px 14px;margin:16px 0}
+.q .qh{font-weight:650;color:#2c333b;font-size:14.5px}
+.opt{margin:5px 0 5px 4px;color:#3b444f;font-size:14.5px}
+.ans{color:var(--green);font-weight:650}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:#98a0aa;font-size:13px;line-height:1.8}
+@media (max-width:1020px){
+  .side{display:none}
+  .layout{padding:0 16px}
+  main{padding-top:22px}
+  .hero{padding:20px 18px}
+  .hero h1{font-size:21px}
+  table.tbl{font-size:13.5px}
+}
+@media print{
+  body{background:#fff}
+  .side{display:none}
+  .widget{page-break-inside:avoid}
+  h2.topic{page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="side">
+  <div class="brand">高中化学 · 知识点与考点</div>
+  <div class="sub">按教材顺序 · 交互版</div>
+  <nav>
+    <div class="grp">必修第一册</div>
+    <a href="#c1">1　物质分类·离子反应·氧化还原</a>
+    <a href="#c2">2　钠、氯、铁与物质的量</a>
+    <a href="#c3">3　物质结构与元素周期律</a>
+    <div class="grp">必修第二册</div>
+    <a href="#c4">4　硫、氮、硅及无机材料</a>
+    <a href="#c5">5　化学反应与能量</a>
+    <a href="#c6">6　反应速率与化学平衡</a>
+    <div class="grp">选择性必修1 反应原理</div>
+    <a href="#c7">7　水溶液中的离子平衡</a>
+    <a href="#c8">8　电化学</a>
+    <div class="grp">选择性必修2 结构</div>
+    <a href="#c9">9　原子·分子·晶体结构</a>
+    <div class="grp">选择性必修3 有机</div>
+    <a href="#c10">10　有机化学基础</a>
+    <a href="#c11">11　有机合成与高分子</a>
+    <div class="grp">通用</div>
+    <a href="#c12">12　化学实验</a>
+    <a href="#c13">13　化学与STSE</a>
+  </nav>
+</aside>
+
+<main>
+
+<div class="hero">
+  <h1>高中化学 · 知识点与考点精讲</h1>
+  <p>按人教版五册教材的顺序排。每一节的结构固定：知识主线 → 高频考点 → 易错辨析 → 口诀 → 例题 → 分层练习。带“可操作”标记的地方有交互图，拖动滑块或点按钮，图会跟着变。</p>
+  <div class="flow">
+    <span><b>1</b>知识主线</span>
+    <span><b>2</b>高频考点</span>
+    <span><b>3</b>易错辨析</span>
+    <span><b>4</b>口诀</span>
+    <span><b>5</b>例题精解</span>
+    <span><b>6</b>分层练习</span>
+  </div>
+</div>
+<!-- ============================================================ -->
+<h2 class="topic" id="c1"><span class="no">必修第一册 · 第一章</span>物质分类 · 离子反应 · 氧化还原</h2>
+<p class="topic-meta">高考占比：选择题 1–2 道，另在工艺流程、实验题里当"底层工具"用。学不好这章，后面全是夹生饭。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 物质的分类：先看是不是一种物质，再看是不是一种元素</h4>
+<table class="tbl compact">
+<tr><th>层级</th><th>判断依据</th><th>常见坑</th></tr>
+<tr><td>混合物 / 纯净物</td><td>有几种物质</td><td>盐酸、氨水、漂白粉、水玻璃、福尔马林都是混合物；冰水混合物是纯净物</td></tr>
+<tr><td>单质 / 化合物</td><td>有几种元素</td><td>O₂ 和 O₃ 混在一起仍是混合物；HD 是化合物（不同核素也算不同元素）</td></tr>
+<tr><td>电解质 / 非电解质</td><td>水溶液或熔融态能否导电</td><td>只看化合物；单质既不是电解质也不是非电解质；CO₂、SO₂、NH₃ 本身不电离，是非电解质，但它们的水化物是电解质</td></tr>
+<tr><td>强 / 弱电解质</td><td>是否完全电离</td><td>BaSO₄、CaCO₃ 难溶，但溶解的那部分完全电离，属<em>强电解质</em></td></tr>
+</table>
+
+<h4>2. 分散系：按粒子直径分三档</h4>
+<table class="tbl compact">
+<tr><th>分散系</th><th>粒子直径</th><th>特征</th><th>实例</th></tr>
+<tr><td>溶液</td><td>&lt; 1 nm</td><td>均一、透明、稳定，能透过滤纸和半透膜</td><td>NaCl 溶液</td></tr>
+<tr><td>胶体</td><td>1–100 nm</td><td>均一、透明、介稳定，透过滤纸但不能透过半透膜，有丁达尔效应</td><td>Fe(OH)₃ 胶体、豆浆、雾、烟</td></tr>
+<tr><td>浊液</td><td>&gt; 100 nm</td><td>不均一、不透明、不稳定</td><td>泥水、油水</td></tr>
+</table>
+<p>胶体的三个性质要能对上号：<strong>丁达尔效应</strong>（光通过时出现光路，用来区分胶体和溶液）、<strong>电泳</strong>（胶粒带电，在电场中定向移动）、<strong>聚沉</strong>（加电解质、加热、加带相反电荷的胶体）。</p>
+<div class="callout">
+<span class="tag">制备 Fe(OH)₃ 胶体</span>
+向沸水中滴加饱和 FeCl₃ 溶液，继续煮沸至液体呈红褐色，立即停止加热。写 <code>FeCl₃ + 3H₂O --Δ--> Fe(OH)₃(胶体) + 3HCl</code>。<br>
+不能写成沉淀符号，不能搅拌，不能用 NaOH 溶液——那是制沉淀，不是制胶体。
+</div>
+
+<h4>3. 离子反应：核心是"拆不拆"</h4>
+<p>离子方程式把溶液中真正参加反应的粒子写出来。判断拆不拆只有一个标准：<strong>这个物质在溶液里是不是主要以自由离子形式存在</strong>。</p>
+<table class="tbl compact">
+<tr><th>要拆成离子</th><th>保留化学式</th></tr>
+<tr><td>强酸（HCl、H₂SO₄、HNO₃、HBr、HI、HClO₄）<br>强碱（NaOH、KOH、Ba(OH)₂）<br>可溶性盐（含 Na⁺、K⁺、NH₄⁺、NO₃⁻ 的盐，以及大部分氯化物、硫酸盐）</td><td>弱酸（CH₃COOH、HClO、H₂CO₃、H₂S、HF）<br>弱碱（NH₃·H₂O、Fe(OH)₃、Cu(OH)₂）<br>难溶物（BaSO₄、AgCl、CaCO₃）<br>气体（CO₂、SO₂、NH₃）<br>氧化物（Na₂O、Fe₂O₃）<br>水</td></tr>
+</table>
+<p>书写四步：写化学方程式 → 把可拆的拆成离子 → 删掉两边相同的离子 → 检查电荷守恒和质量守恒。</p>
+<div class="callout blue">
+<span class="tag">离子共存题的唯一思路</span>
+看这四个字就够：<strong>沉、气、弱、氧</strong>。能不能生成沉淀、气体、弱电解质（含水）、能不能发生氧化还原（Fe³⁺ 与 I⁻、MnO₄⁻ 与 Cl⁻、NO₃⁻ 酸性条件与 Fe²⁺），再加一条隐含的"无色溶液"排除有色离子（Cu²⁺ 蓝、Fe³⁺ 黄、Fe²⁺ 浅绿、MnO₄⁻ 紫红）。
+</div>
+
+<h4>4. 氧化还原反应：本质是电子转移，特征是化合价升降</h4>
+<table class="tbl">
+<tr><th>概念</th><th>定义</th><th>常见物质</th></tr>
+<tr><td>氧化剂</td><td>得电子、化合价降低、被还原、发生还原反应，生成还原产物</td><td>O₂、Cl₂、浓硫酸、HNO₃、KMnO₄、FeCl₃、H₂O₂</td></tr>
+<tr><td>还原剂</td><td>失电子、化合价升高、被氧化、发生氧化反应，生成氧化产物</td><td>金属单质、H₂、C、CO、SO₂、KI、FeSO₄、Na₂SO₃</td></tr>
+</table>
+
+<div class="widget">
+  <div class="whead"><h4>图 1-1　氧化还原反应的"两座桥"</h4><span class="badge">可操作</span></div>
+  <div class="cap">点下面的反应切换。上方是还原剂失电子的那条桥，下方是氧化剂得电子的那条桥，横跨的电子数一定相等——这就是配平和计算的全部依据。</div>
+  <canvas id="cv-redox"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="rx-pick">
+      <button class="on" data-i="0">Na + Cl₂</button>
+      <button data-i="1">Fe + CuSO₄</button>
+      <button data-i="2">MnO₂ + 浓盐酸</button>
+      <button data-i="3">Cl₂ + NaOH</button>
+    </div>
+  </div>
+  <div class="readout" id="rx-out"></div>
+</div>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+<b>升失氧、降得还</b>——化合价<b>升</b>高、<b>失</b>电子、被<b>氧</b>化（作还原剂）；化合价<b>降</b>低、<b>得</b>电子、被<b>还</b>原（作氧化剂）。<br>
+判断剂和产物时记：<b>还原剂被氧化，生成氧化产物</b>；<b>氧化剂被还原，生成还原产物</b>。四个词两两交叉，是最容易反的地方。
+</div>
+
+<h3>二、高频考点</h3>
+<table class="tbl compact">
+<tr><th>考点</th><th>典型问法</th><th>处理办法</th></tr>
+<tr><td>氧化性/还原性强弱比较</td><td>"下列物质氧化性最强的是"</td><td>氧化性：氧化剂 &gt; 氧化产物；还原性：还原剂 &gt; 还原产物。再由反应能否发生反推</td></tr>
+<tr><td>电子守恒计算</td><td>"转移电子数为 ___ mol"</td><td>n(得失电子) = n(氧化剂) × 每个粒子得电子数。先把配平做对，再乘</td></tr>
+<tr><td>离子方程式正误</td><td>给四个方程式判断对错</td><td>查四件事：拆没拆对、守恒、产物是否合理（如 Fe 与稀硝酸不能生成 H₂）、量的关系（少量/过量）</td></tr>
+<tr><td>氧化还原配平</td><td>缺项配平</td><td>标价态 → 列升降 → 求最小公倍数 → 配系数 → 补水或 OH⁻ 或 H⁺ 补平 H、O</td></tr>
+</table>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>容易混的一对</th><th>关键区别</th></tr>
+<tr><td>氧化性 vs 还原性</td><td>氧化性是<em>得</em>电子的能力，还原性是<em>失</em>电子的能力。同一物质可能两者都有（如 SO₂ 既有氧化性又有还原性，但以还原性为主）</td></tr>
+<tr><td>电解质 vs 导电</td><td>电解质不一定导电（固体 NaCl 不导电）；导电的不一定是电解质（铜、盐水）</td></tr>
+<tr><td>Cl₂ 的漂白 vs SO₂ 的漂白</td><td>Cl₂ 靠 HClO 强氧化性，<em>不可逆</em>；SO₂ 是与有色物质化合生成不稳定无色物，<em>可逆</em>，加热复色</td></tr>
+<tr><td>Fe³⁺ 与 Fe²⁺ 的检验</td><td>Fe³⁺ 用 KSCN 变红（专属）；Fe²⁺ 用 K₃[Fe(CN)₆] 生成蓝色沉淀（专属），加 KSCN 无变化只能说明没有 Fe³⁺</td></tr>
+</table>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　在反应 KClO₃ + 6HCl(浓) = KCl + 3Cl₂↑ + 3H₂O 中，被氧化的 HCl 与参加反应的 HCl 的物质的量之比是多少？转移电子数为多少？</p>
+<p><strong>第一步，标价态。</strong>KClO₃ 中 Cl 为 +5，HCl 中 Cl 为 −1，产物 Cl₂ 中 Cl 为 0。</p>
+<p><strong>第二步，找升降。</strong>+5 → 0，降 5，得 5e⁻，KClO₃ 是氧化剂。−1 → 0，升 1，失 1e⁻，HCl 是还原剂。</p>
+<p><strong>第三步，电子守恒定系数。</strong>得失要相等：1 个 ClO₃⁻ 得 5e⁻，需要 5 个 Cl⁻ 各失 1e⁻。所以生成 3 mol Cl₂ 里，<em>1 mol Cl 来自 KClO₃，5 mol Cl 来自 HCl</em>。另外 1 mol HCl 变成 KCl，化合价没变，没被氧化。</p>
+<p><strong>答案：</strong>被氧化的 HCl 是 5 mol，参加反应的是 6 mol，比值 <strong>5 : 6</strong>。转移电子 <strong>5 mol</strong>。</p>
+<div class="callout red">
+<span class="tag">这题的坎在哪</span>
+看到 6HCl 就以为 6 个都被氧化，是这类题最常见的错。有一份 HCl 只提供酸性的 H⁺ 和 Cl⁻ 去配 KCl，它一个电子都没给。判断"被氧化的量"只能看化合价有没有变的那部分。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列物质中，属于强电解质的是（　）</p>
+<p class="opt">A. 醋酸　B. 氨水　C. 硫酸钡　D. 二氧化碳</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>醋酸是弱酸，弱电解质。氨水是混合物，既不是电解质也不是非电解质。CO₂ 本身不电离，是非电解质。BaSO₄ 虽然难溶，但溶解的部分完全电离，是强电解质。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 写出下列反应的离子方程式：</p>
+<p class="opt">(1) 碳酸钙与盐酸反应　(2) 氢氧化钡与稀硫酸反应　(3) 铁与稀盐酸反应</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) CaCO₃ + 2H⁺ = Ca²⁺ + H₂O + CO₂↑</p>
+<p class="ans">(2) Ba²⁺ + 2OH⁻ + 2H⁺ + SO₄²⁻ = BaSO₄↓ + 2H₂O</p>
+<p class="ans">(3) Fe + 2H⁺ = Fe²⁺ + H₂↑</p>
+<p>(1) CaCO₃ 难溶，写化学式。(2) 两组离子都反应，一个都不能删。(3) 铁与非氧化性酸生成 Fe²⁺，不是 Fe³⁺。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 已知氧化性 Cl₂ &gt; Br₂ &gt; Fe³⁺ &gt; I₂。向 FeBr₂ 溶液中通入少量 Cl₂，最先被氧化的是哪种离子？写出反应的离子方程式。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">最先被氧化的是 Fe²⁺：2Fe²⁺ + Cl₂ = 2Fe³⁺ + 2Cl⁻</p>
+<p>还原性顺序是 I⁻ &gt; Fe²⁺ &gt; Br⁻（与氧化性顺序相反）。FeBr₂ 溶液里只有 Fe²⁺ 和 Br⁻，还原性强的是 Fe²⁺，所以 Cl₂ 先氧化它。只有 Cl₂ 过量时才会氧化 Br⁻。</p>
+<p>通入少量 Cl₂ 时若写成 Br⁻ 被氧化，就把顺序弄反了。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c2"><span class="no">必修第一册 · 第二章</span>钠、氯、铁及其化合物 · 物质的量</h2>
+<p class="topic-meta">元素化合物是"素材库"，物质的量是"计算尺"。高考把两者绑在一起考：以 Na、Cl、Fe 为载体，算物质的量、浓度、产率。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 钠及其化合物</h4>
+<table class="tbl">
+<tr><th>物质</th><th>关键性质</th><th>反应</th></tr>
+<tr><td>Na</td><td>银白色软金属，密度小于水，熔点低；常温生成 Na₂O，点燃生成 Na₂O₂</td><td>2Na + 2H₂O = 2NaOH + H₂↑（浮、熔、游、响、红）</td></tr>
+<tr><td>Na₂O₂</td><td>淡黄色固体，既是氧化剂又是还原剂（自身歧化）</td><td>2Na₂O₂ + 2H₂O = 4NaOH + O₂↑<br>2Na₂O₂ + 2CO₂ = 2Na₂CO₃ + O₂</td></tr>
+<tr><td>Na₂CO₃</td><td>俗称纯碱、苏打，易溶于水，溶液显碱性</td><td>Na₂CO₃ + 2HCl = 2NaCl + H₂O + CO₂↑（速率为快）</td></tr>
+<tr><td>NaHCO₃</td><td>俗称小苏打，溶解度较小，受热易分解</td><td>2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">Na₂O₂ 的两个常考结论</span>
+① 与 H₂O、CO₂ 反应时，Na₂O₂ 中 <em>−1 价氧一半升到 0、一半降到 −2</em>，每生成 1 mol O₂ 转移 2 mol 电子。<br>
+② 固体增重规律：Na₂O₂ 吸收 CO₂ 相当于吸收 CO，吸收 H₂O 相当于吸收 H₂。所以 "Na₂O₂ + 有机物充分燃烧产物" 的增重，等于原有机物中 CO 和 H₂ 部分的质量。
+</div>
+
+<h4>2. 氯及其化合物</h4>
+<div class="eq">
+MnO₂ + 4HCl(浓) --Δ--> MnCl₂ + Cl₂↑ + 2H₂O　（实验室制法，需加热，稀盐酸不反应）
+</div>
+<table class="tbl compact">
+<tr><th>反应对象</th><th>现象 / 产物</th></tr>
+<tr><td>Na</td><td>剧烈燃烧，黄色火焰，白烟（NaCl）</td></tr>
+<tr><td>Fe</td><td>点燃生成 FeCl₃（棕褐色烟），不是 FeCl₂</td></tr>
+<tr><td>Cu</td><td>生成 CuCl₂，棕黄色烟</td></tr>
+<tr><td>H₂</td><td>苍白色火焰，瓶口白雾</td></tr>
+<tr><td>H₂O</td><td>Cl₂ + H₂O ⇌ HCl + HClO，氯水的成分是"三分子四离子"</td></tr>
+<tr><td>NaOH</td><td>Cl₂ + 2NaOH = NaCl + NaClO + H₂O（尾气吸收）</td></tr>
+</table>
+<p><strong>氯水的成分：</strong>Cl₂、H₂O、HClO 三种分子；H⁺、Cl⁻、ClO⁻、OH⁻ 四种离子。所以氯水有<em>酸性</em>（H⁺）、<em>漂白性</em>（HClO）、<em>氧化性</em>（Cl₂、HClO）。</p>
+
+<h4>3. 铁及其化合物：一张"铁三角"</h4>
+<div class="eq">
+Fe --Cl₂/O₂(足)--&gt; Fe³⁺ ；Fe³⁺ --Fe、Cu、I⁻、S²⁻--&gt; Fe²⁺ ；Fe²⁺ --Cl₂、HNO₃、O₂--&gt; Fe³⁺
+</div>
+<table class="tbl compact">
+<tr><th>物质</th><th>颜色</th><th>注意</th></tr>
+<tr><td>FeO</td><td>黑色</td><td>碱性氧化物</td></tr>
+<tr><td>Fe₂O₃</td><td>红棕色</td><td>俗称铁红，红色油漆颜料</td></tr>
+<tr><td>Fe₃O₄</td><td>黑色</td><td>复杂氧化物，可看作 FeO·Fe₂O₃，有磁性</td></tr>
+<tr><td>Fe(OH)₂</td><td>白色</td><td>极易被氧化：4Fe(OH)₂ + O₂ + 2H₂O = 4Fe(OH)₃，颜色白→灰绿→红褐</td></tr>
+<tr><td>Fe(OH)₃</td><td>红褐色</td><td>胶体可净水</td></tr>
+</table>
+<div class="callout">
+<span class="tag">制备 Fe(OH)₂ 为什么必须"防氧"</span>
+三件事：① 用煮沸过的蒸馏水配溶液（去溶解氧）；② 加苯或植物油液封；③ 胶头滴管伸到液面以下再滴 NaOH。缺一个，看到的就直接是灰绿色。
+</div>
+
+<h4>4. 物质的量：把宏观质量和微观粒子连起来</h4>
+<div class="eq">
+n = m / M = N / N<sub>A</sub> = V / V<sub>m</sub> = c · V<sub>液</sub>
+</div>
+<table class="tbl compact">
+<tr><th>量</th><th>符号</th><th>单位</th><th>易错点</th></tr>
+<tr><td>摩尔质量</td><td>M</td><td>g/mol</td><td>数值等于相对分子质量，但单位不能省</td></tr>
+<tr><td>气体摩尔体积</td><td>V<sub>m</sub></td><td>L/mol</td><td><em>只对气体</em>，标况（0 ℃、101 kPa）下 22.4 L/mol；常温常压不是 22.4</td></tr>
+<tr><td>物质的量浓度</td><td>c</td><td>mol/L</td><td>V 是<em>溶液</em>体积，不是溶剂体积</td></tr>
+</table>
+
+<div class="widget">
+  <div class="whead"><h4>图 2-1　物质的量换算器</h4><span class="badge">可操作</span></div>
+  <div class="cap">选一种物质，拖质量滑块。左边看微观粒子数涨到多少，右边看标况下气体体积。同一个 n，从三条路都能算出来。</div>
+  <canvas id="cv-mol"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="mo-pick">
+      <button class="on" data-i="0">H₂O</button>
+      <button data-i="1">NaCl</button>
+      <button data-i="2">CO₂</button>
+      <button data-i="3">H₂SO₄</button>
+      <button data-i="4">O₂</button>
+    </div>
+    <label>质量 <input type="range" id="mo-m" min="0" max="100" step="1" value="18"><span class="val" id="mo-mv">18 g</span></label>
+  </div>
+  <div class="readout" id="mo-out"></div>
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>阿伏加德罗常数正误判断</strong>：常设在"标况下非气体"（水、SO₃、CCl₄、苯）、"溶液中离子数"（要考虑水解、弱电解质部分电离）、"可逆反应不能进行到底"（如 2NO₂ ⇌ N₂O₄）、"气体摩尔体积的适用条件"。</li>
+<li><strong>配制一定物质的量浓度溶液</strong>：计算 → 称量 → 溶解（冷却）→ 转移（玻璃棒引流）→ 洗涤 2–3 次并转入 → 定容（离刻度线 1–2 cm 改胶头滴管）→ 摇匀。误差分析只看一个式子：<code>c = n/V</code>，n 偏小或 V 偏大，浓度就偏低。</li>
+<li><strong>Na₂CO₃ 与 NaHCO₃ 的鉴别与除杂</strong>：加热法、滴加盐酸的速率法、BaCl₂ 或 CaCl₂ 溶液法。除去 NaHCO₃ 中的 Na₂CO₃ 通 CO₂；除去 Na₂CO₃ 中的 NaHCO₃ 加热。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>Na₂O₂ 中的阴离子</td><td>是 O₂²⁻（过氧根），不是两个 O²⁻。阴阳离子个数比 1 : 2</td></tr>
+<tr><td>Cl₂ 与 Fe 反应</td><td>无论 Cl₂ 少量还是过量，都生成 FeCl₃。铁与盐酸才生成 FeCl₂</td></tr>
+<tr><td>干燥 Cl₂</td><td>用浓硫酸，不能用碱石灰、不能用无水 CaCl₂ 之外的碱性干燥剂</td></tr>
+<tr><td>Fe³⁺ 与 S²⁻</td><td>不能共存，发生氧化还原：2Fe³⁺ + S²⁻ = 2Fe²⁺ + S↓</td></tr>
+<tr><td>V<sub>m</sub> = 22.4 L/mol</td><td>只在标况下成立。标准状况指 0 ℃、101 kPa，不是 25 ℃</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+钠的焰色<b>黄</b>、钾的焰色<b>紫</b>（要透过蓝色钴玻璃滤掉钠的黄光）。<br>
+Fe²⁺ 检验记<b>"蓝"</b>：铁氰化钾 K₃[Fe(CN)₆] 遇 Fe²⁺ 生成<b>蓝色</b>沉淀，这是 Fe²⁺ 的专属反应；Fe³⁺ 记<b>"红"</b>：KSCN 变<b>血红</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　将 7.8 g Na₂O₂ 投入 100 g 水中，充分反应后，求：① 生成 O₂ 的物质的量；② 所得溶液中 NaOH 的质量分数；③ 转移电子数。</p>
+<p><strong>①</strong> M(Na₂O₂) = 78 g/mol，n = 7.8/78 = 0.1 mol。</p>
+<div class="eq">2Na₂O₂ + 2H₂O = 4NaOH + O₂↑　　n(O₂) = 0.05 mol，标况 1.12 L</div>
+<p><strong>②</strong> n(NaOH) = 0.2 mol，m(NaOH) = 0.2 × 40 = 8 g。溶液质量 = 7.8 + 100 − 逸出的 O₂（0.05 × 32 = 1.6 g）= 106.2 g。</p>
+<p>w(NaOH) = 8 / 106.2 × 100% ≈ <strong>7.5%</strong></p>
+<p><strong>③</strong> Na₂O₂ 中 O 为 −1 价，生成 O₂ 时一半升到 0、一半降到 −2。每生成 1 mol O₂ 转移 2 mol e⁻，所以转移 <strong>0.1 mol</strong>。</p>
+<div class="callout red">
+<span class="tag">三处必错</span>
+① 溶液质量忘了减掉跑掉的氧气，直接用 107.8 g 算；② 电子数算成 0.05 mol（只算了失电子那一半）；③ 把 NaOH 的物质的量当成 0.1 mol。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 用 N<sub>A</sub> 表示阿伏加德罗常数的值，下列说法正确的是（　）</p>
+<p class="opt">A. 标准状况下，22.4 L H₂O 含有的分子数为 N<sub>A</sub></p>
+<p class="opt">B. 1 mol Na₂O₂ 与足量水反应，转移电子数为 2N<sub>A</sub></p>
+<p class="opt">C. 1 L 0.1 mol/L 的 Na₂CO₃ 溶液中 CO₃²⁻ 数目为 0.1N<sub>A</sub></p>
+<p class="opt">D. 常温常压下，32 g O₂ 含有的氧原子数为 2N<sub>A</sub></p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">D</p>
+<p>A 错：标况下水是液体，不能用 22.4 L/mol。B 错：1 mol Na₂O₂ 与水反应转移 1 mol 电子（歧化，只有一半氧被氧化）。C 错：CO₃²⁻ 会水解，数目小于 0.1N<sub>A</sub>。D 对：32 g O₂ 是 1 mol O₂，含 2 mol 氧原子，与温度压强无关。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 除去下列物质中的少量杂质（括号内为杂质），写出所用试剂和操作方法：</p>
+<p class="opt">(1) Na₂CO₃ 固体（NaHCO₃）　(2) NaHCO₃ 溶液（Na₂CO₃）　(3) Cl₂（HCl）</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) 加热至质量不再变化　(2) 通入足量 CO₂　(3) 通过饱和食盐水后干燥</p>
+<p>(1) NaHCO₃ 受热分解转化为 Na₂CO₃。(2) Na₂CO₃ + CO₂ + H₂O = 2NaHCO₃。(3) HCl 极易溶于水被吸收，Cl₂ 在饱和食盐水中溶解度很小，损失最少。不能用 NaOH 溶液——那会把 Cl₂ 也吸收掉。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 将 5.6 g 铁粉加入 100 mL 2 mol/L 的 FeCl₃ 溶液中，充分反应后，求溶液中 Fe²⁺ 的物质的量浓度（体积变化忽略）。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">c(Fe²⁺) = 3 mol/L</p>
+<p>n(Fe) = 5.6/56 = 0.1 mol，n(FeCl₃) = 2 mol/L × 0.1 L = 0.2 mol。</p>
+<p>先判过量：反应 Fe + 2Fe³⁺ = 3Fe²⁺，0.1 mol Fe 恰好消耗 0.2 mol Fe³⁺。两者恰好完全反应，无剩余。</p>
+<p>再用铁元素守恒：反应前铁元素总量 = 0.1 mol（Fe 单质）+ 0.2 mol（FeCl₃ 中）= 0.3 mol。反应后全部以 Fe²⁺ 形式存在，故 n(Fe²⁺) = 0.3 mol。</p>
+<p>c(Fe²⁺) = 0.3 mol ÷ 0.1 L = <strong>3 mol/L</strong>。</p>
+<p>用元素守恒一步算完，比"原有多少、生成多少、加起来"稳得多。凡是同一元素在不同物质间转化，优先想守恒。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c3"><span class="no">必修第一册 · 第四章</span>物质结构与元素周期律</h2>
+<p class="topic-meta">选择题必考一道。核心是"位置—结构—性质"三者的三角关系，以及化学键与电子式。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 原子结构</h4>
+<p>原子由原子核（质子、中子）和核外电子构成。质子数决定元素种类，中子数不同的同一元素原子互称<strong>同位素</strong>。</p>
+<div class="eq">
+质量数 A = 质子数 Z + 中子数 N　　核电荷数 = 质子数 = 核外电子数 = 原子序数
+</div>
+<table class="tbl compact">
+<tr><th>概念</th><th>含义</th><th>实例</th></tr>
+<tr><td>核素</td><td>具有一定质子数和中子数的一种原子</td><td>¹H、²H、³H 是三种核素</td></tr>
+<tr><td>同位素</td><td>质子数相同、中子数不同的原子</td><td>¹H 与 ²H 互为同位素</td></tr>
+<tr><td>同素异形体</td><td>同种元素形成的不同单质</td><td>O₂ 与 O₃、金刚石与石墨</td></tr>
+</table>
+
+<h4>2. 元素周期表的结构</h4>
+<p><strong>7 个周期</strong>：一二三为短周期（2、8、8 种元素），四五六七为长周期（18、18、32、32 种）。<strong>16 个族</strong>：7 个主族（A）、7 个副族（B）、第Ⅷ族（3 列）、0 族（稀有气体）。</p>
+
+<div class="widget">
+  <div class="whead"><h4>图 3-1　元素周期表：点一格，看一组数据</h4><span class="badge">可操作</span></div>
+  <div class="cap">点任意元素格子，下面显示它的电子排布和性质。切"着色方式"可以看两种递变：原子半径沿周期从左到右变小、自上而下变大；金属性正好相反。</div>
+  <canvas id="cv-pt"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="pt-mode">
+      <button class="on" data-i="0">按原子半径着色</button>
+      <button data-i="1">按金属性着色</button>
+      <button data-i="2">不染色</button>
+    </div>
+  </div>
+  <div class="readout" id="pt-out"></div>
+</div>
+
+<h4>3. 元素周期律</h4>
+<table class="tbl">
+<tr><th>项目</th><th>同周期（左→右）</th><th>同主族（上→下）</th></tr>
+<tr><td>原子半径</td><td>逐渐减小</td><td>逐渐增大</td></tr>
+<tr><td>电子层数</td><td>相同</td><td>递增</td></tr>
+<tr><td>金属性</td><td>减弱</td><td>增强</td></tr>
+<tr><td>非金属性</td><td>增强</td><td>减弱</td></tr>
+<tr><td>最高正价</td><td>+1 → +7（O、F 除外）</td><td>相同</td></tr>
+<tr><td>气态氢化物稳定性</td><td>增强</td><td>减弱</td></tr>
+<tr><td>最高价氧化物对应水化物酸性</td><td>增强</td><td>减弱</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">判断金属性/非金属性的实验依据</span>
+金属性看：单质与水或酸置换出 H₂ 的难易、最高价氧化物水化物的碱性、金属间的置换。<br>
+非金属性看：单质与 H₂ 化合的难易、气态氢化物的稳定性、最高价氧化物水化物的酸性、非金属间的置换。<br>
+注意：<em>不能</em>用"酸性强弱"判断非金属性，除非是最高价含氧酸。HClO 的酸性比 H₂CO₃ 还弱，但 Cl 的非金属性远强于 C。
+</div>
+
+<h4>4. 化学键与电子式</h4>
+<table class="tbl compact">
+<tr><th>类型</th><th>形成条件</th><th>实例</th></tr>
+<tr><td>离子键</td><td>活泼金属 ↔ 活泼非金属，通过得失电子形成</td><td>NaCl、MgO、Na₂O₂（含共价键）</td></tr>
+<tr><td>极性共价键</td><td>不同种非金属原子间，共用电子对偏移</td><td>HCl、H₂O、CO₂</td></tr>
+<tr><td>非极性共价键</td><td>同种原子间，共用电子对不偏移</td><td>H₂、O₂、Cl₂、N₂</td></tr>
+<tr><td>金属键</td><td>金属阳离子与自由电子</td><td>Fe、Cu、Al</td></tr>
+</table>
+<p>含共价键的化合物不一定是共价化合物（NaOH 有共价键但是离子化合物）；含离子键的化合物一定是离子化合物。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>"位—构—性"推断</strong>：给短周期元素的性质或结构片段，推元素，再判断选项。突破口通常是：最外层电子数是次外层 2 倍（C）、3 倍（O）、电子总数是最外层 3 倍（Be 或 Ar 之类）、地壳中含量最高的两种元素（O、Si）。</li>
+<li><strong>化学键判断</strong>：判断某物质含哪种键、是离子化合物还是共价化合物。常考 Na₂O₂、NaOH、NH₄Cl、AlCl₃。</li>
+<li><strong>电子式书写</strong>：离子化合物要标电荷和方括号，共价化合物不标。</li>
+<li><strong>"10 电子/18 电子微粒"</strong>：10 电子有 Ne、HF、H₂O、NH₃、CH₄、Na⁺、Mg²⁺、Al³⁺、NH₄⁺、H₃O⁺、OH⁻、F⁻、O²⁻、N³⁻。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>最外层电子数 = 族序数？</td><td>只对主族成立。副族、Ⅷ族、0 族都不适用</td></tr>
+<tr><td>稀有气体最外层都是 8 电子？</td><td>He 是 2 电子，属 0 族但不满足 8 电子稳定结构</td></tr>
+<tr><td>离子键一定存在于金属与非金属之间？</td><td>NH₄Cl、NH₄NO₃ 全部由非金属元素组成，却是离子化合物</td></tr>
+<tr><td>H₂O 的沸点比 H₂S 高是因为水的相对分子质量大？</td><td>反了，H₂O 的相对分子质量更小，沸点高是因为<em>氢键</em></td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+周期表取用：<b>横行是周期，纵行是族</b>；<b>十八列十六族</b>（第 8、9、10 三列合成第Ⅷ族）。<br>
+递变：<b>同周右走半径小、非金属强；同族下行半径大、金属强</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　短周期元素 X、Y、Z、W 的原子序数依次增大。X 原子的最外层电子数是其内层电子数的 3 倍；Y 是地壳中含量最多的金属元素；Z 与 X 同主族；W 的简单阴离子与 Ar 原子的电子层结构相同。回答：</p>
+<p class="opt">(1) 写出四种元素的符号；(2) Z 在周期表中的位置；(3) 比较 Y³⁺、Z²⁻、W⁻ 的半径大小；(4) 比较 Z、W 最高价氧化物对应水化物的酸性。</p>
+<p><strong>X：</strong>"最外层是内层的 3 倍"。短周期元素内层最多 2 个（第二周期）或 10 个（第三周期）。若内层 2 个，最外层 6 个，为 O；若内层 10 个，最外层需 30 个，不存在。<em>X = O</em>。</p>
+<p><strong>Y：</strong>地壳元素含量排序是 O &gt; Si &gt; Al &gt; Fe。含量最多的<em>金属</em>是 Al。且 13 &gt; 8，符合"原子序数依次增大"。<em>Y = Al</em>。</p>
+<p><strong>Z：</strong>与 X（O）同主族，即第ⅥA 族，原子序数大于 13，只能是第三周期的 S。<em>Z = S</em>。</p>
+<p><strong>W：</strong>简单阴离子与 Ar 电子层结构相同，即得电子后有 18 个电子，W 为 17 号氯。<em>W = Cl</em>。</p>
+<p>检验原子序数：8 &lt; 13 &lt; 16 &lt; 17，依次增大，条件全部吻合。</p>
+<p><strong>(1)</strong> O、Al、S、Cl</p>
+<p><strong>(2)</strong> 第三周期第ⅥA 族</p>
+<p><strong>(3)</strong> Al³⁺ 只有 2 个电子层（10 电子），S²⁻ 与 Cl⁻ 都是 3 个电子层（18 电子），电子层多的半径大；同为 18 电子的 S²⁻ 与 Cl⁻，核电荷数大的半径小。故 <strong>S²⁻ &gt; Cl⁻ &gt; Al³⁺</strong>。</p>
+<p><strong>(4)</strong> 最高价含氧酸分别是 H₂SO₄ 和 HClO₄。同周期从左到右非金属性增强，最高价含氧酸酸性增强，故 <strong>HClO₄ &gt; H₂SO₄</strong>（高氯酸是中学阶段最强的含氧酸）。</p>
+<div class="callout red">
+<span class="tag">这类题的通用打法</span>
+先把每个条件单独翻译成"元素候选集"，再取交集，最后用"原子序数依次增大"这个排序条件筛。最忌讳边推边猜——推出一个就往下走，走到后面发现矛盾再回头，时间全耗掉。<br>
+另外记牢一句：比较微粒半径先看<em>电子层数</em>，层数相同再看<em>核电荷数</em>，核电荷数越大半径越小。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列物质中，既含离子键又含非极性共价键的是（　）</p>
+<p class="opt">A. NaOH　B. Na₂O₂　C. HCl　D. NH₄Cl</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>Na₂O₂ 中 Na⁺ 与 O₂²⁻ 之间是离子键，O₂²⁻ 内部两个氧原子之间是非极性共价键。A 中 O—H 是极性共价键；C 只有极性共价键；D 中 N—H 是极性共价键。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 比较下列各组微粒的半径大小：</p>
+<p class="opt">(1) Na、Mg、Al　(2) O²⁻、F⁻、Na⁺、Mg²⁺　(3) F、Cl、Br</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) Na &gt; Mg &gt; Al　(2) O²⁻ &gt; F⁻ &gt; Na⁺ &gt; Mg²⁺　(3) Br &gt; Cl &gt; F</p>
+<p>(1) 同周期从左到右半径减小。(2) 电子层结构相同的微粒，核电荷数越大半径越小。(3) 同主族从上到下半径增大。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 已知 X、Y、Z 三种短周期元素的原子序数依次增大，X 与 Z 同主族，Y 的原子半径在同周期中最大，Z 的最外层电子数是 Y 的最外层电子数的 3 倍。判断三种元素并说明理由。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">X = B，Y = Na，Z = Al</p>
+<p><strong>第一步，用"半径最大"锁定 Y。</strong>同一周期中原子半径最大的元素是该周期第一个元素，即第ⅠA 族。短周期里只有 Li 和 Na 两个候选。</p>
+<p><strong>第二步，用"3 倍"锁定 Z 的族。</strong>Z 的最外层电子数是 Y 的 3 倍。Y 最外层只有 1 个电子，故 Z 最外层 3 个电子，属第ⅢA 族。</p>
+<p><strong>第三步，用"原子序数依次增大"剔除错误组合。</strong>若 Y = Li(3)，Z 应为第二周期ⅢA 的 B(5)，但 X 与 Z 同主族且原子序数小于 Y，不可能有比 B 更轻的ⅢA 元素，排除。若 Y = Na(11)，Z = Al(13)，X 与 Z 同主族且序数小于 11，只能是 B(5)。</p>
+<p><strong>检验：</strong>B(5) &lt; Na(11) &lt; Al(13) 依次增大；B 与 Al 同属第ⅢA 族；Na 在第三周期半径最大；Al 最外层 3 个电子恰为 Na 的 3 倍。全部成立。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="c4"><span class="no">必修第二册 · 第五、六章</span>硫、氮、硅及无机非金属材料</h2>
+<p class="topic-meta">元素化合物里最容易出推断题和工业流程题的板块。核心是"价态—物质—性质"三条线：同种元素不同价态怎么转化。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 硫：一张价态图</h4>
+<div class="eq">
+H₂S(−2) → S(0) → SO₂(+4) → SO₃(+6) → H₂SO₄(+6)
+</div>
+<table class="tbl compact">
+<tr><th>物质</th><th>关键性质</th><th>高考常见考法</th></tr>
+<tr><td>SO₂</td><td>酸性氧化物、还原性为主、漂白性（可逆）</td><td>使品红褪色但加热复色；使酸性 KMnO₄ 褪色（还原性，不是漂白）</td></tr>
+<tr><td>浓硫酸</td><td>吸水性（干燥剂）、脱水性（蔗糖变黑）、强氧化性（与 Cu 加热生成 SO₂）</td><td>稀硫酸无强氧化性；常温下使 Fe、Al 钝化</td></tr>
+<tr><td>SO₄²⁻ 检验</td><td>先加稀盐酸酸化，再加 BaCl₂，生成白色沉淀</td><td>不能用硝酸酸化（会把 SO₃²⁻ 氧化成 SO₄²⁻，无法排除干扰）</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">SO₂ 使褪色，三种情况要分清</span>
+品红 → <em>漂白性</em>，加热复色；<br>
+酸性 KMnO₄ 溶液 → <em>还原性</em>，SO₂ 被氧化成 SO₄²⁻，不复色；<br>
+石蕊试液 → <em>酸性</em>，只变红不褪色。
+</div>
+
+<h4>2. 氮：从游离态到化合态</h4>
+<table class="tbl compact">
+<tr><th>物质</th><th>要点</th></tr>
+<tr><td>N₂</td><td>三键极稳定，常温下惰性；高温放电时才与 O₂、H₂ 反应</td></tr>
+<tr><td>NH₃</td><td>唯一碱性气体；极易溶于水（1:700），可做喷泉实验；氨水呈弱碱性</td></tr>
+<tr><td>NO</td><td>无色，遇空气立即变红棕色：2NO + O₂ = 2NO₂，只能用排水法收集</td></tr>
+<tr><td>NO₂</td><td>红棕色，与水反应：3NO₂ + H₂O = 2HNO₃ + NO，用向上排空气法</td></tr>
+<tr><td>HNO₃</td><td>强氧化性酸。浓 HNO₃ 与 Cu 生成 NO₂，稀 HNO₃ 生成 NO；常温钝化 Fe、Al</td></tr>
+<tr><td>铵盐</td><td>受热分解；与碱共热放出 NH₃（检验 NH₄⁺ 的方法）</td></tr>
+</table>
+<div class="callout">
+<span class="tag">硝酸与金属反应的核心守恒</span>
+无论浓稀，硝酸的消耗分两部分：<em>起氧化剂作用的</em>（被还原为 NO₂/NO）和<em>起酸作用的</em>（生成硝酸盐）。计算时列两个守恒：<br>
+电子守恒：n(金属) × 化合价变化 = n(NO₂) + 3n(NO)<br>
+氮守恒：n(HNO₃) = 2n(M(NO₃)ₓ) + n(NO₂) + n(NO)
+</div>
+
+<h4>3. 硅与无机非金属材料</h4>
+<table class="tbl compact">
+<tr><th>物质</th><th>性质与用途</th></tr>
+<tr><td>Si</td><td>半导体，用于芯片、光伏电池</td></tr>
+<tr><td>SiO₂</td><td>酸性氧化物，与 NaOH 反应（玻璃不能盛碱）；与 HF 反应（刻蚀玻璃）</td></tr>
+<tr><td>H₂SiO₃</td><td>弱酸，硅胶可作干燥剂</td></tr>
+<tr><td>硅酸盐</td><td>水泥、玻璃、陶瓷三大传统材料</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>SO₂ 与 CO₂ 的鉴别与除杂</strong>：用品红或酸性 KMnO₄ 检验 SO₂，再用溴水或酸性 KMnO₄ 除去；除去 CO₂ 中的 SO₂ 用饱和 NaHCO₃ 溶液。</li>
+<li><strong>氮氧化物溶于水的计算</strong>：4NO₂ + O₂ + 2H₂O = 4HNO₃；4NO + 3O₂ + 2H₂O = 4HNO₃。可合并成一个总反应，按"谁过量谁剩余"分析。</li>
+<li><strong>喷泉实验的成立条件</strong>：气体极易溶于液体或与液体迅速反应，造成压强差。NH₃ 与 H₂O、HCl 与 H₂O、SO₂ 与 NaOH、CO₂ 与 NaOH 都能做。</li>
+<li><strong>工业流程中的"沉硅"</strong>：SiO₂ 不溶于一般酸，用 HF 或碱熔解，是流程题的常见节点。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>浓硫酸的吸水性与脱水性</td><td>吸水性是吸收现成的水分子（干燥气体）；脱水性是按 H:O = 2:1 夺走有机物中的氢和氧（蔗糖变黑）</td></tr>
+<tr><td>稀硝酸与 Fe 生成什么</td><td>生成 Fe³⁺（硝酸强氧化性），不是 Fe²⁺。铁过量时才会被还原为 Fe²⁺</td></tr>
+<tr><td>NO₂ 与溴蒸气的区分</td><td>都是红棕色，但 NO₂ 溶于水得无色溶液且生成 NO，溴蒸气溶于水得橙黄色；也可用 AgNO₃ 或淀粉-KI 试纸</td></tr>
+<tr><td>SiO₂ 是酸性氧化物</td><td>但它不与水反应生成硅酸，也不能用"与水反应生成酸"来判断酸性氧化物</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+<b>SO₂ 三性：还原、漂白、酸性；浓硫酸三性：吸水、脱水、氧化。</b><br>
+硝酸与金属：<b>浓得 NO₂、稀得 NO；越稀越还原</b>（被还原的氮价态降得越低）。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　将 1.92 g 铜粉与 50 mL 一定浓度的硝酸反应，铜完全溶解，收集到标准状况下 1.12 L 气体。求：① 转移的电子数；② 消耗的硝酸的物质的量。</p>
+<p><strong>① 电子守恒。</strong>n(Cu) = 1.92/64 = 0.03 mol，Cu 从 0 到 +2，每个铜失 2 个电子，共失 0.06 mol e⁻。转移电子 <strong>0.06 mol</strong>。</p>
+<p><strong>② 气体成分。</strong>n(气体) = 1.12/22.4 = 0.05 mol。设 NO₂ 为 x mol，NO 为 y mol：</p>
+<div class="eq">
+x + y = 0.05　　x + 3y = 0.06
+</div>
+<p>解得 y = 0.005 mol，x = 0.045 mol。</p>
+<p><strong>③ 氮守恒。</strong>硝酸的去向有两处：生成 Cu(NO₃)₂，和变成气体。n(Cu(NO₃)₂) = 0.03 mol，含 NO₃⁻ 0.06 mol。气体中的氮 0.05 mol。</p>
+<div class="eq">
+n(HNO₃) = 0.06 + 0.05 = 0.11 mol
+</div>
+<p><strong>答案：</strong>转移电子 0.06 mol，消耗硝酸 0.11 mol。</p>
+<div class="callout red">
+<span class="tag">不要急着分类讨论歧化</span>
+这题不需要先判断气体到底是 NO₂ 还是 NO 占多少——电子守恒一次就锁定了总电子数，再用总气体量解二元一次方程组。凡是"硝酸与金属、气体成分不明"的题，都走"电子守恒 + 原子守恒"这条路，比逐段分类快。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列实验现象与结论对应正确的是（　）</p>
+<p class="opt">A. SO₂ 使酸性 KMnO₄ 溶液褪色，说明 SO₂ 有漂白性</p>
+<p class="opt">B. SO₂ 使品红溶液褪色，加热后恢复红色，说明该漂白是可逆的</p>
+<p class="opt">C. 向某溶液中加 BaCl₂ 生成白色沉淀，说明含 SO₄²⁻</p>
+<p class="opt">D. 浓硫酸使蔗糖变黑，说明浓硫酸有吸水性</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>A 体现的是还原性（SO₂ 被 KMnO₄ 氧化）。C 还可能是 CO₃²⁻、SO₃²⁻、Ag⁺ 等，必须先用盐酸酸化。D 体现的是脱水性。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 写出下列反应的化学方程式：</p>
+<p class="opt">(1) 铜与浓硫酸共热　(2) 铜与稀硝酸反应　(3) 二氧化氮与水反应</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) Cu + 2H₂SO₄(浓) --Δ--> CuSO₄ + SO₂↑ + 2H₂O</p>
+<p class="ans">(2) 3Cu + 8HNO₃(稀) = 3Cu(NO₃)₂ + 2NO↑ + 4H₂O</p>
+<p class="ans">(3) 3NO₂ + H₂O = 2HNO₃ + NO</p>
+<p>(1) 浓硫酸表现氧化性和酸性，硫被还原到 +4。(2) 稀硝酸被还原到 +2，配平后系数 3、8、3、2、4。(3) 这是 NO₂ 的歧化，氮从 +4 一部分升到 +5、一部分降到 +2。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 将盛有 20 mL NO 和 NO₂ 混合气体的量筒倒立于水槽中，充分反应后剩余 12 mL 气体。求原混合气体中 NO 和 NO₂ 的体积比（气体体积在同温同压下测定）。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">V(NO) : V(NO₂) = 2 : 1</p>
+<p>3NO₂ + H₂O = 2HNO₃ + NO，<em>每 3 体积 NO₂ 反应后只剩 1 体积 NO</em>，体积减少 2 体积。</p>
+<p>体积减少量 = 20 − 12 = 8 mL，对应 NO₂ 的体积 = 8 × 3/2 = 12 mL。</p>
+<p>故原 NO₂ 为 12 mL，原来的 NO 为 20 − 12 = 8 mL。剩下的 12 mL 气体 = 原有的 8 mL NO + 新生成的 4 mL NO，正好吻合。</p>
+<p>体积比 NO : NO₂ = 8 : 12 = <strong>2 : 1</strong>。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c5"><span class="no">必修第二册 · 第六章 / 选择性必修1 第一章</span>化学反应与能量</h2>
+<p class="topic-meta">选择题一题（热化学方程式正误、盖斯定律计算），大题中常与平衡、工艺条件合并出现。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 放热与吸热的本质</h4>
+<p>断键要吸收能量，成键会放出能量。一个反应是放热还是吸热，取决于<strong>断键吸收的总能量与成键放出的总能量哪个大</strong>。放热反应中，生成物的总能量低于反应物的总能量。</p>
+<div class="eq">
+ΔH = Σ(反应物键能) − Σ(生成物键能)　　ΔH &lt; 0 放热，ΔH &gt; 0 吸热
+</div>
+<div class="callout blue">
+<span class="tag">常见的放热/吸热反应，记住"例外"就够了</span>
+大多数化合、燃烧、中和、金属与酸的反应都是放热；大多数分解反应吸热。<br>
+<em>例外必记</em>：C 与 CO₂ 生成 CO、Ba(OH)₂·8H₂O 与 NH₄Cl 的反应、大多数以 C、H₂、CO 作还原剂的还原反应，都是<em>吸热</em>。而 Al 与 Fe₂O₃ 的铝热反应、Na 与水的反应是<em>放热</em>。
+</div>
+
+<h4>2. 热化学方程式的书写规则</h4>
+<table class="tbl compact">
+<tr><th>规则</th><th>说明</th></tr>
+<tr><td>必须标状态</td><td>s（固）、l（液）、g（气）、aq（水溶液）。同一反应，水的状态不同，ΔH 不同</td></tr>
+<tr><td>必须标 ΔH 的符号和单位</td><td>单位是 kJ/mol，写在方程式右侧，用分号隔开</td></tr>
+<tr><td>系数可以是分数</td><td>系数表示物质的量，不表示分子个数</td></tr>
+<tr><td>系数翻倍，ΔH 同步翻倍</td><td>方程式的 ΔH 与系数绑定，不能只改一边</td></tr>
+<tr><td>正逆反应的 ΔH 等值反号</td><td>ΔH(正) = −ΔH(逆)</td></tr>
+</table>
+
+<h4>3. 燃烧热与中和热</h4>
+<table class="tbl">
+<tr><th>项目</th><th>燃烧热</th><th>中和热</th></tr>
+<tr><td>定义</td><td>1 mol 纯物质完全燃烧生成稳定氧化物时放出的热量</td><td>稀溶液中强酸与强碱反应生成 1 mol 水时放出的热量</td></tr>
+<tr><td>关键限定</td><td>可燃物为 1 mol；产物必须是最稳定氧化物（C→CO₂，H→H₂O(l)）</td><td>生成 1 mol H₂O；稀溶液；强酸强碱</td></tr>
+<tr><td>数值</td><td>因物质而异</td><td>约 57.3 kJ/mol，是一个定值</td></tr>
+</table>
+
+<h4>4. 盖斯定律</h4>
+<p>反应热只与始态和终态有关，与路径无关。所以可以把已知方程式像代数式一样加减乘除，凑出目标方程式，ΔH 同步运算。</p>
+<div class="callout">
+<span class="tag">操作三步</span>
+① 找出目标方程式中各物质在哪个已知方程式中出现；② 确定每个已知方程式的系数和方向（正向、逆向、乘几）；③ 对 ΔH 做同样的运算。<br>
+技巧：先盯住<em>只在一个方程式中出现的物质</em>，它决定那个方程式要不要乘系数。
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>热化学方程式正误判断</strong>：查状态、查符号、查单位、查系数与 ΔH 是否匹配。</li>
+<li><strong>键能估算 ΔH</strong>：注意只算<em>参与反应</em>的键，不要把所有键都算进去。</li>
+<li><strong>盖斯定律计算</strong>：常见于"由已知反应求未知反应 ΔH"，也可以用"总能量变化 = 各步之和"。</li>
+<li><strong>图像题</strong>：给出能量-反应进程图，判断 ΔH 正负、催化剂是否改变 ΔH（不改变）。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>ΔH 与反应条件</td><td>热化学方程式中的 ΔH 与是否加热无关。加热只是活化能的问题</td></tr>
+<tr><td>催化剂对 ΔH 的影响</td><td>只降低活化能，不改变始态终态能量差，ΔH 不变</td></tr>
+<tr><td>燃烧热 vs 反应热</td><td>燃烧热是特定条件下的反应热（1 mol 可燃物、完全燃烧、稳定产物）；反应热是一般概念</td></tr>
+<tr><td>中和热测定值偏小</td><td>因为量热计有热量散失，以及使用了保温不良的装置；不能因此改数据，只能说"约"</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+<b>断键吸、成键放</b>；<b>放热 ΔH 负、吸热 ΔH 正</b>。<br>
+燃烧热记四个"最"：<b>1 mol、完全燃烧、稳定氧化物、25 ℃ 101 kPa</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　已知：<br>① C(s) + O₂(g) = CO₂(g)　ΔH₁ = −393.5 kJ/mol<br>② 2CO(g) + O₂(g) = 2CO₂(g)　ΔH₂ = −566.0 kJ/mol<br>求 C(s) + ½O₂(g) = CO(g) 的 ΔH。</p>
+<p><strong>找目标：</strong>C(s) + ½O₂(g) → CO(g)。</p>
+<p><strong>看 C 出现在哪：</strong>只在①中，且系数为 1，直接用①。</p>
+<p><strong>看 CO 出现在哪：</strong>只在②中，但②的 CO 是反应物，系数 2。目标里 CO 是生成物，系数 1，所以②要<em>逆向并除以 2</em>：</p>
+<div class="eq">
+CO₂(g) = CO(g) + ½O₂(g)　ΔH = +566.0/2 = +283.0 kJ/mol
+</div>
+<p><strong>相加：</strong>① + (−½ × ②)：</p>
+<div class="eq">
+ΔH = −393.5 + 283.0 = −110.5 kJ/mol
+</div>
+<p><strong>答案：</strong>ΔH = −110.5 kJ/mol（放热）。</p>
+<p><strong>验算：</strong>C 完全燃烧放 393.5，CO 燃烧时每 1 mol 再放 283.0，两者相加 393.5 − 283.0 = 110.5，与答案一致。</p>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列说法正确的是（　）</p>
+<p class="opt">A. 需要加热才能进行的反应一定是吸热反应</p>
+<p class="opt">B. 放热反应在任何条件下都能自发进行</p>
+<p class="opt">C. 化学反应中的能量变化主要形式是热量变化</p>
+<p class="opt">D. 催化剂能降低反应的 ΔH</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>A 错：燃烧需要加热引发，但燃烧是放热反应。B 错：反应能否自发进行由吉布斯自由能变决定，与吸放热不直接等同；很多放热反应需要达到一定温度。D 错：催化剂改变活化能，不改变 ΔH。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 已知：N₂(g) + 3H₂(g) ⇌ 2NH₃(g)　ΔH = −92.4 kJ/mol。若 1 mol N₂ 与 3 mol H₂ 在密闭容器中充分反应，实际放出的热量是多少？为什么？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">小于 92.4 kJ</p>
+<p>该反应是可逆反应，1 mol N₂ 不可能完全转化，实际参加反应的 N₂ 少于 1 mol，故放出的热量小于 92.4 kJ。热化学方程式中的 ΔH 表示"按方程式系数完全反应"时的热量，不等于实际放出的热量。</p>
+<p>这是高考最爱设的一个陷阱：把可逆反应的 ΔH 当成实际热量。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c6"><span class="no">选择性必修1 · 第二章</span>化学反应速率与化学平衡</h2>
+<p class="topic-meta">这是整个反应原理的重心。选择题必考图像分析，大题必考平衡计算与条件选择。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 反应速率</h4>
+<div class="eq">
+v = Δc / Δt　　（单位 mol/(L·s) 或 mol/(L·min)）
+</div>
+<p>用不同物质表示速率时，<strong>速率之比等于化学计量数之比</strong>。比较速率大小时，必须先换算成<em>同一种物质</em>再比。</p>
+<p>影响速率的因素：浓度（增大反应物浓度加快）、压强（对有气体参加且气体分子数变化的反应有效）、温度（升高加快，且正逆都加快）、催化剂、固体表面积。</p>
+<div class="callout blue">
+<span class="tag">有效碰撞理论，用它解释一切速率问题</span>
+分子要发生反应，必须①碰撞、②能量足够（达到活化能）、③取向合适。能发生反应的碰撞叫<em>有效碰撞</em>。<br>
+升温 → 活化分子百分数增加 → 有效碰撞增多 → 速率加快；<br>
+加催化剂 → 降低活化能 → 活化分子百分数增加 → 速率加快；<br>
+增大浓度 → 单位体积内活化分子<em>数</em>增加（百分数不变） → 速率加快。
+</div>
+
+<h4>2. 化学平衡状态</h4>
+<p>可逆反应进行到正反应速率等于逆反应速率、各物质浓度不再变化的状态。注意：<strong>平衡时反应没有停止</strong>，是动态平衡；各物质浓度不变但不一定相等。</p>
+<table class="tbl compact">
+<tr><th>能判断达到平衡</th><th>不能判断（永远成立或与平衡无关）</th></tr>
+<tr><td>v正 = v逆（同一物质，方向相反）</td><td>各物质浓度相等</td></tr>
+<tr><td>各组分浓度、质量分数、体积分数不再变化</td><td>反应物转化率相等</td></tr>
+<tr><td>恒容下总压不再变化（Δn ≠ 0 时）</td><td>总质量、总体积不变</td></tr>
+<tr><td>恒容下密度不再变化（有固体参与时）</td><td>平均摩尔质量不变（Δn = 0 且全为气体时）</td></tr>
+<tr><td>绝热容器中温度不再变化</td><td>速率之比等于计量数之比</td></tr>
+</table>
+
+<h4>3. 平衡常数</h4>
+<div class="eq">
+对于 aA + bB ⇌ cC + dD　　K = c(C)<sup>c</sup>·c(D)<sup>d</sup> / [c(A)<sup>a</sup>·c(B)<sup>b</sup>]
+</div>
+<p>K 只与<strong>温度</strong>有关，与浓度、压强、催化剂无关（固体和纯液体不写进表达式）。K 越大，反应进行得越完全。</p>
+
+<div class="widget">
+  <div class="whead"><h4>图 6-1　勒夏特列原理：换个条件，平衡往哪走</h4><span class="badge">可操作</span></div>
+  <div class="cap">以合成氨 N₂ + 3H₂ ⇌ 2NH₃（ΔH &lt; 0）为例。拖温度、拖压强，或者点"加反应物/移走产物/加催化剂"，左边看转化率和 K 怎么变，右边看速率怎么从"正≠逆"回到"正=逆"。</div>
+  <canvas id="cv-eq"></canvas>
+  <div class="ctrl">
+    <label>温度 <input type="range" id="eq-T" min="400" max="800" step="10" value="500"><span class="val" id="eq-Tv">500 K</span></label>
+    <label>压强 <input type="range" id="eq-P" min="5" max="300" step="5" value="100"><span class="val" id="eq-Pv">100 bar</span></label>
+    <button class="btn" id="eq-add">加反应物</button>
+    <button class="btn" id="eq-cut">移走产物</button>
+    <button class="btn" id="eq-cat">加催化剂</button>
+  </div>
+  <div class="readout" id="eq-out"></div>
+</div>
+
+<h4>4. 勒夏特列原理</h4>
+<p>改变影响平衡的一个条件，平衡会向<em>减弱这种改变</em>的方向移动。注意是"减弱"不是"消除"。</p>
+<table class="tbl">
+<tr><th>条件改变</th><th>平衡移动方向</th><th>对 K 的影响</th></tr>
+<tr><td>增大反应物浓度</td><td>正向移动</td><td>K 不变</td></tr>
+<tr><td>升高温度</td><td>向吸热方向移动</td><td>吸热反应 K 增大，放热反应 K 减小</td></tr>
+<tr><td>增大压强</td><td>向气体分子数减少的方向移动</td><td>K 不变</td></tr>
+<tr><td>加入催化剂</td><td>不移动</td><td>K 不变</td></tr>
+<tr><td>恒容下充入惰性气体</td><td>不移动</td><td>K 不变</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>速率-时间图像</strong>：看清"突变"还是"渐变"。浓度改变导致一个速率突变，温度或压强改变导致两个速率同时突变但幅度不同，催化剂导致两者同等幅度突变。</li>
+<li><strong>转化率-温度-压强图像</strong>：先看等温线（横坐标固定一条竖线），判断吸放热；再看等压线，判断 Δn 符号。</li>
+<li><strong>平衡计算</strong>：列"三段式"（起始、变化、平衡），用转化率或 K 建立方程。</li>
+<li><strong>工业条件选择</strong>：合成氨选 400–500 ℃、10–30 MPa、铁触媒，要同时权衡速率、平衡转化率和催化剂活性。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>v正 = v逆 与 v正 : v逆 = 计量数比</td><td>前者才是平衡；后者只在特定时刻偶然成立，不能作判据</td></tr>
+<tr><td>平衡常数与转化率</td><td>K 只随温度变；转化率还受浓度、压强影响。所以"K 大"不代表"当前转化率大"</td></tr>
+<tr><td>加压与充惰性气体</td><td>恒容充惰性气体，各组分浓度不变，平衡不移动；恒压充惰性气体，相当于减压，平衡向气体分子数增多的方向移动</td></tr>
+<tr><td>催化剂与转化率</td><td>催化剂只缩短达到平衡的时间，不提高转化率</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+平衡移动：<b>升温向吸热，加压向气少</b>。<br>
+看懂图像：<b>先定一轴看一线，再看陡缓判速率</b>——先固定温度看压强线，或固定压强看温度线，不要两轴一起看。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　在 2 L 密闭容器中充入 2 mol SO₂ 和 1 mol O₂，一定温度下发生 2SO₂(g) + O₂(g) ⇌ 2SO₃(g)。达到平衡时测得 SO₃ 为 1.6 mol。求：① SO₂ 的转化率；② 该温度下的平衡常数 K。</p>
+<p><strong>三段式</strong>（单位 mol，容器体积 2 L）：</p>
+<table class="tbl">
+<tr><th></th><th>2SO₂</th><th>O₂</th><th>2SO₃</th></tr>
+<tr><td>起始</td><td>2</td><td>1</td><td>0</td></tr>
+<tr><td>变化</td><td>−1.6</td><td>−0.8</td><td>+1.6</td></tr>
+<tr><td>平衡</td><td>0.4</td><td>0.2</td><td>1.6</td></tr>
+</table>
+<p><strong>① 转化率：</strong>α(SO₂) = 1.6/2 × 100% = <strong>80%</strong>。</p>
+<p><strong>② 换算浓度：</strong>c(SO₂) = 0.2 mol/L，c(O₂) = 0.1 mol/L，c(SO₃) = 0.8 mol/L。</p>
+<div class="eq">
+K = c²(SO₃) / [c²(SO₂)·c(O₂)] = 0.8² / (0.2² × 0.1) = 0.64 / 0.004 = 160
+</div>
+<p><strong>答案：</strong>转化率 80%，K = 160（注意 K 的单位取决于具体表达式，中学阶段一般只写数值）。</p>
+<div class="callout red">
+<span class="tag">两处高频失分</span>
+① 用物质的量直接代入 K，忘了除以体积；② 忘记先把系数平方。三段式写完，一定要单独检查"浓度换算"和"幂次"这两步。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 对于反应 N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH &lt; 0，下列措施既能加快反应速率又能提高 NH₃ 产率的是（　）</p>
+<p class="opt">A. 升高温度　B. 增大压强　C. 使用催化剂　D. 及时分离出 NH₃</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>A 升温加快速率，但平衡逆向移动，产率降低。C 只加快速率，不改变产率。D 提高产率但减慢正反应速率（浓度降低）。B 加压同时使速率加快、平衡向气体分子数减少的方向（即生成 NH₃）移动。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某温度下，反应 CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) 的 K = 1.0。起始时 CO 和 H₂O 的浓度均为 1.0 mol/L，求平衡时 CO 的转化率。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">50%</p>
+<p>设转化了 x mol/L：平衡时 c(CO) = 1−x，c(H₂O) = 1−x，c(CO₂) = x，c(H₂) = x。</p>
+<div class="eq">K = x² / (1−x)² = 1.0</div>
+<p>开方得 x/(1−x) = 1，x = 0.5。转化率 = 0.5/1.0 = 50%。</p>
+<p>这题开方比解二次方程快得多。凡是两边幂次相同的平衡表达式，先试着开方。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="c7"><span class="no">选择性必修1 · 第三章</span>水溶液中的离子平衡</h2>
+<p class="topic-meta">选择题必考（离子浓度大小比较、pH 计算），大题里常与滴定曲线、沉淀转化一起考。这一章是"定量"的分水岭。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 弱电解质的电离平衡</h4>
+<div class="eq">
+CH₃COOH ⇌ CH₃COO⁻ + H⁺　　K<sub>a</sub> = c(CH₃COO⁻)·c(H⁺) / c(CH₃COOH)
+</div>
+<p>Ka 越大，酸性越强。电离度 α = 已电离的分子数 / 原有分子总数。<strong>稀释时电离度增大，但 c(H⁺) 减小</strong>（越稀越电离，但浓度还是被稀释掉了）。</p>
+<div class="callout blue">
+<span class="tag">一元强酸与一元弱酸的比较（浓度相同）</span>
+c(H⁺)：强酸 &gt; 弱酸；pH：强酸 &lt; 弱酸；中和同量碱所需体积：相同；稀释 10 倍后 pH 变化：强酸变 1，弱酸变化小于 1。<br>
+反过来，pH 相同时：c(弱酸) &gt; c(强酸)，中和能力弱酸更强。
+</div>
+
+<h4>2. 水的电离与 pH</h4>
+<div class="eq">
+H₂O ⇌ H⁺ + OH⁻　　K<sub>w</sub> = c(H⁺)·c(OH⁻) = 1.0×10⁻¹⁴（25 ℃）
+</div>
+<p>Kw 只随温度变化，升温增大。所以<strong>100 ℃ 时 pH = 6 仍是中性</strong>。</p>
+<table class="tbl compact">
+<tr><th>溶液类型</th><th>pH 计算思路</th></tr>
+<tr><td>强酸</td><td>直接由 c(H⁺) 求 −lg</td></tr>
+<tr><td>强碱</td><td>先求 c(OH⁻)，再用 Kw 换算 c(H⁺)</td></tr>
+<tr><td>弱酸/弱碱</td><td>用 Ka 或 Kb 近似：c(H⁺) ≈ √(Ka·c)</td></tr>
+<tr><td>酸碱混合</td><td>先判断谁过量，按过量一方算；恰好中和则看盐的水解</td></tr>
+</table>
+
+<h4>3. 盐类水解</h4>
+<p>盐电离出的离子与水电离出的 H⁺ 或 OH⁻ 结合生成弱电解质，促使水的电离平衡正向移动。规律一句话：<strong>谁弱谁水解，谁强显谁性</strong>。</p>
+<table class="tbl compact">
+<tr><th>盐的类型</th><th>水解情况</th><th>溶液酸碱性</th><th>实例</th></tr>
+<tr><td>强酸强碱盐</td><td>不水解</td><td>中性</td><td>NaCl、KNO₃</td></tr>
+<tr><td>强酸弱碱盐</td><td>阳离子水解</td><td>酸性</td><td>NH₄Cl、FeCl₃</td></tr>
+<tr><td>强碱弱酸盐</td><td>阴离子水解</td><td>碱性</td><td>CH₃COONa、Na₂CO₃</td></tr>
+<tr><td>弱酸弱碱盐</td><td>双水解</td><td>看相对强弱</td><td>CH₃COONH₄（中性）</td></tr>
+</table>
+<div class="callout">
+<span class="tag">水解的四个应用，考试常从这里出</span>
+① 配制 FeCl₃ 溶液时加少量盐酸抑制水解；② 泡沫灭火器（Al³⁺ 与 HCO₃⁻ 双水解产生 CO₂）；③ 明矾净水（Al³⁺ 水解生成 Al(OH)₃ 胶体吸附杂质）；④ 加热蒸干某些盐溶液得不到原盐（如 AlCl₃ 蒸干得 Al₂O₃）。
+</div>
+
+<h4>4. 沉淀溶解平衡</h4>
+<div class="eq">
+AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq)　　K<sub>sp</sub> = c(Ag⁺)·c(Cl⁻)
+</div>
+<p>Ksp 只与温度有关。Q &gt; Ksp 生成沉淀，Q = Ksp 饱和，Q &lt; Ksp 不沉淀。<strong>沉淀转化</strong>的方向：由 Ksp 大的转化为 Ksp 小的（如 AgCl → AgI → Ag₂S）。</p>
+
+<h4>5. 酸碱中和滴定</h4>
+<div class="widget">
+  <div class="whead"><h4>图 7-1　滴定曲线：为什么指示剂不能随便选</h4><span class="badge">可操作</span></div>
+  <div class="cap">拖滴定体积看 pH 怎么走。注意两条曲线的"突跃"位置差得很远：强酸强碱在 pH 4–10 之间几乎垂直，弱酸用强碱滴定则突跃缩到 7–9 附近。指示剂的变色范围必须落在突跃之内，否则误差无法控制。</div>
+  <canvas id="cv-titr"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="ti-pick">
+      <button class="on" data-i="0">0.1 mol/L HCl 滴定</button>
+      <button data-i="1">0.1 mol/L CH₃COOH 滴定</button>
+    </div>
+    <label>加入 NaOH <input type="range" id="ti-v" min="0" max="40" step="0.2" value="0"><span class="val" id="ti-vv">0 mL</span></label>
+  </div>
+  <div class="readout" id="ti-out"></div>
+</div>
+<p>操作要点：酸式滴定管装酸、碱式装碱（不能混用，碱会腐蚀玻璃活塞）；<strong>用待测液润洗锥形瓶是错的</strong>（会让待测物偏多），滴定管必须润洗；读数读到小数点后两位；终点判断看"半滴加入后颜色突变且 30 s 内不褪"。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>离子浓度大小比较</strong>：单一溶液中抓"水解程度小"，混合溶液中抓"电荷守恒 + 物料守恒 + 质子守恒"。</li>
+<li><strong>三个守恒式</strong>：电荷守恒（正电荷总数 = 负电荷总数）、物料守恒（某元素总量不变）、质子守恒（得失 H⁺ 相等）。</li>
+<li><strong>滴定误差分析</strong>：只看一个式子 <code>c(待测) = c(标准)·V(标准)/V(待测)</code>，判断 V(标准) 偏大还是偏小。</li>
+<li><strong>沉淀转化与 Ksp 计算</strong>：常用于工艺流程题，判断某离子是否沉淀完全（一般以浓度小于 1×10⁻⁵ mol/L 为完全）。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>pH = 7 一定是中性？</td><td>只在 25 ℃ 成立。温度升高 Kw 增大，中性时 pH &lt; 7</td></tr>
+<tr><td>水解程度与浓度</td><td>盐溶液越稀，水解程度越大，但水解产生的离子浓度反而可能减小</td></tr>
+<tr><td>Ksp 小的先沉淀？</td><td>不同类型（如 AgCl 与 Ag₂CrO₄）不能只比 Ksp 大小，要用 Q 计算，或换算成溶解度</td></tr>
+<tr><td>滴定终点与中和点</td><td>中和点是恰好完全反应（强酸强碱 pH = 7），终点是指示剂变色点，两者不一定重合</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+水解：<b>有弱才水解，无弱不水解；越弱越水解，都弱双水解；谁强显谁性，同强显中性</b>。<br>
+三种守恒：<b>电荷看离子、物料看元素、质子看得失</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　常温下，将 0.1 mol/L 的 CH₃COOH 溶液与 0.1 mol/L 的 NaOH 溶液等体积混合，所得溶液中各离子浓度由大到小的顺序是什么？</p>
+<p><strong>第一步，判断反应。</strong>等体积等浓度，恰好完全反应，生成 CH₃COONa，浓度约 0.05 mol/L。</p>
+<p><strong>第二步，判断水解。</strong>CH₃COO⁻ 是弱酸根，水解：CH₃COO⁻ + H₂O ⇌ CH₃COOH + OH⁻，溶液显碱性，故 c(Na⁺) &gt; c(CH₃COO⁻)，c(OH⁻) &gt; c(H⁺)。</p>
+<p><strong>第三步，排序。</strong>水解程度很小，所以 c(CH₃COO⁻) 仍远大于 c(OH⁻)。</p>
+<div class="eq">
+c(Na⁺) &gt; c(CH₃COO⁻) &gt; c(OH⁻) &gt; c(H⁺)
+</div>
+<p><strong>验证用电荷守恒：</strong>c(Na⁺) + c(H⁺) = c(CH₃COO⁻) + c(OH⁻)。上面这个顺序代入是自洽的。</p>
+<div class="callout red">
+<span class="tag">排序题的三步固定动作</span>
+① 先确定溶质是什么、有没有过量；② 判断主要平衡（电离还是水解）；③ 用"电离/水解程度小"这个前提拉开数量级，最后用电荷守恒验证。三步做完再看选项，不要一上来就套守恒式。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列溶液在常温下 pH 大于 7 的是（　）</p>
+<p class="opt">A. NaCl　B. NH₄Cl　C. CH₃COONa　D. HCl</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>NaCl 是强酸强碱盐，不水解，pH = 7。NH₄Cl 中 NH₄⁺ 水解显酸性。HCl 是强酸。CH₃COONa 中 CH₃COO⁻ 水解产生 OH⁻，显碱性。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 常温下，pH = 3 的盐酸与 pH = 11 的 NaOH 溶液等体积混合，混合后溶液的 pH 是多少？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">pH = 7</p>
+<p>pH = 3 的盐酸 c(H⁺) = 1×10⁻³ mol/L；pH = 11 的 NaOH 中 c(OH⁻) = 1×10⁻³ mol/L。两者等体积混合，H⁺ 与 OH⁻ 恰好完全中和，剩余溶液为 NaCl 溶液，pH = 7。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 已知 Ksp(AgCl) = 1.8×10⁻¹⁰，Ksp(AgI) = 8.5×10⁻¹⁷。向含 Cl⁻ 和 I⁻ 浓度均为 0.01 mol/L 的溶液中逐滴加入 AgNO₃ 溶液，哪种离子先沉淀？当 Cl⁻ 开始沉淀时，溶液中 I⁻ 的浓度是多少？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">I⁻ 先沉淀；c(I⁻) ≈ 4.7×10⁻⁹ mol/L</p>
+<p><strong>先沉淀判断：</strong>开始沉淀所需 c(Ag⁺)：<br>
+对 Cl⁻：c(Ag⁺) = 1.8×10⁻¹⁰ / 0.01 = 1.8×10⁻⁸ mol/L<br>
+对 I⁻：c(Ag⁺) = 8.5×10⁻¹⁷ / 0.01 = 8.5×10⁻¹⁵ mol/L<br>
+所需 Ag⁺ 浓度小的先沉淀，所以 I⁻ 先沉淀。</p>
+<p><strong>第二步：</strong>当 c(Ag⁺) 达到 1.8×10⁻⁸ mol/L 时 Cl⁻ 开始沉淀，此时 I⁻ 仍在溶液中，满足 Ksp(AgI)：</p>
+<div class="eq">c(I⁻) = 8.5×10⁻¹⁷ / 1.8×10⁻⁸ ≈ 4.7×10⁻⁹ mol/L</div>
+<p>此时 I⁻ 已远小于 1×10⁻⁵ mol/L，说明 I⁻ 已沉淀完全。这也是"分步沉淀"分离离子的原理。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c8"><span class="no">选择性必修1 · 第四章</span>电化学</h2>
+<p class="topic-meta">选择题一到两道 + 大题中的电解计算。核心是"谁失电子谁氧化"，把氧化还原原封不动搬到电极上。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 原电池</h4>
+<p>把化学能转化为电能的装置。构成条件：两个活泼性不同的电极、电解质溶液、形成闭合回路、能自发进行的氧化还原反应。</p>
+
+<div class="widget">
+  <div class="whead"><h4>图 8-1　原电池：电子到底往哪走</h4><span class="badge">可操作</span></div>
+  <div class="cap">左边单液电池，右边双液电池带盐桥。看黄色小点在导线里流动的方向——电子<strong>只走导线，不走溶液</strong>；溶液里靠离子迁移导电。点"换电解质"可以在稀硫酸和硫酸铜之间切换，正极反应会跟着变。</div>
+  <canvas id="cv-cell"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="ce-mode">
+      <button class="on" data-i="0">单液（稀硫酸）</button>
+      <button data-i="1">双液（盐桥）</button>
+    </div>
+    <button class="btn" id="ce-run">暂停</button>
+    <button class="btn" id="ce-swap">换电解质</button>
+  </div>
+  <div class="readout" id="ce-out"></div>
+</div>
+
+<table class="tbl compact">
+<tr><th>项目</th><th>负极</th><th>正极</th></tr>
+<tr><td>反应类型</td><td>氧化反应（失电子）</td><td>还原反应（得电子）</td></tr>
+<tr><td>电极材料</td><td>活泼金属</td><td>较不活泼金属或石墨</td></tr>
+<tr><td>电子流向</td><td>电子流出</td><td>电子流入</td></tr>
+<tr><td>离子移动</td><td>阴离子移向负极</td><td>阳离子移向正极</td></tr>
+<tr><td>现象</td><td>电极溶解变细</td><td>有气泡或金属析出</td></tr>
+</table>
+
+<h4>2. 电解池</h4>
+<p>把电能转化为化学能。与电源负极相连的是<strong>阴极</strong>（发生还原），与正极相连的是<strong>阳极</strong>（发生氧化）。</p>
+<table class="tbl compact">
+<tr><th>电极</th><th>放电顺序（阳离子得电子）</th></tr>
+<tr><td>阴极</td><td>Ag⁺ &gt; Fe³⁺ &gt; Cu²⁺ &gt; H⁺ &gt; Pb²⁺ &gt; Fe²⁺ &gt; Zn²⁺ &gt; (H⁺) &gt; Al³⁺ &gt; Mg²⁺ &gt; Na⁺</td></tr>
+<tr><td>阳极（惰性）</td><td>S²⁻ &gt; I⁻ &gt; Br⁻ &gt; Cl⁻ &gt; OH⁻ &gt; 含氧酸根</td></tr>
+<tr><td>阳极（活泼金属）</td><td>电极本身先溶解（如 Cu、Ag 作阳极）</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">四个电解应用，考法固定</span>
+<strong>氯碱工业</strong>：电解饱和食盐水，阳极 Cl₂、阴极 H₂、溶液中得 NaOH。<br>
+<strong>电镀</strong>：镀层金属作阳极，待镀件作阴极，电镀液含镀层金属离子（浓度基本不变）。<br>
+<strong>电解精炼铜</strong>：粗铜作阳极，纯铜作阴极，CuSO₄ 溶液作电解液（阳极泥中含 Au、Ag）。<br>
+<strong>电解熔融盐</strong>：制 Na、Mg、Al，注意 Al 是电解熔融 Al₂O₃（加冰晶石），不能电解 AlCl₃（共价化合物，熔融不导电）。
+</div>
+
+<h4>3. 金属的腐蚀与防护</h4>
+<table class="tbl compact">
+<tr><th>类型</th><th>条件</th><th>实例</th></tr>
+<tr><td>化学腐蚀</td><td>金属与接触到的物质直接反应</td><td>铁在高温下与 O₂ 反应</td></tr>
+<tr><td>电化学腐蚀（析氢）</td><td>酸性环境，正极放出 H₂</td><td>铁在酸性溶液中</td></tr>
+<tr><td>电化学腐蚀（吸氧）</td><td>中性或弱酸性环境，正极消耗 O₂</td><td>钢铁在潮湿空气中（最常见）</td></tr>
+</table>
+<p>防护方法：覆盖保护层、改变金属内部结构（制成不锈钢）、电化学保护（<strong>牺牲阳极的阴极保护法</strong>：接更活泼的金属如 Zn；<strong>外加电流的阴极保护法</strong>：接电源负极）。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>电极判断与电极反应式书写</strong>：先判正负极（或阴阳极），再写半反应，最后检查电子守恒与电荷守恒。</li>
+<li><strong>电解计算</strong>：串联电路中各电极通过的电子数相等，按 <code>n(e⁻) = It/F</code> 或按电极反应式的计量关系换算。</li>
+<li><strong>离子交换膜电解池</strong>：判断哪种离子通过哪种膜（阳离子交换膜只允许阳离子通过），是近年新高考的热点。</li>
+<li><strong>可充电电池</strong>：放电时是原电池，充电时是电解池，注意"负极"在充电时变"阴极"。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>电子能否通过溶液</td><td>不能。电子只在导线中移动，溶液中靠离子定向移动导电</td></tr>
+<tr><td>原电池的负极一定活泼？</td><td>通常成立，但燃料电池中负极是通燃料的电极（如 Pt），可能并不"活泼"</td></tr>
+<tr><td>电解池阳极一定溶解？</td><td>只有活泼金属作阳极才溶解；惰性电极（Pt、石墨）上是溶液中的离子放电</td></tr>
+<tr><td>充电时电极名称</td><td>放电时的负极在充电时作阴极（接电源负极），正极作阳极</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+原电池：<b>负氧正还</b>（负极氧化、正极还原）；电解池：<b>阳氧阴还</b>（阳极氧化、阴极还原）。<br>
+电子流向记一条线：<b>负极 → 导线 → 正极</b>，电解池里是<b>阳极 → 电源正极</b>，方向永远一致。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　以石墨为电极，电解 500 mL 含 0.2 mol CuSO₄ 的溶液。当电路中通过 0.2 mol 电子时，阴极析出铜的质量是多少？溶液的 pH 如何变化？</p>
+<p><strong>阴极反应：</strong>Cu²⁺ + 2e⁻ = Cu。通过 0.2 mol 电子，生成 Cu 0.1 mol，质量 = 0.1 × 64 = <strong>6.4 g</strong>。</p>
+<p><strong>阳极反应：</strong>4OH⁻ − 4e⁻ = O₂↑ + 2H₂O（或写成 2H₂O − 4e⁻ = O₂↑ + 4H⁺）。通过 0.2 mol 电子，生成 H⁺ 0.2 mol。</p>
+<p><strong>pH 变化：</strong>溶液中 H⁺ 增加 0.2 mol，相当于生成了 0.1 mol H₂SO₄，<strong>pH 减小</strong>（酸性增强）。</p>
+<p>c(H⁺) = 0.2/0.5 = 0.4 mol/L，pH ≈ 0.4。</p>
+<div class="callout red">
+<span class="tag">顺序问题别忽略</span>
+如果 CuSO₄ 只有 0.05 mol（即 Cu²⁺ 不够），那么电子先用于析铜，Cu²⁺ 耗尽后转为电解水（阴极放 H₂）。这题给的是 0.2 mol CuSO₄，足够消耗 0.4 mol 电子，所以只析铜。凡"通过多少电子"的题，先算电解质的量够不够。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 关于铜锌稀硫酸原电池，下列说法正确的是（　）</p>
+<p class="opt">A. 锌是正极，发生还原反应　B. 铜极上有气泡产生</p>
+<p class="opt">C. 电子由铜经导线流向锌　D. 溶液中 H⁺ 向负极移动</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>锌比铜活泼，作负极，发生氧化反应，A 错。铜作正极，溶液中的 H⁺ 在铜极得电子生成 H₂，有气泡，B 对。电子由负极（锌）经导线流向正极（铜），C 反向。阳离子（H⁺）向正极移动，D 错。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 用惰性电极电解饱和食盐水 500 mL，当阴极产生 2.24 L（标况）气体时，电路中转移的电子数为多少？阳极产生什么气体、体积多少？溶液的 pH 如何变化？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">转移 0.2 mol 电子；阳极产生 Cl₂ 2.24 L；pH 增大</p>
+<p>阴极：2H₂O + 2e⁻ = H₂↑ + 2OH⁻，n(H₂) = 2.24/22.4 = 0.1 mol，转移电子 0.2 mol。</p>
+<p>阳极：2Cl⁻ − 2e⁻ = Cl₂↑，转移 0.2 mol 电子生成 Cl₂ 0.1 mol，标况 2.24 L。</p>
+<p>阴极生成 0.2 mol OH⁻，溶液中 NaOH 增多，pH 增大。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="c9"><span class="no">选择性必修2 · 全册</span>原子结构 · 分子结构 · 晶体结构</h2>
+<p class="topic-meta">新高考里通常是选考或必考中的一道大题。文字量少但陷阱密，属于"理解了就送分、没理解就全错"的类型。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 原子结构：能层、能级与排布</h4>
+<table class="tbl compact">
+<tr><th>概念</th><th>要点</th></tr>
+<tr><td>能层</td><td>K、L、M、N…，对应 n = 1、2、3、4，能量依次升高</td></tr>
+<tr><td>能级</td><td>同一能层内分 s、p、d、f，能量 s &lt; p &lt; d &lt; f</td></tr>
+<tr><td>能级容纳电子数</td><td>s 2 个，p 6 个，d 10 个，f 14 个</td></tr>
+<tr><td>构造原理</td><td>按 1s 2s 2p 3s 3p 4s 3d 4p 5s… 的顺序填充（4s 先于 3d）</td></tr>
+<tr><td>洪特规则</td><td>同一能级的不同轨道上，电子优先单独占据且自旋方向相同</td></tr>
+<tr><td>泡利原理</td><td>一个轨道最多容纳 2 个电子，且自旋相反</td></tr>
+<tr><td>半充满/全充满更稳定</td><td>Cr 的 3d⁵4s¹、Cu 的 3d¹⁰4s¹ 是特例，必须记</td></tr>
+</table>
+
+<h4>2. 电离能与电负性</h4>
+<div class="callout blue">
+<span class="tag">电离能的三个规律</span>
+① 同周期从左到右，第一电离能总体增大，但 <em>ⅡA &gt; ⅢA、ⅤA &gt; ⅥA</em>（半充满、全充满更稳定）。<br>
+② 同主族从上到下，第一电离能减小。<br>
+③ 同一元素逐级电离能跃升最大的地方，就是它最外层电子数所在的位置——常用来判断元素价态。
+</div>
+<p><strong>电负性</strong>：衡量原子吸引成键电子的能力。F 最大（4.0），金属性越强电负性越小。电负性差值 &gt; 1.7 通常形成离子键。</p>
+
+<h4>3. 共价键与分子结构</h4>
+<table class="tbl compact">
+<tr><th>项目</th><th>内容</th></tr>
+<tr><td>σ 键 / π 键</td><td>σ 键头碰头，可绕轴旋转；π 键肩并肩，不能旋转。单键是 1 个 σ，双键是 σ + π，三键是 σ + 2π</td></tr>
+<tr><td>键参数</td><td>键能越大键越牢；键长越短键能越大；键角决定分子空间构型</td></tr>
+<tr><td>杂化轨道</td><td>sp（直线，180°）、sp²（平面三角，120°）、sp³（四面体，109°28′）</td></tr>
+<tr><td>VSEPR</td><td>价层电子对数 = σ 键电子对 + 孤电子对，决定基本构型，孤电子对会压缩键角</td></tr>
+</table>
+<table class="tbl compact">
+<tr><th>分子</th><th>中心原子杂化</th><th>空间构型</th><th>极性</th></tr>
+<tr><td>CO₂</td><td>sp</td><td>直线形</td><td>非极性</td></tr>
+<tr><td>BF₃</td><td>sp²</td><td>平面三角形</td><td>非极性</td></tr>
+<tr><td>CH₄</td><td>sp³</td><td>正四面体</td><td>非极性</td></tr>
+<tr><td>NH₃</td><td>sp³</td><td>三角锥形</td><td>极性</td></tr>
+<tr><td>H₂O</td><td>sp³</td><td>V 形（角形）</td><td>极性</td></tr>
+</table>
+
+<h4>4. 分子间作用力</h4>
+<ul>
+<li><strong>范德华力</strong>：普遍存在，随相对分子质量增大而增强（所以卤素单质熔沸点 F₂ &lt; Cl₂ &lt; Br₂ &lt; I₂）。</li>
+<li><strong>氢键</strong>：与 N、O、F 相连的 H 与另一分子的 N、O、F 之间的作用力。使 H₂O、NH₃、HF 沸点异常升高，冰的密度小于水也源于氢键。</li>
+<li><strong>配位键</strong>：由一方提供孤电子对、另一方提供空轨道形成，如 NH₄⁺、[Cu(NH₃)₄]²⁺。</li>
+</ul>
+
+<h4>5. 晶体类型</h4>
+<table class="tbl">
+<tr><th>类型</th><th>构成微粒</th><th>作用力</th><th>实例</th><th>熔沸点</th></tr>
+<tr><td>离子晶体</td><td>阴阳离子</td><td>离子键</td><td>NaCl、CaO</td><td>较高，硬而脆</td></tr>
+<tr><td>分子晶体</td><td>分子</td><td>分子间作用力</td><td>冰、干冰、I₂</td><td>低，易升华</td></tr>
+<tr><td>共价晶体</td><td>原子</td><td>共价键</td><td>金刚石、SiO₂、SiC</td><td>很高，硬度大</td></tr>
+<tr><td>金属晶体</td><td>金属阳离子与自由电子</td><td>金属键</td><td>Fe、Cu、Na</td><td>差别大，有延展性</td></tr>
+</table>
+<div class="callout">
+<span class="tag">晶胞计算的均摊法</span>
+顶点占 1/8、棱上占 1/4、面心占 1/2、体心占 1。先算出一个晶胞含多少个"化学式单位"，再用 ρ = m/V 求密度，注意单位换算（pm → cm 要乘 10⁻¹⁰，常用 1 pm = 10⁻¹⁰ cm）。
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>电子排布式与轨道表示式</strong>：注意 3d 与 4s 的书写顺序（写排布式时 3d 写在 4s 前），以及 Cr、Cu 的特例。</li>
+<li><strong>杂化方式与构型判断</strong>：先算价层电子对数 = (中心原子价电子数 + 配体提供的电子数 ± 电荷)/2，再对照构型表。</li>
+<li><strong>熔沸点比较</strong>：先看晶体类型（共价晶体 &gt; 离子晶体 &gt; 分子晶体），同类型再比分子间作用力或离子半径与电荷。</li>
+<li><strong>晶胞密度计算</strong>：这是每年最难的一小问，按"数微粒 → 求质量 → 求体积 → 相除"四步走。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>氢键是化学键？</td><td>不是。氢键属于分子间作用力，比化学键弱得多，但比范德华力强</td></tr>
+<tr><td>SiO₂ 与 CO₂ 的性质差异</td><td>SiO₂ 是共价晶体（原子晶体），CO₂ 是分子晶体。前者熔点高、硬度大</td></tr>
+<tr><td>含极性键的分子一定是极性分子？</td><td>不一定。CO₂、CH₄ 含极性键，但因结构对称，整体为非极性分子</td></tr>
+<tr><td>NaCl 晶胞中 Na⁺ 的配位数</td><td>6（上下左右前后各 1 个 Cl⁻），不是 8</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+填充顺序：<b>一撇一捺写能级，4s 先于 3d</b>。特例记 <b>"铬一半、铜全满"</b>。<br>
+熔沸点比较顺序：<b>共价 &gt; 离子 &gt; 分子</b>，金属看情况。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　判断下列分子的中心原子杂化方式和空间构型：① H₂O　② NH₃　③ CO₂　④ SO₂</p>
+<p><strong>H₂O：</strong>O 有 6 个价电子，与 2 个 H 形成 2 个 σ 键，孤电子对 = (6 − 2×1)/2 = 2。价层电子对 = 2 + 2 = 4，<strong>sp³ 杂化</strong>，VSEPR 母体是四面体，去掉 2 个孤对后为 <strong>V 形</strong>，键角约 104.5°（小于 109°28′，因为孤对排斥更强）。</p>
+<p><strong>NH₃：</strong>N 有 5 个价电子，与 3 个 H 成键，孤电子对 = (5 − 3)/2 = 1。价层电子对 = 4，<strong>sp³ 杂化</strong>，<strong>三角锥形</strong>，键角约 107°。</p>
+<p><strong>CO₂：</strong>C 与 2 个 O 形成 2 个 σ 键，无孤对。价层电子对 = 2，<strong>sp 杂化</strong>，<strong>直线形</strong>，180°。</p>
+<p><strong>SO₂：</strong>S 有 6 个价电子，与 2 个 O 成 σ 键，孤电子对 = (6 − 2×2)/2 = 1。价层电子对 = 3，<strong>sp² 杂化</strong>，母体平面三角形，去掉 1 个孤对后为 <strong>V 形</strong>，键角约 119°。</p>
+<div class="callout red">
+<span class="tag">SO₂ 为什么和 CO₂ 不一样</span>
+两者都是"中心原子连两个氧"，但 S 上还有 1 对孤电子，C 上没有。孤电子对既改变杂化方式（sp² 而不是 sp），也把分子从直线压成 V 形。做这类题一定要把孤电子对算出来，不能只看"几个原子"。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 写出 24 号元素铬（Cr）的基态电子排布式，并说明它为什么是特例。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">1s²2s²2p⁶3s²3p⁶3d⁵4s¹</p>
+<p>按构造原理应填成 3d⁴4s²，但 3d 轨道半充满（5 个单电子）时能量更低、更稳定，所以实际是 3d⁵4s¹。铜（29 号）同理，为 3d¹⁰4s¹，是全充满更稳定。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 比较下列各组物质的熔沸点高低并说明理由：</p>
+<p class="opt">(1) NaCl 与 NaBr　(2) 金刚石与晶体硅　(3) H₂O 与 H₂S</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) NaCl &gt; NaBr　(2) 金刚石 &gt; 晶体硅　(3) H₂O &gt; H₂S</p>
+<p>(1) 都是离子晶体，Na⁺ 相同，Br⁻ 半径大于 Cl⁻，离子键更弱，熔点更低。</p>
+<p>(2) 都是共价晶体，C—C 键长小于 Si—Si 键长，键能更大，熔点更高。</p>
+<p>(3) 都是分子晶体，H₂O 分子间存在氢键，H₂S 没有，所以水的沸点异常高（虽然 H₂S 相对分子质量更大）。这是"氢键打破分子量规律"的经典例子。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c10"><span class="no">选择性必修3 · 第一、二、三章</span>有机化学基础</h2>
+<p class="topic-meta">有机推断与合成为必考大题。这一节是"零件库"，把官能团和反应类型对应清楚，大题就不会卡。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 有机物的结构特点</h4>
+<p>碳原子最外层 4 个电子，形成 4 个共价键，可以成链、成环、成双键三键。同分异构体分四类：碳链异构、位置异构、官能团异构、顺反异构。</p>
+
+<h4>2. 官能团与反应类型对照表（核心中的核心）</h4>
+<table class="tbl">
+<tr><th>官能团</th><th>代表物</th><th>能发生的反应</th></tr>
+<tr><td>碳碳双键 C=C</td><td>乙烯</td><td>加成（H₂、X₂、HX、H₂O）、加聚、氧化（KMnO₄ 褪色）</td></tr>
+<tr><td>碳碳三键 C≡C</td><td>乙炔</td><td>加成、加聚、氧化</td></tr>
+<tr><td>苯环</td><td>苯</td><td>取代（卤代、硝化）、加成（H₂）、不使 KMnO₄ 褪色</td></tr>
+<tr><td>卤素原子 −X</td><td>溴乙烷</td><td>水解（NaOH 水溶液，取代）、消去（NaOH 醇溶液，加热）</td></tr>
+<tr><td>羟基 −OH（醇）</td><td>乙醇</td><td>与 Na 置换、催化氧化、消去、酯化</td></tr>
+<tr><td>羟基 −OH（酚）</td><td>苯酚</td><td>弱酸性、与浓溴水取代、显色反应（FeCl₃）</td></tr>
+<tr><td>醛基 −CHO</td><td>乙醛</td><td>氧化（银镜反应、与新制 Cu(OH)₂）、还原（加 H₂ 成醇）</td></tr>
+<tr><td>羧基 −COOH</td><td>乙酸</td><td>酸性、酯化、与 Na₂CO₃/NaHCO₃ 反应</td></tr>
+<tr><td>酯基 −COO−</td><td>乙酸乙酯</td><td>水解（酸性、碱性）</td></tr>
+</table>
+
+<div class="callout blue">
+<span class="tag">六个必须背下来的反应现象</span>
+① 银镜反应：−CHO + 2Ag(NH₃)₂OH → 水浴加热 → 银镜；<br>
+② 与新制 Cu(OH)₂：−CHO + 2Cu(OH)₂ → 煮沸 → 砖红色沉淀；<br>
+③ 苯酚 + 浓溴水 → 白色沉淀（2,4,6-三溴苯酚）；<br>
+④ 苯酚 + FeCl₃ → 紫色（显色反应）；<br>
+⑤ 淀粉 + 碘 → 蓝色；<br>
+⑥ 蛋白质 + 浓硝酸 → 黄色（变性）。
+</div>
+
+<h4>3. 同分异构体数目的判断</h4>
+<table class="tbl compact">
+<tr><th>方法</th><th>适用</th></tr>
+<tr><td>等效氢法</td><td>一元取代物的数目 = 等效氢的种数（同一碳上的氢等效、对称位置的氢等效）</td></tr>
+<tr><td>基元法</td><td>记住常见烷基的数目：—CH₃ 1 种、—C₂H₅ 1 种、—C₃H₇ 2 种、—C₄H₉ 4 种</td></tr>
+<tr><td>插入法</td><td>酯、醚类：在两个基团之间插入 —COO— 或 —O—</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>有机反应类型判断</strong>：看到"与 H₂ 加成"是还原（也是加成反应）、"能使 KMnO₄ 褪色"是氧化、烯烃的"使溴水褪色"是加成（不是取代）。</li>
+<li><strong>官能团的性质对应</strong>：给一个陌生有机物，问能发生哪些反应、消耗多少 mol 试剂（如 1 mol 某物最多与几 mol H₂ 加成，苯环算 3 mol）。</li>
+<li><strong>除杂与分离</strong>：乙酸乙酯中除乙酸用饱和 Na₂CO₃ 溶液；溴苯中除溴用 NaOH 溶液；硝基苯中除硝酸用 NaOH 溶液。</li>
+<li><strong>共线共面问题</strong>：苯环 12 原子共面、乙烯 6 原子共面、乙炔 4 原子共线，组合时注意单键可以旋转。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>卤代烃水解 vs 消去</td><td>NaOH 水溶液加热 → 水解生成醇；NaOH 醇溶液加热 → 消去生成烯。条件决定产物</td></tr>
+<tr><td>苯酚与羧酸的酸性</td><td>苯酚酸性弱于碳酸（不能使石蕊变红），羧酸强于碳酸（能使石蕊变红）</td></tr>
+<tr><td>酯化反应的水从哪来</td><td>羧酸脱 —OH、醇脱 —H，用 ¹⁸O 标记可以证明</td></tr>
+<tr><td>苯与烯烃的溴水反应</td><td>苯不能使溴水褪色（只会萃取使水层变浅、苯层变橙），烯烃能使其褪色</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+<b>醇羟基能取代能消去能氧化，酚羟基显弱酸遇铁变紫，醛基能银镜能还原，羧基显酸能酯化。</b><br>
+苯环记三个字：<b>易取代、难加成、不氧化</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某有机物结构简式为 CH₂=CH—CH₂—COOH。判断 1 mol 该有机物分别与足量的 Br₂（水溶液）、H₂、NaHCO₃、Na 反应时，各消耗多少 mol？</p>
+<p><strong>Br₂ 水溶液：</strong>只有 C=C 加成，消耗 <strong>1 mol</strong>。</p>
+<p><strong>H₂：</strong>只有 C=C 加成，消耗 <strong>1 mol</strong>（—COOH 不与 H₂ 加成）。</p>
+<p><strong>NaHCO₃：</strong>—COOH 与 NaHCO₃ 反应放出 CO₂，1 mol —COOH 消耗 <strong>1 mol</strong> NaHCO₃。</p>
+<p><strong>Na：</strong>—OH 和 —COOH 都能与 Na 反应放出 H₂，但该分子只有 —COOH，1 mol 消耗 <strong>1 mol</strong> Na。</p>
+<div class="callout red">
+<span class="tag">这类题的固定做法</span>
+把结构式里的官能团一个一个圈出来，逐个对照"能与谁反应、消耗几摩尔"，最后相加。<em>不要凭整体感觉估</em>。特别注意：苯环加 H₂ 是 3 mol；—COOH 不与 H₂ 加成；酚 —OH 与羧基都能与 Na 反应，但只有羧基能与 NaHCO₃ 反应。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列物质中，不能使溴水褪色的是（　）</p>
+<p class="opt">A. 乙烯　B. 乙炔　C. 苯　D. 二氧化硫</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>苯不能与溴水反应，也不会使溴水褪色；把溴水中的溴萃取到苯层后，水层颜色变浅、苯层呈橙红色，但整体溴并未被消耗，属于"萃取"不是"褪色反应"。A、B 通过加成消耗 Br₂；D 中 SO₂ 把 Br₂ 还原为 Br⁻。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 写出分子式为 C₄H₈ 的所有属于烯烃的同分异构体，并指出其中存在顺反异构的是哪一个。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">共 3 种：1-丁烯、2-丁烯、2-甲基丙烯</p>
+<p>① CH₂=CH—CH₂—CH₃（1-丁烯）<br>② CH₃—CH=CH—CH₃（2-丁烯）<br>③ CH₂=C(CH₃)₂（2-甲基丙烯，碳链异构）</p>
+<p>只有 2-丁烯存在顺反异构：双键两端各连的基团不同（—CH₃ 和 —H），可以有顺式和反式两种。1-丁烯双键端基有两个 H，2-甲基丙烯双键端基有两个 H，都不满足顺反异构条件。</p>
+<p>顺反异构的条件：<em>双键两端每个碳上都连两个不同的基团</em>。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c11"><span class="no">选择性必修3 · 第四、五章</span>有机合成 · 生物大分子 · 高分子</h2>
+<p class="topic-meta">大题最后一问常写合成路线或判断单体，属于"送分但要完整"的分。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 有机合成的思路</h4>
+<p>逆合成分析：从目标分子的结构出发，往回找它由什么反应得到，一步退到起点。常见连接方式：</p>
+<table class="tbl compact">
+<tr><th>目标结构</th><th>常用形成方法</th></tr>
+<tr><td>酯</td><td>羧酸 + 醇，浓硫酸催化，可逆</td></tr>
+<tr><td>碳碳双键</td><td>卤代烃消去、醇消去</td></tr>
+<tr><td>卤代烃</td><td>烷烃取代、烯烃加成、醇取代</td></tr>
+<tr><td>醚</td><td>醇分子间脱水</td></tr>
+<tr><td>肽键</td><td>氨基酸缩合</td></tr>
+</table>
+<div class="callout">
+<span class="tag">官能团引入的先后顺序</span>
+合成中如果分子同时存在容易被氧化的基团（如酚羟基、醛基），需要先保护再反应、最后脱保护。题目里出现这类要求时，路线必须写出保护步骤，否则扣分。
+</div>
+
+<h4>2. 生物大分子</h4>
+<table class="tbl compact">
+<tr><th>物质</th><th>结构单元</th><th>关键性质</th></tr>
+<tr><td>糖类</td><td>单糖（葡萄糖、果糖 C₆H₁₂O₆）、二糖（蔗糖、麦芽糖 C₁₂H₂₂O₁₁）、多糖（淀粉、纤维素）</td><td>葡萄糖含 —CHO 能银镜；淀粉遇碘变蓝；淀粉和纤维素都水解成葡萄糖</td></tr>
+<tr><td>油脂</td><td>高级脂肪酸甘油酯</td><td>碱性水解叫皂化反应；液态油加氢可变成固态脂肪（硬化油）</td></tr>
+<tr><td>蛋白质</td><td>氨基酸通过肽键缩合</td><td>水解生成氨基酸；遇浓硝酸变黄（含苯环）；变性不可逆</td></tr>
+</table>
+<p>氨基酸的特点：同一分子中既有 —NH₂ 又有 —COOH，能形成内盐，具有两性。</p>
+
+<h4>3. 高分子</h4>
+<table class="tbl compact">
+<tr><th>类型</th><th>特征</th><th>实例</th></tr>
+<tr><td>加聚反应</td><td>单体含 C=C 或 C≡C，产物只有聚合物，无小分子脱落</td><td>聚乙烯、聚丙烯、聚氯乙烯</td></tr>
+<tr><td>缩聚反应</td><td>单体有两个以上官能团，产物有聚合物和小分子（H₂O、HCl）</td><td>聚酯（PET）、尼龙、酚醛树脂</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">找单体，两步</span>
+<strong>加聚物找单体：</strong>把主链上的碳碳键还原成双键（每两个碳为一组，双键写回去）。<br>
+<strong>缩聚物找单体：</strong>把酯基或肽键从中间断开，断处一端补 —OH、一端补 —H。
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>合成路线设计</strong>：给目标物和原料，写出中间步骤。常见套路是"烯烃 → 卤代烃 → 醇 → 醛 → 酸 → 酯"。</li>
+<li><strong>单体与聚合物互推</strong>：给定聚合物写单体、或给定单体写聚合物。</li>
+<li><strong>水解产物判断</strong>：糖类、油脂、蛋白质的完全水解产物。</li>
+<li><strong>检验与鉴别</strong>：葡萄糖用银镜或新制 Cu(OH)₂；淀粉用碘水；蛋白质用浓硝酸或灼烧。
+
+</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>糖类都是有甜味的</td><td>纤维素、淀粉没有甜味；糖精有甜味但不是糖类</td></tr>
+<tr><td>淀粉与纤维素是同分异构体？</td><td>不是。两者通式都可写 (C₆H₁₀O₅)ₙ，但 n 值不同，聚合度不同，不互为同分异构体</td></tr>
+<tr><td>油脂是高分子？</td><td>不是。油脂相对分子质量较小，属于小分子化合物</td></tr>
+<tr><td>加聚与缩聚的判断</td><td>看有没有小分子生成，看单体是否只有双键</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+糖类：<b>单糖还原、二糖看是否还原（麦芽糖还原、蔗糖不还原）、多糖水解</b>。<br>
+蛋白质：<b>水解变氨基酸，变性不再回来，灼烧有焦臭味</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某聚酯的结构为 —[O—CH₂—CH₂—O—CO—C₆H₄—CO]—ₙ（PET），写出它的两种单体，并说明反应类型。</p>
+<p><strong>第一步，判断类型。</strong>主链中存在酯基 —COO—，且以"断开—补基"的方式可以追到单体，属于<strong>缩聚反应</strong>。</p>
+<p><strong>第二步，从酯基处断开。</strong>酯基 —CO—O— 断开，羰基一方补 —OH，氧一方补 —H：</p>
+<p>单体一：HO—CH₂—CH₂—OH（乙二醇）</p>
+<p>单体二：HOOC—C₆H₄—COOH（对苯二甲酸）</p>
+<p><strong>第三步，验证。</strong>n 个乙二醇与 n 个对苯二甲酸缩聚，脱去 2n−1 个 H₂O，得到聚对苯二甲酸乙二醇酯。因为两种单体都是二官能团化合物，才能形成长链。</p>
+<div class="callout red">
+<span class="tag">断键方向不要弄反</span>
+酯基中断裂的是 <em>C—O 单键</em>（羰基碳与氧之间），不是 C=O。断口处羰基侧补羟基、氧侧补氢，这样补回去正好是羧酸和醇。方向反了会补成醛和醚，一查就错。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列物质水解的最终产物只有一种的是（　）</p>
+<p class="opt">A. 蔗糖　B. 麦芽糖　C. 蛋白质　D. 油脂</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>蔗糖水解生成葡萄糖和果糖，两种。麦芽糖水解只生成葡萄糖，一种。蛋白质水解生成多种氨基酸。油脂水解生成甘油和多种高级脂肪酸（或盐）。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 以乙烯为原料（其他无机试剂任选），设计合成乙酸乙酯的路线，写出各步反应的化学方程式并注明反应类型。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p><strong>路线：</strong>乙烯 → 乙醇 → 乙醛 → 乙酸 → 乙酸乙酯</p>
+<p>① CH₂=CH₂ + H₂O --催化剂/加热加压--> CH₃CH₂OH　（加成）</p>
+<p>② 2CH₃CH₂OH + O₂ --Cu/Δ--> 2CH₃CHO + 2H₂O　（氧化）</p>
+<p>③ 2CH₃CHO + O₂ --催化剂/Δ--> 2CH₃COOH　（氧化）</p>
+<p>④ CH₃COOH + CH₃CH₂OH ⇌ CH₃COOCH₂CH₃ + H₂O（浓硫酸，Δ）　（酯化/取代）</p>
+<p>这条链是醇—醛—酸的经典转化，高考里出现频率极高。注意第③步也可用酸性 KMnO₄ 或银镜反应后的酸化，但工业上常用催化氧化。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c12"><span class="no">跨册 · 通用</span>化学实验</h2>
+<p class="topic-meta">实验题是分值最重的一道大题，通常 14–16 分。考的不是背，而是"这一步为什么这么做"。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 常用仪器与操作</h4>
+<table class="tbl compact">
+<tr><th>操作</th><th>关键点</th></tr>
+<tr><td>过滤</td><td>一贴二低三靠；沉淀要洗涤</td></tr>
+<tr><td>蒸发结晶</td><td>蒸发皿，玻璃棒搅拌，出现大量固体时停止加热，用余热蒸干</td></tr>
+<tr><td>蒸馏</td><td>温度计水银球在蒸馏烧瓶支管口处；冷凝水下进上出</td></tr>
+<tr><td>萃取分液</td><td>分液漏斗，下层从下口放出，上层从上口倒出</td></tr>
+<tr><td>配制溶液</td><td>容量瓶，定容时视线与凹液面最低处相平</td></tr>
+</table>
+
+<h4>2. 常见气体的实验室制法</h4>
+<table class="tbl">
+<tr><th>气体</th><th>反应物</th><th>收集方法</th><th>干燥剂</th></tr>
+<tr><td>O₂</td><td>KClO₃ + MnO₂ 加热；或 H₂O₂ + MnO₂</td><td>排水法或向上排空气</td><td>浓硫酸</td></tr>
+<tr><td>Cl₂</td><td>MnO₂ + 浓盐酸，加热</td><td>向上排空气（或排饱和食盐水）</td><td>浓硫酸</td></tr>
+<tr><td>NH₃</td><td>NH₄Cl + Ca(OH)₂ 加热</td><td>向下排空气</td><td>碱石灰</td></tr>
+<tr><td>SO₂</td><td>Na₂SO₃ + 较浓硫酸</td><td>向上排空气</td><td>浓硫酸</td></tr>
+<tr><td>NO</td><td>Cu + 稀硝酸</td><td>排水法（不能用排空气）</td><td>不能干燥（会与空气反应）</td></tr>
+<tr><td>C₂H₄</td><td>乙醇 + 浓硫酸，170 ℃</td><td>排水法</td><td>碱石灰</td></tr>
+</table>
+
+<h4>3. 实验设计与评价</h4>
+<div class="callout blue">
+<span class="tag">四个必答的"为什么"</span>
+<strong>为什么先通一段时间气体再加热？</strong>排尽装置内空气，防止爆炸或氧化。<br>
+<strong>为什么要有防倒吸装置？</strong>易溶气体（NH₃、HCl）被吸收时压强骤降，液体会倒吸。<br>
+<strong>为什么末端要有尾气处理？</strong>有毒气体（Cl₂、SO₂、NO₂、CO）不能直接排空。<br>
+<strong>为什么要在装置之间加干燥或除杂？</strong>杂质会干扰后续检验或反应。
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>装置连接顺序</strong>：发生 → 除杂 → 干燥 → 主体反应 → 收集 → 尾气处理。干燥和除杂的先后要看除杂试剂是不是水溶液。</li>
+<li><strong>物质检验的方案设计</strong>：先说取样、加试剂、看现象、得结论，四句话写全。特别注意"排除干扰"这一步是得分点。</li>
+<li><strong>定量实验误差分析</strong>：明确测什么、由什么量算出、哪个步骤会让这个量偏大或偏小。</li>
+<li><strong>气密性检查</strong>：微热法或液差法，答题格式是"……后，若……，则气密性良好"。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>排水法与排空气法</td><td>能用排水法的前提是气体不溶于水且不与水反应。NO₂、NH₃、HCl 不能用排水法</td></tr>
+<tr><td>干燥剂的选择</td><td>浓硫酸不能干燥 NH₃；碱石灰不能干燥 CO₂、SO₂、Cl₂；无水 CaCl₂ 不能干燥 NH₃</td></tr>
+<tr><td>检验 SO₄²⁻ 先加什么</td><td>先加稀盐酸，不是稀硝酸，也不是氯化钡（先加 BaCl₂ 会把 Ag⁺ 等干扰带进来）</td></tr>
+<tr><td>洗涤沉淀用什么</td><td>用蒸馏水或乙醇，不能用滤液（会把杂质带回来）</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+装置顺序：<b>发生—除杂—干燥—主体—收集—尾气</b>。<br>
+检验四句话：<b>取少量、加试剂、说现象、下结论</b>。少一句都要扣分。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　用下图思路制取并收集干燥纯净的氯气：MnO₂ 与浓盐酸共热 → 饱和食盐水 → 浓硫酸 → 向上排空气收集 → NaOH 溶液吸收尾气。回答：</p>
+<p class="opt">(1) 饱和食盐水的作用是什么？(2) 为什么用向上排空气法收集？(3) 尾气为什么必须处理？</p>
+<p><strong>(1)</strong> 除去 Cl₂ 中混有的 HCl 气体。Cl₂ 在饱和食盐水中溶解度很小（同离子效应），损失可忽略，而 HCl 极易溶被吸收。</p>
+<p><strong>(2)</strong> Cl₂ 的密度比空气大（相对分子质量 71 &gt; 29），且能与水反应，所以不能用排水法。</p>
+<p><strong>(3)</strong> Cl₂ 有毒，直接排放会污染空气，用 NaOH 溶液吸收：Cl₂ + 2NaOH = NaCl + NaClO + H₂O。</p>
+<div class="callout red">
+<span class="tag">顺序不能颠倒</span>
+如果先浓硫酸再饱和食盐水，气体通过食盐水时又会带出水蒸气，前面的干燥白做。凡"除杂 + 干燥"同时出现，<em>除杂（水溶液）一定在干燥之前</em>。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列气体中，不能用浓硫酸干燥的是（　）</p>
+<p class="opt">A. Cl₂　B. SO₂　C. NH₃　D. CO₂</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>NH₃ 是碱性气体，会与浓硫酸反应生成 (NH₄)₂SO₄，所以不能用浓硫酸干燥，应改用碱石灰。其余三种都是酸性或中性气体，可用浓硫酸干燥。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 设计实验证明某白色固体中含有 Na₂CO₃ 和 NaCl，写出操作步骤、现象和结论。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p><strong>步骤 1：</strong>取少量固体溶于水配成溶液，加入足量稀硝酸，产生气泡，说明含 CO₃²⁻。</p>
+<p><strong>步骤 2：</strong>将上述溶液煮沸赶尽 CO₂（或用足量稀硝酸酸化），再滴加 AgNO₃ 溶液，产生白色沉淀，说明含 Cl⁻。</p>
+<p><strong>结论：</strong>固体中含 Na₂CO₃ 和 NaCl。</p>
+<p>关键点：必须<em>先加足量稀硝酸</em>排除 CO₃²⁻ 的干扰（Ag₂CO₃ 也是白色沉淀），否则无法证明 Cl⁻ 的存在。用稀盐酸也不行，因为引入了 Cl⁻。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="c13"><span class="no">跨册 · 通用</span>化学与 STSE</h2>
+<p class="topic-meta">选择题第一题的位置，3–6 分。背不背差别很大，但量不大。</p>
+
+<table class="tbl">
+<tr><th>主题</th><th>必记内容</th></tr>
+<tr><td>能源</td><td>化石燃料（煤、石油、天然气）不可再生；新能源有太阳能、风能、核能、氢能、生物质能。氢能热值高、产物只有水</td></tr>
+<tr><td>环境</td><td>酸雨主要成分 SO₂ 和 NOₓ（pH &lt; 5.6）；光化学烟雾来自氮氧化物和碳氢化合物；臭氧层空洞与氟氯代烷有关；温室效应主要是 CO₂ 和 CH₄；水体富营养化是氮磷过量导致</td></tr>
+<tr><td>材料</td><td>三大传统材料：水泥、玻璃、陶瓷。三大合成材料：塑料、合成纤维、合成橡胶。合金硬度大于成分金属，熔点更低</td></tr>
+<tr><td>健康</td><td>食盐加碘（KIO₃）防甲状腺肿大；缺铁导致贫血；维生素 C 有还原性，可作抗氧化剂；甲醛、亚硝酸钠有毒或致癌</td></tr>
+<tr><td>生活</td><td>明矾净水（Al³⁺ 水解）；漂白粉（Ca(ClO)₂ 与 CaCl₂ 的混合物）；小苏打用于发酵和治胃酸过多</td></tr>
+</table>
+
+<div class="callout">
+<span class="tag">这一节的答题策略</span>
+STSE 题不需要推理，需要的是"知道或不知道"。重点看选项里有没有<em>绝对化</em>的表述（"完全""彻底""没有任何污染"），有这种词的选项基本都是错的。另外把最近三年的社会热点（碳中和、可降解塑料、新型电池）对应的化学原理过一遍就够。
+</div>
+
+<footer>
+<p>材料按人教版 2019 版教材顺序编排，覆盖必修第一册、必修第二册与选择性必修 1–3。文中"教材第几章"的标注以通行版本为准，不同地区章节编号可能略有差异。</p>
+<p>交互图全部用画布实时绘制，不依赖网络。拖动滑块、点按钮即可操作。</p>
+</footer>
+
+</main>
+</div>
+<script>
+"use strict";
+var COL = {
+  text:'#1b1f24', muted:'#5d646d', line:'#e4e7ec', soft:'#f1f4f8',
+  blue:'#2563eb', red:'#c93a3a', green:'#0f8a5f', amber:'#b45309', violet:'#7c3aed'
+};
+function prep(id, W, H){
+  var c = document.getElementById(id);
+  if(!c) return null;
+  c.width = W*2; c.height = H*2;
+  c.style.width = '100%'; c.style.height = 'auto';
+  var g = c.getContext('2d');
+  g.setTransform(2,0,0,2,0,0);
+  g.clearRect(0,0,W,H);
+  g.font = '13px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textBaseline = 'middle';
+  return g;
+}
+function arrow(g, x1,y1,x2,y2, color, w, head){
+  head = head || 9;
+  var dx=x2-x1, dy=y2-y1, L=Math.hypot(dx,dy);
+  if(L < 0.5) return;
+  var ux=dx/L, uy=dy/L;
+  g.strokeStyle=color; g.fillStyle=color; g.lineWidth=w||2;
+  g.beginPath(); g.moveTo(x1,y1);
+  g.lineTo(x2-ux*head*0.85, y2-uy*head*0.85); g.stroke();
+  g.beginPath();
+  g.moveTo(x2,y2);
+  g.lineTo(x2-ux*head - uy*head*0.42, y2-uy*head + ux*head*0.42);
+  g.lineTo(x2-ux*head + uy*head*0.42, y2-uy*head - ux*head*0.42);
+  g.closePath(); g.fill();
+}
+function label(g, txt, x, y, color, align, size){
+  g.fillStyle = color || COL.text;
+  g.font = (size||12) + 'px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textAlign = align || 'center';
+  g.fillText(txt, x, y);
+  g.textAlign = 'left';
+}
+function roundRect(g,x,y,w,h,r){
+  g.beginPath();
+  g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r);
+  g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath();
+}
+
+/* ============================================================
+   图 1-1  氧化还原的两座桥
+   ============================================================ */
+(function(){
+  var W=680, H=286;
+  var RX = [
+    { eq:'2Na + Cl₂ = 2NaCl',
+      red:{ name:'Na（钠单质）', from:'0 价', to:'NaCl 中的 Na：+1 价', e:2 },
+      oxi:{ name:'Cl₂（氯气）',  from:'0 价', to:'NaCl 中的 Cl：−1 价', e:2 },
+      prod:'产物 NaCl 既是氧化产物，又是还原产物' },
+    { eq:'Fe + CuSO₄ = FeSO₄ + Cu',
+      red:{ name:'Fe（铁）', from:'0 价', to:'FeSO₄ 中的 Fe：+2 价', e:2 },
+      oxi:{ name:'CuSO₄（硫酸铜）', from:'+2 价', to:'Cu 单质：0 价', e:2 },
+      prod:'氧化产物 FeSO₄，还原产物 Cu' },
+    { eq:'MnO₂ + 4HCl(浓) --Δ--> MnCl₂ + Cl₂↑ + 2H₂O',
+      red:{ name:'HCl（浓盐酸）', from:'Cl：−1 价', to:'Cl₂ 中的 Cl：0 价', e:2 },
+      oxi:{ name:'MnO₂（二氧化锰）', from:'Mn：+4 价', to:'MnCl₂ 中的 Mn：+2 价', e:2 },
+      prod:'氧化产物 Cl₂，还原产物 MnCl₂；4 mol HCl 中只有 2 mol 被氧化' },
+    { eq:'Cl₂ + 2NaOH = NaCl + NaClO + H₂O',
+      red:{ name:'Cl₂（作还原剂的那一半）', from:'0 价', to:'NaClO 中的 Cl：+1 价', e:1 },
+      oxi:{ name:'Cl₂（作氧化剂的那一半）', from:'0 价', to:'NaCl 中的 Cl：−1 价', e:1 },
+      prod:'歧化反应：同一物质既被氧化又被还原' }
+  ];
+  var idx = 0;
+
+  function box(g, x, y, w, h, title, sub, color){
+    g.fillStyle = '#fff';
+    g.strokeStyle = color; g.lineWidth = 1.4;
+    roundRect(g, x, y, w, h, 9); g.fill(); g.stroke();
+    label(g, title, x+w/2, y+22, color, 'center', 13.5);
+    label(g, sub, x+w/2, y+44, COL.muted, 'center', 12);
+  }
+
+  function draw(){
+    var g = prep('cv-redox', W, H);
+    if(!g) return;
+    var d = RX[idx];
+    var bw = 196, bh = 60, lx = 26, rx = W-26-bw;
+
+    /* 方程式 */
+    g.fillStyle = '#f4f7fd'; roundRect(g, 20, 14, W-40, 40, 9); g.fill();
+    label(g, d.eq, W/2, 35, '#26313d', 'center', 14.5);
+
+    /* 上：失电子 */
+    box(g, lx, 76, bw, bh, '还原剂　' + d.red.name, '化合价 ' + d.red.from, COL.red);
+    box(g, rx, 76, bw, bh, '氧化产物', d.red.to, COL.red);
+    arrow(g, lx+bw+8, 106, rx-8, 106, COL.red, 1.6, 9);
+    label(g, '失 ' + d.red.e + 'e⁻　化合价升高　被氧化', W/2, 92, COL.red, 'center', 12.5);
+    label(g, '（还原剂发生氧化反应）', W/2, 120, '#b97575', 'center', 11);
+
+    /* 下：得电子 */
+    box(g, lx, 176, bw, bh, '氧化剂　' + d.oxi.name, '化合价 ' + d.oxi.from, COL.blue);
+    box(g, rx, 176, bw, bh, '还原产物', d.oxi.to, COL.blue);
+    arrow(g, rx-8, 206, lx+bw+8, 206, COL.blue, 1.6, 9);
+    label(g, '得 ' + d.oxi.e + 'e⁻　化合价降低　被还原', W/2, 192, COL.blue, 'center', 12.5);
+    label(g, '（氧化剂发生还原反应）', W/2, 220, '#8398c4', 'center', 11);
+
+    /* 中间电子数 */
+    g.strokeStyle = '#d9dee6'; g.lineWidth = 1; g.setLineDash([4,4]);
+    g.beginPath(); g.moveTo(W/2, 136); g.lineTo(W/2, 176); g.stroke();
+    g.setLineDash([]);
+    g.fillStyle = '#fff'; g.strokeStyle = '#c9d2df'; g.lineWidth = 1;
+    roundRect(g, W/2-64, 142, 128, 26, 13); g.fill(); g.stroke();
+    label(g, '转移电子 ' + d.red.e + ' mol（守恒）', W/2, 155, '#3d4855', 'center', 12);
+
+    label(g, d.prod, W/2, 262, COL.muted, 'center', 12.5);
+
+    var out = document.getElementById('rx-out');
+    if(out){
+      out.innerHTML =
+        '<div>还原剂<b>'+ d.red.name.replace(/（.*?）/,'') +'</b>失电子，被氧化</div>' +
+        '<div>氧化剂<b>'+ d.oxi.name.replace(/（.*?）/,'') +'</b>得电子，被还原</div>' +
+        '<div class="ok">转移电子<b>'+ d.red.e +' mol</b>每摩尔反应</div>' +
+        '<div>计算依据<b>电子守恒</b>得失相等</div>';
+    }
+  }
+
+  var seg = document.getElementById('rx-pick');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      idx = +b.dataset.i; draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 2-1  物质的量换算
+   ============================================================ */
+(function(){
+  var W=680, H=252;
+  var SUB = [
+    {f:'H₂O',   M:18,   gas:false, note:'水，常温下是液体'},
+    {f:'NaCl',  M:58.5, gas:false, note:'氯化钠，离子化合物'},
+    {f:'CO₂',   M:44,   gas:true,  note:'二氧化碳，标况下是气体'},
+    {f:'H₂SO₄', M:98,   gas:false, note:'硫酸，液体'},
+    {f:'O₂',    M:32,   gas:true,  note:'氧气，标况下是气体'}
+  ];
+  var i = 0, m = 18;
+
+  function sci(x){
+    if(x === 0) return '0';
+    var e = Math.floor(Math.log10(x));
+    var mant = x / Math.pow(10, e);
+    return mant.toFixed(2) + '×10' + String(e).replace(/-/g,'⁻').replace(/0/g,'⁰').replace(/1/g,'¹').replace(/2/g,'²').replace(/3/g,'³').replace(/4/g,'⁴').replace(/5/g,'⁵').replace(/6/g,'⁶').replace(/7/g,'⁷').replace(/8/g,'⁸').replace(/9/g,'⁹');
+  }
+
+  function node(g, x, y, r, big, small, color){
+    g.fillStyle = '#fff'; g.strokeStyle = color; g.lineWidth = 1.6;
+    g.beginPath(); g.arc(x, y, r, 0, 7); g.fill(); g.stroke();
+    label(g, big, x, y-9, color, 'center', 13);
+    label(g, small, x, y+11, '#8b96a3', 'center', 10.5);
+  }
+
+  function draw(){
+    var g = prep('cv-mol', W, H);
+    if(!g) return;
+    var s = SUB[i];
+    var n = m / s.M;
+    var N = n * 6.02e23;
+    var V = s.gas ? n * 22.4 : 0;
+
+    label(g, '宏观 ←────────── 桥梁 ──────────→ 微观', W/2, 20, '#a6aeb9', 'center', 12);
+
+    node(g, 104, 96, 52, m.toFixed(0) + ' g', '质量 m', COL.amber);
+    node(g, 300, 96, 52, n.toFixed(3) + ' mol', '物质的量 n', COL.blue);
+    node(g, 508, 56, 46, sci(N), '微粒数 N', COL.green);
+    node(g, 508, 168, 46, s.gas ? V.toFixed(1) + ' L' : '—', '标况体积 V', COL.violet);
+
+    arrow(g, 158, 96, 244, 96, '#c3ccd8', 1.6, 9);
+    label(g, '÷ M = ' + s.M, 200, 78, COL.muted, 'center', 11.5);
+    label(g, 'g/mol', 200, 114, '#a6aeb9', 'center', 10.5);
+
+    arrow(g, 354, 84, 458, 62, '#c3ccd8', 1.6, 9);
+    label(g, '× N_A', 404, 60, COL.muted, 'center', 11.5);
+
+    arrow(g, 354, 110, 458, 158, '#c3ccd8', 1.6, 9);
+    label(g, '× 22.4', 398, 148, COL.muted, 'center', 11.5);
+    if(!s.gas){ label(g, '非气体，无此换算', 508, 205, '#c0c7d1', 'center', 11); }
+
+    g.fillStyle = '#f4f7fd'; roundRect(g, 24, 208, W-48, 30, 8); g.fill();
+    label(g, s.f + '：M = ' + s.M + ' g/mol，' + s.note, W/2, 223, '#3d4855', 'center', 12.5);
+
+    var out = document.getElementById('mo-out');
+    if(out){
+      out.innerHTML =
+        '<div>物质的量 n<b>' + n.toFixed(3) + ' mol</b></div>' +
+        '<div>微粒数 N<b>' + sci(N) + '</b></div>' +
+        '<div>标况体积<b>' + (s.gas ? V.toFixed(2) + ' L' : '不适用') + '</b></div>' +
+        '<div>质量 m<b>' + m.toFixed(0) + ' g</b></div>';
+    }
+  }
+
+  var seg = document.getElementById('mo-pick');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); i = +b.dataset.i; draw();
+    });
+  }
+  var sl = document.getElementById('mo-m');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      m = +e.target.value;
+      document.getElementById('mo-mv').textContent = m + ' g';
+      draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 3-1  元素周期表
+   ============================================================ */
+(function(){
+  var W=680, H=336;
+  var EL = [
+    ['H','氢',1,1,1,37,2.10,'1s¹'],      ['He','氦',2,1,8,null,null,'1s²'],
+    ['Li','锂',3,2,1,152,0.98,'1s²2s¹'], ['Be','铍',4,2,2,111,1.57,'1s²2s²'],
+    ['B','硼',5,2,3,88,2.04,'1s²2s²2p¹'],['C','碳',6,2,4,77,2.55,'1s²2s²2p²'],
+    ['N','氮',7,2,5,70,3.04,'1s²2s²2p³'],['O','氧',8,2,6,66,3.44,'1s²2s²2p⁴'],
+    ['F','氟',9,2,7,64,3.98,'1s²2s²2p⁵'],['Ne','氖',10,2,8,null,null,'1s²2s²2p⁶'],
+    ['Na','钠',11,3,1,186,0.93,'1s²2s²2p⁶3s¹'],['Mg','镁',12,3,2,160,1.31,'…3s²'],
+    ['Al','铝',13,3,3,143,1.61,'…3s²3p¹'],['Si','硅',14,3,4,117,1.90,'…3p²'],
+    ['P','磷',15,3,5,110,2.19,'…3p³'],   ['S','硫',16,3,6,104,2.58,'…3p⁴'],
+    ['Cl','氯',17,3,7,99,3.16,'…3p⁵'],   ['Ar','氩',18,3,8,null,null,'…3p⁶'],
+    ['K','钾',19,4,1,227,0.82,'…4s¹'],   ['Ca','钙',20,4,2,197,1.00,'…4s²']
+  ];
+  var GNAME = ['','ⅠA','ⅡA','ⅢA','ⅣA','ⅤA','ⅥA','ⅦA','0'];
+  var CW=64, CH=42, GAP=4, X0=70, Y0=44;
+  var mode = 0, sel = 7;  // 默认选中 O
+
+  function cellX(g){ return X0 + (g-1)*(CW+GAP); }
+  function cellY(p){ return Y0 + (p-1)*(CH+GAP); }
+
+  function colorOf(el){
+    if(el[4] === 8 || el[5] === null) return mode === 2 ? '#ffffff' : '#f3f5f8';
+    if(mode === 2) return '#ffffff';
+    if(mode === 0){
+      var t = Math.max(0, Math.min(1, (el[5]-37)/(227-37)));
+      return 'hsl(' + (215 - 195*t) + ',72%,' + (86 - 8*t) + '%)';
+    }
+    var t2 = Math.max(0, Math.min(1, ((el[6]||2)-0.8)/(3.98-0.8)));
+    return 'hsl(' + (32 + 185*t2) + ',68%,80%)';
+  }
+
+  function draw(){
+    var g = prep('cv-pt', W, H);
+    if(!g) return;
+    label(g, '元素周期表（短周期部分 + K、Ca）', W/2, 20, COL.muted, 'center', 12.5);
+
+    for(var gj=1; gj<=8; gj++){
+      label(g, GNAME[gj], cellX(gj)+CW/2, Y0-12, '#8b96a3', 'center', 11.5);
+    }
+    for(var p=1; p<=4; p++){
+      label(g, '第' + p + '周期', X0-10, cellY(p)+CH/2, '#8b96a3', 'right', 11);
+    }
+
+    for(var r=1; r<=4; r++){
+      for(var c=1; c<=8; c++){
+        var x = cellX(c), y = cellY(r);
+        var el = null;
+        for(var k=0;k<EL.length;k++){ if(EL[k][3]===r && EL[k][4]===c){ el = EL[k]; break; } }
+        g.lineWidth = 1;
+        if(!el){
+          g.fillStyle = '#fafbfc'; g.strokeStyle = '#eef1f5';
+          roundRect(g, x, y, CW, CH, 6); g.fill(); g.stroke();
+          continue;
+        }
+        g.fillStyle = colorOf(el);
+        g.strokeStyle = (EL.indexOf(el) === sel) ? COL.blue : '#ffffff';
+        g.lineWidth = (EL.indexOf(el) === sel) ? 2.2 : 1;
+        roundRect(g, x, y, CW, CH, 6); g.fill(); g.stroke();
+        label(g, el[0], x+CW/2, y+16, '#1b1f24', 'center', 15);
+        label(g, el[2], x+CW/2, y+31, '#5d646d', 'center', 10);
+      }
+    }
+
+    label(g, '第四周期 ⅢA–ⅦA 及副族未列出', W/2, 254, '#a6aeb9', 'center', 11);
+
+    var e = EL[sel];
+    var gname = (e[4] === 8) ? '0 族' : GNAME[e[4]] + ' 族';
+    var info = [
+      ['元素', e[1] + '（' + e[0] + '）'],
+      ['原子序数', e[2]],
+      ['位置', '第 ' + e[3] + ' 周期　' + gname],
+      ['电子排布', e[7]],
+      ['原子半径', e[5] ? e[5] + ' pm' : '—'],
+      ['电负性', e[6] ? e[6].toFixed(2) : '—']
+    ];
+
+    var out = document.getElementById('pt-out');
+    if(out){
+      out.innerHTML = info.map(function(it){
+        return '<div>' + it[0] + '<b>' + it[1] + '</b></div>';
+      }).join('');
+    }
+
+    label(g, mode===0 ? '颜色越红 → 半径越大（同周期左大右小、同族上小下大）'
+        : (mode===1 ? '颜色越红 → 金属性越强（同周期左强右弱、同族上弱下强）'
+        : '点任意元素查看数据'), W/2, 278, COL.muted, 'center', 11.5);
+    label(g, mode===0 ? '当前：按原子半径着色' : (mode===1 ? '当前：按金属性（用电负性反映）着色' : '当前：不染色'),
+          W/2, 300, '#a6aeb9', 'center', 11);
+  }
+
+  var cvs = document.getElementById('cv-pt');
+  if(cvs){
+    cvs.addEventListener('click', function(ev){
+      var r = cvs.getBoundingClientRect();
+      var x = (ev.clientX - r.left) / r.width * W;
+      var y = (ev.clientY - r.top) / r.height * H;
+      var c = Math.floor((x - X0) / (CW+GAP)) + 1;
+      var p = Math.floor((y - Y0) / (CH+GAP)) + 1;
+      if(c < 1 || c > 8 || p < 1 || p > 4) return;
+      for(var k=0;k<EL.length;k++){
+        if(EL[k][3]===p && EL[k][4]===c){ sel = k; draw(); return; }
+      }
+    });
+  }
+  var seg = document.getElementById('pt-mode');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); mode = +b.dataset.i; draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 6-1  化学平衡
+   ============================================================ */
+(function(){
+  var W=680, H=326;
+  var T = 500, P = 100;
+  var hist = [], running = true, timer = null;
+  var vf = 1, vb = 1, target = 1, note = '平衡状态：正反应速率 = 逆反应速率';
+  var dir = 0;
+
+  function kp(Tk){ return 6e-4 * Math.exp(11113 * (1/Tk - 1/700)); }
+
+  function extent(Tk, Pb){
+    var K = kp(Tk) * Pb * Pb;
+    var lo = 1e-4, hi = 0.998;
+    for(var it=0; it<80; it++){
+      var mid = (lo+hi)/2;
+      var f = 4*mid*mid*Math.pow(4-2*mid,2) / (27*Math.pow(1-mid,4));
+      if(f < K) lo = mid; else hi = mid;
+    }
+    return (lo+hi)/2;
+  }
+
+  function reset(msg){ note = msg; }
+
+  function nudge(kind){
+    if(kind === 'Tup'){ vf = 1.32; vb = 1.62; dir = -1; reset('升温：正逆速率都增大，但逆反应增大得更多'); }
+    if(kind === 'Tdown'){ vf = 0.80; vb = 0.62; dir = 1; reset('降温：正逆速率都减小，但逆反应减小得更多'); }
+    if(kind === 'Pup'){ vf = 1.42; vb = 1.16; dir = 1; reset('加压：向气体分子数减少的方向（正反应）移动'); }
+    if(kind === 'Pdown'){ vf = 0.74; vb = 0.92; dir = -1; reset('减压：向气体分子数增多的方向（逆反应）移动'); }
+    if(kind === 'add'){ vf = 1.55; dir = 1; reset('加反应物：正反应速率瞬间增大，逆反应暂时不变'); }
+    if(kind === 'cut'){ vb = 0.52; vf = 1.0; dir = 1; reset('移走产物：逆反应速率骤降，正反应相对占优'); }
+    if(kind === 'cat'){ vf = 1.34; vb = 1.34; dir = 0; reset('加催化剂：正逆速率同等程度增大，平衡不移动'); }
+    hist.length = 0;
+  }
+
+  function tick(){
+    if(!running) return;
+    vf += (target - vf) * 0.07;
+    vb += (target - vb) * 0.07;
+    if(Math.abs(vf-target) < 0.004) vf = target;
+    if(Math.abs(vb-target) < 0.004) vb = target;
+    hist.push([vf, vb]);
+    if(hist.length > 160) hist.shift();
+    draw();
+  }
+
+  function draw(){
+    var g = prep('cv-eq', W, H);
+    if(!g) return;
+    var xi = extent(T, P);
+    var conv = xi * 100;
+    var ynh3 = 2*xi/(4-2*xi) * 100;
+
+    /* 左：转化率柱 */
+    var bx = 76, by0 = 236, bh = 150;
+    g.strokeStyle = '#e4e7ec'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(bx-30, by0); g.lineTo(bx-30, by0-bh-10); g.stroke();
+    for(var i=0;i<=4;i++){
+      var yy = by0 - bh*i/4;
+      g.strokeStyle = '#f0f2f6';
+      g.beginPath(); g.moveTo(bx-30, yy); g.lineTo(bx+120, yy); g.stroke();
+      label(g, (i*25)+'%', bx-36, yy, '#a6aeb9', 'right', 10);
+    }
+    g.fillStyle = '#dbe7fb';
+    roundRect(g, bx, by0-bh*conv/100, 40, bh*conv/100, 4); g.fill();
+    g.fillStyle = COL.blue;
+    roundRect(g, bx, by0-bh*conv/100, 40, bh*conv/100, 4); g.fill();
+    label(g, conv.toFixed(1) + '%', bx+20, by0-bh*conv/100-14, COL.blue, 'center', 13.5);
+    label(g, 'N₂ 转化率', bx+20, by0+16, '#6b7580', 'center', 11.5);
+
+    /* NH3 含量小柱 */
+    g.fillStyle = '#c7ead9';
+    roundRect(g, bx+62, by0-bh*ynh3/100, 22, bh*ynh3/100, 4); g.fill();
+    label(g, ynh3.toFixed(0)+'%', bx+73, by0-bh*ynh3/100-14, COL.green, 'center', 12);
+    label(g, 'NH₃ 含量', bx+73, by0+16, '#6b7580', 'center', 11);
+
+    label(g, '平衡状态', 46, 34, '#8b96a3', 'left', 12);
+    label(g, 'ΔH < 0（放热）', 46, 54, '#8b96a3', 'left', 11.5);
+
+    /* 右：速率-时间 */
+    var gx0 = 300, gx1 = W-28, gy0 = 60, gy1 = 236;
+    g.strokeStyle = '#dfe4ea'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(gx0, gy1); g.lineTo(gx1, gy1); g.stroke();
+    g.beginPath(); g.moveTo(gx0, gy1); g.lineTo(gx0, gy0); g.stroke();
+    arrow(g, gx1-8, gy1, gx1, gy1, '#dfe4ea', 1, 6);
+    arrow(g, gx0, gy0+8, gx0, gy0, '#dfe4ea', 1, 6);
+    label(g, 't', gx1-2, gy1+14, '#a6aeb9', 'right', 11.5);
+    label(g, 'v', gx0-6, gy0+4, '#a6aeb9', 'right', 11.5);
+
+    var maxV = 1.9;
+    function py(v){ return gy1 - (v/maxV)*(gy1-gy0); }
+
+    if(hist.length > 1){
+      var step = (gx1-gx0) / 159;
+      g.lineWidth = 1.8;
+      g.strokeStyle = COL.red;
+      g.beginPath();
+      for(var i2=0;i2<hist.length;i2++){
+        var X = gx0 + i2*step, Y = py(hist[i2][0]);
+        if(i2===0) g.moveTo(X,Y); else g.lineTo(X,Y);
+      }
+      g.stroke();
+      g.strokeStyle = COL.blue;
+      g.beginPath();
+      for(var i3=0;i3<hist.length;i3++){
+        var X2 = gx0 + i3*step, Y2 = py(hist[i3][1]);
+        if(i3===0) g.moveTo(X2,Y2); else g.lineTo(X2,Y2);
+      }
+      g.stroke();
+    }
+
+    label(g, 'v正', gx1-30, py(vf)-12, COL.red, 'center', 12);
+    label(g, 'v逆', gx1-30, py(vb)+16, COL.blue, 'center', 12);
+
+    /* 状态提示 */
+    var state = '平衡：v正 = v逆';
+    var c = '#6b7580';
+    if(vf - vb > 0.05){ state = '正向移动：v正 > v逆'; c = COL.red; }
+    else if(vb - vf > 0.05){ state = '逆向移动：v逆 > v正'; c = COL.blue; }
+    else { c = COL.green; }
+    label(g, state, (gx0+gx1)/2, gy1+22, c, 'center', 12.5);
+
+    g.fillStyle = '#f6f8fc'; roundRect(g, gx0, 20, gx1-gx0, 26, 7); g.fill();
+    label(g, note, (gx0+gx1)/2, 33, '#4a5460', 'center', 11.5);
+
+    var out = document.getElementById('eq-out');
+    if(out){
+      out.innerHTML =
+        '<div>温度<b>' + T + ' K</b></div>' +
+        '<div>压强<b>' + P + ' bar</b></div>' +
+        '<div class="ok">平衡转化率<b>' + conv.toFixed(1) + '%</b></div>' +
+        '<div>NH₃ 体积分数<b>' + ynh3.toFixed(1) + '%</b></div>';
+    }
+  }
+
+  var sT = document.getElementById('eq-T');
+  if(sT){
+    sT.addEventListener('input', function(e){
+      var nv = +e.target.value;
+      nudge(nv > T ? 'Tup' : 'Tdown');
+      T = nv;
+      document.getElementById('eq-Tv').textContent = T + ' K';
+      draw();
+    });
+  }
+  var sP = document.getElementById('eq-P');
+  if(sP){
+    sP.addEventListener('input', function(e){
+      var nv = +e.target.value;
+      nudge(nv > P ? 'Pup' : 'Pdown');
+      P = nv;
+      document.getElementById('eq-Pv').textContent = P + ' bar';
+      draw();
+    });
+  }
+  var bAdd = document.getElementById('eq-add');
+  if(bAdd) bAdd.addEventListener('click', function(){ nudge('add'); draw(); });
+  var bCut = document.getElementById('eq-cut');
+  if(bCut) bCut.addEventListener('click', function(){ nudge('cut'); draw(); });
+  var bCat = document.getElementById('eq-cat');
+  if(bCat) bCat.addEventListener('click', function(){ nudge('cat'); draw(); });
+
+  timer = setInterval(tick, 60);
+  draw();
+})();
+
+/* ============================================================
+   图 7-1  滴定曲线
+   ============================================================ */
+(function(){
+  var W=680, H=344;
+  var mode = 0, vNow = 0;
+  var pKa = 4.74, Ka = 1.8e-5, Kw = 1e-14;
+
+  function pHstrong(v){
+    var na = 2.0, nb = 0.1*v, V = 20 + v;
+    if(Math.abs(na-nb) < 1e-9) return 7;
+    if(na > nb) return -Math.log10((na-nb)/V);
+    return 14 + Math.log10((nb-na)/V);
+  }
+  function pHweak(v){
+    var CA = 2.0/(20+v), CNa = 0.1*v/(20+v);
+    var lo = -15, hi = 0;
+    for(var i=0;i<100;i++){
+      var mid = (lo+hi)/2, h = Math.pow(10, mid);
+      var g = h + CNa - CA*Ka/(Ka+h) - Kw/h;
+      if(g > 0) hi = mid; else lo = mid;
+    }
+    return -((lo+hi)/2);
+  }
+  function pH(v){ return mode === 0 ? pHstrong(v) : pHweak(v); }
+
+  function draw(){
+    var g = prep('cv-titr', W, H);
+    if(!g) return;
+    var x0 = 58, x1 = W-30, y0 = 44, y1 = 268;
+    function px(v){ return x0 + v/40*(x1-x0); }
+    function py(p){ return y1 - p/14*(y1-y0); }
+
+    /* 指示剂色带 */
+    var bands = [
+      {lo:3.1, hi:4.4, c:'rgba(233,160,60,.16)', t:'甲基橙 3.1–4.4'},
+      {lo:8.2, hi:10, c:'rgba(214,86,138,.14)', t:'酚酞 8.2–10.0'}
+    ];
+    for(var b=0;b<bands.length;b++){
+      g.fillStyle = bands[b].c;
+      g.fillRect(x0, py(bands[b].hi), x1-x0, py(bands[b].lo)-py(bands[b].hi));
+      label(g, bands[b].t, x1-6, py(bands[b].hi)+10, '#8b96a3', 'right', 10.5);
+    }
+
+    /* 网格 */
+    g.strokeStyle = '#eef1f5'; g.lineWidth = 1;
+    for(var p=0;p<=14;p+=2){
+      g.beginPath(); g.moveTo(x0, py(p)); g.lineTo(x1, py(p)); g.stroke();
+      label(g, p, x0-8, py(p), '#a6aeb9', 'right', 10.5);
+    }
+    for(var v=0;v<=40;v+=10){
+      label(g, v, px(v), y1+15, '#a6aeb9', 'center', 10.5);
+    }
+    g.strokeStyle = '#dfe4ea';
+    g.beginPath(); g.moveTo(x0, y1); g.lineTo(x1, y1); g.stroke();
+    g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.stroke();
+    label(g, 'pH', x0-8, y0-14, '#8b96a3', 'right', 11.5);
+    label(g, 'V(NaOH) / mL', x1, y1+34, '#8b96a3', 'right', 11.5);
+
+    /* 全曲线 */
+    g.strokeStyle = mode===0 ? '#b9cdf3' : '#cfe6da';
+    g.lineWidth = 2;
+    g.beginPath();
+    for(var vv=0; vv<=40; vv+=0.1){
+      var X = px(vv), Y = py(pH(vv));
+      if(vv===0) g.moveTo(X,Y); else g.lineTo(X,Y);
+    }
+    g.stroke();
+
+    /* 已走部分 */
+    g.strokeStyle = mode===0 ? COL.blue : COL.green;
+    g.lineWidth = 2.6;
+    g.beginPath();
+    for(var v2=0; v2<=vNow; v2+=0.1){
+      var X2 = px(v2), Y2 = py(pH(v2));
+      if(v2===0) g.moveTo(X2,Y2); else g.lineTo(X2,Y2);
+    }
+    g.stroke();
+
+    /* 当前点 */
+    var cx = px(vNow), cy = py(pH(vNow));
+    g.fillStyle = '#fff'; g.strokeStyle = mode===0?COL.blue:COL.green; g.lineWidth = 2;
+    g.beginPath(); g.arc(cx, cy, 5.5, 0, 7); g.fill(); g.stroke();
+    g.setLineDash([3,4]); g.strokeStyle = '#d5dbe3'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx, y1); g.stroke();
+    g.setLineDash([]);
+
+    /* 突跃标注 */
+    var lo=null, hi=null;
+    for(var v3=0; v3<=40; v3+=0.05){
+      var p3 = pH(v3);
+      if(lo===null && p3 > 4.5) lo = v3;
+      if(hi===null && p3 > 9.5) hi = v3;
+    }
+    if(lo!==null && hi!==null){
+      g.strokeStyle = 'rgba(120,130,145,.35)'; g.setLineDash([4,3]); g.lineWidth = 1;
+      g.beginPath(); g.moveTo(px(lo), y0); g.lineTo(px(lo), y1); g.stroke();
+      g.beginPath(); g.moveTo(px(hi), y0); g.lineTo(px(hi), y1); g.stroke();
+      g.setLineDash([]);
+      label(g, '突跃 ' + (hi-lo).toFixed(2) + ' mL', (px(lo)+px(hi))/2, y0-14, '#7b8492', 'center', 11);
+    }
+
+    var pv = pH(vNow);
+    var out = document.getElementById('ti-out');
+    if(out){
+      out.innerHTML =
+        '<div>加入体积<b>' + vNow.toFixed(1) + ' mL</b></div>' +
+        '<div>当前 pH<b>' + pv.toFixed(2) + '</b></div>' +
+        '<div>突跃跨度<b>' + (lo!==null&&hi!==null?(hi-lo).toFixed(2)+' mL':'—') + '</b></div>' +
+        '<div class="warn">推荐指示剂<b>' + (mode===0 ? '甲基橙/酚酞均可' : '酚酞') + '</b></div>';
+    }
+  }
+
+  var seg = document.getElementById('ti-pick');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); mode = +b.dataset.i; draw();
+    });
+  }
+  var sl = document.getElementById('ti-v');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      vNow = +e.target.value;
+      document.getElementById('ti-vv').textContent = vNow.toFixed(1) + ' mL';
+      draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 8-1  原电池
+   ============================================================ */
+(function(){
+  var W=680, H=330;
+  var mode = 0, phase = 0, running = true;
+  var electro = 0;   /* 0 稀硫酸  1 硫酸铜（仅单液） */
+
+  function wirePath(){
+    return [[300,86],[300,52],[430,52],[430,86]];
+  }
+
+  function drawElectrons(g){
+    var pts = wirePath();
+    for(var d=0; d<5; d++){
+      var s = (phase + d/5) % 1;
+      var seg = s < 0.5 ? 0 : 1;
+      var t = s < 0.5 ? s*2 : (s-0.5)*2;
+      var p1 = pts[seg], p2 = pts[seg+1];
+      var x = p1[0] + (p2[0]-p1[0])*t;
+      var y = p1[1] + (p2[1]-p1[1])*t;
+      g.fillStyle = '#f5b500';
+      g.beginPath(); g.arc(x, y, 3.6, 0, 7); g.fill();
+      g.strokeStyle = '#c99400'; g.lineWidth = 0.8; g.stroke();
+    }
+  }
+
+  function electrode(g, x, y, w, h, name, color, tag){
+    g.fillStyle = color;
+    roundRect(g, x, y, w, h, 4); g.fill();
+    g.strokeStyle = 'rgba(0,0,0,.12)'; g.lineWidth = 1; g.stroke();
+    label(g, name, x+w/2, y+h+16, '#4a5460', 'center', 12.5);
+    if(tag) label(g, tag, x+w/2, y-12, tag==='负极'?COL.blue:COL.red, 'center', 12);
+  }
+
+  function draw(){
+    var g = prep('cv-cell', W, H);
+    if(!g) return;
+
+    if(mode === 0){
+      /* 单液 */
+      g.fillStyle = electro===0 ? '#eaf3fd' : '#e4f0fb';
+      roundRect(g, 210, 150, 320, 150, 8); g.fill();
+      g.strokeStyle = '#c7d7ea'; g.lineWidth = 1.2; g.stroke();
+      label(g, electro===0 ? '稀硫酸 H₂SO₄' : '硫酸铜 CuSO₄ 溶液', 370, 286, '#5d646d', 'center', 12.5);
+
+      electrode(g, 288, 86, 24, 196, 'Zn', '#b9c0c8', '负极');
+      electrode(g, 418, 86, 24, 196, 'Cu', '#c98a4b', '正极');
+
+      /* 导线 */
+      g.strokeStyle = '#5d646d'; g.lineWidth = 1.6;
+      g.beginPath(); g.moveTo(300,86); g.lineTo(300,52); g.lineTo(430,52); g.lineTo(430,86); g.stroke();
+      drawElectrons(g);
+      label(g, 'e⁻ 由负极经导线流向正极', 365, 36, '#8a6200', 'center', 11.5);
+
+      if(electro === 0){
+        /* 气泡 */
+        for(var i=0;i<7;i++){
+          var t = (phase*2 + i*0.14) % 1;
+          var y = 250 - t*90;
+          var x = 424 + (i%3-1)*4 + Math.sin((t+i)*6)*2;
+          g.strokeStyle = 'rgba(90,150,220,.75)'; g.fillStyle = 'rgba(190,220,250,.85)';
+          g.beginPath(); g.arc(x, y, 3.2 - t*1.4, 0, 7); g.fill(); g.stroke();
+        }
+        label(g, '2H⁺ + 2e⁻ = H₂↑', 470, 130, COL.red, 'left', 12);
+      } else {
+        for(var k=0;k<6;k++){
+          var t2 = (phase + k*0.17) % 1;
+          g.fillStyle = 'rgba(201,138,75,' + (0.9-t2*0.6) + ')';
+          g.beginPath(); g.arc(430 + Math.sin(k*2.3)*7, 230 - t2*60, 3, 0, 7); g.fill();
+        }
+        label(g, 'Cu²⁺ + 2e⁻ = Cu', 470, 130, COL.red, 'left', 12);
+      }
+      label(g, 'Zn − 2e⁻ = Zn²⁺', 210, 130, COL.blue, 'right', 12);
+
+      /* 离子迁移 */
+      if(running){
+        for(var j=0;j<4;j++){
+          var tt = (phase + j*0.25) % 1;
+          g.fillStyle = 'rgba(37,99,235,.55)';
+          g.beginPath(); g.arc(330 + tt*70, 200 + j*10, 2.6, 0, 7); g.fill();
+        }
+        label(g, '阳离子 → 正极', 365, 176, '#8ba3c4', 'center', 10.5);
+      }
+    } else {
+      /* 双液 + 盐桥 */
+      g.fillStyle = '#eaf3fd';
+      roundRect(g, 150, 150, 170, 140, 8); g.fill();
+      g.strokeStyle = '#c7d7ea'; g.lineWidth = 1.2; g.stroke();
+      label(g, 'ZnSO₄', 235, 210, '#5d646d', 'center', 12.5);
+
+      g.fillStyle = '#e4f0fb';
+      roundRect(g, 420, 150, 170, 140, 8); g.fill();
+      g.strokeStyle = '#c7d7ea'; g.stroke();
+      label(g, 'CuSO₄', 505, 210, '#5d646d', 'center', 12.5);
+
+      electrode(g, 228, 86, 24, 196, 'Zn', '#b9c0c8', '负极');
+      electrode(g, 508, 86, 24, 196, 'Cu', '#c98a4b', '正极');
+
+      /* 盐桥 */
+      g.strokeStyle = '#d8a0a0'; g.lineWidth = 12;
+      g.beginPath(); g.moveTo(300, 152); g.bezierCurveTo(360, 108, 400, 108, 460, 152); g.stroke();
+      g.strokeStyle = '#f0d7d7'; g.lineWidth = 6; g.stroke();
+      label(g, '盐桥（KCl）', 380, 96, '#a06a6a', 'center', 11.5);
+
+      g.strokeStyle = '#5d646d'; g.lineWidth = 1.6;
+      g.beginPath(); g.moveTo(240,86); g.lineTo(240,52); g.lineTo(520,52); g.lineTo(520,86); g.stroke();
+      /* 电子 */
+      for(var d=0; d<5; d++){
+        var s = (phase + d/5) % 1;
+        var X = 240 + s*280, Y = 52;
+        g.fillStyle = '#f5b500';
+        g.beginPath(); g.arc(X, Y, 3.6, 0, 7); g.fill();
+        g.strokeStyle = '#c99400'; g.lineWidth = 0.8; g.stroke();
+      }
+      label(g, 'e⁻', 380, 36, '#8a6200', 'center', 11.5);
+
+      label(g, 'Zn − 2e⁻ = Zn²⁺', 206, 130, COL.blue, 'right', 12);
+      label(g, 'Cu²⁺ + 2e⁻ = Cu', 546, 130, COL.red, 'left', 12);
+    }
+
+    var out = document.getElementById('ce-out');
+    if(out){
+      if(mode === 0){
+        out.innerHTML =
+          '<div>负极<b>Zn（氧化）</b></div>' +
+          '<div>正极<b>Cu（还原）</b></div>' +
+          '<div>正极反应<b>' + (electro===0 ? '2H⁺+2e⁻=H₂↑' : 'Cu²⁺+2e⁻=Cu') + '</b></div>' +
+          '<div class="ok">电子路径<b>负极→导线→正极</b></div>';
+      } else {
+        out.innerHTML =
+          '<div>负极<b>Zn（氧化）</b></div>' +
+          '<div>正极<b>Cu（还原）</b></div>' +
+          '<div>盐桥作用<b>平衡电荷、构成回路</b></div>' +
+          '<div class="ok">电子路径<b>负极→导线→正极</b></div>';
+      }
+    }
+  }
+
+  var seg = document.getElementById('ce-mode');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); mode = +b.dataset.i; draw();
+    });
+  }
+  var br = document.getElementById('ce-run');
+  if(br){
+    br.addEventListener('click', function(e){
+      running = !running;
+      e.target.textContent = running ? '暂停' : '继续';
+    });
+  }
+  var bs = document.getElementById('ce-swap');
+  if(bs){
+    bs.addEventListener('click', function(){
+      if(mode === 0) electro = 1 - electro;
+      draw();
+    });
+  }
+
+  setInterval(function(){
+    if(running){ phase = (phase + 0.012) % 1; draw(); }
+  }, 55);
+  draw();
+})();
+
+/* ============================================================
+   侧栏高亮
+   ============================================================ */
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.side nav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var pos = window.scrollY + 140, cur = 0;
+    for(var i=0;i<secs.length;i++){
+      if(secs[i] && secs[i].offsetTop <= pos) cur = i;
+    }
+    links.forEach(function(a,i){ a.classList.toggle('on', i===cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

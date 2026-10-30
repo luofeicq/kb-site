@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高中生物 · 知识点与考点精讲（交互版）</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --text:#1b1f24; --muted:#5d646d;
+  --line:#e3e6ec; --soft:#f1f4f8; --soft2:#e6f3ea;
+  --blue:#15803d; --red:#c93a3a; --green:#0f8a5f; --amber:#b45309; --violet:#7c3aed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.9 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.layout{display:flex;max-width:1260px;margin:0 auto;gap:40px;padding:0 24px}
+.side{
+  width:224px;flex:0 0 224px;position:sticky;top:0;align-self:flex-start;
+  max-height:100vh;overflow:auto;padding:32px 0 40px;font-size:14px;
+}
+.side .brand{font-weight:700;font-size:15px;letter-spacing:.3px;color:var(--text);margin-bottom:4px}
+.side .sub{font-size:12px;color:var(--muted);margin-bottom:16px}
+.side nav a{
+  display:block;padding:5px 10px;border-radius:7px;color:var(--muted);
+  text-decoration:none;line-height:1.55;margin-bottom:1px;border-left:2px solid transparent;font-size:13.5px;
+}
+.side nav a:hover{background:var(--soft);color:var(--text)}
+.side nav a.on{background:var(--soft2);color:var(--blue);font-weight:600;border-left-color:var(--blue)}
+.side .grp{font-size:11.5px;color:#98a0aa;margin:14px 0 5px;padding-left:10px;letter-spacing:.6px}
+main{flex:1;min-width:0;padding:32px 0 120px}
+.hero{background:linear-gradient(155deg,#fff 0%,#edf7f0 100%);border:1px solid var(--line);border-radius:16px;padding:28px 32px;margin-bottom:30px}
+.hero h1{font-size:26px;margin:0 0 10px;letter-spacing:-.2px;line-height:1.35}
+.hero p{margin:0;color:var(--muted);font-size:15px}
+.hero .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero .flow span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 13px;font-size:13px;color:var(--muted)}
+.hero .flow span b{color:var(--blue);margin-right:5px}
+
+h2.topic{font-size:22px;margin:62px 0 8px;padding-left:14px;border-left:4px solid var(--blue);line-height:1.5;letter-spacing:-.2px}
+h2.topic .no{color:var(--blue);font-weight:800;margin-right:8px;font-size:15px;display:block;letter-spacing:1px;margin-bottom:-4px}
+.topic-meta{color:var(--muted);font-size:13.5px;padding-left:18px;margin:0 0 6px}
+h3{font-size:16.5px;margin:32px 0 10px;color:var(--text);position:relative;padding-left:16px}
+h3::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--blue);opacity:.55}
+h4{font-size:15px;margin:20px 0 6px;color:#2c333b}
+p{margin:11px 0}
+strong{font-weight:650}
+em{font-style:normal;color:var(--amber);font-weight:600}
+ul,ol{margin:10px 0;padding-left:26px}
+li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:52px 0}
+code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:14px;font-family:ui-monospace,Consolas,monospace}
+.eq{
+  background:var(--soft);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:10px 16px;margin:12px 0;font-family:"Cambria Math","Times New Roman",Georgia,serif;
+  font-size:16px;overflow-x:auto;line-height:1.95;letter-spacing:.3px;
+}
+.callout{background:#fdf7ec;border:1px solid #f0dfc0;border-radius:10px;padding:13px 18px;margin:15px 0;font-size:15px}
+.callout.blue{background:#eff5ff;border-color:#d3e2fb}
+.callout.green{background:#eefaf4;border-color:#c9ecdd}
+.callout.red{background:#fdf0f0;border-color:#f2d2d2}
+.callout .tag{font-weight:700;font-size:13px;letter-spacing:.4px;color:var(--amber);display:block;margin-bottom:3px}
+.callout.blue .tag{color:var(--blue)}
+.callout.green .tag{color:var(--green)}
+.callout.red .tag{color:var(--red)}
+.mnemonic{
+  background:linear-gradient(180deg,#f8f4ff,#fbf9ff);border:1px dashed #d6c9f5;border-radius:10px;
+  padding:12px 18px;margin:15px 0;font-size:15px;
+}
+.mnemonic .tag{font-weight:700;font-size:12.5px;color:var(--violet);letter-spacing:.6px;display:block;margin-bottom:3px}
+.mnemonic b{color:var(--violet)}
+
+table.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+table.tbl th{background:var(--soft);text-align:left;padding:9px 13px;font-weight:650;font-size:14px;border-bottom:1px solid var(--line)}
+table.tbl td{padding:8px 13px;border-bottom:1px solid #eff2f6;vertical-align:top;line-height:1.7}
+table.tbl tr:last-child td{border-bottom:none}
+table.tbl td:first-child{color:#333c46;font-weight:600}
+table.tbl.compact td:first-child{width:26%}
+
+.widget{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px 15px;margin:22px 0;box-shadow:0 1px 3px rgba(16,24,40,.045)}
+.widget .whead{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.widget .whead h4{margin:0;font-size:15px;color:var(--text)}
+.widget .whead .badge{font-size:11.5px;background:#eaf1fe;color:var(--blue);border-radius:20px;padding:2px 9px;font-weight:600}
+.widget .cap{font-size:13.5px;color:var(--muted);margin:2px 0 12px;line-height:1.7}
+canvas{display:block;border-radius:9px;background:#fbfcfd;border:1px solid #eef1f5;max-width:100%}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;margin-top:14px;font-size:14px;color:#39424d}
+.ctrl label{display:flex;align-items:center;gap:9px}
+.ctrl input[type=range]{width:150px;accent-color:var(--blue);cursor:pointer}
+.ctrl .val{display:inline-block;min-width:56px;font-variant-numeric:tabular-nums;color:var(--blue);font-weight:650}
+.seg{display:inline-flex;background:var(--soft);border-radius:8px;padding:2px;gap:2px}
+.seg button{border:none;background:transparent;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:13.5px;color:var(--muted);font-family:inherit;transition:.15s}
+.seg button.on{background:#fff;color:var(--blue);font-weight:650;box-shadow:0 1px 2px rgba(16,24,40,.1)}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:9px;margin-top:13px}
+.readout div{background:var(--soft);border-radius:9px;padding:8px 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.readout b{display:block;font-size:16.5px;color:var(--blue);font-variant-numeric:tabular-nums;font-weight:650;margin-top:1px;letter-spacing:-.3px}
+.readout div.warn b{color:var(--red)}
+.readout div.ok b{color:var(--green)}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 15px;cursor:pointer;font-size:13.5px;font-family:inherit;color:#39424d;transition:.15s}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#1d4fd8}
+.btn.primary:disabled{background:#a9bde8;border-color:#a9bde8;cursor:default}
+
+details{border:1px solid var(--line);border-radius:10px;background:#fff;margin:14px 0;overflow:hidden}
+details summary{cursor:pointer;padding:10px 16px;font-size:14px;font-weight:600;color:var(--blue);background:var(--soft);list-style:none;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"\25B8  ";font-size:12px}
+details[open] summary::before{content:"\25BE  "}
+details .inner{padding:6px 16px 12px}
+kbd{background:#fff;border:1px solid #cfd6e0;border-bottom-width:2px;border-radius:4px;padding:0 5px;font-size:12px;font-family:inherit}
+
+.q{border-left:3px solid #cfd9e8;padding:2px 0 2px 14px;margin:16px 0}
+.q .qh{font-weight:650;color:#2c333b;font-size:14.5px}
+.opt{margin:5px 0 5px 4px;color:#3b444f;font-size:14.5px}
+.ans{color:var(--green);font-weight:650}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:#98a0aa;font-size:13px;line-height:1.8}
+@media (max-width:1020px){
+  .side{display:none}
+  .layout{padding:0 16px}
+  main{padding-top:22px}
+  .hero{padding:20px 18px}
+  .hero h1{font-size:21px}
+  table.tbl{font-size:13.5px}
+}
+@media print{
+  body{background:#fff}
+  .side{display:none}
+  .widget{page-break-inside:avoid}
+  h2.topic{page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="side">
+  <div class="brand">高中生物 · 知识点与考点</div>
+  <div class="sub">按教材顺序 · 交互版</div>
+  <nav>
+    <div class="grp">必修1 分子与细胞</div>
+    <a href="#b1">1　细胞的分子组成</a>
+    <a href="#b2">2　细胞的结构与功能</a>
+    <a href="#b3">3　物质运输·酶·ATP</a>
+    <a href="#b4">4　细胞呼吸与光合作用</a>
+    <div class="grp">必修2 遗传与进化</div>
+    <a href="#b5">5　细胞增殖与减数分裂</a>
+    <a href="#b6">6　遗传规律与伴性遗传</a>
+    <a href="#b7">7　基因的本质与表达</a>
+    <a href="#b8">8　变异·育种·进化</a>
+    <div class="grp">选择性必修1 稳态与调节</div>
+    <a href="#b9">9　稳态与神经—体液调节</a>
+    <a href="#b10">10　免疫调节</a>
+    <div class="grp">选择性必修2 生物与环境</div>
+    <a href="#b11">11　种群·群落·生态系统</a>
+    <div class="grp">选择性必修3 技术与工程</div>
+    <a href="#b12">12　生物技术与工程</a>
+  </nav>
+</aside>
+
+<main>
+
+<div class="hero">
+  <h1>高中生物 · 知识点与考点精讲</h1>
+  <p>按人教版必修 1、2 与选择性必修 1、2、3 的顺序排。每一节的结构固定：知识主线 → 高频考点 → 易错辨析 → 口诀 → 例题 → 分层练习。带“可操作”标记的地方有交互图，可以拖动、点击直接看变化。</p>
+  <div class="flow">
+    <span><b>1</b>知识主线</span>
+    <span><b>2</b>高频考点</span>
+    <span><b>3</b>易错辨析</span>
+    <span><b>4</b>口诀</span>
+    <span><b>5</b>例题精解</span>
+    <span><b>6</b>分层练习</span>
+  </div>
+</div>
+<!-- ============================================================ -->
+<h2 class="topic" id="b1"><span class="no">必修1 · 第1章</span>细胞的分子组成</h2>
+<p class="topic-meta">高考直接考的不多（3–6 分），但它是理解代谢、遗传的前提。选择题里"下列叙述正确的是"这类题，八成从这里出。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 元素与化合物</h4>
+<p>细胞中含量最多的元素是 <strong>O</strong>（按质量）或 <strong>H</strong>（按原子数）；最基本的元素是 <strong>C</strong>，因为碳链构成有机物骨架。大量元素有 C、H、O、N、P、S、K、Ca、Mg 等，微量元素有 Fe、Mn、Zn、Cu、B、Mo 等。</p>
+<table class="tbl compact">
+<tr><th>化合物</th><th>质量分数</th><th>核心作用</th></tr>
+<tr><td>水</td><td>85%–90%</td><td>含量最多；溶剂、运输、参与反应</td></tr>
+<tr><td>蛋白质</td><td>7%–10%</td><td>生命活动的主要承担者</td></tr>
+<tr><td>脂质</td><td>1%–2%</td><td>储能、构成膜、调节</td></tr>
+<tr><td>糖类与核酸</td><td>各 1%–1.5%</td><td>糖类是主要能源；核酸是遗传物质</td></tr>
+</table>
+
+<h4>2. 水与无机盐</h4>
+<table class="tbl">
+<tr><th>形式</th><th>作用</th><th>变化规律</th></tr>
+<tr><td>自由水</td><td>细胞内良好溶剂，运输物质，参与化学反应，提供液体环境</td><td>自由水/结合水比值<em>升高</em> → 代谢旺盛；比值<em>降低</em> → 抗逆性增强（如越冬植物、休眠种子）</td></tr>
+<tr><td>结合水</td><td>细胞结构的重要组成成分</td><td>与自由水可相互转化</td></tr>
+</table>
+<p>无机盐多以<strong>离子</strong>形式存在。功能有三：构成细胞结构（如 Mg²⁺ 构成叶绿素、Fe²⁺ 构成血红蛋白）、维持细胞和生物体的生命活动（如 Ca²⁺ 过低引起抽搐）、维持渗透压和酸碱平衡。</p>
+
+<h4>3. 糖类与脂质</h4>
+<table class="tbl compact">
+<tr><th>类别</th><th>种类</th><th>要点</th></tr>
+<tr><td>单糖</td><td>葡萄糖、果糖、核糖、脱氧核糖</td><td>葡萄糖是"生命的燃料"；核糖参与 RNA</td></tr>
+<tr><td>二糖</td><td>蔗糖、麦芽糖（植物）；乳糖（动物）</td><td>蔗糖水解成葡萄糖 + 果糖</td></tr>
+<tr><td>多糖</td><td>淀粉、纤维素（植物）；糖原（动物）</td><td>纤维素不能被人消化，但能促进肠道蠕动（膳食纤维）</td></tr>
+<tr><td>脂肪</td><td>甘油 + 脂肪酸</td><td>储能物质，同质量下比糖类储能多一倍以上</td></tr>
+<tr><td>磷脂</td><td>甘油 + 脂肪酸 + 磷酸</td><td>构成细胞膜的基本骨架</td></tr>
+<tr><td>固醇</td><td>胆固醇、性激素、维生素 D</td><td>胆固醇参与构成动物细胞膜，还参与脂质运输</td></tr>
+</table>
+
+<h4>4. 蛋白质：结构决定功能</h4>
+<p>氨基酸的结构通式：一个碳原子上连着氨基（—NH₂）、羧基（—COOH）、氢原子和一个侧链基团（R 基）。<strong>不同氨基酸的差别只在 R 基。</strong></p>
+<div class="eq">
+肽键数 = 脱去的水分子数 = 氨基酸数 − 肽链数
+</div>
+<table class="tbl compact">
+<tr><th>项目</th><th>要点</th></tr>
+<tr><td>结构多样性原因</td><td>氨基酸的种类、数目、排列顺序不同，肽链的盘曲折叠方式及空间结构不同</td></tr>
+<tr><td>功能多样性</td><td>结构蛋白（肌肉、羽毛）、催化（酶）、运输（血红蛋白）、调节（胰岛素）、免疫（抗体）</td></tr>
+<tr><td>变性</td><td>高温、强酸强碱、重金属使空间结构破坏，肽键不断裂，<em>不可逆</em></td></tr>
+</table>
+
+<h4>5. 核酸</h4>
+<table class="tbl compact">
+<tr><th></th><th>DNA</th><th>RNA</th></tr>
+<tr><td>五碳糖</td><td>脱氧核糖</td><td>核糖</td></tr>
+<tr><td>特有碱基</td><td>T（胸腺嘧啶）</td><td>U（尿嘧啶）</td></tr>
+<tr><td>共有碱基</td><td colspan="2">A、G、C</td></tr>
+<tr><td>基本单位</td><td>脱氧核苷酸（4 种）</td><td>核糖核苷酸（4 种）</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>有机物检测实验</strong>：还原糖 + 斐林试剂 → 水浴加热 → 砖红色沉淀；蛋白质 + 双缩脲试剂 → 紫色（不加热）；脂肪 + 苏丹Ⅲ → 橘黄色（需显微镜）；淀粉 + 碘 → 蓝色。</li>
+<li><strong>蛋白质计算</strong>：n 个氨基酸形成 m 条肽链，肽键数 = n − m，相对分子质量减少 18(n−m)。若含二硫键，每形成一个 —S—S— 再减少 2。</li>
+<li><strong>自由水与代谢的关系</strong>：凡是"代谢旺盛"的叙述（萌发种子、癌细胞、年幼细胞），自由水/结合水比值都高。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>斐林试剂与双缩脲试剂</td><td>成分相同（NaOH 和 CuSO₄），但浓度和用法不同：斐林试剂要<em>甲液乙液等量混合后使用并水浴加热</em>；双缩脲试剂<em>先加 A 液再加 B 液</em>，不加热</td></tr>
+<tr><td>脂质都是脂肪？</td><td>不是。脂质包括脂肪、磷脂、固醇三类，磷脂和固醇不是脂肪</td></tr>
+<tr><td>糖类是唯一能源？</td><td>糖类是主要能源物质，但脂肪是主要储能物质，蛋白质在特殊情况下也供能</td></tr>
+<tr><td>蛋白质变性后肽键断裂？</td><td>没有。变性只破坏空间结构，肽键完好，所以变性蛋白仍能与双缩脲试剂反应</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+检测记<b>"糖加热、蛋白不加热"</b>。<br>
+水的规律记<b>"自由多代谢旺，结合多抗逆强"</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某蛋白质由 2 条肽链构成，共含 128 个氨基酸，其中有一个二硫键（—S—S—）。求：① 该蛋白质形成时脱去的水分子数；② 相对分子质量比原来减少了多少？</p>
+<p><strong>① 脱水数：</strong>肽键数 = 氨基酸数 − 肽链数 = 128 − 2 = 126，所以脱去 <strong>126 个水分子</strong>。</p>
+<p><strong>② 减少的相对分子质量：</strong>脱水减少 126 × 18 = 2268。形成 1 个二硫键还要脱去 2 个 H，再减少 2。合计 2268 + 2 = <strong>2270</strong>。</p>
+<div class="callout red">
+<span class="tag">两个坑</span>
+① 忘了减肽链数，直接算成 128 个水；② 忘了二硫键。题目里只要出现"—S—S—"，就要在失水总量上再加 2（每个二硫键）。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列关于细胞中水的叙述，正确的是（　）</p>
+<p class="opt">A. 自由水是细胞结构的重要组成成分</p>
+<p class="opt">B. 结合水越多，细胞代谢越旺盛</p>
+<p class="opt">C. 越冬植物细胞内自由水与结合水的比值会降低</p>
+<p class="opt">D. 水在细胞中都以自由水的形式存在</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>结合水才是结构组成成分，A 错。自由水越多代谢越旺盛，B 反了。水有自由水和结合水两种形式，D 错。越冬时自由水减少、结合水相对增多，比值降低，抗寒能力增强，C 对。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 现有 100 个氨基酸，共含 110 个氨基和 118 个羧基，由这些氨基酸缩合成一条多肽链。求该多肽链中游离的氨基和羧基的数目。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">游离氨基 11 个，游离羧基 19 个</p>
+<p>一条肽链至少有一端游离氨基、一端游离羧基。R 基上的氨基数 = 110 − 100 = 10（每个氨基酸至少 1 个氨基，多出的都在 R 基）。R 基上的羧基数 = 118 − 100 = 18。</p>
+<p>所以游离氨基 = 1（肽链一端）+ 10 = 11；游离羧基 = 1 + 18 = 19。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b2"><span class="no">必修1 · 第2、3章</span>细胞的结构与功能</h2>
+<p class="topic-meta">细胞器功能与分泌蛋白的合成运输是高频选择题，几乎每套卷都有。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 细胞膜</h4>
+<p>流动镶嵌模型：磷脂双分子层构成基本骨架，蛋白质镶在表面、嵌入或贯穿其中，外表面还有糖蛋白（糖被）。结构特点是<strong>一定的流动性</strong>，功能特性是<strong>选择透过性</strong>。</p>
+<p>三大功能：将细胞与外界环境分隔开、控制物质进出细胞、进行细胞间的信息交流。</p>
+
+<h4>2. 细胞器——按膜层数记，比按功能记牢</h4>
+<div class="widget">
+  <div class="whead"><h4>图 2-1　细胞器图鉴：点哪个，讲哪个</h4><span class="badge">可操作</span></div>
+  <div class="cap">点图中任意一个细胞器（或下面的按钮），右侧会显示它的膜层数、主要功能和常考陷阱。先把"有几层膜"这条线记牢，选择题里一半的坑都在这里。</div>
+  <canvas id="cv-org"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="or-pick">
+      <button class="on" data-i="0">细胞核</button>
+      <button data-i="1">线粒体</button>
+      <button data-i="2">叶绿体</button>
+      <button data-i="3">内质网</button>
+      <button data-i="4">高尔基体</button>
+      <button data-i="5">核糖体</button>
+      <button data-i="6">溶酶体</button>
+      <button data-i="7">中心体</button>
+    </div>
+  </div>
+  <div class="readout" id="or-out"></div>
+</div>
+
+<table class="tbl">
+<tr><th>膜层数</th><th>细胞器</th><th>关键功能</th></tr>
+<tr><td>双层膜</td><td>线粒体、叶绿体</td><td>线粒体是有氧呼吸的主要场所（"动力车间"）；叶绿体是光合作用场所（"养料制造车间"）</td></tr>
+<tr><td>单层膜</td><td>内质网、高尔基体、液泡、溶酶体</td><td>内质网加工蛋白质和合成脂质；高尔基体加工分类包装；液泡调节渗透压；溶酶体是"消化车间"</td></tr>
+<tr><td>无膜</td><td>核糖体、中心体</td><td>核糖体是蛋白质合成场所；中心体与有丝分裂时纺锤体形成有关</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">两个"不一定"，很爱考</span>
+① 有中心体的<em>不一定</em>是动物细胞（低等植物细胞也有）；
+② 有叶绿体的<em>一定</em>是植物细胞，但植物细胞<em>不一定</em>有叶绿体（根细胞就没有）。
+</div>
+
+<h4>3. 细胞核</h4>
+<p>核膜（双层）、核孔、核仁、染色质。核孔是<strong>大分子物质进出细胞核的通道</strong>（如 mRNA 出核、蛋白质入核），但 DNA 不能通过核孔。核仁与核糖体的形成有关。染色质和染色体是同种物质在不同时期的两种形态。</p>
+
+<h4>4. 分泌蛋白的合成与运输</h4>
+<div class="eq">
+核糖体 → 内质网（加工、折叠）→ 高尔基体（进一步加工、分类包装）→ 细胞膜（胞吐）
+</div>
+<p>全程需要<strong>线粒体</strong>供能。这一过程中，内质网的膜面积减少、高尔基体的膜面积先增后减、细胞膜的膜面积增加。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>细胞器功能的对应</strong>：给一段功能描述，判断是哪个细胞器。记住关键词：<em>加工、分类、包装</em> → 高尔基体；<em>合成蛋白质</em> → 核糖体；<em>消化</em> → 溶酶体；<em>调节渗透压</em> → 液泡。</li>
+<li><strong>分泌蛋白路径的放射性追踪</strong>：给 ³H 标记的氨基酸，问放射性依次出现在哪些结构。</li>
+<li><strong>细胞膜的结构与功能</strong>：常考"糖被只分布在细胞膜外侧"、"载体蛋白具有特异性"。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>核糖体与内质网的功能</td><td>核糖体只负责"合成"，加工在内质网。游离核糖体合成胞内蛋白，附着核糖体合成分泌蛋白</td></tr>
+<tr><td>溶酶体的酶从哪来</td><td>由核糖体合成、经内质网和高尔基体加工后形成，不是溶酶体自己合成的</td></tr>
+<tr><td>细胞壁的成分</td><td>植物细胞壁是纤维素和果胶（高尔基体参与形成）；细菌细胞壁是肽聚糖；真菌是几丁质</td></tr>
+<tr><td>核孔是否"什么都过"</td><td>核孔有选择性，DNA 不能通过，mRNA 和蛋白质可以通过</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+膜层数：<b>双膜线叶、单膜内高液溶、无膜核糖中心</b>。<br>
+分泌蛋白：<b>核（糖体）内（质网）高（尔基）膜</b>，四步走，线粒体全程供能。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　用 ³H 标记的亮氨酸培养胰腺腺泡细胞，追踪放射性出现的顺序。下列排序正确的是（　）</p>
+<p class="opt">A. 核糖体 → 内质网 → 高尔基体 → 细胞膜　B. 核糖体 → 高尔基体 → 内质网 → 细胞膜</p>
+<p class="opt">C. 内质网 → 核糖体 → 高尔基体 → 细胞膜　D. 高尔基体 → 内质网 → 核糖体 → 细胞膜</p>
+<p><strong>答案：A。</strong></p>
+<p><strong>推理：</strong>亮氨酸是合成蛋白质的原料，最先在核糖体上脱水缩合形成肽链。肽链进入内质网进行初步加工、折叠，再经囊泡运输到高尔基体进一步加工、分类、包装，最后由囊泡运至细胞膜，通过胞吐分泌到细胞外。</p>
+<div class="callout red">
+<span class="tag">注意两个细节</span>
+① 胰岛素、抗体、消化酶都是分泌蛋白，走这条路径；血红蛋白、呼吸酶是胞内蛋白，不走这条路。<br>
+② 题目若问"经过哪些细胞器"，答案里应包含核糖体、内质网、高尔基体、线粒体；若问"经过哪些<em>膜结构</em>"，核糖体无膜，不能算进去。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列细胞器中，不含膜结构的是（　）</p>
+<p class="opt">A. 线粒体　B. 核糖体　C. 高尔基体　D. 溶酶体</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>线粒体是双层膜，高尔基体和溶酶体是单层膜，核糖体由 rRNA 和蛋白质组成，没有膜结构。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 分泌蛋白从合成到分泌的过程中，内质网膜、高尔基体膜、细胞膜的膜面积分别如何变化？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">内质网膜面积减小，高尔基体膜面积基本不变，细胞膜面积增大</p>
+<p>内质网以出芽方式形成囊泡，膜面积减少；高尔基体接受囊泡（膜增加）又出芽形成囊泡（膜减少），一进一出面积基本不变；囊泡与细胞膜融合，使细胞膜面积增大。</p>
+<p>这条"膜面积变化"是分泌蛋白专题的固定考点，答"高尔基体不变"是关键。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b3"><span class="no">必修1 · 第4章</span>物质跨膜运输 · 酶 · ATP</h2>
+<p class="topic-meta">选择题常考"运输方式的判断"和"酶的特性曲线"。三个知识点合在一起，是因为它们都属于"细胞代谢的条件"。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 三种跨膜运输方式</h4>
+<table class="tbl">
+<tr><th>方式</th><th>是否需要载体</th><th>是否耗能</th><th>方向</th><th>实例</th></tr>
+<tr><td>自由扩散</td><td>否</td><td>否</td><td>高浓度 → 低浓度</td><td>O₂、CO₂、甘油、乙醇、苯</td></tr>
+<tr><td>协助扩散</td><td>是</td><td>否</td><td>高浓度 → 低浓度</td><td>葡萄糖进入红细胞、水通道</td></tr>
+<tr><td>主动运输</td><td>是</td><td>是</td><td>可逆浓度梯度</td><td>K⁺、Na⁺、氨基酸、葡萄糖进入小肠上皮细胞</td></tr>
+</table>
+<p>胞吞胞吐不属于跨膜运输（物质不穿过膜，靠膜的流动性），但也要消耗能量。</p>
+<div class="callout blue">
+<span class="tag">判断运输方式的三连问</span>
+① 有没有载体？（看是否饱和、是否有竞争抑制、是否受载体抑制剂影响）<br>
+② 耗不耗能？（缺氧或加呼吸抑制剂后是否受影响）<br>
+③ 逆不逆浓度？（低浓度侧能否继续吸收）
+</div>
+
+<h4>2. 酶</h4>
+<p>酶是<strong>活细胞产生的具有催化作用的有机物</strong>，绝大多数是蛋白质，少数是 RNA。三个特性：高效性、专一性、作用条件较温和。</p>
+<table class="tbl compact">
+<tr><th>因素</th><th>影响机理</th><th>曲线特征</th></tr>
+<tr><td>温度</td><td>低温抑制活性（可恢复），高温使酶变性（不可恢复）</td><td>先升后降，有一个最适温度</td></tr>
+<tr><td>pH</td><td>过酸过碱都使酶变性</td><td>钟形曲线，有一个最适 pH</td></tr>
+<tr><td>底物浓度</td><td>底物有限时限制速率，过量后受酶量限制</td><td>先近线性上升，后趋于平台</td></tr>
+<tr><td>酶浓度</td><td>底物充足时正比</td><td>过原点的直线</td></tr>
+</table>
+
+<h4>3. ATP</h4>
+<div class="eq">
+ATP ⇌ ADP + Pi + 能量　　（A—P~P~P，"~"是高能磷酸键）
+</div>
+<p>ATP 是直接能源物质。合成 ATP 的途径：细胞呼吸（所有活细胞）、光合作用（绿色植物）。ATP 水解释放的能量用于各项生命活动。</p>
+<p>注意：<strong>ATP 在细胞中含量很少，但转化速度极快</strong>，能保证能量的持续供应。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>运输方式的实验判断</strong>：给一组数据（如某物质在细胞内外的浓度），判断是主动运输还是被动运输。</li>
+<li><strong>酶促反应曲线分析</strong>：改变温度/pH 时，最适点是否移动；改变酶浓度时，最大速率变化但最适条件不变。</li>
+<li><strong>ATP 与能量代谢的关系</strong>：ATP 水解释放的能量可转化为机械能、电能、渗透能、化学能等。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>低温与高温对酶的影响</td><td>低温只是降低活性，回温后恢复；高温破坏空间结构，不可恢复。所以酶制剂要低温保存</td></tr>
+<tr><td>酶 vs 激素</td><td>酶有催化作用，反应前后自身不变；激素起调节作用，起作用后被灭活</td></tr>
+<tr><td>协助扩散需要能量？</td><td>不需要。只有主动运输和胞吞胞吐消耗 ATP</td></tr>
+<tr><td>ATP 中的"A"</td><td>是腺苷（腺嘌呤 + 核糖），不是腺嘌呤</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+运输三问：<b>要载体吗？要能量吗？逆浓度吗？</b>三个"是"→主动运输；前两个"否"→自由扩散；只有中间"是"→协助扩散。<br>
+酶：<b>低温不坏，高温变坏，过酸过碱也变坏</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某植物根细胞对 K⁺ 的吸收速率随 O₂ 浓度变化的曲线是：O₂ 浓度为 0 时仍有少量吸收，随 O₂ 浓度升高吸收速率增大，之后趋于稳定。说明 K⁺ 进入根细胞的方式是什么？为什么？</p>
+<p><strong>答案：主动运输。</strong></p>
+<p><strong>理由一：</strong>O₂ 浓度为 0 时仍能吸收，说明不完全是需氧供能的过程，但吸收速率随 O₂ 浓度升高而增大，说明该过程<em>需要能量</em>（有氧呼吸供能）。</p>
+<p><strong>理由二：</strong>吸收速率最终趋于稳定，是因为<em>载体蛋白数量有限</em>，说明需要载体。</p>
+<p>既需要载体又需要能量，且根细胞能从土壤中低浓度的 K⁺ 持续吸收，属于逆浓度梯度的主动运输。</p>
+<div class="callout red">
+<span class="tag">曲线题的读图顺序</span>
+先看起点（是否为零 → 是否完全依赖该因素）、再看趋势（升/降/平台）、最后看平台（说明什么受限）。这题的"平台"就是载体饱和，"起点不为零"说明还有无氧呼吸供能。两步就能说清。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列物质进出细胞的方式中，需要载体蛋白但不消耗能量的是（　）</p>
+<p class="opt">A. 葡萄糖进入红细胞　B. 葡萄糖进入小肠上皮细胞</p>
+<p class="opt">C. 氧气进入肺泡细胞　D. 白细胞吞噬细菌</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">A</p>
+<p>葡萄糖进入红细胞是协助扩散，需要载体不耗能。葡萄糖进入小肠上皮细胞是主动运输，耗能。氧气是自由扩散，不需要载体。白细胞吞噬细菌是胞吞，需要能量但不属于跨膜运输。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某同学做"探究温度对淀粉酶活性的影响"实验，先将淀粉酶与淀粉分别保温在不同温度下，再混合。若要检测结果，能否用斐林试剂？为什么？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">不能，应改用碘液</p>
+<p>斐林试剂检测还原糖需要<em>水浴加热</em>，而加热会改变酶已经设定的温度条件，使实验变量失控——低温组的酶在检测时会因加热而恢复活性，结果失真。碘液在常温下检测淀粉是否被分解，不影响温度变量。</p>
+<p>这是实验设计题里很典型的一处"检测方法反过来干扰自变量"的错误。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b4"><span class="no">必修1 · 第5章</span>细胞呼吸与光合作用</h2>
+<p class="topic-meta">必修一的核心，也是整卷最容易出大题的地方。两条主线必须能默写，曲线必须能分析。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 有氧呼吸三阶段</h4>
+<table class="tbl">
+<tr><th>阶段</th><th>场所</th><th>反应</th><th>产物</th></tr>
+<tr><td>第一阶段（糖酵解）</td><td>细胞质基质</td><td>葡萄糖 → 2 丙酮酸 + 4[H]</td><td>少量 ATP</td></tr>
+<tr><td>第二阶段</td><td>线粒体基质</td><td>2 丙酮酸 + 6H₂O → 6CO₂ + 20[H]</td><td>少量 ATP</td></tr>
+<tr><td>第三阶段</td><td>线粒体内膜</td><td>24[H] + 6O₂ → 12H₂O</td><td>大量 ATP</td></tr>
+</table>
+<div class="eq">
+C₆H₁₂O₆ + 6O₂ + 6H₂O --酶--> 6CO₂ + 12H₂O + 能量
+</div>
+<p><strong>无氧呼吸</strong>：第一阶段同上，第二阶段丙酮酸在细胞质基质中转化为乳酸或酒精 + CO₂。只在第一阶段产生少量 ATP。微生物的无氧呼吸也叫发酵。</p>
+
+<h4>2. 光合作用</h4>
+<table class="tbl">
+<tr><th>阶段</th><th>场所</th><th>物质变化</th><th>能量变化</th></tr>
+<tr><td>光反应</td><td>类囊体薄膜</td><td>水的光解产生 [H] 和 O₂；ADP + Pi → ATP</td><td>光能 → 活跃化学能</td></tr>
+<tr><td>暗反应（碳反应）</td><td>叶绿体基质</td><td>CO₂ 固定形成 C₃；C₃ 被 [H] 还原，一部分生成糖类，一部分再生 C₅</td><td>活跃化学能 → 稳定化学能</td></tr>
+</table>
+<div class="eq">
+6CO₂ + 12H₂O --光能/叶绿体--> C₆H₁₂O₆ + 6O₂ + 6H₂O
+</div>
+<div class="callout blue">
+<span class="tag">条件突变时的瞬时变化，记住这条推理链</span>
+光照突然减弱 → [H] 和 ATP 减少 → C₃ 还原受阻 → <em>C₃ 增多、C₅ 减少</em>；同时 CO₂ 固定仍在进行，短暂消耗 C₅。<br>
+CO₂ 突然减少 → C₃ 生成减少 → <em>C₃ 减少、C₅ 增多</em>，[H] 和 ATP 暂时积累。<br>
+判断口诀：<b>先看谁变，再看它被谁用、用来生成谁</b>。
+</div>
+
+<div class="widget">
+  <div class="whead"><h4>图 4-1　光合曲线：光强、CO₂ 怎么影响净光合</h4><span class="badge">可操作</span></div>
+  <div class="cap">拖光强滑块，看净光合速率怎么走。曲线与横轴的交点是<strong>光补偿点</strong>（光合 = 呼吸，净积累为 0），再往右到平台是<strong>光饱和点</strong>。切 CO₂ 浓度，整条曲线会抬高或压低，但光补偿点几乎不动。</div>
+  <canvas id="cv-photo"></canvas>
+  <div class="ctrl">
+    <label>光强 <input type="range" id="ph-i" min="0" max="2000" step="20" value="600"><span class="val" id="ph-iv">600 lx</span></label>
+    <div class="seg" id="ph-co2">
+      <button data-i="0">CO₂ 低</button>
+      <button class="on" data-i="1">CO₂ 中</button>
+      <button data-i="2">CO₂ 高</button>
+    </div>
+  </div>
+  <div class="readout" id="ph-out"></div>
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>总光合与净光合的换算</strong>：净光合 = 总光合 − 呼吸。测"吸收 CO₂ 的量"是净光合，测"制造有机物的量"是总光合。</li>
+<li><strong>密闭容器中 CO₂ 浓度变化曲线</strong>：下降段表示光合 &gt; 呼吸，转折点是补偿点。</li>
+<li><strong>呼吸速率的测定</strong>：用 NaOH 吸收 CO₂，测 O₂ 的减少量；或遮光测 CO₂ 释放量。</li>
+<li><strong>同位素标记追踪</strong>：¹⁴C 标记 CO₂，追踪 C 的转移途径：CO₂ → C₃ → 有机物。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>光合作用的 O₂ 来自 CO₂？</td><td>来自水。用 H₂¹⁸O 标记可证明释放的 O₂ 含 ¹⁸O</td></tr>
+<tr><td>[H] 是同一种物质？</td><td>光合作用产生的 [H] 是 NADPH，呼吸作用产生的是 NADH，不是同一种</td></tr>
+<tr><td>无氧呼吸不产生 ATP？</td><td>第一阶段产生少量 ATP，只是第二阶段不产生</td></tr>
+<tr><td>暗反应不需要光？</td><td>暗反应本身不直接需要光，但需要光反应提供的 [H] 和 ATP，长期无光则停止</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+有氧呼吸三阶段：<b>一在质、二在基、三在内膜</b>，能量<b>少、少、多</b>。<br>
+光合两阶段：<b>光反应在膜上，暗反应在基质</b>；<b>光反应产 [H] 和 ATP，暗反应用它们还原 C₃</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　将某绿色植物置于密闭容器中，黑暗处理 1 h 后测得 CO₂ 增加 22 mg；随后给予适宜光照 1 h，测得 CO₂ 减少 44 mg。求：① 呼吸速率；② 光照 1 h 的净光合速率与总光合速率（以 CO₂ mg/h 表示）。</p>
+<p><strong>① 呼吸速率：</strong>黑暗下只进行呼吸作用，CO₂ 增加量即呼吸释放量，<strong>22 mg/h</strong>。</p>
+<p><strong>② 净光合速率：</strong>光照下 CO₂ 减少量 = 净光合吸收量 = <strong>44 mg/h</strong>。</p>
+<p><strong>③ 总光合速率：</strong>总光合 = 净光合 + 呼吸 = 44 + 22 = <strong>66 mg/h</strong>。</p>
+<div class="callout red">
+<span class="tag">三个概念必须分清</span>
+"CO₂ 减少量"是<em>净</em>光合；"CO₂ 固定量"或"制造有机物量"是<em>总</em>光合；呼吸速率无论光暗都在进行。题目给的数字属于哪一个，决定了要不要加呼吸。<br>
+另外注意单位：mg/h 是速率，mg 是总量，问"速率"时不要漏掉时间。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 有氧呼吸过程中，产生 ATP 最多的阶段和产生 CO₂ 的阶段分别是（　）</p>
+<p class="opt">A. 第一阶段、第一阶段　B. 第三阶段、第二阶段</p>
+<p class="opt">C. 第二阶段、第三阶段　D. 第三阶段、第一阶段</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>第三阶段 [H] 与 O₂ 结合生成水，释放大量能量，产生 ATP 最多。CO₂ 在第二阶段（线粒体基质中丙酮酸与水反应）产生。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 其他条件不变，突然停止光照，短时间内叶绿体中 C₃、C₅、[H] 和 ATP 的含量分别如何变化？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C₃ 增多，C₅ 减少，[H] 减少，ATP 减少</p>
+<p>停止光照后，光反应停止，[H] 和 ATP 不再生成，被暗反应继续消耗，所以两者都减少。</p>
+<p>C₃ 的还原因缺少 [H] 和 ATP 而受阻，C₃ 消耗减少、积累增多；同时 CO₂ 固定仍在进行，继续消耗 C₅ 生成 C₃，所以 C₅ 减少。</p>
+<p>推理的关键是"反应仍在进行，只是某一环节被卡住"，不是所有反应同时停止。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="b5"><span class="no">必修2 · 第1章</span>细胞增殖与减数分裂</h2>
+<p class="topic-meta">染色体、DNA、染色单体三条数目曲线的识别是必考点。图像题一旦看不懂，后面的遗传题也做不动。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 细胞周期</h4>
+<p>连续分裂的细胞，从一次分裂完成时开始，到下一次分裂完成时为止。包括分裂间期（占 90%–95%）和分裂期。<strong>只有连续分裂的细胞才有细胞周期</strong>，神经细胞、成熟红细胞没有。</p>
+
+<h4>2. 有丝分裂各时期</h4>
+<table class="tbl">
+<tr><th>时期</th><th>主要变化</th><th>染色体 / DNA / 单体</th></tr>
+<tr><td>间期</td><td>DNA 复制和有关蛋白质合成</td><td>2n / 4n / 4n</td></tr>
+<tr><td>前期</td><td>核膜核仁消失，出现染色体和纺锤体</td><td>2n / 4n / 4n</td></tr>
+<tr><td>中期</td><td>着丝粒排列在赤道板上，形态最稳定、数目最清晰</td><td>2n / 4n / 4n</td></tr>
+<tr><td>后期</td><td>着丝粒分裂，姐妹染色单体分开移向两极</td><td>4n / 4n / 0</td></tr>
+<tr><td>末期</td><td>核膜核仁重现，细胞质分裂</td><td>4n→2n / 4n→2n / 0</td></tr>
+</table>
+
+<h4>3. 减数分裂：染色体只复制一次，细胞连续分裂两次</h4>
+<div class="widget">
+  <div class="whead"><h4>图 5-1　减数分裂：拖一遍，看染色体怎么分</h4><span class="badge">可操作</span></div>
+  <div class="cap">拖时间轴，从左到右走完整个减数分裂。重点看三个地方：<strong>减Ⅰ前期同源染色体联会</strong>、<strong>减Ⅰ后期同源染色体分离</strong>（这是减数的关键）、<strong>减Ⅱ后期姐妹染色单体分离</strong>。下方读数会跟着变。</div>
+  <canvas id="cv-meio"></canvas>
+  <div class="ctrl">
+    <label>进程 <input type="range" id="me-s" min="0" max="7" step="1" value="0"><span class="val" id="me-sv">间期</span></label>
+  </div>
+  <div class="readout" id="me-out"></div>
+</div>
+
+<table class="tbl compact">
+<tr><th>比较项</th><th>有丝分裂</th><th>减数分裂</th></tr>
+<tr><td>分裂次数</td><td>1 次</td><td>连续 2 次</td></tr>
+<tr><td>同源染色体行为</td><td>不联会、不分离</td><td>减Ⅰ前期联会，减Ⅰ后期分离</td></tr>
+<tr><td>子细胞</td><td>2 个，染色体数与母细胞相同</td><td>4 个，染色体数减半</td></tr>
+<tr><td>发生部位</td><td>体细胞</td><td>生殖器官（精巢、卵巢、花药等）</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">配子为什么多样</span>
+两个来源：① 减Ⅰ后期<strong>非同源染色体自由组合</strong>；② 减Ⅰ前期<strong>同源染色体的非姐妹染色单体交叉互换</strong>。<br>
+注意交叉互换发生在<em>同源染色体的非姐妹染色单体</em>之间，不是姐妹染色单体之间。
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>三条曲线判断</strong>：染色体数"后期加倍"，DNA"间期加倍、末期减半"，染色单体"间期出现、后期消失"。</li>
+<li><strong>细胞图像识别</strong>：先看有没有同源染色体，再看同源染色体是否联会或分离，最后看着丝粒位置。</li>
+<li><strong>受精作用</strong>：精子与卵细胞融合，染色体数恢复到体细胞水平，维持前后代染色体数目恒定。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>着丝粒分裂发生在什么时候</td><td>有丝分裂后期、减Ⅱ后期。减Ⅰ后期是<em>同源染色体</em>分离，着丝粒不分裂</td></tr>
+<tr><td>减数第一次分裂与第二次的"减数"在哪</td><td>减Ⅰ结束染色体数就减半了；减Ⅱ是姐妹染色单体分开，染色体数暂时加倍后再平分</td></tr>
+<tr><td>一个精原细胞能产生几种精子</td><td>不考虑交叉互换时 2 种，考虑交叉互换时 4 种。注意"一个"和"该个体"不同</td></tr>
+<tr><td>赤道板与细胞板</td><td>赤道板是假想的平面，不存在这个结构；细胞板是植物细胞末期真实形成的结构</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+<b>间期复制、前期出现、中期排队、后期分家、末期重建</b>。<br>
+减数分裂记两句话：<b>减Ⅰ分同源，减Ⅱ分姐妹</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某动物（2n = 4）的精原细胞进行减数分裂。不考虑交叉互换，回答：① 减Ⅰ后期的细胞中有几条染色体、几个 DNA、几条染色单体？② 一个精原细胞最终产生几种精子？</p>
+<p><strong>① 减Ⅰ后期：</strong>同源染色体正在分离，但细胞还没分裂，染色体数仍为 <strong>4 条</strong>，DNA 为 <strong>8 个</strong>，染色单体为 <strong>8 条</strong>（每条染色体含 2 条姐妹染色单体）。</p>
+<p><strong>② 精子种类：</strong>该细胞含 2 对同源染色体，减Ⅰ时非同源染色体自由组合产生 2 种组合，因此形成 <strong>2 种</strong>精子（每种 2 个）。</p>
+<p><strong>延伸：</strong>如果题目问"该动物产生的精子种类"，则要考虑多个精原细胞，理论上有 2² = 4 种。问"一个精原细胞"和"一个个体"的答案不同，这是最常见的失分点。</p>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 减数分裂过程中，染色体数目减半发生在（　）</p>
+<p class="opt">A. 减Ⅰ末期　B. 减Ⅱ末期　C. 减Ⅰ后期　D. 减Ⅱ后期</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">A</p>
+<p>减Ⅰ末期细胞分裂成两个子细胞，同源染色体已分到两个细胞中，每个子细胞染色体数减半。减Ⅱ后期着丝粒分裂，染色体数暂时加倍，减Ⅱ末期再平分，子细胞染色体数与减Ⅱ前期相同。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某细胞分裂图像显示：细胞中有 4 条染色体，分为 2 对同源染色体，同源染色体正在移向两极。判断该细胞处于什么时期，并说明理由。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">减数第一次分裂后期</p>
+<p>判断依据：① 细胞中存在同源染色体（有同源染色体说明不是减Ⅱ）；② 同源染色体正在分离并移向两极，说明是减Ⅰ后期；③ 若为有丝分裂后期，应是着丝粒分裂后姐妹染色单体分开移向两极，此时细胞内染色体数为 4n，且每一极都有同源染色体。</p>
+<p>三步排除法：有无同源 → 同源是否联会/分离 → 着丝粒是否分裂。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b6"><span class="no">必修2 · 第1、2章</span>遗传基本规律与伴性遗传</h2>
+<p class="topic-meta">遗传题是大题固定位置，分值高。棋盘、比例、系谱三块必须熟到能反应。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 一对相对性状的杂交实验</h4>
+<div class="eq">
+P：高茎 × 矮茎 → F₁ 全为高茎 → F₂ 高茎 : 矮茎 = 3 : 1
+</div>
+<p>孟德尔用<strong>假说—演绎法</strong>：提出问题 → 作出假说（体细胞中遗传因子成对、形成配子时成对因子分离）→ 演绎推理（测交应为 1:1）→ 实验验证 → 得出结论。</p>
+
+<h4>2. 分离定律与自由组合定律</h4>
+<table class="tbl compact">
+<tr><th>定律</th><th>内容</th><th>发生时期</th><th>典型比例</th></tr>
+<tr><td>分离定律</td><td>等位基因随同源染色体的分开而分离</td><td>减Ⅰ后期</td><td>3 : 1（杂合自交）、1 : 1（测交）</td></tr>
+<tr><td>自由组合定律</td><td>非同源染色体上的非等位基因自由组合</td><td>减Ⅰ后期</td><td>9 : 3 : 3 : 1（双杂合自交）</td></tr>
+</table>
+
+<div class="widget">
+  <div class="whead"><h4>图 6-1　棋盘格：把配子组合一个个摆出来</h4><span class="badge">可操作</span></div>
+  <div class="cap">选一组杂交组合，格子里是子代基因型，颜色代表表现型。下方给出表现型比例。<strong>双杂合自交</strong>那一组是最常考的 9 : 3 : 3 : 1。</div>
+  <canvas id="cv-pun"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="pu-pick">
+      <button class="on" data-i="0">Aa × Aa</button>
+      <button data-i="1">Aa × aa</button>
+      <button data-i="2">AaBb × AaBb</button>
+      <button data-i="3">XᴮXᵇ × XᴮY</button>
+    </div>
+  </div>
+  <div class="readout" id="pu-out"></div>
+</div>
+
+<h4>3. 伴性遗传</h4>
+<table class="tbl compact">
+<tr><th>类型</th><th>特点</th><th>实例</th></tr>
+<tr><td>X 染色体隐性</td><td>男性患者多于女性；交叉遗传（外公 → 母亲 → 外孙）；女患者的父亲和儿子必患病</td><td>红绿色盲、血友病</td></tr>
+<tr><td>X 染色体显性</td><td>女性患者多于男性；男患者的母亲和女儿必患病</td><td>抗维生素 D 佝偻病</td></tr>
+<tr><td>Y 染色体遗传</td><td>传男不传女，父传子、子传孙</td><td>外耳道多毛症</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>显隐性与基因位置的判断</strong>：自交看是否发生性状分离（有分离则显性为亲本性状）；测交看比例。</li>
+<li><strong>基因定位</strong>：判断基因在常染色体还是 X 染色体上，常考"隐性雌 × 显性雄"是否出现交叉遗传。</li>
+<li><strong>自由组合的变形比</strong>：9:7、9:6:1、15:1、9:3:4 都是 9:3:3:1 的变体，本质是基因互作，仍按两对基因独立遗传来算。</li>
+<li><strong>概率计算</strong>：先拆成一对一对算，再相乘（乘法原理）。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>3 : 1 与 1 : 1</td><td>3:1 是杂合子自交，1:1 是杂合子测交。看的是"自交"还是"与隐性纯合杂交"</td></tr>
+<tr><td>基因自由组合 = 性状自由组合？</td><td>只有位于非同源染色体上的非等位基因才自由组合；同一条染色体上的基因连锁</td></tr>
+<tr><td>伴 X 隐性遗传中"女患者"的条件</td><td>女儿患病，父亲一定患病、儿子一定患病，这是判断系谱的关键</td></tr>
+<tr><td>表现型相同基因型相同？</td><td>不一定，如显性性状可能是 AA 也可能是 Aa</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+分离定律：<b>一对基因三比一，测交一半对一半</b>。<br>
+自由组合：<b>两对基因九三三一</b>；变形比先加起来看总和是不是 16。<br>
+伴 X 隐性：<b>母病子必病，女病父必病</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　豌豆的高茎（D）对矮茎（d）为显性，圆粒（R）对皱粒（r）为显性，两对基因独立遗传。让 DdRr × DdRr 杂交，求：① 子代中高茎圆粒的比例；② 子代中纯合子的比例；③ 子代中与亲本表现型相同的比例。</p>
+<p><strong>先拆成一对待一对。</strong>Dd × Dd → 高茎 3/4、矮茎 1/4；Rr × Rr → 圆粒 3/4、皱粒 1/4。</p>
+<p><strong>① 高茎圆粒：</strong>3/4 × 3/4 = <strong>9/16</strong>。</p>
+<p><strong>② 纯合子：</strong>每对中纯合子占 1/2（DD + dd = 1/4 + 1/4），两对都是纯合子 = 1/2 × 1/2 = <strong>1/4</strong>。</p>
+<p><strong>③ 与亲本表现型相同（高茎圆粒）：</strong>就是 ①，<strong>9/16</strong>。</p>
+<div class="callout red">
+<span class="tag">别急着画棋盘</span>
+两对基因独立遗传时，先算每一对的分离比，再用乘法原理相乘，比画 16 格棋盘快得多，也不容易漏。棋盘只用来验算或讲清原理。<br>
+只有遇到"基因互作"（如 9:7、15:1）或需要列出具体组合时，才回到棋盘。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 一对表现型正常的夫妇，生了一个患红绿色盲的儿子。若再生育，生下患病男孩的概率是（　）</p>
+<p class="opt">A. 1/4　B. 1/8　C. 1/2　D. 0</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">A</p>
+<p>色盲基因位于 X 染色体上。夫妇表现型正常，但生出患病儿子，说明母亲是携带者 XᴮXᵇ，父亲为 XᴮY。</p>
+<p>子代四种情况各占 1/4：XᴮXᴮ（正常女）、XᴮXᵇ（携带女）、XᴮY（正常男）、XᵇY（患病男）。</p>
+<p>"生下患病男孩"是在<em>全部子代</em>里找，占 1/4，选 A。</p>
+<p>若题目改成"生下的男孩中患病的概率"，分母变成男孩（1/2），答案就是 1/2。这两个问法每年都有学生栽进去，读题时把"的"字前后的范围圈出来。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某植物花色由两对独立遗传的基因控制，A_B_ 为紫色，A_bb 为红色，aaB_ 和 aabb 均为白色。AaBb 自交，子代表现型比例为多少？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">紫色 9 : 红色 3 : 白色 4</p>
+<p>AaBb 自交产生的基因型比例为 A_B_ 9/16、A_bb 3/16、aaB_ 3/16、aabb 1/16。</p>
+<p>按题意合并：紫色 = 9/16，红色 = 3/16，白色 = 3/16 + 1/16 = 4/16。所以是 9 : 3 : 4。</p>
+<p>这是 9:3:3:1 的变形之一。遇到变形比，先写出 16 份的标准拆分，再按题目给的对应关系合并，不要试图直接背比例。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b7"><span class="no">必修2 · 第3、4章</span>基因的本质与表达</h2>
+<p class="topic-meta">三个经典实验 + 中心法则。选择题考实验结论，大题常与变异、基因工程连起来考。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 证明 DNA 是遗传物质的三个实验</h4>
+<table class="tbl">
+<tr><th>实验</th><th>做法</th><th>结论</th></tr>
+<tr><td>格里菲斯肺炎双球菌转化实验</td><td>加热杀死的 S 型菌 + 活的 R 型菌 → 小鼠死亡，分离出 S 型菌</td><td>存在"转化因子"，但不知道是什么</td></tr>
+<tr><td>艾弗里体外转化实验</td><td>把 S 型菌的 DNA、蛋白质、多糖分别与 R 型菌混合</td><td>只有 DNA 能使 R 型菌转化，<strong>DNA 是遗传物质</strong></td></tr>
+<tr><td>噬菌体侵染细菌实验</td><td>³⁵S 标记蛋白质、³²P 标记 DNA，分别侵染</td><td>DNA 进入细菌，蛋白质外壳留在外面，<strong>DNA 是遗传物质</strong></td></tr>
+</table>
+
+<h4>2. DNA 的结构与复制</h4>
+<p>双螺旋结构：两条反向平行的脱氧核苷酸链，碱基通过氢键配对（<strong>A—T 两个氢键，G—C 三个氢键</strong>），磷酸和脱氧核糖交替排列在外侧构成基本骨架。</p>
+<table class="tbl compact">
+<tr><th>项目</th><th>要点</th></tr>
+<tr><td>复制时间</td><td>细胞分裂间期</td></tr>
+<tr><td>复制方式</td><td>半保留复制，边解旋边复制</td></tr>
+<tr><td>条件</td><td>模板（DNA 双链）、原料（4 种脱氧核苷酸）、能量（ATP）、酶（解旋酶、DNA 聚合酶）</td></tr>
+<tr><td>碱基计算</td><td>A = T，G = C；(A+T)/(G+C) 在双链与单链中相同，(A+G)/(T+C) 双链中恒为 1</td></tr>
+</table>
+
+<h4>3. 基因的表达</h4>
+<table class="tbl compact">
+<tr><th>过程</th><th>场所</th><th>模板</th><th>产物</th></tr>
+<tr><td>转录</td><td>细胞核（主要）</td><td>DNA 的一条链</td><td>mRNA</td></tr>
+<tr><td>翻译</td><td>核糖体</td><td>mRNA</td><td>多肽链</td></tr>
+</table>
+<p>密码子位于 mRNA 上，共 64 种，其中 3 种是终止密码子。反密码子位于 tRNA 上。一种氨基酸可能对应多个密码子（密码子的简并性）。</p>
+<div class="eq">
+DNA → mRNA → 蛋白质　（转录、翻译；逆转录、RNA 复制见于某些病毒）
+</div>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>实验结论的辨别</strong>：格里菲斯只证明"有转化因子"，艾弗里和赫尔希-蔡斯才证明"是 DNA"。这是最常见的偷换。</li>
+<li><strong>同位素标记的误差分析</strong>：³²P 组上清液有少量放射性，是因为保温时间过长（细菌裂解释放）或过短（部分噬菌体未侵染）。</li>
+<li><strong>碱基比例计算</strong>：给一条链的比例求另一条链或双链的比例。</li>
+<li><strong>翻译过程中的数量关系</strong>：mRNA 上 3 个碱基决定 1 个氨基酸；DNA 上 6 个碱基对应 1 个氨基酸。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>遗传物质都是 DNA？</td><td>绝大多数生物是 DNA，RNA 病毒（如新冠病毒、烟草花叶病毒）的遗传物质是 RNA</td></tr>
+<tr><td>原核细胞有没有转录翻译</td><td>有。原核细胞没有核膜，转录和翻译可以同时同地进行</td></tr>
+<tr><td>DNA 复制出错一定突变？</td><td>复制出错导致基因突变；但若发生在非基因片段，不产生基因突变</td></tr>
+<tr><td>一个 mRNA 只翻译一条肽链？</td><td>不是。一个 mRNA 可结合多个核糖体（多聚核糖体），同时翻译出多条相同的肽链</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+三个实验：<b>格里菲斯看见现象、艾弗里分离成分、赫尔希蔡斯追踪元素</b>。<br>
+中心法则：<b>DNA 复制传下代，转录翻译出蛋白</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某双链 DNA 分子中，A 占全部碱基的 30%，其中一条链（称为 α 链）上 G 占该链碱基的 20%。求：① 该 DNA 中 G 的比例；② α 链上 A 的比例范围无法确定，但 β 链上 G 的比例是多少？</p>
+<p><strong>①</strong> 双链中 A = T = 30%，所以 A + T = 60%，G + C = 40%，G = C = <strong>20%</strong>。</p>
+<p><strong>②</strong> 设 α 链碱基数为 100，则 β 链也是 100，双链共 200 个碱基，G 总数为 20% × 200 = 40 个。</p>
+<p>α 链上 G = 20% × 100 = 20 个，剩下的 40 − 20 = 20 个 G 全在 β 链上，占 β 链的 <strong>20%</strong>。</p>
+<div class="callout red">
+<span class="tag">碱基计算的通用思路</span>
+① 双链中 A = T、G = C；② 一条链上的 A 等于另一条链上的 T；③ 算总数比算比例稳——先把"双链总数"设成 200，再把各链加起来，不容易乱。<br>
+题目若给"A 占 30%，G 占 20%"，一定先检查加起来是否合逻辑（A+T+G+C 应等于 100%）。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 用 ³⁵S 标记的噬菌体侵染未标记的细菌，保温一段时间后搅拌、离心，放射性主要出现在（　）</p>
+<p class="opt">A. 上清液　B. 沉淀物　C. 上清液和沉淀物都有　D. 都没有</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">A</p>
+<p>³⁵S 标记的是噬菌体的蛋白质外壳，蛋白质外壳没有进入细菌，离心后留在上清液中。³²P 标记 DNA，会进入细菌，放射性主要在沉淀物中。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某基因含 300 个碱基对，其中 A 有 120 个。该基因转录出的 mRNA 上最多能编码多少个氨基酸？</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">最多 100 个氨基酸</p>
+<p>DNA 有 300 个碱基对，即 600 个碱基。转录出的 mRNA 有 300 个碱基（以一条链为模板）。</p>
+<p>每 3 个相邻碱基构成 1 个密码子，300 ÷ 3 = 100 个密码子。若不考虑终止密码子，最多编码 100 个氨基酸；实际因有终止密码子，通常少于 100 个。</p>
+<p>题目问"最多"，按 100 答。注意别把"碱基对"当成"碱基"。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b8"><span class="no">必修2 · 第5、6、7章</span>变异 · 育种 · 进化</h2>
+<p class="topic-meta">这一块知识点碎但考法固定：变异类型判断、育种方案选择、基因频率计算。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 三种可遗传变异</h4>
+<table class="tbl">
+<tr><th>类型</th><th>实质</th><th>能否用显微镜观察</th><th>实例</th></tr>
+<tr><td>基因突变</td><td>DNA 分子中碱基对的替换、增添或缺失，产生新基因</td><td>不能</td><td>镰刀型细胞贫血症、白化病</td></tr>
+<tr><td>基因重组</td><td>控制不同性状的基因重新组合，不产生新基因</td><td>不能</td><td>减Ⅰ后期的自由组合、交叉互换</td></tr>
+<tr><td>染色体变异</td><td>染色体结构或数目改变</td><td>能</td><td>21 三体综合征、猫叫综合征</td></tr>
+</table>
+<p>基因突变的特点：普遍性、随机性、低频性、多数有害、不定向性。它是<strong>新基因产生的途径</strong>，是生物变异的根本来源。</p>
+
+<h4>2. 五种育种方式</h4>
+<table class="tbl compact">
+<tr><th>方法</th><th>原理</th><th>优点</th><th>缺点</th></tr>
+<tr><td>杂交育种</td><td>基因重组</td><td>操作简单，能集中多个优良性状</td><td>育种年限长</td></tr>
+<tr><td>诱变育种</td><td>基因突变</td><td>能提高突变率，创造新类型</td><td>有利变异少，需大量处理</td></tr>
+<tr><td>单倍体育种</td><td>染色体变异</td><td>明显缩短育种年限</td><td>技术复杂</td></tr>
+<tr><td>多倍体育种</td><td>染色体变异</td><td>器官大、营养物质含量高</td><td>发育迟缓、结实率低</td></tr>
+<tr><td>基因工程育种</td><td>基因重组</td><td>定向改造，打破物种界限</td><td>技术要求高，存在安全性争议</td></tr>
+</table>
+
+<h4>3. 生物进化</h4>
+<div class="callout blue">
+<span class="tag">现代生物进化理论四条</span>
+① 种群是生物进化的基本单位；② 突变和基因重组产生进化的原材料；③ 自然选择使种群基因频率定向改变，决定进化方向；④ 隔离是物种形成的必要条件。
+</div>
+<p><strong>基因频率计算</strong>：某基因频率 = 该基因数 / 该位点基因总数。哈代-温伯格平衡时，AA = p²，Aa = 2pq，aa = q²。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>变异类型判断</strong>：给现象判类型。注意"同源染色体非姐妹染色单体交叉互换"属基因重组，"非同源染色体之间交换片段"属染色体结构变异（易位）。</li>
+<li><strong>育种方案设计</strong>：问"最快获得纯合子"用单倍体育种；"获得新基因"用诱变育种；"打破物种界限"用基因工程。</li>
+<li><strong>基因频率计算</strong>：注意是常染色体还是 X 染色体，X 染色体上雄性只有一个基因。</li>
+<li><strong>物种形成的标志</strong>：生殖隔离，不是地理隔离，也不是基因频率改变。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>交叉互换 vs 易位</td><td>同源染色体的非姐妹染色单体之间交换 = 基因重组；非同源染色体之间交换 = 染色体结构变异（易位）</td></tr>
+<tr><td>单倍体只有一个染色体组？</td><td>不一定。由配子直接发育来的个体都叫单倍体，若亲本是多倍体，单倍体可含多个染色体组</td></tr>
+<tr><td>生物进化 = 新物种形成？</td><td>不等于。进化是基因频率改变，物种形成必须出现生殖隔离</td></tr>
+<tr><td>自然选择的对象</td><td>直接选择的是<em>表现型</em>，实质是选择基因型，结果是基因频率定向改变</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+三种变异：<b>突变生新基因、重组只换搭配、染色体变异看得见</b>。<br>
+育种：<b>要快用单倍体，要新用诱变，要跨物种用基因工程</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某植物种群中，AA 个体占 30%，Aa 占 60%，aa 占 10%。若该种群随机交配，子一代中 A 的基因频率是多少？aa 的基因型频率是多少？</p>
+<p><strong>第一步，算基因频率。</strong>设种群有 100 个个体，则 A 基因数 = 30×2 + 60×1 = 120，等位基因总数 = 200。</p>
+<div class="eq">
+p(A) = 120/200 = 0.6　　q(a) = 1 − 0.6 = 0.4
+</div>
+<p><strong>第二步，随机交配后。</strong>随机交配不改变基因频率，子一代中 A 仍为 0.6、a 为 0.4。</p>
+<div class="eq">
+aa = q² = 0.4² = 0.16，即 16%
+</div>
+<p><strong>答案：</strong>A 基因频率 0.6，子一代 aa 占 16%。</p>
+<div class="callout red">
+<span class="tag">随机交配与自交的区别</span>
+随机交配后基因频率和基因型频率都不再变化（达到哈代-温伯格平衡）；连续自交则<em>基因频率不变、纯合子比例升高、杂合子比例降低</em>。这两句话每年都考，一定要分开记。<br>
+这题如果改成"自交"，aa 的比例就要按 1/4 × 60% + 10% = 25% 计算，答案完全不同。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列变异中，属于染色体结构变异的是（　）</p>
+<p class="opt">A. 同源染色体的非姐妹染色单体交叉互换</p>
+<p class="opt">B. 非同源染色体之间交换片段</p>
+<p class="opt">C. 基因中碱基对的缺失</p>
+<p class="opt">D. 减Ⅰ后期非同源染色体自由组合</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>A 和 D 属于基因重组，C 属于基因突变。非同源染色体之间交换片段是易位，属于染色体结构变异。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 现有两个纯合小麦品种：抗病矮秆（AAbb）和不抗病高秆（aaBB），两对基因独立遗传。若要快速获得能稳定遗传的抗病矮秆品种，说明育种思路及理由。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p><strong>杂交育种方案：</strong>AAbb × aaBB → F₁（AaBb）→ 自交 → 从 F₂ 中选出抗病矮秆（A_bb），连续自交直至不再发生性状分离。缺点是要多代自交，年限长。</p>
+<p><strong>更快的方案（单倍体育种）：</strong>F₁（AaBb）的花药离体培养 → 得到单倍体幼苗 → 用秋水仙素处理使染色体加倍 → 得到纯合二倍体，其中 AABB 抗病但高秆、AAbb 即为目标品种，只需两年左右。</p>
+<p><strong>选择理由：</strong>题目要求"快速"和"能稳定遗传"，单倍体育种一步得到纯合子，不用连续自交筛选，明显缩短年限。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="b9"><span class="no">选择性必修1 · 第1、2、3章</span>内环境稳态 · 神经调节 · 体液调节</h2>
+<p class="topic-meta">选择性必修一的主干。高频考法：动作电位曲线、突触传递方向、血糖/体温/水盐的调节路径。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 内环境与稳态</h4>
+<p>内环境 = 细胞外液（血浆、组织液、淋巴）。三者的关系：血浆与组织液双向交换，组织液可进入毛细淋巴管形成淋巴，淋巴最终汇入血浆。</p>
+<table class="tbl compact">
+<tr><th>成分差异</th><th>说明</th></tr>
+<tr><td>血浆中含较多蛋白质</td><td>组织液和淋巴中蛋白质很少</td></tr>
+<tr><td>不属于内环境</td><td>血红蛋白（在红细胞内）、消化液、尿液、汗液、泪液</td></tr>
+</table>
+<p>稳态是指内环境的成分和理化性质保持相对稳定的状态，靠<strong>神经—体液—免疫调节网络</strong>维持，是动态平衡。</p>
+
+<h4>2. 神经调节</h4>
+<p>反射弧五个部分：感受器 → 传入神经 → 神经中枢 → 传出神经 → 效应器（传出神经末梢及其支配的肌肉或腺体）。<strong>反射弧必须完整</strong>，任何一环受损都不能完成反射。</p>
+
+<div class="widget">
+  <div class="whead"><h4>图 9-1　动作电位：膜电位到底怎么翻上去又落下来</h4><span class="badge">可操作</span></div>
+  <div class="cap">拖滑块走一遍从静息到恢复的全过程。注意三个点：<strong>静息时 K⁺ 外流</strong>（外正内负）、<strong>受刺激后 Na⁺ 内流</strong>（电位反转）、<strong>恢复时 K⁺ 外流</strong>。右侧通道的开闭状态会跟着变。</div>
+  <canvas id="cv-ap"></canvas>
+  <div class="ctrl">
+    <label>时间 <input type="range" id="ap-t" min="0" max="100" step="1" value="0"><span class="val" id="ap-tv">0 ms</span></label>
+    <button class="btn primary" id="ap-run">播放</button>
+  </div>
+  <div class="readout" id="ap-out"></div>
+</div>
+
+<table class="tbl compact">
+<tr><th>项目</th><th>神经纤维上的传导</th><th>突触间的传递</th></tr>
+<tr><td>方向</td><td>双向（离体时）</td><td>单向：前膜 → 后膜</td></tr>
+<tr><td>形式</td><td>电信号（局部电流）</td><td>电信号 → 化学信号 → 电信号</td></tr>
+<tr><td>速度</td><td>快</td><td>慢（有突触延搁）</td></tr>
+<tr><td>关键结构</td><td>离子通道</td><td>突触小泡、神经递质</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">突触为什么只能单向传递</span>
+神经递质只存在于突触前膜的突触小泡中，只能由前膜释放、作用于后膜上的受体。这是结构决定的，不是"习惯"。
+</div>
+
+<h4>3. 体液调节</h4>
+<table class="tbl compact">
+<tr><th>调节</th><th>路径</th><th>关键激素</th></tr>
+<tr><td>血糖</td><td>血糖升高 → 胰岛 B 细胞分泌胰岛素 → 降血糖；血糖降低 → 胰岛 A 细胞分泌胰高血糖素 → 升血糖</td><td>胰岛素、胰高血糖素、肾上腺素</td></tr>
+<tr><td>体温</td><td>寒冷 → 下丘脑 → 甲状腺激素、肾上腺素增多，产热增加；同时皮肤血管收缩、汗腺分泌减少</td><td>甲状腺激素、肾上腺素</td></tr>
+<tr><td>水盐</td><td>细胞外液渗透压升高 → 下丘脑渗透压感受器 → 垂体释放抗利尿激素 → 肾小管重吸收水增多</td><td>抗利尿激素、醛固酮</td></tr>
+</table>
+<p>下丘脑是内分泌活动的枢纽，也是体温调节中枢、水盐平衡调节中枢、血糖调节中枢。</p>
+<p><strong>分级调节与反馈</strong>：下丘脑 → 垂体 → 甲状腺 → 甲状腺激素。血液中甲状腺激素过多时会<em>反过来抑制</em>下丘脑和垂体（负反馈）。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>动作电位的产生与恢复</strong>：静息电位由 K⁺ 外流维持，动作电位由 Na⁺ 内流形成，恢复靠 K⁺ 外流和钠钾泵。</li>
+<li><strong>兴奋传导方向判断</strong>：看突触结构，从突触小体指向下一个神经元；电流表偏转次数与方向是常考题。</li>
+<li><strong>激素的分级调节与反馈</strong>：给"下丘脑—垂体—靶腺"三段式，判断某段受损后的激素水平变化。</li>
+<li><strong>神经调节与体液调节的关系</strong>：不少生命活动是"神经调节为主导，体液调节参与"，如体温、血糖。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>兴奋在神经纤维上双向，在反射弧中单向</td><td>离体神经纤维可以双向传导；但在完整反射弧中，受突触限制，兴奋只能单向传递</td></tr>
+<tr><td>神经递质一定是兴奋性的？</td><td>不一定，也有抑制性递质，会使后膜产生抑制性电位</td></tr>
+<tr><td>胰岛素是唯一降血糖的激素？</td><td>是。但升血糖的激素有胰高血糖素、肾上腺素等多种</td></tr>
+<tr><td>感觉中枢与效应器</td><td>感觉在大脑皮层形成，但反射弧不经过大脑也能完成（如膝跳反射）</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+静息电位：<b>外正内负，K⁺ 外流</b>；动作电位：<b>外负内正，Na⁺ 内流</b>。<br>
+血糖：<b>胰岛素是唯一降糖的，升糖的有一群</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　给离体的神经纤维施加一个适宜刺激，测得膜电位变化如图（先上升到 +30 mV，再下降到 −70 mV 以下，最后回到 −70 mV）。回答：① 静息电位数值是多少？② 电位上升到 +30 mV 的主要原因是什么？③ 若降低细胞外 Na⁺ 浓度，动作电位的峰值会怎样变化？</p>
+<p><strong>①</strong> 静息电位为 <strong>−70 mV</strong>（外正内负），由 K⁺ 外流维持。</p>
+<p><strong>②</strong> 受刺激后 Na⁺ 通道打开，Na⁺ 大量内流，使膜内电位升高并反转为正，形成动作电位的峰值。</p>
+<p><strong>③</strong> 峰值会<strong>降低</strong>。动作电位的幅度取决于膜内外 Na⁺ 的浓度差，细胞外 Na⁺ 减少，浓度差变小，内流的 Na⁺ 减少，峰值下降。</p>
+<div class="callout red">
+<span class="tag">这条推理每年都考</span>
+<em>细胞外 Na⁺ 浓度 ↓ → 动作电位峰值 ↓，但静息电位基本不变</em>；<br>
+<em>细胞外 K⁺ 浓度 ↑ → 静息电位绝对值 ↓（更接近 0），动作电位峰值影响较小</em>。<br>
+把这两条对照着记，考到就是送分。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列关于内环境的叙述，正确的是（　）</p>
+<p class="opt">A. 血红蛋白属于内环境成分　B. 血浆、组织液和淋巴共同构成内环境</p>
+<p class="opt">C. 内环境的理化性质保持不变　D. 消化液属于内环境</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>血红蛋白在红细胞内，不属于内环境。内环境的理化性质保持<em>相对稳定</em>，是动态平衡，不是固定不变。消化液通过消化道与外界相通，不属于内环境。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某患者因垂体病变导致促甲状腺激素分泌不足，预测其血液中甲状腺激素和促甲状腺激素释放激素的含量变化。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">甲状腺激素减少，促甲状腺激素释放激素增多</p>
+<p>垂体分泌的促甲状腺激素（TSH）减少，甲状腺失去促进，甲状腺激素分泌减少。</p>
+<p>甲状腺激素对下丘脑的负反馈减弱，下丘脑分泌的促甲状腺激素释放激素（TRH）代偿性增多。</p>
+<p>这条推理链是"分级调节 + 负反馈"的固定应用：<em>下游减少 → 上游代偿增多</em>。若病变在下丘脑，则 TRH 和 TSH 都减少。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b10"><span class="no">选择性必修1 · 第4章</span>免疫调节</h2>
+<p class="topic-meta">近年考得越来越重，尤其是体液免疫与细胞免疫的区分、二次免疫曲线。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 免疫系统的三道防线</h4>
+<table class="tbl compact">
+<tr><th>防线</th><th>组成</th><th>特点</th></tr>
+<tr><td>第一道</td><td>皮肤、黏膜及其分泌物</td><td>非特异性，先天具有</td></tr>
+<tr><td>第二道</td><td>体液中的杀菌物质（溶菌酶）和吞噬细胞</td><td>非特异性</td></tr>
+<tr><td>第三道</td><td>免疫器官、免疫细胞、免疫活性物质</td><td>特异性，后天获得</td></tr>
+</table>
+
+<h4>2. 特异性免疫的两条路线</h4>
+<table class="tbl">
+<tr><th>项目</th><th>体液免疫</th><th>细胞免疫</th></tr>
+<tr><td>主要细胞</td><td>B 细胞 → 浆细胞</td><td>T 细胞 → 效应 T 细胞</td></tr>
+<tr><td>作用对象</td><td>细胞外的抗原（细菌、毒素）</td><td>被病原体感染的宿主细胞、癌细胞</td></tr>
+<tr><td>效应物质</td><td>抗体</td><td>效应 T 细胞直接接触靶细胞</td></tr>
+<tr><td>结果</td><td>抗原被抗体结合后形成沉淀或细胞集团，被吞噬细胞清除</td><td>靶细胞裂解死亡，病原体暴露后被抗体或吞噬细胞清除</td></tr>
+</table>
+<p>两条路线不是孤立的：多数病原体感染时两者协同，T 细胞还能分泌淋巴因子促进 B 细胞增殖分化。</p>
+
+<h4>3. 二次免疫</h4>
+<p>初次免疫产生记忆细胞，再次接触同一抗原时，记忆细胞迅速增殖分化为浆细胞，<strong>产生抗体又快又多</strong>。这是疫苗接种的原理。</p>
+
+<h4>4. 免疫失调</h4>
+<table class="tbl compact">
+<tr><th>类型</th><th>机理</th><th>实例</th></tr>
+<tr><td>过敏反应</td><td>已免疫的机体再次接触过敏原时发生的组织损伤或功能紊乱</td><td>花粉过敏、青霉素过敏</td></tr>
+<tr><td>自身免疫病</td><td>免疫系统攻击自身正常组织</td><td>类风湿性关节炎、系统性红斑狼疮</td></tr>
+<tr><td>免疫缺陷病</td><td>免疫功能低下或缺失</td><td>艾滋病（HIV 攻击 T 细胞）</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>抗体与抗原的关系</strong>：抗体由浆细胞产生，一种浆细胞只产生一种抗体，但一种抗原可刺激产生多种抗体。</li>
+<li><strong>二次免疫曲线</strong>：与初次相比，抗体出现更早、峰值更高、持续时间更长。</li>
+<li><strong>艾滋病</strong>：HIV 主要攻击 T 细胞，导致免疫功能几乎全部丧失，患者常死于其他感染或肿瘤。</li>
+<li><strong>器官移植</strong>：使用免疫抑制剂抑制排斥反应，但会增加感染风险。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>浆细胞与 B 细胞</td><td>B 细胞能识别抗原并增殖分化；浆细胞<em>不能</em>识别抗原，只负责产生抗体</td></tr>
+<tr><td>抗体能直接杀死病原体？</td><td>不能。抗体只是与抗原结合，最终靠吞噬细胞清除</td></tr>
+<tr><td>过敏反应是免疫功能过强？</td><td>是免疫功能<em>异常</em>（免疫系统对无害物质反应过度），不是简单的"过强"</td></tr>
+<tr><td>T 细胞只在细胞免疫中起作用？</td><td>T 细胞也参与体液免疫（分泌淋巴因子促进 B 细胞分化）</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+两条路线：<b>体液免疫靠抗体打"外面"的，细胞免疫靠效应 T 打"里面"的</b>。<br>
+记住两个"不能"：<b>浆细胞不能识别抗原，抗体不能直接消灭抗原</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某同学接种了新冠疫苗，一个月后再次接触同种病原体。与初次接触相比，体内抗体的产生有什么特点？为什么？</p>
+<p><strong>特点：</strong>抗体产生更快、浓度更高、持续时间更长。</p>
+<p><strong>原因：</strong>初次接种后，B 细胞增殖分化，除产生浆细胞外还产生了<strong>记忆细胞</strong>。再次接触同一抗原时，记忆细胞迅速识别抗原，快速增殖分化为大量浆细胞，短时间内产生大量抗体。</p>
+<p>这条曲线在坐标图上的表现是：起点更快上升、峰值更高、下降更慢。</p>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列细胞中，不能识别抗原的是（　）</p>
+<p class="opt">A. B 细胞　B. T 细胞　C. 记忆细胞　D. 浆细胞</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">D</p>
+<p>浆细胞的功能是产生和分泌抗体，本身不能识别抗原。B 细胞、T 细胞、记忆细胞都有抗原识别能力。吞噬细胞能识别抗原但没有特异性。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 艾滋病患者最终往往死于严重感染或恶性肿瘤，试从免疫学角度解释原因。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p>HIV 主要攻击 T 细胞，使 T 细胞大量死亡。T 细胞既参与细胞免疫（分化为效应 T 细胞），又能分泌淋巴因子促进 B 细胞增殖分化，因此 T 细胞受损会导致：</p>
+<p>① 细胞免疫几乎丧失，无法清除被感染的细胞和癌细胞；</p>
+<p>② 体液免疫也受严重影响，抗体产生减少；</p>
+<p>③ 免疫监视功能下降，肿瘤发生率升高。</p>
+<p>结果是机体几乎丧失全部特异性免疫功能，平时不致病的病原体也会引起严重感染。</p>
+</div></details>
+</div>
+
+<hr>
+<!-- ============================================================ -->
+<h2 class="topic" id="b11"><span class="no">选择性必修2 · 全册</span>种群 · 群落 · 生态系统</h2>
+<p class="topic-meta">选择题稳定 2 道，常考"J 型与 S 型曲线""能量传递效率计算""演替类型判断"。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 种群的数量特征</h4>
+<table class="tbl compact">
+<tr><th>特征</th><th>作用</th></tr>
+<tr><td>种群密度</td><td>最基本的数量特征</td></tr>
+<tr><td>出生率、死亡率</td><td>决定种群密度的直接因素</td></tr>
+<tr><td>迁入率、迁出率</td><td>也直接影响种群密度</td></tr>
+<tr><td>年龄组成</td><td>预测种群数量变化趋势（增长型、稳定型、衰退型）</td></tr>
+<tr><td>性别比例</td><td>影响出生率，从而影响种群密度</td></tr>
+</table>
+<p><strong>调查方法</strong>：样方法（植物、活动能力弱的动物，随机取样、取平均值）、标志重捕法（活动能力强的动物）。</p>
+
+<h4>2. 种群数量增长曲线</h4>
+<table class="tbl">
+<tr><th>类型</th><th>条件</th><th>特点</th><th>公式</th></tr>
+<tr><td>J 型</td><td>食物和空间充裕、无敌害、气候适宜</td><td>持续增长，增长率不变</td><td>N<sub>t</sub> = N₀λ<sup>t</sup></td></tr>
+<tr><td>S 型</td><td>资源有限</td><td>增长速率先增后减，K/2 时增长最快，最终稳定在 K 值</td><td>—</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">K 值与 K/2 的用途</span>
+<strong>K/2</strong> 时种群增长速率最大，是<em>渔业捕捞后</em>应保留的数量；<strong>K 值</strong>是环境容纳量，是<em>害虫防治</em>要压低的目标。两者对应"保护"和"防治"两种完全相反的策略。
+</div>
+
+<h4>3. 群落</h4>
+<p><strong>种间关系</strong>：竞争、捕食、寄生、互利共生。判断方法看图：两条曲线同步升降是互利共生，此消彼长且不同步是捕食，一方上升另一方下降是竞争。</p>
+<p><strong>群落演替</strong>：初生演替（从裸岩、沙丘开始，速度慢）与次生演替（从弃耕农田、火灾后的草原开始，速度快，因为保留了土壤条件和繁殖体）。</p>
+
+<h4>4. 生态系统的结构与功能</h4>
+<p>成分：非生物的物质和能量、生产者、消费者、分解者。<strong>生产者是基石</strong>，分解者是物质循环不可缺少的环节。</p>
+
+<div class="widget">
+  <div class="whead"><h4>图 11-1　能量流动：为什么食物链撑不到第六级</h4><span class="badge">可操作</span></div>
+  <div class="cap">拖传递效率滑块（10%–20% 是自然界的常见区间）。每往上一级，能量只剩一小截，到第四营养级就所剩无几。这就是"能量单向流动、逐级递减"的直观含义。</div>
+  <canvas id="cv-ener"></canvas>
+  <div class="ctrl">
+    <label>传递效率 <input type="range" id="en-e" min="8" max="25" step="1" value="10"><span class="val" id="en-ev">10%</span></label>
+  </div>
+  <div class="readout" id="en-out"></div>
+</div>
+
+<table class="tbl compact">
+<tr><th>功能</th><th>特点</th><th>关键结论</th></tr>
+<tr><td>能量流动</td><td>单向流动、逐级递减</td><td>传递效率 10%–20%；营养级一般不超过 5 个</td></tr>
+<tr><td>物质循环</td><td>全球性、循环往复</td><td>碳在生物群落与无机环境之间主要以 CO₂ 形式循环</td></tr>
+<tr><td>信息传递</td><td>物理、化学、行为信息</td><td>调节种间关系，维持生态系统稳定</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>能量传递效率计算</strong>：已知低营养级能量求高营养级最多/最少获得量，按 20% / 10% 两个极端算。</li>
+<li><strong>S 型曲线的应用</strong>：K/2 处增长最快，捕捞后维持在此处可快速恢复。</li>
+<li><strong>演替类型判断</strong>：看起点有没有土壤和植被。</li>
+<li><strong>生态系统稳定性</strong>：生物种类越多、营养结构越复杂，抵抗力稳定性越强，恢复力稳定性越弱。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>增长速率与增长率</td><td>J 型曲线增长率不变，增长速率越来越大；S 型曲线增长速率先增后减</td></tr>
+<tr><td>能量传递效率 = 摄入量之比？</td><td>不是。传递效率 = 同化量之比，摄入量中有一部分未被消化吸收（以粪便排出）</td></tr>
+<tr><td>分解者一定是微生物？</td><td>不一定。蚯蚓、秃鹫等动物也是分解者；硝化细菌是生产者</td></tr>
+<tr><td>K 值是固定不变的</td><td>不是。环境条件改变，K 值随之改变</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+能量流动八个字：<b>单向流动、逐级递减</b>，效率 <b>10% 到 20%</b>。<br>
+种群增长：<b>J 型无上限，S 型有 K 值；K/2 最快，K 处最稳</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　某食物链为：草 → 兔 → 狐 → 狼。若草固定的太阳能为 10000 kJ，求狼最多和最少能获得的能量。</p>
+<p><strong>最多：</strong>按最高传递效率 20%，每级都按 20% 传递：</p>
+<div class="eq">
+10000 × 20% × 20% × 20% = 80 kJ
+</div>
+<p><strong>最少：</strong>按最低传递效率 10%：</p>
+<div class="eq">
+10000 × 10% × 10% × 10% = 10 kJ
+</div>
+<p><strong>答案：</strong>最多 80 kJ，最少 10 kJ。</p>
+<div class="callout red">
+<span class="tag">两个方向别弄反</span>
+问"最多获得"→ 用最高效率 20%；问"最少获得"→ 用最低效率 10%。<br>
+反过来的题（"狼增重 1 kg 至少消耗草多少"）也要用 20%，因为"至少消耗"意味着效率最高。判断依据是<em>对谁有利就取哪个极端</em>。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列属于初生演替的是（　）</p>
+<p class="opt">A. 弃耕农田上发生的演替　B. 火灾后的草原上发生的演替</p>
+<p class="opt">C. 裸岩上发生的演替　D. 过量砍伐的森林上发生的演替</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>初生演替的起点是从来没有植被覆盖、或原有植被被彻底消灭的地方（裸岩、沙丘、冰川泥）。其余三项都保留了土壤条件甚至繁殖体，属于次生演替。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 某湖泊中投放了一种外来鱼类，一段时间后本地小型鱼类数量大幅下降。从生态学角度分析可能的原因及后果。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p><strong>原因：</strong>外来鱼与本地小型鱼生态位重叠，竞争食物和空间；若外来鱼为肉食性，还会直接捕食本地小鱼。由于缺少天敌和寄生生物的制约，其种群可能呈 J 型增长。</p>
+<p><strong>后果：</strong>本地鱼类种群数量下降甚至局部灭绝，物种多样性降低；食物链结构改变，可能引起浮游生物等更低营养级的连锁变化；生态系统抵抗力稳定性下降。</p>
+<p>这类题答题要点是"竞争/捕食 → 数量下降 → 多样性降低 → 稳定性下降"这条链，答到稳定性才算完整。</p>
+</div></details>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="b12"><span class="no">选择性必修3 · 全册</span>生物技术与工程</h2>
+<p class="topic-meta">选考或必考中的一道，通常 10–15 分。流程题为主，背流程比背概念有效。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 发酵工程</h4>
+<table class="tbl compact">
+<tr><th>环节</th><th>要点</th></tr>
+<tr><td>培养基</td><td>含碳源、氮源、水、无机盐；按用途分选择培养基和鉴别培养基</td></tr>
+<tr><td>灭菌</td><td>培养基高压蒸汽灭菌；接种环灼烧灭菌；双手酒精消毒（消毒≠灭菌）</td></tr>
+<tr><td>接种</td><td>平板划线法（可分离单菌落）、稀释涂布平板法（可计数）</td></tr>
+<tr><td>计数</td><td>稀释涂布平板法统计的活菌数往往偏小（两个菌连在一起只长成一个菌落）</td></tr>
+<tr><td>发酵</td><td>果酒（酵母菌，18–25 ℃，无氧）、果醋（醋酸菌，30–35 ℃，需氧）</td></tr>
+</table>
+
+<h4>2. 细胞工程</h4>
+<table class="tbl compact">
+<tr><th>技术</th><th>关键点</th></tr>
+<tr><td>植物组织培养</td><td>原理是细胞的全能性；脱分化形成愈伤组织，再分化形成芽和根；需植物激素（生长素与细胞分裂素比例决定分化方向）</td></tr>
+<tr><td>植物体细胞杂交</td><td>用纤维素酶和果胶酶去壁获得原生质体，用 PEG 诱导融合，克服远缘杂交不亲和的障碍</td></tr>
+<tr><td>动物细胞培养</td><td>需无菌无毒环境、营养、温度 pH、气体环境（95% 空气 + 5% CO₂，CO₂ 维持 pH）</td></tr>
+<tr><td>动物细胞融合</td><td>诱导手段有 PEG、灭活的病毒、电激；用于制备单克隆抗体</td></tr>
+<tr><td>核移植</td><td>体细胞核移入去核卵母细胞，体现细胞核的全能性</td></tr>
+</table>
+<div class="callout blue">
+<span class="tag">单克隆抗体的制备流程</span>
+给小鼠注射抗原 → 从脾脏取出 B 淋巴细胞 → 与骨髓瘤细胞融合 → 筛选杂交瘤细胞 → 克隆化培养和抗体检测 → 体内或体外培养 → 提取单克隆抗体。<br>
+两个"筛"是关键：第一次筛掉未融合细胞，第二次筛出能产生特定抗体的杂交瘤细胞。
+</div>
+
+<h4>3. 基因工程</h4>
+<table class="tbl compact">
+<tr><th>工具</th><th>作用</th></tr>
+<tr><td>限制酶</td><td>识别特定核苷酸序列并在特定位点切割 DNA，产生黏性末端或平末端</td></tr>
+<tr><td>DNA 连接酶</td><td>把两个 DNA 片段连接起来（E·coli DNA 连接酶只连黏性末端，T4 连接酶两种都能连）</td></tr>
+<tr><td>载体</td><td>质粒、噬菌体、动植物病毒；需具备标记基因、限制酶切点、能自我复制</td></tr>
+</table>
+<div class="eq">
+目的基因的获取 → 基因表达载体的构建 → 将目的基因导入受体细胞 → 目的基因的检测与鉴定
+</div>
+<p>检测分三个层次：DNA 分子杂交（是否插入）、分子杂交检测 mRNA（是否转录）、抗原-抗体杂交（是否翻译）。</p>
+
+<h3>二、高频考点</h3>
+<ul>
+<li><strong>灭菌与消毒的区别</strong>：灭菌杀死包括芽孢和孢子在内的所有微生物；消毒只杀死部分微生物。</li>
+<li><strong>选择培养基的设计</strong>：如筛选能分解尿素的细菌，用尿素作唯一氮源；筛选纤维素分解菌，用刚果红染色。</li>
+<li><strong>限制酶的选择</strong>：不能破坏目的基因和标记基因，要保证目的基因与载体有相同的黏性末端。</li>
+<li><strong>PCR 技术</strong>：变性（90 ℃ 以上解链）、复性（50 ℃ 左右引物结合）、延伸（72 ℃ Taq 酶催化）。</li>
+</ul>
+
+<h3>三、易错辨析</h3>
+<table class="tbl">
+<tr><th>易混点</th><th>辨析</th></tr>
+<tr><td>消毒与灭菌</td><td>酒精擦拭双手是消毒；培养基高压蒸汽处理是灭菌</td></tr>
+<tr><td>稀释涂布平板法计数为何偏小</td><td>两个或多个菌体连在一起时只形成一个菌落，统计值低于实际活菌数</td></tr>
+<tr><td>植物组织培养 vs 动物细胞培养</td><td>前者能发育成完整植株（体现全能性），后者只能获得细胞或细胞产物，不能发育成个体</td></tr>
+<tr><td>基因工程是否产生新基因</td><td>导入的是外源基因，对本物种而言是新基因组合；但基因工程本身属于基因重组层面</td></tr>
+</table>
+
+<div class="mnemonic">
+<span class="tag">口 诀</span>
+基因工程四步：<b>取、接、导、检</b>。<br>
+细胞工程：<b>植物讲全能，动物讲融合，核移植讲核的全能</b>。
+</div>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　科学家想把人的胰岛素基因导入大肠杆菌，使其大量生产胰岛素。回答：① 获取目的基因后，构建基因表达载体时必须有哪些组成部分？② 如何筛选出成功导入重组质粒的大肠杆菌？</p>
+<p><strong>① 基因表达载体必须包含：</strong>目的基因、启动子、终止子、标记基因（如抗生素抗性基因），以及复制原点。</p>
+<p>启动子是 RNA 聚合酶识别和结合的部位，驱动转录；终止子控制转录终止；标记基因用于后续筛选。</p>
+<p><strong>② 筛选方法：</strong>用含有相应抗生素的培养基进行选择培养。只有导入了重组质粒（含抗性基因）的大肠杆菌才能在该培养基上生长，未导入的会被淘汰。若要进一步确认，可用 DNA 分子杂交检测目的基因是否插入。</p>
+<div class="callout red">
+<span class="tag">表达载体四个部分缺一不可</span>
+少了启动子，目的基因无法转录；少了终止子，转录停不下来；少了标记基因，筛不出来。答题时按"启动子—终止子—标记基因—目的基因"顺序写，不容易漏。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 下列关于灭菌和消毒的叙述，正确的是（　）</p>
+<p class="opt">A. 用酒精擦拭双手属于灭菌</p>
+<p class="opt">B. 培养基通常用高压蒸汽灭菌</p>
+<p class="opt">C. 接种环用酒精浸泡消毒</p>
+<p class="opt">D. 消毒能杀死所有微生物包括芽孢</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B</p>
+<p>酒精擦拭属于消毒；接种环应在酒精灯火焰上灼烧灭菌；消毒不能杀死芽孢和孢子，只有灭菌才能。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">2. 用稀释涂布平板法测定某水样中的细菌总数，取 0.1 mL 稀释 10⁵ 倍的样液涂布，培养后平均长出 40 个菌落。估算原水样中细菌的浓度，并说明该方法可能存在的误差。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">约 4.0×10⁷ 个/mL，且实际值可能更高</p>
+<p>计算：40 ÷ 0.1 × 10⁵ = 4.0×10⁷ 个/mL。</p>
+<p>误差来源：当两个或多个细菌连在一起时，只形成一个菌落，导致统计值<em>低于</em>实际活菌数；因此该方法的估算结果偏小。此外取样不均匀、稀释操作误差也会影响结果，通常需设三个重复取平均值。</p>
+</div></details>
+</div>
+
+<footer>
+<p>材料按人教版 2019 版教材顺序编排，覆盖必修 1、2 与选择性必修 1、2、3。章节编号以通行版本为准，不同地区教材的编排顺序可能略有差异。</p>
+<p>交互图全部用画布实时绘制，不依赖网络。拖动滑块、点击图中的细胞器或按钮即可操作。</p>
+</footer>
+
+</main>
+</div>
+<script>
+"use strict";
+var COL = {
+  text:'#1b1f24', muted:'#5d646d', line:'#e4e7ec', soft:'#f1f4f8',
+  blue:'#2563eb', red:'#c93a3a', green:'#15803d', amber:'#b45309', violet:'#7c3aed'
+};
+function prep(id, W, H){
+  var c = document.getElementById(id);
+  if(!c) return null;
+  c.width = W*2; c.height = H*2;
+  c.style.width = '100%'; c.style.height = 'auto';
+  var g = c.getContext('2d');
+  g.setTransform(2,0,0,2,0,0);
+  g.clearRect(0,0,W,H);
+  g.font = '13px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textBaseline = 'middle';
+  return g;
+}
+function arrow(g, x1,y1,x2,y2, color, w, head){
+  head = head || 9;
+  var dx=x2-x1, dy=y2-y1, L=Math.hypot(dx,dy);
+  if(L < 0.5) return;
+  var ux=dx/L, uy=dy/L;
+  g.strokeStyle=color; g.fillStyle=color; g.lineWidth=w||2;
+  g.beginPath(); g.moveTo(x1,y1);
+  g.lineTo(x2-ux*head*0.85, y2-uy*head*0.85); g.stroke();
+  g.beginPath();
+  g.moveTo(x2,y2);
+  g.lineTo(x2-ux*head - uy*head*0.42, y2-uy*head + ux*head*0.42);
+  g.lineTo(x2-ux*head + uy*head*0.42, y2-uy*head - ux*head*0.42);
+  g.closePath(); g.fill();
+}
+function label(g, txt, x, y, color, align, size){
+  g.fillStyle = color || COL.text;
+  g.font = (size||12) + 'px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textAlign = align || 'center';
+  g.fillText(txt, x, y);
+  g.textAlign = 'left';
+}
+function roundRect(g,x,y,w,h,r){
+  g.beginPath();
+  g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r);
+  g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath();
+}
+
+/* ============================================================
+   图 2-1  细胞器
+   ============================================================ */
+(function(){
+  var W=680, H=364;
+  var ORG = [
+    {n:'细胞核', m:'双层膜', f:'遗传信息库，是细胞代谢和遗传的控制中心',
+     t:'核孔是大分子进出通道，但 DNA 不能通过核孔', cx:168, cy:118, r:44},
+    {n:'线粒体', m:'双层膜', f:'有氧呼吸的主要场所，为细胞提供能量',
+     t:'内膜向内折叠形成嵴，扩大了酶的附着面积；注意它有自己的 DNA', cx:392, cy:92, r:42},
+    {n:'叶绿体', m:'双层膜', f:'光合作用的场所，把光能转化为化学能',
+     t:'有叶绿体的一定是植物细胞，但植物细胞不一定有（根细胞就没有）', cx:552, cy:92, r:42},
+    {n:'内质网', m:'单层膜', f:'蛋白质加工的场所，也是脂质合成的车间',
+     t:'与核膜相连，分为粗面（附着核糖体）和滑面两种', cx:232, cy:264, r:40},
+    {n:'高尔基体', m:'单层膜', f:'对来自内质网的蛋白质进行加工、分类和包装',
+     t:'植物细胞中还与细胞壁的形成有关；"加工分类包装"这五个字专属于它', cx:404, cy:264, r:38},
+    {n:'核糖体', m:'无膜', f:'蛋白质合成的场所',
+     t:'由 rRNA 和蛋白质组成，没有膜；游离的合成胞内蛋白，附着的合成分泌蛋白', cx:296, cy:172, r:30},
+    {n:'溶酶体', m:'单层膜', f:'含有多种水解酶，能分解衰老、损伤的细胞器',
+     t:'其中的酶由核糖体合成，经内质网和高尔基体加工而来', cx:552, cy:252, r:24},
+    {n:'中心体', m:'无膜', f:'与动物细胞有丝分裂时纺锤体的形成有关',
+     t:'存在中心体的不一定是动物细胞，低等植物细胞也有', cx:104, cy:264, r:26}
+  ];
+  var sel = 0;
+
+  function draw(){
+    var g = prep('cv-org', W, H);
+    if(!g) return;
+
+    /* 细胞轮廓 */
+    g.fillStyle = '#f7fbf8';
+    roundRect(g, 30, 22, 620, 300, 22); g.fill();
+    g.strokeStyle = '#cfe3d6'; g.lineWidth = 2.5;
+    roundRect(g, 30, 22, 620, 300, 22); g.stroke();
+    g.strokeStyle = '#e6f1e9'; g.lineWidth = 1;
+    roundRect(g, 36, 28, 608, 288, 18); g.stroke();
+    label(g, '细胞膜', 330, 36, '#8fae99', 'center', 10.5);
+
+    /* 细胞核 */
+    g.fillStyle = '#eef0fb'; g.strokeStyle = '#b9c0e8'; g.lineWidth = 2;
+    g.beginPath(); g.arc(ORG[0].cx, ORG[0].cy, ORG[0].r, 0, 7); g.fill(); g.stroke();
+    g.strokeStyle = '#d5daf2'; g.lineWidth = 1.4;
+    g.beginPath(); g.arc(ORG[0].cx, ORG[0].cy, ORG[0].r-6, 0, 7); g.stroke();
+    g.fillStyle = '#c9cff0';
+    g.beginPath(); g.arc(ORG[0].cx-10, ORG[0].cy-8, 9, 0, 7); g.fill();
+
+    /* 线粒体 */
+    g.fillStyle = '#fdeeee'; g.strokeStyle = '#e2b6b6'; g.lineWidth = 2;
+    g.beginPath(); g.ellipse(ORG[1].cx, ORG[1].cy, 44, 22, -0.12, 0, 7); g.fill(); g.stroke();
+    g.strokeStyle = '#e9c3c3'; g.lineWidth = 1.3;
+    for(var i=-2;i<=2;i++){
+      g.beginPath();
+      g.moveTo(ORG[1].cx + i*14, ORG[1].cy - 16);
+      g.quadraticCurveTo(ORG[1].cx + i*14 + 6, ORG[1].cy, ORG[1].cx + i*14, ORG[1].cy + 16);
+      g.stroke();
+    }
+
+    /* 叶绿体 */
+    g.fillStyle = '#e8f5ea'; g.strokeStyle = '#9dcaa8'; g.lineWidth = 2;
+    g.beginPath(); g.ellipse(ORG[2].cx, ORG[2].cy, 44, 22, 0.12, 0, 7); g.fill(); g.stroke();
+    g.fillStyle = '#9dcaa8';
+    for(var j=-1;j<=1;j++){
+      g.beginPath(); g.ellipse(ORG[2].cx + j*22, ORG[2].cy, 9, 6, 0, 0, 7); g.fill();
+    }
+
+    /* 内质网 */
+    g.strokeStyle = '#b9c8e0'; g.lineWidth = 2.2;
+    for(var k=0;k<4;k++){
+      g.beginPath();
+      g.moveTo(186, 240 + k*16);
+      g.bezierCurveTo(216, 228 + k*16, 248, 252 + k*16, 278, 240 + k*16);
+      g.stroke();
+    }
+
+    /* 高尔基体 */
+    g.strokeStyle = '#c9b7e0'; g.lineWidth = 3;
+    for(var m=0;m<4;m++){
+      g.beginPath();
+      g.arc(ORG[4].cx, 300, 44 - m*11, Math.PI*1.12, Math.PI*1.88);
+      g.stroke();
+    }
+
+    /* 核糖体 */
+    g.fillStyle = '#9aa5b5';
+    for(var p=0;p<12;p++){
+      var ang = p*0.9, rr = 12 + (p%3)*9;
+      g.beginPath();
+      g.arc(ORG[5].cx + Math.cos(ang)*rr, ORG[5].cy + Math.sin(ang)*rr*0.8, 3.2, 0, 7);
+      g.fill();
+    }
+
+    /* 溶酶体 */
+    g.fillStyle = '#fbeef6'; g.strokeStyle = '#dcb4cd'; g.lineWidth = 2;
+    g.beginPath(); g.arc(ORG[6].cx, ORG[6].cy, 19, 0, 7); g.fill(); g.stroke();
+    g.fillStyle = '#dcb4cd';
+    for(var q=0;q<5;q++){
+      g.beginPath();
+      g.arc(ORG[6].cx + Math.cos(q*1.3)*8, ORG[6].cy + Math.sin(q*1.3)*8, 2.2, 0, 7);
+      g.fill();
+    }
+
+    /* 中心体 */
+    g.strokeStyle = '#8f9bb0'; g.lineWidth = 3.4;
+    g.beginPath(); g.moveTo(92, 254); g.lineTo(104, 272); g.stroke();
+    g.beginPath(); g.moveTo(112, 254); g.lineTo(100, 272); g.stroke();
+
+    /* 标签 */
+    label(g, '细胞核', 168, 176, '#6b76a8', 'center', 11);
+    label(g, '线粒体', 392, 126, '#a86a6a', 'center', 11);
+    label(g, '叶绿体', 552, 126, '#4f8a5f', 'center', 11);
+    label(g, '内质网', 232, 320, '#7c8aa5', 'center', 11);
+    label(g, '高尔基体', 404, 320, '#8878ab', 'center', 11);
+    label(g, '核糖体', 296, 208, '#77839a', 'center', 11);
+    label(g, '溶酶体', 552, 284, '#a9758f', 'center', 11);
+    label(g, '中心体', 104, 296, '#77839a', 'center', 11);
+
+    /* 选中高亮 */
+    var s = ORG[sel];
+    g.strokeStyle = COL.green; g.lineWidth = 2.4; g.setLineDash([5,4]);
+    g.beginPath(); g.arc(s.cx, s.cy, s.r, 0, 7); g.stroke();
+    g.setLineDash([]);
+
+    var out = document.getElementById('or-out');
+    if(out){
+      out.innerHTML =
+        '<div>细胞器<b>' + s.n + '</b></div>' +
+        '<div>膜结构<b>' + s.m + '</b></div>' +
+        '<div style="grid-column:span 2">功能<b style="font-size:13.5px">' + s.f + '</b></div>' +
+        '<div style="grid-column:span 2" class="warn">易错<b style="font-size:13px;color:#c93a3a">' + s.t + '</b></div>';
+    }
+  }
+
+  var seg = document.getElementById('or-pick');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); sel = +b.dataset.i; draw();
+      var i = sel;
+      seg.querySelectorAll('button').forEach(function(bt){ bt.classList.toggle('on', +bt.dataset.i === i); });
+    });
+  }
+
+  var cvs = document.getElementById('cv-org');
+  if(cvs){
+    cvs.addEventListener('click', function(ev){
+      var r = cvs.getBoundingClientRect();
+      var x = (ev.clientX - r.left) / r.width * W;
+      var y = (ev.clientY - r.top) / r.height * H;
+      var best = -1, bd = 1e9;
+      for(var i=0;i<ORG.length;i++){
+        var d = Math.hypot(x-ORG[i].cx, y-ORG[i].cy);
+        if(d < ORG[i].r + 6 && d < bd){ bd = d; best = i; }
+      }
+      if(best >= 0){
+        sel = best; draw();
+        if(seg) seg.querySelectorAll('button').forEach(function(bt){ bt.classList.toggle('on', +bt.dataset.i === best); });
+      }
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 4-1  光合曲线
+   ============================================================ */
+(function(){
+  var W=680, H=326;
+  var I = 600, co2 = 1;
+  var PMAX = [16, 24, 30], K = 320, R = 5;
+  var LBL = ['CO₂ 低', 'CO₂ 中', 'CO₂ 高'];
+
+  var A = 0.04;  /* 弱光区的初始斜率，决定光补偿点的位置 */
+  function gross(i, lvl){ return PMAX[lvl]*(1 - Math.exp(-A*i/PMAX[lvl])); }
+  function net(i, lvl){ return gross(i, lvl) - R; }
+  function comp(lvl){ return -PMAX[lvl]/A * Math.log(1 - R/PMAX[lvl]); }
+  function sat(lvl){ return -PMAX[lvl]/A * Math.log(0.05); }
+
+  function draw(){
+    var g = prep('cv-photo', W, H);
+    if(!g) return;
+    var x0 = 66, x1 = 650, y0 = 40, y1 = 258;
+    function px(i){ return x0 + i/2000*(x1-x0); }
+    function py(v){ return y1 - (v+8)/40*(y1-y0); }
+
+    /* 网格 */
+    g.strokeStyle = '#eef1f5'; g.lineWidth = 1;
+    for(var v=-8; v<=32; v+=8){
+      g.beginPath(); g.moveTo(x0, py(v)); g.lineTo(x1, py(v)); g.stroke();
+      label(g, v, x0-8, py(v), '#a6aeb9', 'right', 10.5);
+    }
+    for(var i=0;i<=2000;i+=500){
+      label(g, i, px(i), y1+15, '#a6aeb9', 'center', 10.5);
+    }
+    /* 轴 */
+    g.strokeStyle = '#dfe4ea'; g.lineWidth = 1.2;
+    g.beginPath(); g.moveTo(x0, y0-6); g.lineTo(x0, y1); g.lineTo(x1, y1); g.stroke();
+    label(g, '净光合速率 / CO₂ mg·h⁻¹', 10, 16, '#8b96a3', 'left', 11);
+    label(g, '光强 / lx', x1, y1+30, '#8b96a3', 'right', 11);
+
+    /* 零线 */
+    g.strokeStyle = '#c9d2df'; g.lineWidth = 1; g.setLineDash([4,4]);
+    g.beginPath(); g.moveTo(x0, py(0)); g.lineTo(x1, py(0)); g.stroke();
+    g.setLineDash([]);
+    label(g, '0', x0-8, py(0), '#8b96a3', 'right', 10.5);
+
+    /* 三条曲线 */
+    for(var lv=0; lv<3; lv++){
+      g.strokeStyle = lv===co2 ? (lv===0?'#8fb6e8':(lv===1?COL.green:'#a4741f')) : '#e6ebf2';
+      g.lineWidth = lv===co2 ? 2.6 : 1.4;
+      g.beginPath();
+      for(var ii=0; ii<=2000; ii+=20){
+        var X = px(ii), Y = py(net(ii, lv));
+        if(ii===0) g.moveTo(X,Y); else g.lineTo(X,Y);
+      }
+      g.stroke();
+    }
+
+    /* 补偿点 */
+    var cp = comp(co2);
+    g.strokeStyle = '#c9d2df'; g.setLineDash([3,3]); g.lineWidth = 1;
+    g.beginPath(); g.moveTo(px(cp), py(0)); g.lineTo(px(cp), y1); g.stroke();
+    g.setLineDash([]);
+    label(g, '补偿点 ' + cp.toFixed(0), px(cp), y1-8, '#7b8492', 'center', 10.5);
+    g.fillStyle = '#fff'; g.strokeStyle = COL.green; g.lineWidth = 1.6;
+    g.beginPath(); g.arc(px(cp), py(0), 4, 0, 7); g.fill(); g.stroke();
+
+    /* 饱和点 */
+    var sp = sat(co2);
+    if(sp <= 2000){
+      g.strokeStyle = '#c9d2df'; g.setLineDash([3,3]); g.lineWidth = 1;
+      g.beginPath(); g.moveTo(px(sp), py(net(sp,co2))); g.lineTo(px(sp), y1); g.stroke();
+      g.setLineDash([]);
+      label(g, '接近饱和 ' + sp.toFixed(0), px(sp), py(net(sp,co2)) + 16, '#7b8492', 'center', 10.5);
+    }
+
+    /* 当前点 */
+    var cv = net(I, co2);
+    g.fillStyle = COL.red;
+    g.beginPath(); g.arc(px(I), py(cv), 5.5, 0, 7); g.fill();
+    g.strokeStyle = '#fff'; g.lineWidth = 1.5; g.stroke();
+    g.setLineDash([3,3]); g.strokeStyle = '#d5dbe3'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(px(I), py(cv)); g.lineTo(px(I), y1); g.stroke();
+    g.setLineDash([]);
+
+    var lbx = px(I) + 10, lba = 'left';
+    if(lbx > 500){ lbx = px(I) - 10; lba = 'right'; }
+    label(g, '当前：' + cv.toFixed(1), lbx, py(cv) - 14, COL.red, lba, 11.5);
+
+    /* 图例 */
+    g.fillStyle = 'rgba(255,255,255,.92)';
+    roundRect(g, 462, 186, 168, 68, 8); g.fill();
+    var lx = 476, ly = 200;
+    for(var l2=0; l2<3; l2++){
+      g.strokeStyle = l2===co2 ? (l2===0?'#8fb6e8':(l2===1?COL.green:'#a4741f')) : '#cfd7e2';
+      g.lineWidth = l2===co2 ? 2.6 : 1.4;
+      g.beginPath(); g.moveTo(lx, ly + l2*16); g.lineTo(lx+22, ly + l2*16); g.stroke();
+      label(g, LBL[l2], lx+28, ly + l2*16, l2===co2 ? '#39424d' : '#a6aeb9', 'left', 11);
+    }
+    label(g, '呼吸速率恒为 ' + R.toFixed(0), 476, 247, '#8b96a3', 'left', 10.5);
+
+    var out = document.getElementById('ph-out');
+    if(out){
+      var state = cv > 0.5 ? '净积累（光合 > 呼吸）' : (cv < -0.5 ? '净消耗（光合 < 呼吸）' : '达到补偿点');
+      out.innerHTML =
+        '<div>净光合速率<b>' + cv.toFixed(1) + '</b></div>' +
+        '<div>总光合速率<b>' + (cv+R).toFixed(1) + '</b></div>' +
+        '<div>呼吸速率<b>' + R.toFixed(1) + '</b></div>' +
+        '<div class="' + (cv>0?'ok':'warn') + '">状态<b>' + state + '</b></div>';
+    }
+  }
+
+  var sl = document.getElementById('ph-i');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      I = +e.target.value;
+      document.getElementById('ph-iv').textContent = I + ' lx';
+      draw();
+    });
+  }
+  var seg = document.getElementById('ph-co2');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); co2 = +b.dataset.i; draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 5-1  减数分裂
+   ============================================================ */
+(function(){
+  var W=680, H=330;
+  var st = 0;
+  var NAME = ['间期（DNA 复制）','减Ⅰ前期（联会、四分体）','减Ⅰ中期','减Ⅰ后期（同源染色体分离）',
+              '减Ⅰ末期','减Ⅱ中期','减Ⅱ后期','减Ⅱ末期（形成 4 个配子）'];
+  var NUM = [['4','8','8'],['4','8','8'],['4','8','8'],['4','8','8'],
+             ['2','4','4'],['2','4','4'],['4','4','0'],['2','2','0']];
+
+  function chromX(g, x, y, s, color){
+    g.strokeStyle = color; g.lineWidth = 4.5; g.lineCap = 'round';
+    g.beginPath(); g.moveTo(x-s, y-s); g.lineTo(x+s, y+s); g.stroke();
+    g.beginPath(); g.moveTo(x+s, y-s); g.lineTo(x-s, y+s); g.stroke();
+    g.lineCap = 'butt';
+  }
+  function chromRod(g, x, y, s, color, vertical){
+    g.strokeStyle = color; g.lineWidth = 4.5; g.lineCap = 'round';
+    g.beginPath();
+    if(vertical){ g.moveTo(x, y-s); g.lineTo(x, y+s); }
+    else { g.moveTo(x-s*0.7, y); g.lineTo(x+s*0.7, y); }
+    g.stroke();
+    g.lineCap = 'butt';
+  }
+  function cell(g, x, y, r){
+    g.fillStyle = '#fbfdfb'; g.strokeStyle = '#cfdcd3'; g.lineWidth = 2;
+    g.beginPath(); g.arc(x, y, r, 0, 7); g.fill(); g.stroke();
+  }
+
+  function draw(){
+    var g = prep('cv-meio', W, H);
+    if(!g) return;
+    g.fillStyle = '#fbfcfd'; g.fillRect(0,0,W,H);
+
+    var R1 = 128, R2 = 86, R4 = 62;
+    var RED = '#c95b5b', BLUE = '#5b7cc9';
+
+    if(st <= 3){
+      cell(g, 340, 168, R1);
+      if(st === 0){
+        chromX(g, 300, 120, 15, RED); chromX(g, 300, 200, 15, BLUE);
+        chromX(g, 386, 120, 11, RED); chromX(g, 386, 200, 11, BLUE);
+      }
+      if(st === 1){
+        chromX(g, 280, 130, 15, RED); chromX(g, 322, 130, 15, RED);
+        chromX(g, 362, 210, 11, BLUE); chromX(g, 404, 210, 11, BLUE);
+        g.strokeStyle = '#e0c3c3'; g.lineWidth = 1.2; g.setLineDash([3,3]);
+        g.beginPath(); g.ellipse(301, 130, 34, 26, 0, 0, 7); g.stroke();
+        g.setLineDash([]);
+        label(g, '四分体', 301, 96, '#a86a6a', 'center', 11);
+        label(g, '交叉互换', 383, 236, '#6b76a8', 'center', 11);
+      }
+      if(st === 2){
+        g.strokeStyle = '#e6ecf5'; g.lineWidth = 1.4; g.setLineDash([5,4]);
+        g.beginPath(); g.moveTo(210, 168); g.lineTo(470, 168); g.stroke();
+        g.setLineDash([]);
+        chromX(g, 300, 168, 15, RED); chromX(g, 330, 168, 15, RED);
+        chromX(g, 360, 168, 11, BLUE); chromX(g, 390, 168, 11, BLUE);
+        label(g, '赤道板', 470, 162, '#a6aeb9', 'left', 10.5);
+      }
+      if(st === 3){
+        chromX(g, 300, 106, 15, RED); chromX(g, 330, 106, 15, RED);
+        chromX(g, 360, 230, 11, BLUE); chromX(g, 390, 230, 11, BLUE);
+        arrow(g, 315, 132, 315, 100, '#d9a3a3', 1.6, 8);
+        arrow(g, 375, 204, 375, 236, '#a9b6d9', 1.6, 8);
+        label(g, '同源染色体分离', 340, 60, COL.red, 'center', 12);
+        label(g, '非同源染色体自由组合', 340, 292, COL.blue, 'center', 12);
+      }
+    } else if(st <= 6){
+      var ccx = [226, 454], ccy = 168;
+      for(var i=0;i<2;i++){
+        var cx = ccx[i];
+        cell(g, cx, ccy, R2);
+        if(st === 4){
+          chromX(g, cx-16, ccy-16, 14, RED);
+          chromX(g, cx+18, ccy+18, 10, BLUE);
+        }
+        if(st === 5){
+          g.strokeStyle = '#e6ecf5'; g.lineWidth = 1.4; g.setLineDash([5,4]);
+          g.beginPath(); g.moveTo(cx-R2+10, ccy); g.lineTo(cx+R2-10, ccy); g.stroke();
+          g.setLineDash([]);
+          chromX(g, cx-20, ccy, 14, RED);
+          chromX(g, cx+20, ccy, 10, BLUE);
+        }
+        if(st === 6){
+          chromRod(g, cx-40, ccy, 18, RED, true);
+          chromRod(g, cx+40, ccy, 18, RED, true);
+          chromRod(g, cx-16, ccy, 12, BLUE, true);
+          chromRod(g, cx+16, ccy, 12, BLUE, true);
+          arrow(g, cx-24, ccy, cx-40, ccy, '#d9a3a3', 1.4, 7);
+          arrow(g, cx+24, ccy, cx+40, ccy, '#d9a3a3', 1.4, 7);
+        }
+      }
+      if(st === 4) label(g, '减Ⅰ结束：染色体数减半', 340, 40, COL.text, 'center', 12.5);
+      if(st === 5) label(g, '减Ⅱ中期：着丝粒排在赤道板', 340, 40, COL.text, 'center', 12.5);
+      if(st === 6) label(g, '减Ⅱ后期：姐妹染色单体分开', 340, 40, COL.red, 'center', 12.5);
+    } else {
+      var pos = [[176,132],[330,132],[176,246],[330,246]];
+      for(var j=0;j<4;j++){
+        cell(g, pos[j][0], pos[j][1], R4);
+        if(j < 2){ chromRod(g, pos[j][0], pos[j][1], 16, RED, true); }
+        else { chromRod(g, pos[j][0], pos[j][1], 11, BLUE, true); }
+      }
+      label(g, '4 个配子，染色体数为体细胞的一半', 340, 40, COL.text, 'center', 12.5);
+    }
+
+    /* 阶段条 */
+    for(var k=0;k<8;k++){
+      g.fillStyle = (k <= st) ? COL.green : '#e9edf2';
+      roundRect(g, 40 + k*76, 300, 62, 8, 4); g.fill();
+    }
+    label(g, NAME[st], 340, 322, COL.green, 'center', 12);
+
+    var out = document.getElementById('me-out');
+    if(out){
+      var n = NUM[st];
+      out.innerHTML =
+        '<div>时期<b style="font-size:13px">' + NAME[st].replace(/（.*?）/,'') + '</b></div>' +
+        '<div>染色体数<b>' + n[0] + '</b></div>' +
+        '<div>DNA 数<b>' + n[1] + '</b></div>' +
+        '<div>染色单体<b>' + n[2] + '</b></div>';
+    }
+  }
+
+  var sl = document.getElementById('me-s');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      st = +e.target.value;
+      document.getElementById('me-sv').textContent = NAME[st].replace(/（.*?）/,'');
+      draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 6-1  棋盘格
+   ============================================================ */
+(function(){
+  var W=680, H=382;
+  var idx = 0;
+
+  function gam(f){
+    if(f === 'Aa') return ['A','a'];
+    if(f === 'aa') return ['a','a'];
+    if(f === 'AaBb') return ['AB','Ab','aB','ab'];
+    if(f === 'XᴮXᵇ') return ['Xᴮ','Xᵇ'];
+    if(f === 'XᴮY') return ['Xᴮ','Y'];
+    return ['?'];
+  }
+
+  var SETS = [
+    {p1:'Aa', p2:'Aa', title:'Aa × Aa（一对相对性状）',
+     phen:function(gt){ return gt.indexOf('A') >= 0 && gt[0] === 'A' ? '显性' : '隐性'; },
+     cols:{'显性':'#dbeafe','隐性':'#fde2e2'},
+     txt:{'显性':'#1e40af','隐性':'#a13a3a'}},
+    {p1:'Aa', p2:'aa', title:'Aa × aa（测交）',
+     phen:function(gt){ return gt[0] === 'A' ? '显性' : '隐性'; },
+     cols:{'显性':'#dbeafe','隐性':'#fde2e2'},
+     txt:{'显性':'#1e40af','隐性':'#a13a3a'}},
+    {p1:'AaBb', p2:'AaBb', title:'AaBb × AaBb（两对相对性状，9 : 3 : 3 : 1）',
+     phen:function(gt){
+       var hasA = gt[0] === 'A', hasB = gt[2] === 'B';
+       if(hasA && hasB) return '双显';
+       if(hasA && !hasB) return '单显A';
+       if(!hasA && hasB) return '单显B';
+       return '双隐';
+     },
+     cols:{'双显':'#dbeafe','单显A':'#dcf5e3','单显B':'#fdf0d8','双隐':'#fde2e2'},
+     txt:{'双显':'#1e40af','单显A':'#166534','单显B':'#92580a','双隐':'#a13a3a'}},
+    {p1:'XᴮXᵇ', p2:'XᴮY', title:'XᴮXᵇ × XᴮY（伴 X 隐性遗传）',
+     phen:function(gt){
+       if(gt.indexOf('Y') >= 0) return gt.indexOf('Xᵇ') >= 0 ? '男患病' : '男正常';
+       return gt.indexOf('Xᵇ') >= 0 ? '女携带' : '女正常';
+     },
+     cols:{'女正常':'#dbeafe','女携带':'#e8e3fb','男正常':'#dcf5e3','男患病':'#fde2e2'},
+     txt:{'女正常':'#1e40af','女携带':'#5b3fa8','男正常':'#166534','男患病':'#a13a3a'}}
+  ];
+
+  function draw(){
+    var g = prep('cv-pun', W, H);
+    if(!g) return;
+    var S = SETS[idx];
+    var g1 = gam(S.p1), g2 = gam(S.p2);
+    var nx = g2.length, ny = g1.length;
+
+    var cell = Math.min(74, 434/nx, 210/ny);
+    var gx = 340 - nx*cell/2, gy = 58;
+    var hdr = 30;
+
+    label(g, S.title, W/2, 22, COL.text, 'center', 13);
+
+    /* 表头 */
+    for(var j=0;j<nx;j++){
+      g.fillStyle = '#f1f4f8';
+      roundRect(g, gx + j*cell, gy, cell-4, hdr-4, 6); g.fill();
+      label(g, g2[j], gx + j*cell + (cell-4)/2, gy + 13, '#4a5460', 'center', 12.5);
+    }
+    for(var i=0;i<ny;i++){
+      g.fillStyle = '#f1f4f8';
+      roundRect(g, gx - hdr, gy + hdr + i*cell, hdr-4, cell-4, 6); g.fill();
+      label(g, g1[i], gx - hdr + (hdr-4)/2, gy + hdr + i*cell + (cell-4)/2, '#4a5460', 'center', 12.5);
+    }
+
+    /* 格子 */
+    var count = {};
+    for(var r=0;r<ny;r++){
+      for(var c=0;c<nx;c++){
+        var gt = combine(S.p1, g1[r], S.p2, g2[c]);
+        var ph = S.phen(gt);
+        count[ph] = (count[ph]||0) + 1;
+        var x = gx + c*cell, y = gy + hdr + r*cell;
+        g.fillStyle = S.cols[ph] || '#f1f4f8';
+        roundRect(g, x, y, cell-4, cell-4, 6); g.fill();
+        label(g, gt, x + (cell-4)/2, y + (cell-4)/2, S.txt[ph] || '#39424d', 'center', 12.5);
+      }
+    }
+
+    /* 比例 */
+    var tot = nx*ny, parts = [], keys = Object.keys(S.cols);
+    for(var k=0;k<keys.length;k++){
+      if(count[keys[k]]) parts.push(keys[k] + ' ' + count[keys[k]]);
+    }
+    label(g, '表现型：' + parts.join('　'), W/2, 356, COL.green, 'center', 12.5);
+
+    var out = document.getElementById('pu-out');
+    if(out){
+      var nums = keys.filter(function(kk){ return count[kk]; })
+                     .map(function(kk){ return count[kk]; });
+      var gd = gcdAll(nums);
+      out.innerHTML =
+        '<div>杂交组合<b>' + S.p1 + ' × ' + S.p2 + '</b></div>' +
+        '<div>配子种类<b>' + nx + ' × ' + ny + '</b></div>' +
+        '<div>子代组合数<b>' + tot + '</b></div>' +
+        '<div class="ok">表现型比<b>' + nums.map(function(n){ return n/gd; }).join(' : ') + '</b></div>';
+    }
+  }
+
+  function combine(p1, a, p2, b){
+    if(p1 === 'AaBb'){
+      function pr(x, y){ return [x, y].sort().join(''); }
+      return pr(a[0], b[0]) + pr(a[1], b[1]);
+    }
+    if(p1 === 'Aa' || p1 === 'aa'){
+      var x1 = a, x2 = b;
+      if((x1 === 'A' || x2 === 'A') && (x1 === 'A' && x2 === 'A')) return 'AA';
+      if(x1 === 'a' && x2 === 'a') return 'aa';
+      return 'Aa';
+    }
+    /* 伴性 */
+    if(b === 'Y' || a === 'Y'){
+      var xx = (a === 'Y') ? b : a;
+      return xx + 'Y';
+    }
+    return a + b;
+  }
+
+  function gcdAll(arr){
+    function gd(a,b){ return b ? gd(b, a%b) : a; }
+    var r = arr[0];
+    for(var i=1;i<arr.length;i++) r = gd(r, arr[i]);
+    return r || 1;
+  }
+
+  var seg = document.getElementById('pu-pick');
+  if(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(seg.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); idx = +b.dataset.i; draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 9-1  动作电位
+   ============================================================ */
+(function(){
+  var W=680, H=326;
+  var t = 0, timer = null, playing = false;
+
+  function V(tt){
+    if(tt < 20) return -70;
+    if(tt < 26){ var u = (tt-20)/6; return -70 + 100*(u*u*(3-2*u)); }
+    if(tt < 42){ var u2 = (tt-26)/16; return 30 - 100*(u2*u2*(3-2*u2)); }
+    if(tt < 52){ var u3 = (tt-42)/10; return -70 - 10*Math.sin(Math.PI*u3); }
+    if(tt < 80){ var u4 = (tt-52)/28; return -70 - 10*(1-u4); }
+    return -70;
+  }
+  function phase(tt){
+    if(tt < 20) return ['静息状态', '关闭（备用）', '开放（K⁺ 外流维持静息电位）'];
+    if(tt < 26) return ['去极化（Na⁺ 内流）', '大量开放', '关闭'];
+    if(tt < 42) return ['复极化（K⁺ 外流）', '失活关闭', '开放'];
+    if(tt < 52) return ['超极化', '失活', '仍开放'];
+    if(tt < 80) return ['恢复静息', '关闭（恢复备用）', '逐渐关闭'];
+    return ['静息状态', '关闭（备用）', '开放'];
+  }
+
+  function draw(){
+    var g = prep('cv-ap', W, H);
+    if(!g) return;
+    var x0 = 62, x1 = 646, y0 = 40, y1 = 250;
+    function px(tt){ return x0 + tt/100*(x1-x0); }
+    function py(v){ return y1 - (v+90)/130*(y1-y0); }
+
+    g.strokeStyle = '#eef1f5'; g.lineWidth = 1;
+    [-90,-70,-50,-30,-10,10,30].forEach(function(v){
+      g.beginPath(); g.moveTo(x0, py(v)); g.lineTo(x1, py(v)); g.stroke();
+      label(g, v, x0-8, py(v), '#a6aeb9', 'right', 10.5);
+    });
+    g.strokeStyle = '#dfe4ea'; g.lineWidth = 1.2;
+    g.beginPath(); g.moveTo(x0, y0-4); g.lineTo(x0, y1); g.lineTo(x1, y1); g.stroke();
+    label(g, '膜电位 / mV', 10, 16, '#8b96a3', 'left', 11.5);
+    label(g, '时间', x1, y1+14, '#8b96a3', 'right', 11);
+
+    /* 阈值线 */
+    g.strokeStyle = '#f0c9c9'; g.setLineDash([4,4]); g.lineWidth = 1;
+    g.beginPath(); g.moveTo(x0, py(-55)); g.lineTo(x1, py(-55)); g.stroke();
+    g.setLineDash([]);
+    label(g, '阈电位', x0+6, py(-55)-10, '#c08a8a', 'left', 10.5);
+
+    /* 曲线 */
+    g.strokeStyle = '#c6d3e6'; g.lineWidth = 2;
+    g.beginPath();
+    for(var tt=0; tt<=100; tt+=0.5){
+      var X = px(tt), Y = py(V(tt));
+      if(tt===0) g.moveTo(X,Y); else g.lineTo(X,Y);
+    }
+    g.stroke();
+
+    /* 已走 */
+    g.strokeStyle = COL.red; g.lineWidth = 2.8;
+    g.beginPath();
+    for(var t2=0; t2<=t; t2+=0.4){
+      var X2 = px(t2), Y2 = py(V(t2));
+      if(t2===0) g.moveTo(X2,Y2); else g.lineTo(X2,Y2);
+    }
+    g.stroke();
+
+    /* 当前点 */
+    var cx = px(t), cy = py(V(t));
+    g.fillStyle = '#fff'; g.strokeStyle = COL.red; g.lineWidth = 2.2;
+    g.beginPath(); g.arc(cx, cy, 6, 0, 7); g.fill(); g.stroke();
+    g.setLineDash([3,3]); g.strokeStyle = '#d5dbe3'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx, y1); g.stroke();
+    g.setLineDash([]);
+
+    /* 通道示意 */
+    var ph = phase(t);
+    var bx = 480, by = 278;
+    g.fillStyle = '#f6f8fc'; roundRect(g, 40, 268, W-80, 40, 9); g.fill();
+    label(g, ph[0], 60, 288, COL.text, 'left', 12.5);
+    label(g, 'Na⁺ 通道：' + ph[1], 300, 288, '#4a5460', 'left', 11.5);
+    label(g, 'K⁺ 通道：' + ph[2], 460, 288, '#4a5460', 'left', 11.5);
+
+    var out = document.getElementById('ap-out');
+    if(out){
+      out.innerHTML =
+        '<div>时间<b>' + t.toFixed(0) + ' ms</b></div>' +
+        '<div>膜电位<b>' + V(t).toFixed(0) + ' mV</b></div>' +
+        '<div>状态<b style="font-size:13px">' + ph[0] + '</b></div>' +
+        '<div class="' + (V(t)>0?'warn':'ok') + '">电位极性<b>' + (V(t)>0?'外负内正':'外正内负') + '</b></div>';
+    }
+  }
+
+  var sl = document.getElementById('ap-t');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      t = +e.target.value;
+      document.getElementById('ap-tv').textContent = t.toFixed(0) + ' ms';
+      draw();
+    });
+  }
+  var btn = document.getElementById('ap-run');
+  if(btn){
+    btn.addEventListener('click', function(){
+      playing = !playing;
+      btn.textContent = playing ? '暂停' : '播放';
+      if(playing){
+        timer = setInterval(function(){
+          t += 1.6;
+          if(t > 100){ t = 0; }
+          sl.value = t.toFixed(0);
+          document.getElementById('ap-tv').textContent = t.toFixed(0) + ' ms';
+          draw();
+        }, 40);
+      } else if(timer){
+        clearInterval(timer); timer = null;
+      }
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   图 11-1  能量流动
+   ============================================================ */
+(function(){
+  var W=680, H=330;
+  var eff = 10, E0 = 1000;
+
+  function draw(){
+    var g = prep('cv-ener', W, H);
+    if(!g) return;
+    var LV = ['三级消费者', '次级消费者', '初级消费者', '生产者'];
+    var E = [E0];
+    for(var i=1;i<4;i++) E.push(E[i-1]*eff/100);
+    E.reverse();  /* 生产者在前 */
+
+    var maxW = 520, x0 = 86;
+    var lh = 58, top = 34;
+
+    for(var k=0;k<4;k++){
+      var y = top + k*lh;
+      var w = Math.max(3, maxW * E[k]/E0);
+      var col = k===0 ? '#3f8f5c' : (k===1 ? '#5fa87a' : (k===2 ? '#8cc19f' : '#bcdcc7'));
+      g.fillStyle = col;
+      roundRect(g, x0, y, w, 34, 5); g.fill();
+      label(g, LV[k], x0 - 10, y+17, '#4a5460', 'right', 11.5);
+      label(g, E[k].toFixed(E[k] < 10 ? 2 : 1) + ' kJ', x0 + w + 10, y+17, '#39424d', 'left', 11.5);
+      if(k < 3){
+        var nextW = Math.max(3, maxW * E[k+1]/E0);
+        g.strokeStyle = '#c9d7cf'; g.lineWidth = 1.2;
+        g.beginPath(); g.moveTo(x0 + 10, y+36); g.lineTo(x0 + Math.max(nextW, 10), y + lh - 2); g.stroke();
+        label(g, eff + '%', x0 + nextW + 26, y + lh - 6, '#7b8492', 'left', 11.5);
+        label(g, '其余 ' + (100-eff) + '%：呼吸消耗、未被利用、流入分解者', 300, y + 44, '#b08b8b', 'left', 10.5);
+      }
+    }
+
+    var loss = (1 - Math.pow(eff/100, 3)) * 100;
+    label(g, '每上一级，能量只剩 ' + eff + '%，三级之后总量只剩 ' + (Math.pow(eff/100,3)*100).toFixed(2) + '%', W/2, 300, COL.muted, 'center', 12);
+
+    var out = document.getElementById('en-out');
+    if(out){
+      out.innerHTML =
+        '<div>生产者<b>' + E[0].toFixed(0) + ' kJ</b></div>' +
+        '<div>初级消费者<b>' + E[1].toFixed(1) + ' kJ</b></div>' +
+        '<div>次级消费者<b>' + E[2].toFixed(2) + ' kJ</b></div>' +
+        '<div class="warn">三级消费者<b>' + E[3].toFixed(2) + ' kJ</b></div>';
+    }
+  }
+
+  var sl = document.getElementById('en-e');
+  if(sl){
+    sl.addEventListener('input', function(e){
+      eff = +e.target.value;
+      document.getElementById('en-ev').textContent = eff + '%';
+      draw();
+    });
+  }
+  draw();
+})();
+
+/* ============================================================
+   侧栏高亮
+   ============================================================ */
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.side nav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var pos = window.scrollY + 140, cur = 0;
+    for(var i=0;i<secs.length;i++){
+      if(secs[i] && secs[i].offsetTop <= pos) cur = i;
+    }
+    links.forEach(function(a,i){ a.classList.toggle('on', i===cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
