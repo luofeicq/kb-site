@@ -3,69 +3,312 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>高中物理 · 化学 · 生物　知识点与考点精讲</title>
+<title>高中知识库 · 物理 化学 生物 复习与查知识点</title>
+<meta name="description" content="高中物理、化学、生物知识点与考点整理，跨学科搜索，含可交互示意图。">
 <style>
+:root{
+  --bg:#f6f7f9; --panel:#fff; --text:#16191d; --muted:#5d646d; --faint:#98a0aa;
+  --line:#e4e7ec; --soft:#f1f4f8;
+  --phy:#7c3aed; --chem:#2563eb; --bio:#15803d;
+  --bar-h:56px;
+}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-  background:#f5f6f8;color:#1b1f24;padding:36px 20px;
+  margin:0;background:var(--bg);color:var(--text);
   font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{width:100%;max-width:1080px}
-h1{font-size:25px;margin:0 0 8px;letter-spacing:-.2px}
-.sub{color:#5d646d;font-size:14.5px;margin:0 0 28px;max-width:780px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px}
-a.card{
-  display:block;text-decoration:none;color:inherit;background:#fff;
-  border:1px solid #e3e6ec;border-radius:16px;padding:24px 24px 20px;
-  transition:.18s;box-shadow:0 1px 3px rgba(16,24,40,.045);
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* ---------- 顶栏 ---------- */
+.sitebar{
+  position:fixed;top:0;left:0;right:0;height:var(--bar-h);z-index:900;
+  background:rgba(255,255,255,.9);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);
 }
-a.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(16,24,40,.09)}
-.card .sym{font-size:26px;font-weight:800;letter-spacing:-.8px;line-height:1}
-.card h2{font-size:18px;margin:13px 0 8px}
-.card p{margin:0 0 13px;color:#5d646d;font-size:13.5px;line-height:1.75}
-.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
-.card .tags span{font-size:11.5px;background:#f1f4f8;color:#5d646d;border-radius:20px;padding:2px 10px}
-.card .go{font-size:13.5px;font-weight:600}
-.phy .sym,.phy .go{color:#7c3aed}
-.phy:hover{border-color:#d6c9f5}
-.chem .sym,.chem .go{color:#2563eb}
-.chem:hover{border-color:#c9d6e8}
-.bio .sym,.bio .go{color:#15803d}
-.bio:hover{border-color:#c3dfcb}
-footer{margin-top:26px;color:#98a0aa;font-size:12.5px;line-height:1.8}
-@media (max-width:620px){h1{font-size:21px}body{padding:24px 16px}}
+.sb-inner{max-width:1140px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;gap:26px}
+.sb-brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-weight:750;font-size:15.5px;letter-spacing:-.2px}
+.sb-brand .mk{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:linear-gradient(135deg,#7c3aed,#2563eb 55%,#15803d);color:#fff;font-size:12px;font-weight:800}
+.sb-sub{font-size:11.5px;color:#a3abb6;font-weight:500}
+.sb-nav{display:flex;align-items:center;gap:4px}
+.sb-nav a{text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:600;padding:6px 13px;border-radius:8px;transition:.15s}
+.sb-nav a:hover{background:var(--soft);color:var(--text)}
+.sb-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.sb-btn{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:9px;padding:6px 12px 6px 10px;cursor:pointer;font-family:inherit;font-size:13px;color:var(--muted);transition:.15s}
+.sb-btn:hover{border-color:#c3cede;color:var(--text);box-shadow:0 1px 4px rgba(16,24,40,.06)}
+.sb-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.sb-btn kbd{font-family:ui-monospace,Consolas,monospace;font-size:10.5px;color:#9aa3ae;border:1px solid #e3e7ee;border-bottom-width:2px;border-radius:4px;padding:0 4px;background:#fafbfc}
+
+/* ---------- Hero ---------- */
+.hero{padding:calc(var(--bar-h) + 44px) 0 8px;text-align:center}
+.hero h1{
+  font-size:34px;line-height:1.32;margin:0 0 12px;letter-spacing:-.8px;font-weight:800;
+}
+.hero h1 .g{
+  background:linear-gradient(100deg,#7c3aed,#2563eb 48%,#15803d);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{color:var(--muted);font-size:15.5px;margin:0 auto 26px;max-width:560px}
+
+/* 搜索框 */
+.searchbox{
+  max-width:620px;margin:0 auto;display:flex;align-items:center;gap:12px;
+  background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 16px;
+  box-shadow:0 2px 10px rgba(16,24,40,.05);cursor:text;transition:.18s;
+}
+.searchbox:hover{border-color:#c8d3e4;box-shadow:0 6px 22px rgba(16,24,40,.09)}
+.searchbox svg{width:18px;height:18px;stroke:#98a0aa;fill:none;stroke-width:2;stroke-linecap:round;flex:0 0 auto}
+.searchbox .ph{flex:1;text-align:left;color:#aab2bd;font-size:15.5px}
+.searchbox .kbd{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:#9aa3ae;border:1px solid #e3e7ee;border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:#fafbfc}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px auto 0;max-width:640px}
+.chips span{font-size:12.5px;color:var(--faint);margin-right:2px;align-self:center}
+.chips button{
+  border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 13px;
+  font-size:12.5px;color:var(--muted);cursor:pointer;font-family:inherit;transition:.15s;
+}
+.chips button:hover{border-color:#c3cede;color:var(--text);background:#fbfcfd}
+
+/* ---------- 三科卡片 ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:46px 0 0}
+.acard{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px 22px;text-decoration:none;color:inherit;overflow:hidden;
+  transition:.2s;box-shadow:0 1px 3px rgba(16,24,40,.045);
+}
+.acard::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--c)}
+.acard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(16,24,40,.11);border-color:transparent}
+.acard .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--cs);margin-bottom:15px}
+.acard .ic svg{width:20px;height:20px;stroke:var(--c);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.acard h2{margin:0 0 7px;font-size:18.5px;letter-spacing:-.2px}
+.acard p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.75;min-height:66px}
+.acard .meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.acard .meta i{font-style:normal;font-size:11.5px;background:var(--soft);color:var(--muted);border-radius:20px;padding:2.5px 10px}
+.acard .go{font-size:13.5px;font-weight:700;color:var(--c);display:flex;align-items:center;gap:5px}
+.acard .go svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:.2s}
+.acard:hover .go svg{transform:translateX(3px)}
+
+/* ---------- 知识地图 ---------- */
+.sect-h{display:flex;align-items:baseline;gap:12px;margin:64px 0 6px;flex-wrap:wrap}
+.sect-h h2{font-size:20px;margin:0;letter-spacing:-.2px}
+.sect-h .hint{font-size:13px;color:var(--faint)}
+.map{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px 14px}
+.col .ch{display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid #eef1f5}
+.col .ch .dot{width:8px;height:8px;border-radius:50%;background:var(--c);flex:0 0 auto}
+.col .ch b{font-size:14px;letter-spacing:-.1px}
+.col .ch em{font-style:normal;font-size:11.5px;color:var(--faint);margin-left:auto}
+.col ul{list-style:none;margin:0;padding:0}
+.col li a{
+  display:block;text-decoration:none;color:#39424d;padding:6px 8px;border-radius:7px;
+  font-size:13px;line-height:1.6;transition:.13s;
+}
+.col li a:hover{background:var(--soft);color:var(--c)}
+.col li a .no{display:block;font-size:10.5px;color:#b0b8c2;line-height:1.4;margin-bottom:1px}
+.col li a:hover .no{color:var(--c);opacity:.75}
+
+/* ---------- 使用说明 ---------- */
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 18px}
+.step .n{width:22px;height:22px;border-radius:7px;background:var(--soft);color:var(--muted);font-size:12px;font-weight:700;display:grid;place-items:center;margin-bottom:9px}
+.step b{font-size:13.5px;display:block;margin-bottom:4px}
+.step p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.75}
+
+footer{margin:66px 0 0;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--faint);font-size:12.5px;line-height:1.9}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--chem)}
+
+/* ---------- 搜索面板（由 shell.js 注入样式，这里补基础） ---------- */
+.kbs{position:fixed;inset:0;z-index:1000;display:none;background:rgba(23,27,33,.4);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:0 16px}
+.kbs.on{display:block}
+.kbs-box{max-width:680px;margin:11vh auto 0;background:#fff;border-radius:15px;box-shadow:0 24px 70px rgba(16,24,40,.28);overflow:hidden;display:flex;flex-direction:column;max-height:70vh}
+.kbs-head{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line)}
+.kbs-head svg{width:17px;height:17px;stroke:#98a0aa;fill:none;stroke-width:2;stroke-linecap:round;flex:0 0 auto}
+.kbs-input{flex:1;border:none;outline:none;font-size:16px;font-family:inherit;color:var(--text);background:transparent;line-height:1.6}
+.kbs-input::placeholder{color:#b0b8c2}
+.kbs-close{border:none;background:var(--soft);color:var(--muted);border-radius:7px;padding:3px 9px;font-size:11.5px;cursor:pointer;font-family:inherit}
+.kbs-close:hover{background:#e6eaf1;color:var(--text)}
+.kbs-body{overflow:auto;padding:6px 8px 10px}
+.kbs-tip{padding:16px 12px;font-size:13px;color:#a3abb6;line-height:1.9}
+.kbs-tip b{color:var(--muted);font-weight:600}
+.kbs-grp{font-size:11.5px;color:#a3abb6;padding:11px 12px 5px;letter-spacing:.5px}
+.kbs-item{display:block;text-decoration:none;color:inherit;padding:9px 12px;border-radius:9px;transition:.12s;cursor:pointer}
+.kbs-item:hover,.kbs-item.sel{background:var(--soft)}
+.kbs-item .r1{display:flex;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap}
+.kbs-tag{font-size:10.5px;font-weight:700;color:#fff;border-radius:5px;padding:1.5px 6px;flex:0 0 auto}
+.kbs-tag.phy{background:var(--phy)}
+.kbs-tag.chem{background:var(--chem)}
+.kbs-tag.bio{background:var(--bio)}
+.kbs-item .nm{font-size:14px;font-weight:650;color:var(--text);line-height:1.5}
+.kbs-item .r2{font-size:12px;color:#98a0aa;line-height:1.6;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.kbs-item mark{background:#fef3c7;color:inherit;border-radius:2px;padding:0 1px}
+.kbs-foot{border-top:1px solid var(--line);padding:8px 16px;font-size:11.5px;color:#a3abb6;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.kbs-foot span b{color:var(--muted)}
+.pgbar{position:fixed;top:0;left:0;height:2px;width:0;z-index:901;background:linear-gradient(90deg,#7c3aed,#2563eb,#15803d)}
+.totop{position:fixed;right:24px;bottom:26px;z-index:880;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 16px rgba(16,24,40,.12);opacity:0;visibility:hidden;transition:.22s}
+.totop.on{opacity:1;visibility:visible}
+.totop:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,24,40,.18)}
+.totop svg{width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:940px){
+  .cards,.map,.howto{grid-template-columns:1fr}
+  .acard p{min-height:0}
+  .hero h1{font-size:26px}
+  .hero{padding-top:calc(var(--bar-h) + 40px)}
+  .sb-sub,.sb-btn kbd{display:none}
+}
+
+@media print{
+  .sitebar,.totop,.pgbar,.kbs{display:none!important}
+  .hero{padding-top:20px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>高中物理 · 化学 · 生物　知识点与考点精讲</h1>
-  <p class="sub">三份学习材料，均为单文件网页。每节含知识主线、高频考点、易错辨析、口诀、例题精解与分层练习，练习答案默认折叠。带图标的页面内有可交互的图，可以拖动滑块、点击图中元素直接操作。</p>
-  <div class="grid">
-    <a class="card phy" href="physics.html">
-      <div class="sym">Phys</div>
-      <h2>物理</h2>
-      <p>按错题诊断排序的六个专题：波的图像与多解、等量点电荷、库仑力与圆弧、单摆、弹簧振子、静电概念，另附解题检查清单与两周计划。</p>
-      <div class="tags"><span>6 专题</span><span>2 附录</span><span>7 张交互图</span></div>
-      <div class="go">打开 →</div>
-    </a>
-    <a class="card chem" href="chem.html">
-      <div class="sym">Chem</div>
-      <h2>化学</h2>
-      <p>必修一、二与选择性必修 1–3，共 13 节。含 6 张交互图：氧化还原、物质的量、元素周期表、化学平衡、滴定曲线、原电池。</p>
-      <div class="tags"><span>13 节</span><span>49 张表</span><span>6 张交互图</span></div>
-      <div class="go">打开 →</div>
-    </a>
-    <a class="card bio" href="bio.html">
-      <div class="sym">Bio</div>
-      <h2>生物</h2>
-      <p>必修 1、2 与选择性必修 1–3，共 12 节。含 6 张交互图：细胞器图鉴、光合曲线、减数分裂、棋盘格、动作电位、能量流动。</p>
-      <div class="tags"><span>12 节</span><span>43 张表</span><span>6 张交互图</span></div>
-      <div class="go">打开 →</div>
-    </a>
+
+<header class="sitebar"><div class="sb-inner">
+  <a class="sb-brand" href="index.html"><span class="mk">知</span>高中知识库<span class="sb-sub">复习 · 查知识点</span></a>
+  <nav class="sb-nav">
+    <a href="physics.html">物理</a>
+    <a href="chem.html">化学</a>
+    <a href="bio.html">生物</a>
+  </nav>
+  <div class="sb-right">
+    <button class="sb-btn" data-kbs-open type="button">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      搜索知识点<kbd>/</kbd>
+    </button>
   </div>
-  <footer>三份页面均为单文件，不依赖外部网络与第三方库，离线同样可用。</footer>
+</div></header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <h1>三科知识点，<span class="g">一处查得到</span></h1>
+    <p class="lead">物理、化学、生物的全部章节按教材顺序排好了。想查某个概念，直接搜；想按章节过一遍，从下面的知识地图进。</p>
+
+    <div class="searchbox" data-kbs-open>
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <div class="ph">搜索知识点，例如：勒夏特列、减数分裂、单摆</div>
+      <span class="kbd">/</span>
+    </div>
+
+    <div class="chips">
+      <span>试着搜：</span>
+      <button data-kbs-open data-q="勒夏特列">勒夏特列原理</button>
+      <button data-kbs-open data-q="减数分裂">减数分裂</button>
+      <button data-kbs-open data-q="单摆">单摆</button>
+      <button data-kbs-open data-q="氧化还原">氧化还原</button>
+      <button data-kbs-open data-q="光合">光合作用</button>
+      <button data-kbs-open data-q="波的图像">波的图像</button>
+    </div>
+  </section>
+
+  <section class="cards">
+    <a class="acard" href="physics.html" style="--c:var(--phy);--cs:#f3ecfd">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4.6"/><ellipse cx="12" cy="12" rx="10" ry="4.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.6" transform="rotate(120 12 12)"/></svg></div>
+      <h2>物理</h2>
+      <p>按错题诊断排出的六个专题，从波的图像与多解讲到静电概念。每个专题都从“这题在考什么”起步，配原题复盘。</p>
+      <div class="meta"><i>6 个专题</i><i>2 个附录</i><i>7 张交互图</i></div>
+      <div class="go">进入物理 <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+    </a>
+
+    <a class="acard" href="chem.html" style="--c:var(--chem);--cs:#eaf1fe">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.2L5.6 17a3 3 0 0 0 2.6 4.5h7.6a3 3 0 0 0 2.6-4.5L14 9.2V3"/><path d="M7.4 14.5h9.2"/></svg></div>
+      <h2>化学</h2>
+      <p>必修一、二与选择性必修 1–3，共 13 章。从物质分类一路到有机合成，实验与 STSE 单列成章。</p>
+      <div class="meta"><i>13 章</i><i>49 张表</i><i>6 张交互图</i></div>
+      <div class="go">进入化学 <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+    </a>
+
+    <a class="acard" href="bio.html" style="--c:var(--bio);--cs:#e9f6ed">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3c0 4.5 3 7 6 9s6 4.5 6 9"/><path d="M18 3c0 4.5-3 7-6 9s-6 4.5-6 9"/><path d="M8.5 6.5h7M8.5 17.5h7M7 12h10"/></svg></div>
+      <h2>生物</h2>
+      <p>必修 1、2 与选择性必修 1–3，共 12 章。细胞代谢、遗传规律、稳态调节到生态与生物技术。</p>
+      <div class="meta"><i>12 章</i><i>43 张表</i><i>6 张交互图</i></div>
+      <div class="go">进入生物 <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+    </a>
+  </section>
+
+  <div class="sect-h">
+    <h2>知识地图</h2>
+    <span class="hint">全部 33 章，点任意一条直接跳过去</span>
+  </div>
+  <section class="map" id="map"></section>
+
+  <div class="sect-h">
+    <h2>怎么用</h2>
+  </div>
+  <section class="howto">
+    <div class="step">
+      <div class="n">1</div>
+      <b>查一个概念</b>
+      <p>按 <kbd>/</kbd> 或点右上角搜索，输入关键词，跨三科一起找，点结果直接跳到那一段。</p>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <b>过一遍章节</b>
+      <p>从知识地图进对应学科，左边有目录，滚动时会自动高亮当前章节，随时知道自己在哪。</p>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <b>练完再看答案</b>
+      <p>每章末尾的分层练习，答案默认收起来。先自己写，写完了再展开对答案。</p>
+    </div>
+  </section>
+
+  <footer>
+    <a href="physics.html">物理</a><a href="chem.html">化学</a><a href="bio.html">生物</a>
+    <div style="margin-top:8px">内容按人教版 2019 版教材顺序编排。三个学科页面均为单文件，含可交互示意图，断网也能打开。</div>
+  </footer>
 </div>
+
+<script src="kb-index.js"></script>
+<script src="shell.js"></script>
+<script>
+(function(){
+  "use strict";
+  /* 从索引生成知识地图，按科目分栏 */
+  var IDX = window.__KBIDX || [];
+  var CFG = [
+    {s:'物理', c:'var(--phy)', file:'physics.html'},
+    {s:'化学', c:'var(--chem)', file:'chem.html'},
+    {s:'生物', c:'var(--bio)', file:'bio.html'}
+  ];
+  var map = document.getElementById('map');
+  CFG.forEach(function(cfg){
+    var list = IDX.filter(function(x){ return x.s === cfg.s; });
+    var col = document.createElement('div');
+    col.className = 'col';
+    col.style.setProperty('--c', cfg.c);
+    var lis = list.map(function(x){
+      return '<li><a href="' + x.f + '#' + x.id + '">' +
+             '<span class="no">' + (x.c || '') + '</span>' + x.n + '</a></li>';
+    }).join('');
+    col.innerHTML =
+      '<div class="ch"><span class="dot"></span><b>' + cfg.s + '</b><em>' + list.length + ' 章</em></div>' +
+      '<ul>' + lis + '</ul>';
+    map.appendChild(col);
+  });
+
+  /* 预设搜索词：打开面板并自动填入 */
+  var chips = document.querySelectorAll('[data-q]');
+  [].forEach.call(chips, function(b){
+    b.addEventListener('click', function(){
+      var q = b.getAttribute('data-q');
+      if(window.__kbOpen){
+        window.__kbOpen();
+        setTimeout(function(){
+          var inp = document.getElementById('kbsIn');
+          if(inp){ inp.value = q; inp.dispatchEvent(new Event('input')); }
+        }, 60);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
