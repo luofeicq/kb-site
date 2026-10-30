@@ -176,14 +176,14 @@
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><ellipse cx="12" cy="12" rx="9.6" ry="4.4"/><ellipse cx="12" cy="12" rx="9.6" ry="4.4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.6" ry="4.4" transform="rotate(120 12 12)"/></svg></div>
         <div>
           <h3>物理</h3>
-          <p class="sm">波与振动 · 静电场 · 力学综合 · 实验</p>
+          <p class="sm">力学 · 电磁学 · 振动与波 · 光学 · 热学 · 近代物理</p>
         </div>
-        <div class="stat"><b>6</b><i>专题</i></div>
+        <div class="stat"><b>18</b><i>章</i></div>
       </div>
       <div class="entries">
         <a class="entry" href="physics-knowledge.html">
           <span class="en">知识点学习 <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          <span class="ed">6 专题 + 2 附录 · 7 张交互图</span>
+          <span class="ed">18 章 + 6 深化专题 · 7 张交互图</span>
         </a>
         <a class="entry" href="physics-mistakes.html">
           <span class="en">错题练习 <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
@@ -298,15 +298,19 @@
   </footer>
 </div>
 
-<script src="assets/index.js"></script>
-<script src="assets/search.js"></script>
+<script src="assets/index.js" defer></script>
+<script src="assets/search.js" defer></script>
 <script>
-KB.search.init({
-  items: window.KB_INDEX || [],
-  scope: '全站',
-  placeholder: '全站搜索：知识点、章节、错题',
-  tip: '在<b>六科全部内容</b>里查找，共 ' + ((window.KB_INDEX||[]).length) + ' 个条目。'
+/* 索引较大，脚本用 defer 异步加载；初始化必须等它加载完再执行 */
+document.addEventListener('DOMContentLoaded', function(){
+  KB.search.init({
+    items: window.KB_INDEX || [],
+    scope: '全站',
+    placeholder: '全站搜索：知识点、章节、错题',
+    tip: '在<b>六科全部内容</b>里查找，共 ' + ((window.KB_INDEX||[]).length) + ' 个条目。'
+  });
 });
+
 </script>
 </body>
 </html>

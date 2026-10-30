@@ -99,6 +99,7 @@
               '<button class="mbtn" data-act="mark" data-id="' + d.id + '">' +
                 (done ? '取消已掌握' : '标记为已掌握') + '</button>' +
               '<button class="mbtn ghost" data-act="retry" data-id="' + d.id + '">重做一次</button>' +
+              (d.link ? '<a class="mbtn ghost mlink" href="' + esc(d.link) + '">去对应知识点 →</a>' : '') +
             '</div>' +
             '<div class="mans" id="ans-' + d.id + '">' +
               '<div class="mans-in">' +

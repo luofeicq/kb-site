@@ -10,7 +10,7 @@
 index.html              门户：全站搜索 + 六科入口（每科两个板块）
 
 math-knowledge.html     数学知识点（7 章）      math-mistakes.html     数学错题（8 道）
-physics-knowledge.html  物理知识点（6 专题+附录） physics-mistakes.html  物理错题（11 道）
+physics-knowledge.html  物理知识点（18 章 + 6 专题） physics-mistakes.html  物理错题（11 道）
 bio-knowledge.html      生物知识点（12 章）      bio-mistakes.html      生物错题（8 道）
 chem-knowledge.html     化学知识点（13 章）      chem-mistakes.html     化学错题（8 道）
 chinese-knowledge.html  语文知识点（6 章）       chinese-mistakes.html  语文错题（6 道）
@@ -21,7 +21,7 @@ assets/mistakes.css     错题页专用样式
 assets/site.js          阅读进度条 / 返回顶部 / 锚点闪烁
 assets/search.js        站内搜索组件（页面级 + 全站级共用）
 assets/mistakes.js      错题练习逻辑（筛选 / 搜索 / 重做 / 标记掌握 / 进度）
-assets/index.js         全站搜索索引（442 条，构建时自动生成，勿手改）
+assets/index.js         全站搜索索引（666 条，构建时自动生成，勿手改）
 
 data/mistakes-*.js      六个科目的错题数据（可直接编辑）
 _build/build_site.py    构建脚本：补锚点 id、注入切换条、生成错题页与全站索引
@@ -29,7 +29,9 @@ _build/build_site.py    构建脚本：补锚点 id、注入切换条、生成�
 
 ## 页面约定
 
-每个学科都分两个板块，页面顶部有「知识点学习 / 错题练习」切换条：
+每个学科都分两个板块，页面顶部有「知识点学习 / 错题练习」切换条。
+
+物理知识点页分两部分：前半是按人教版必修一、二、三与选择性必修一、二、三顺序排的 **18 章全册内容**，后半是六个由真实错题反推出来的**深化专题**（含 7 张可拖动的交互图）。
 
 - **知识点页**：左侧目录吸顶，滚动自动高亮；页内搜索（`/` 或 `Ctrl/Cmd + K`）；章节含知识主线、高频考点、易错辨析、口诀、例题精解、分层练习（答案折叠）。
 - **错题页**：按专题筛选、按关键词搜索、点击展开解析、一键重做（先收起答案并居中定位）、标记「已掌握」。进度存在浏览器 localStorage，换设备不同步。
@@ -44,6 +46,8 @@ _build/build_site.py    构建脚本：补锚点 id、注入切换条、生成�
 ## 内容说明
 
 物理错题来自真实错题本记录；其余五科的错题为按高考常见陷阱编排的典型例题，非原卷摘录。
+
+错题卡片上的「去对应知识点 →」可直接跳到全册对应章节，47 道错题全部配了锚点。
 
 ## 修改与发布
 

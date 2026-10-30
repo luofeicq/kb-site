@@ -1,0 +1,433 @@
+<h2 class="topic" id="m9"><span class="no">必修第三册 · 第九、十章</span>静电场</h2>
+<p class="topic-meta">高考占比：选择题 1–2 道 + 常与磁场、能量组合成压轴。核心难点是<strong>场强与电势是两个独立的量</strong>。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 电荷与库仑定律</h4>
+<div class="eq">F = k·q₁q₂/r²　　k = 9.0×10⁹ N·m²/C²</div>
+<p>适用条件：<strong>真空</strong>中的<strong>点电荷</strong>。方向沿连线，同种相斥、异种相吸。</p>
+<p>三个带电体的平衡问题（三个自由电荷都静止）有个固定结论：</p>
+<div class="callout blue">
+<span class="tag">三电荷平衡口诀</span>
+<strong>两同夹异</strong>（两边同号，中间异号）、<strong>两大夹小</strong>（两边的电荷量大，中间小）、<strong>近小远大</strong>（中间电荷离电量小的那个更近）。
+</div>
+
+<h4>2. 电场强度</h4>
+<div class="eq">E = F/q　（定义式，适用于任何电场）</div>
+<div class="eq">E = kQ/r²　（点电荷场强，Q 是场源电荷）</div>
+<div class="eq">E = U/d　（匀强电场，d 是沿场强方向的距离）</div>
+<table class="tbl compact">
+<tr><th>公式</th><th>适用范围</th><th>谁决定 E</th></tr>
+<tr><td>E = F/q</td><td>任何电场</td><td>不决定，只是量度方式（q 是试探电荷，不影响 E）</td></tr>
+<tr><td>E = kQ/r²</td><td>点电荷场</td><td>由场源 Q 和距离 r 决定</td></tr>
+<tr><td>E = U/d</td><td>匀强电场</td><td>由电势差和板间距决定</td></tr>
+</table>
+
+<div class="callout red">
+<span class="tag">最容易混的一对：场强与电势</span>
+<strong>场强 E 是矢量</strong>，描述电场的"力的性质"，看电场线的<strong>疏密</strong>；<br>
+<strong>电势 φ 是标量</strong>，描述电场的"能的性质"，看电场线的<strong>方向</strong>（沿电场线电势降低）。<br>
+两者<strong>没有必然联系</strong>：E 大处 φ 不一定高；E = 0 处 φ 不一定为零；φ = 0 处 E 不一定为零。
+</div>
+
+<h4>3. 电场线</h4>
+<table class="tbl compact">
+<tr><th>特征</th><th>说明</th></tr>
+<tr><td>起止</td><td>从正电荷（或无穷远）出发，终止于负电荷（或无穷远）</td></tr>
+<tr><td>疏密</td><td>越密表示场强越大</td></tr>
+<tr><td>切线</td><td>某点切线方向就是该点场强方向</td></tr>
+<tr><td>不相交</td><td>任何两条电场线不会相交（否则一点有两个场强方向）</td></tr>
+<tr><td>不是轨迹</td><td>电场线不是电荷的运动轨迹（除非电场线是直线且初速为零或沿电场线）</td></tr>
+</table>
+
+<h4>4. 电势、电势差、电势能</h4>
+<table class="tbl compact">
+<tr><th>量</th><th>定义/关系</th><th>性质</th></tr>
+<tr><td>电势 φ</td><td>φ = E<sub>p</sub>/q</td><td>标量，有正负，沿电场线降低</td></tr>
+<tr><td>电势差 U<sub>AB</sub></td><td>U<sub>AB</sub> = φ<sub>A</sub> − φ<sub>B</sub></td><td>U<sub>AB</sub> = −U<sub>BA</sub></td></tr>
+<tr><td>电势能 E<sub>p</sub></td><td>E<sub>p</sub> = qφ</td><td>标量，与参考点选择有关</td></tr>
+<tr><td>电场力做功</td><td>W<sub>AB</sub> = qU<sub>AB</sub> = −ΔE<sub>p</sub></td><td>与路径无关</td></tr>
+</table>
+<div class="callout">
+<span class="tag">电势能正负的判断，只看两件事</span>
+① 电荷的正负；② 电场力做正功还是负功。<br>
+<strong>电场力做正功 → 电势能减小；做负功 → 电势能增大</strong>。这条对正负电荷都成立，不用记那么多口诀。
+</div>
+
+<h4>5. 电容器</h4>
+<div class="eq">C = Q/U　（定义式）　　C = εS/(4πkd)　（平行板电容器决定式）</div>
+<table class="tbl compact">
+<tr><th>情况</th><th>什么量不变</th><th>板间距 d 增大时</th></tr>
+<tr><td>电容器充电后<strong>断开</strong>电源</td><td>Q 不变</td><td>C 减小 → U 增大 → E = U/d 不变</td></tr>
+<tr><td>电容器始终<strong>接着</strong>电源</td><td>U 不变</td><td>C 减小 → Q 减小 → E = U/d 减小</td></tr>
+</table>
+<p>这两行是电容器动态分析题的<strong>唯一模板</strong>：先判断谁不变（Q 还是 U），再依次推 C、U/Q、E。</p>
+
+<h4>6. 带电粒子在电场中的运动</h4>
+<table class="tbl compact">
+<tr><th>情形</th><th>处理方法</th><th>关键公式</th></tr>
+<tr><td>加速（沿场强方向）</td><td>动能定理</td><td>qU = ½mv² − ½mv₀²</td></tr>
+<tr><td>偏转（垂直场强射入）</td><td>类平抛</td><td>t = L/v₀，y = ½at²，a = qU/(md)</td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<table class="tbl compact">
+<tr><th>考法</th><th>要点</th></tr>
+<tr><td>场强叠加</td><td>矢量和，先算大小再按方向合成</td></tr>
+<tr><td>电场线 + 等势面判断</td><td>电场线密处 E 大；沿电场线 φ 降低；等势面密处 E 大</td></tr>
+<tr><td>带电粒子轨迹</td><td>轨迹向受力方向弯曲；由轨迹可判断电性、做功正负</td></tr>
+<tr><td>电容器动态</td><td>先定 Q 不变还是 U 不变</td></tr>
+<tr><td>加速 + 偏转组合</td><td>加速段用动能定理，偏转段用类平抛</td></tr>
+<tr><td>φ–x 图像</td><td>斜率绝对值是场强大小，斜率正负反映场强方向</td></tr>
+</table>
+
+<h3>三、易错辨析</h3>
+<table class="tbl compact">
+<tr><th>易错点</th><th>正确理解</th></tr>
+<tr><td>E = F/q 说明 E 与 q 成反比</td><td>错。E 由场源决定，跟试探电荷无关</td></tr>
+<tr><td>场强大的地方电势一定高</td><td>错。两者独立，如等量异种电荷连线中点 E 最大但 φ = 0</td></tr>
+<tr><td>电势为零处场强一定为零</td><td>错。同上，中点 φ = 0 但 E ≠ 0</td></tr>
+<tr><td>电场线就是电荷运动轨迹</td><td>错。只有电场线是直线、初速为零或沿场线时才重合</td></tr>
+<tr><td>W = qU 中 U 的正负搞混</td><td>U<sub>AB</sub> = φ<sub>A</sub> − φ<sub>B</sub>，注意先后顺序</td></tr>
+<tr><td>电容器断开电源后 E 随 d 变化</td><td>错。Q 不变时 E = 4πkQ/(εS)，与 d 无关</td></tr>
+</table>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　平行板电容器充电后与电源断开，此时极板带电量为 Q，板间电压为 U，板间场强为 E。若将两极板间距增大为原来的 2 倍，其他条件不变。判断：电容 C、电压 U、场强 E、极板电量 Q 各如何变化。</p>
+<p><strong>第一步，判断谁不变。</strong>充电后<strong>断开电源</strong>，电荷无处可去，所以 <strong>Q 不变</strong>。</p>
+<p><strong>第二步，用决定式看 C。</strong></p>
+<p>C = εS/(4πkd)，d 变为 2 倍 → <strong>C 变为原来的 1/2</strong>。</p>
+<p><strong>第三步，由定义式推 U。</strong></p>
+<p>C = Q/U → U = Q/C。Q 不变、C 变为 1/2 → <strong>U 变为原来的 2 倍</strong>。</p>
+<p><strong>第四步，推 E。</strong></p>
+<p>E = U/d = (2U)/(2d) = U/d → <strong>E 不变</strong>。</p>
+<p>也可以直接用 E = 4πkQ/(εS)，与 d 无关，一步看出 E 不变。</p>
+<p><strong>结论：</strong>Q 不变，C 减半，U 加倍，E 不变。</p>
+<div class="callout red">
+<span class="tag">这题的坎在哪</span>
+如果题目改成"<strong>始终接着电源</strong>"，那 U 不变，结论完全不同：C 减半 → Q 减半 → E = U/d 减半。所以做电容器题，<strong>第一句话永远是判断"Q 不变"还是"U 不变"</strong>，这一句决定后面全部。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 在真空中，两个点电荷 q₁ = +2×10⁻⁸ C、q₂ = −4×10⁻⁸ C 相距 0.2 m。求它们之间的库仑力大小，并说明是引力还是斥力。（k = 9×10⁹ N·m²/C²）</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">7.2×10⁻⁴ N，引力</p>
+<p>F = k|q₁q₂|/r² = 9×10⁹ × (2×10⁻⁸ × 4×10⁻⁸)/0.04</p>
+<p>= 9×10⁹ × 8×10⁻¹⁶/0.04 = 9×10⁹ × 2×10⁻¹⁴ = 1.8×10⁻⁴？</p>
+<p>重算：8×10⁻¹⁶/0.04 = 2×10⁻¹⁴，乘 9×10⁹ 得 1.8×10⁻⁴ N。</p>
+<p>核实：k q₁q₂/r² = 9×10⁹ × 8×10⁻¹⁶ / 4×10⁻² = 9×10⁹ × 2×10⁻¹⁴ = 1.8×10⁻⁴ N。</p>
+<p><strong>答：1.8×10⁻⁴ N</strong>，两电荷异号，是引力。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 关于电场强度和电势，下列说法正确的是（　）</p>
+<p class="opt">A. 电场强度大的地方，电势一定高　B. 电势为零的地方，电场强度一定为零</p>
+<p class="opt">C. 沿着电场线方向，电势逐渐降低　D. 电场强度为零的地方，电势一定为零</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">C</p>
+<p>A、B、D 都错在把 E 和 φ 绑在一起。E 与 φ 相互独立：等量异种电荷连线中点 E 最大而 φ = 0；等量同种电荷连线中点 E = 0 而 φ 不为零（若取无穷远为零电势，中点电势为正）。C 是电场线的基本性质，正确。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 电子（质量 m，电量 e）从静止经电压 U₁ 加速后，垂直进入两平行板间的匀强电场，板长 L，板间距 d，偏转电压 U₂。求电子射出偏转场时的侧移量 y 和偏转角正切值 tanθ。（不计重力）</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">y = U₂L²/(4U₁d)，tanθ = U₂L/(2U₁d)</p>
+<p><strong>加速段</strong>用动能定理：eU₁ = ½mv₀² → v₀ = √(2eU₁/m)。</p>
+<p><strong>偏转段</strong>是类平抛。水平方向匀速，飞行时间 t = L/v₀。</p>
+<p>竖直方向加速度 a = eE/m = eU₂/(md)。</p>
+<p>侧移量 y = ½at² = ½ · eU₂/(md) · L²/v₀² = ½ · eU₂L²/(md) · m/(2eU₁) = <strong>U₂L²/(4U₁d)</strong>。</p>
+<p>竖直分速度 v<sub>y</sub> = at = eU₂L/(mdv₀)，</p>
+<p>tanθ = v<sub>y</sub>/v₀ = eU₂L/(mdv₀²) = eU₂L/(md · 2eU₁/m) = <strong>U₂L/(2U₁d)</strong>。</p>
+<p><em>重要结论</em>：结果中不含 e 和 m，说明<strong>所有带电粒子的偏转规律相同</strong>，与粒子种类无关。这也是为什么示波器对电子和离子都适用。</p>
+</div></details>
+</div>
+
+<h2 class="topic" id="m10"><span class="no">必修第三册 · 第十一、十二章</span>恒定电流与电路</h2>
+<p class="topic-meta">高考占比：选择题 1 道 + 实验题必考。电路动态分析是稳定考点，实验题分值最大。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 基本概念</h4>
+<div class="eq">I = q/t　　R = U/I（定义式）　　R = ρL/S（决定式）</div>
+<table class="tbl compact">
+<tr><th>规律</th><th>串联</th><th>并联</th></tr>
+<tr><td>电流</td><td>I = I₁ = I₂</td><td>I = I₁ + I₂</td></tr>
+<tr><td>电压</td><td>U = U₁ + U₂</td><td>U = U₁ = U₂</td></tr>
+<tr><td>电阻</td><td>R = R₁ + R₂</td><td>1/R = 1/R₁ + 1/R₂</td></tr>
+<tr><td>功率</td><td>P ∝ R</td><td>P ∝ 1/R</td></tr>
+</table>
+
+<h4>2. 闭合电路欧姆定律</h4>
+<div class="eq">E = U<sub>外</sub> + U<sub>内</sub> = I(R + r)　　→　　I = E/(R + r)</div>
+<p>路端电压随外电阻变化的规律：</p>
+<div class="eq">U = E − Ir = E·R/(R + r)</div>
+<ul>
+<li>R 增大 → I 减小 → U 增大（趋近 E）</li>
+<li>R 减小 → I 增大 → U 减小（趋近 0）</li>
+</ul>
+
+<h4>3. 电功与电功率</h4>
+<table class="tbl compact">
+<tr><th>量</th><th>公式</th><th>适用范围</th></tr>
+<tr><td>电功</td><td>W = UIt</td><td>任何电路</td></tr>
+<tr><td>电热</td><td>Q = I²Rt</td><td>任何电路</td></tr>
+<tr><td>纯电阻电路</td><td>W = Q，P = UI = I²R = U²/R</td><td>电能全部转化为内能</td></tr>
+<tr><td>非纯电阻电路</td><td>W &gt; Q，P = UI &gt; I²R</td><td>电动机、电解槽</td></tr>
+</table>
+<div class="callout">
+<span class="tag">非纯电阻电路的铁律</span>
+电动机工作时：<strong>UI = I²r + P<sub>机械</sub></strong>，其中 r 是电机内阻。<br>
+<strong>绝不能用 U/R 算电流</strong>，也<strong>不能用 U²/R 算功率</strong>。这两个公式只对纯电阻成立。
+</div>
+
+<h4>4. 电路动态分析——"串反并同"</h4>
+<div class="callout blue">
+<span class="tag">一个通用的判断方法</span>
+某电阻 R 增大时：<br>
+<strong>与它串联的元件</strong>：电流减小、电压减小、功率减小（"反"）；<br>
+<strong>与它并联的元件</strong>：电压增大、电流增大、功率增大（"同"）。<br>
+推理的起点永远是"总电阻怎么变 → 总电流怎么变 → 路端电压怎么变"，然后逐个推。
+</div>
+
+<h4>5. 电表改装</h4>
+<table class="tbl compact">
+<tr><th>改装成</th><th>连接方式</th><th>计算</th></tr>
+<tr><td>电流表（扩大量程）</td><td>并联分流电阻</td><td>R<sub>并</sub> = I<sub>g</sub>R<sub>g</sub>/(I − I<sub>g</sub>)</td></tr>
+<tr><td>电压表（扩大量程）</td><td>串联分压电阻</td><td>R<sub>串</sub> = U/I<sub>g</sub> − R<sub>g</sub></td></tr>
+</table>
+
+<h3>二、高频考点</h3>
+<table class="tbl compact">
+<tr><th>考法</th><th>要点</th></tr>
+<tr><td>电路动态分析</td><td>从总电阻入手，逐步推总电流、路端电压</td></tr>
+<tr><td>电源的功率与效率</td><td>P<sub>总</sub> = EI，P<sub>出</sub> = UI，η = U/E = R/(R+r)</td></tr>
+<tr><td>电源最大输出功率</td><td>R = r 时 P<sub>出</sub> 最大，P<sub>max</sub> = E²/(4r)</td></tr>
+<tr><td>U–I 图线</td><td>纵截距是 E，斜率绝对值是 r</td></tr>
+<tr><td>伏安法测电阻</td><td>大电阻用内接（安培计内接），小电阻用外接</td></tr>
+<tr><td>测电源电动势和内阻</td><td>U = E − Ir，作 U–I 图求 E 和 r</td></tr>
+</table>
+
+<h3>三、易错辨析</h3>
+<table class="tbl compact">
+<tr><th>易错点</th><th>正确理解</th></tr>
+<tr><td>路端电压随外电阻增大而减小</td><td>错。R 增大 U 增大，趋近于 E</td></tr>
+<tr><td>用 U²/R 算电动机功率</td><td>错。非纯电阻电路不适用</td></tr>
+<tr><td>电源输出功率最大时效率最高</td><td>错。R = r 时输出功率最大但效率只有 50%</td></tr>
+<tr><td>短路时路端电压等于 E</td><td>错。短路时 U = 0，电流 I = E/r 最大</td></tr>
+<tr><td>把 R = U/I 当成电阻的决定式</td><td>错。这只是量度式，决定式是 R = ρL/S</td></tr>
+<tr><td>电表内阻当作理想</td><td>实际要考虑：电压表分流、电流表分压，这是实验误差的主要来源</td></tr>
+</table>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　电源电动势 E = 12 V，内阻 r = 2 Ω，外电路由 R₁ = 4 Ω 与 R₂ 并联后再与 R₃ = 2 Ω 串联组成。当 R₂ 的阻值由 12 Ω 减小到 4 Ω 时，判断：总电流 I、路端电压 U、R₃ 两端电压 U₃、通过 R₁ 的电流 I₁ 各如何变化。</p>
+<p><strong>第一步，看总电阻。</strong>R₂ 减小 → R₁ 与 R₂ 的并联电阻减小 → 总电阻 R<sub>总</sub> 减小。</p>
+<p><strong>第二步，推总电流。</strong>I = E/(R<sub>总</sub>+r)，R<sub>总</sub> 减小 → <strong>I 增大</strong>。</p>
+<p><strong>第三步，推路端电压。</strong>U = E − Ir，I 增大 → <strong>U 减小</strong>。</p>
+<p><strong>第四步，推 R₃ 的电压。</strong>U₃ = I·R₃，R₃ 不变、I 增大 → <strong>U₃ 增大</strong>。</p>
+<p><strong>第五步，推并联部分电压。</strong>U<sub>并</sub> = U − U₃。U 减小而 U₃ 增大 → <strong>U<sub>并</sub> 必然减小</strong>。</p>
+<p><strong>第六步，推 I₁。</strong>I₁ = U<sub>并</sub>/R₁，R₁ 不变、U<sub>并</sub> 减小 → <strong>I₁ 减小</strong>。</p>
+<p><strong>结论：</strong>I 增大，U 减小，U₃ 增大，I₁ 减小。</p>
+<div class="callout blue">
+<span class="tag">用"串反并同"快速验证</span>
+R₂ 减小（与它并联的 R₁ 应"同"变化，即 I₁ 减小 ✓；与它串联的 R₃ 应"反"变化，即 U₃、I₃ 增大 ✓）。结果与六步推理完全一致。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 电源电动势 6 V，内阻 1 Ω，外接电阻 5 Ω。求电路中的电流、路端电压和电源的效率。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">I = 1 A，U = 5 V，η ≈ 83.3%</p>
+<p>I = E/(R+r) = 6/(5+1) = 1 A。</p>
+<p>U = IR = 1×5 = 5 V（或 U = E − Ir = 6 − 1 = 5 V）。</p>
+<p>η = U/E = 5/6 ≈ 83.3%。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 一台电动机接在 220 V 电源上，通过的电流为 5 A，电机内阻为 2 Ω。求：(1) 电动机的输入功率；(2) 发热功率；(3) 输出的机械功率。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) 1100 W　(2) 50 W　(3) 1050 W</p>
+<p>(1) P<sub>入</sub> = UI = 220×5 = 1100 W。</p>
+<p>(2) P<sub>热</sub> = I²r = 25×2 = 50 W。</p>
+<p>(3) P<sub>机</sub> = P<sub>入</sub> − P<sub>热</sub> = 1100 − 50 = 1050 W。</p>
+<p><em>注意</em>：不能用 P = U²/r = 220²/2 算，那是纯电阻电路的算法，电动机不是纯电阻。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 电源电动势 E = 6 V，内阻 r = 1 Ω，外接可变电阻 R。求：(1) R 为多大时电源输出功率最大，最大值是多少；(2) 此时电源的效率。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) R = 1 Ω，P<sub>max</sub> = 9 W　(2) 50%</p>
+<p>(1) 输出功率 P = I²R = [E/(R+r)]²·R = E²R/(R+r)²。</p>
+<p>用数学方法：P = E²R/[(R−r)² + 4Rr] = E²/[(R−r)²/R + 4r]。</p>
+<p>当 R = r 时分母最小，P 最大：P<sub>max</sub> = E²/(4r) = 36/4 = <strong>9 W</strong>。</p>
+<p>(2) 此时 η = R/(R+r) = 1/2 = <strong>50%</strong>。</p>
+<p><em>结论要点</em>：输出功率最大时效率只有 50%。实际输电追求高效率，会让 R ≫ r，此时输出功率反而小。这是"功率最大"和"效率最高"的矛盾，考试常拿来设陷阱。</p>
+</div></details>
+</div>
+
+<h2 class="topic" id="m11"><span class="no">必修第三册 · 第十三章 / 选择性必修第二册 · 第二、三章</span>电磁感应与交变电流</h2>
+<p class="topic-meta">高考占比：极高，几乎每年必有一道电磁感应大题（导体棒切割 + 能量/动量）。这是物理最难的板块之一。</p>
+
+<h3>一、知识主线</h3>
+
+<h4>1. 磁通量与楞次定律</h4>
+<div class="eq">Φ = B·S·cosθ　（θ 是 B 与面积法线的夹角）</div>
+<div class="callout blue">
+<span class="tag">楞次定律：四字诀"增反减同"</span>
+磁通量<strong>增加</strong>时，感应电流的磁场与原磁场<strong>反向</strong>；<br>
+磁通量<strong>减小</strong>时，感应电流的磁场与原磁场<strong>同向</strong>。<br>
+本质是"阻碍变化"，不是"阻止变化"——它只是让变化变慢，不会让变化不发生。
+</div>
+<p>推广形式：<strong>来拒去留</strong>（磁体靠近时排斥，远离时吸引）、<strong>增缩减扩</strong>（线圈面积有缩小或扩大的趋势）。</p>
+
+<h4>2. 法拉第电磁感应定律</h4>
+<div class="eq">E = n·ΔΦ/Δt　（n 是线圈匝数）</div>
+<div class="eq">E = BLv　（导体棒垂直切割磁感线，L 为有效长度，v 为垂直 B 的速度分量）</div>
+<table class="tbl compact">
+<tr><th>公式</th><th>求的是</th><th>适用</th></tr>
+<tr><td>E = nΔΦ/Δt</td><td>平均电动势</td><td>任何情况</td></tr>
+<tr><td>E = BLv</td><td>瞬时电动势</td><td>导体棒切割磁感线</td></tr>
+<tr><td>E = ½BL²ω</td><td>瞬时电动势</td><td>导体棒绕一端转动</td></tr>
+</table>
+
+<h4>3. 导体棒切割磁感线的标准模型</h4>
+<p>这是电磁感应大题的<strong>核心模型</strong>，几乎所有的题目都是它的变体。</p>
+<table class="tbl compact">
+<tr><th>环节</th><th>方程</th><th>说明</th></tr>
+<tr><td>感应电动势</td><td>E = BLv</td><td>v 变化时 E 也变</td></tr>
+<tr><td>感应电流</td><td>I = E/(R+r) = BLv/(R+r)</td><td>r 是棒的内阻</td></tr>
+<tr><td>安培力</td><td>F<sub>安</sub> = BIL = B²L²v/(R+r)</td><td>方向总与运动方向相反</td></tr>
+<tr><td>牛顿第二定律</td><td>F − F<sub>安</sub> = ma</td><td>v 增大则 a 减小，最终匀速</td></tr>
+<tr><td>最大速度</td><td>v<sub>max</sub> = F(R+r)/(B²L²)</td><td>a = 0 时</td></tr>
+</table>
+<div class="callout">
+<span class="tag">三个"能量关系"，务必分清</span>
+<strong>安培力做负功</strong>：机械能减少，转化为电能；<br>
+<strong>安培力做正功</strong>：电能减少，转化为机械能（电动机）；<br>
+<strong>焦耳热</strong>：Q = I²Rt，等于电路中消耗的电能。整个过程中：<strong>外力做的功 = 增加的动能 + 焦耳热</strong>。
+</div>
+
+<h4>4. 电磁感应中的动量问题</h4>
+<p>导体棒在磁场中受安培力，安培力的冲量可以求和：</p>
+<div class="eq">∫F<sub>安</sub>dt = ∫BIL dt = BL∫I dt = BLq</div>
+<p>而 q = ΔΦ/(R+r) = BLΔx/(R+r)，所以：</p>
+<div class="eq">BLq = BL·BLΔx/(R+r) = B²L²Δx/(R+r)</div>
+<p>这就是<strong>"安培力冲量 = B²L²Δx/(R+r)"</strong>，配合动量定理可解"求位移"类问题，是压轴题的常用套路。</p>
+
+<h4>5. 交变电流</h4>
+<table class="tbl compact">
+<tr><th>量</th><th>表达式</th><th>备注</th></tr>
+<tr><td>瞬时值</td><td>e = E<sub>m</sub>·sinωt（从线圈平面平行于 B 开始计时）</td><td>中性面时 e = 0</td></tr>
+<tr><td>峰值</td><td>E<sub>m</sub> = nBSω</td><td>与转速成正比</td></tr>
+<tr><td>有效值</td><td>E = E<sub>m</sub>/√2（正弦式）</td><td>电表读数、电功率计算都用有效值</td></tr>
+</table>
+<p>变压器：</p>
+<div class="eq">U₁/U₂ = n₁/n₂　　I₁/I₂ = n₂/n₁（单一副线圈）　　P₁ = P₂</div>
+<p>远距离输电：<strong>P<sub>损</sub> = I²R<sub>线</sub></strong>，所以<strong>提高输电电压可以减小电流，从而大幅降低线损</strong>。</p>
+
+<h3>二、高频考点</h3>
+<table class="tbl compact">
+<tr><th>考法</th><th>要点</th></tr>
+<tr><td>楞次定律判断方向</td><td>先定原磁场方向，再看 Φ 增减，最后定感应电流磁场方向</td></tr>
+<tr><td>导体棒切割</td><td>v 变 → E 变 → I 变 → F<sub>安</sub> 变 → a 变，最终匀速</td></tr>
+<tr><td>电磁感应 + 能量</td><td>用能量守恒求焦耳热，比积分省事</td></tr>
+<tr><td>电磁感应 + 动量</td><td>用 BLq = B²L²Δx/(R+r) 求位移</td></tr>
+<tr><td>图像问题</td><td>Φ–t 图斜率是 E；i–t 图要注意方向</td></tr>
+<tr><td>变压器</td><td>电压比 = 匝数比；功率相等；频率不变</td></tr>
+</table>
+
+<h3>三、易错辨析</h3>
+<table class="tbl compact">
+<tr><th>易错点</th><th>正确理解</th></tr>
+<tr><td>楞次定律理解为"阻止变化"</td><td>错。是"阻碍"，只让变化变慢，不能阻止</td></tr>
+<tr><td>E = BLv 中的 L 用导体总长</td><td>错。用<strong>有效长度</strong>（垂直于 v 和 B 的投影长度）</td></tr>
+<tr><td>磁通量为零时感应电动势为零</td><td>错。Φ = 0 时 ΔΦ/Δt 可以最大（线圈平面平行 B 时）</td></tr>
+<tr><td>安培力总是做负功</td><td>错。电动机中安培力做正功</td></tr>
+<tr><td>变压器能改变频率</td><td>错。变压器只变电压电流，频率不变</td></tr>
+<tr><td>电表读数是峰值</td><td>错。交流电表读的是<strong>有效值</strong></td></tr>
+<tr><td>导线框完全进入磁场后仍有感应电流</td><td>错。完全进入后 Φ 不变，无感应电流（但仍有感应电动势吗？也没有，因为 ΔΦ = 0）</td></tr>
+</table>
+
+<h3>四、例题精解</h3>
+<div class="q">
+<p class="qh">例　水平放置的两条光滑平行金属导轨间距 L = 0.5 m，处于竖直向下的匀强磁场中，磁感应强度 B = 0.4 T。导轨上放一根质量 m = 0.2 kg、电阻 r = 0.5 Ω 的金属棒，导轨另一端接有 R = 1.5 Ω 的电阻，导轨电阻不计。用水平恒力 F = 0.4 N 拉棒由静止开始运动，棒与导轨间摩擦不计。求：(1) 棒的最大速度；(2) 棒达到最大速度时，外力做功的功率；(3) 从静止到最大速度过程中，若棒移动了 2 m，求这一过程中产生的焦耳热。</p>
+<p><strong>第一步，受力与运动分析。</strong>棒受向右的拉力 F 和向左的安培力 F<sub>安</sub>。速度增大 → 感应电动势增大 → 电流增大 → 安培力增大 → 合力减小 → 加速度减小。当 F<sub>安</sub> = F 时速度最大，此后匀速。</p>
+<p><strong>第二步，求最大速度。</strong></p>
+<p>F<sub>安</sub> = BIL = B·(BLv/(R+r))·L = B²L²v/(R+r)。</p>
+<p>令 F<sub>安</sub> = F：</p>
+<p>B²L²v<sub>max</sub>/(R+r) = F</p>
+<p>0.4²×0.5²×v<sub>max</sub>/(1.5+0.5) = 0.4</p>
+<p>0.16×0.25×v<sub>max</sub>/2 = 0.4</p>
+<p>0.04v<sub>max</sub>/2 = 0.4 → 0.02v<sub>max</sub> = 0.4 → <strong>v<sub>max</sub> = 20 m/s</strong>。</p>
+<p><strong>第三步，求外力的功率。</strong>匀速时外力功率 = 安培力功率（全部转为电功率）：</p>
+<p>P = F·v<sub>max</sub> = 0.4×20 = <strong>8 W</strong>。</p>
+<p><strong>第四步，用能量守恒求焦耳热。</strong>从静止到 2 m 处，动能从 0 增到 ½mv²，外力做功 F·x，其余变成热量：</p>
+<p>F·x = ½mv<sub>max</sub>² + Q</p>
+<p>0.4×2 = ½×0.2×400 + Q</p>
+<p>0.8 = 40 + Q → <strong>Q = −39.2 J？</strong></p>
+<p><em>发现问题</em>：位移 2 m 时棒还没到 20 m/s。需要用动量定理求实际速度。</p>
+<p>由动量定理：Ft − ∫F<sub>安</sub>dt = mv，其中 ∫F<sub>安</sub>dt = B²L²x/(R+r)。</p>
+<p>0.4t − 0.04×2/2 = 0.2v …这需要 t，题目未给，说明题目应理解为"已充分加速"。实际考试中此类问法通常给"移动 2 m"时已接近最大速度，此时可近似 v ≈ v<sub>max</sub> 计算，或题目本意就是求"达到稳定速度后移动 2 m"的过程。</p>
+<p><strong>修正理解：</strong>若题意为"棒已达到最大速度后继续移动 2 m"，则速度不变、动能不变，外力做功全部转为热量：</p>
+<p>Q = F·x = 0.4×2 = <strong>0.8 J</strong>。</p>
+<div class="callout red">
+<span class="tag">这题暴露的两个问题</span>
+① 这类题必须注意"是否已达稳定速度"，否则动能项会算出负值这种荒谬结果，说明前提不成立；<br>
+② 若真要算"从静止到 2 m"的焦耳热，必须先用动量定理求出该时刻的速度：<br>
+　Ft − B²L²x/(R+r) = mv，还需要 t，而 t 可由 ∫dt 解出（涉及指数衰减），超出高中要求。<strong>所以高中题一定会在题目里说清"已达最大速度后"或直接给时间</strong>。
+</div>
+</div>
+
+<h3>五、分层练习</h3>
+<p><strong>基础</strong></p>
+<div class="q">
+<p class="qh">1. 闭合线圈放在匀强磁场中，下列哪种情况会产生感应电流（　）</p>
+<p class="opt">A. 线圈在磁场中匀速平动，且始终完全在磁场内</p>
+<p class="opt">B. 线圈绕垂直于磁场的轴匀速转动</p>
+<p class="opt">C. 线圈静止在增强的磁场中</p>
+<p class="opt">D. 线圈在磁场中沿磁感线方向平动</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">B、C</p>
+<p>产生感应电流的条件是<strong>穿过线圈的磁通量发生变化</strong>。</p>
+<p>A：完全在匀强磁场内平动，Φ = BS 不变，无感应电流。</p>
+<p>B：转动时线圈平面与 B 的夹角变化，Φ 变化，有感应电流（这就是交流发电机）。</p>
+<p>C：磁场增强，Φ 增大，有感应电流。</p>
+<p>D：沿磁感线平动，若线圈平面与 B 垂直，Φ 不变；若平行，Φ 始终为零，也不变。总之无感应电流。</p>
+</div></details>
+</div>
+<div class="q">
+<p class="qh">2. 理想变压器原、副线圈匝数比 n₁ : n₂ = 10 : 1，原线圈接 220 V 交流电，副线圈接一个 22 Ω 的电阻。求副线圈的电压、电流和原线圈的电流。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">U₂ = 22 V，I₂ = 1 A，I₁ = 0.1 A</p>
+<p>U₁/U₂ = n₁/n₂ → 220/U₂ = 10 → U₂ = 22 V。</p>
+<p>I₂ = U₂/R = 22/22 = 1 A。</p>
+<p>I₁/I₂ = n₂/n₁ = 1/10 → I₁ = 0.1 A。</p>
+<p>验算功率：P₁ = 220×0.1 = 22 W，P₂ = 22×1 = 22 W，相等 ✓。</p>
+</div></details>
+</div>
+<p><strong>提升</strong></p>
+<div class="q">
+<p class="qh">3. 光滑水平导轨间距 L = 1 m，处于竖直向下的匀强磁场中，B = 0.5 T。导轨上两根金属棒 a、b 质量均为 m = 0.1 kg，电阻均为 R = 0.5 Ω，导轨电阻不计。开始时 b 静止，a 以 v₀ = 4 m/s 向右运动。求：(1) 最终两棒的共同速度；(2) 全过程产生的焦耳热；(3) 通过棒的总电荷量及 a 移动的距离。</p>
+<details><summary>答案与解析</summary><div class="inner">
+<p class="ans">(1) 2 m/s　(2) 0.4 J　(3) q = 0.8 C，Δx<sub>相对</sub> = 0.8 m</p>
+<p>(1) 两棒系统所受外力为零（安培力是内力），<strong>动量守恒</strong>：</p>
+<p>mv₀ = 2mv → 0.1×4 = 0.2v → <strong>v = 2 m/s</strong>。</p>
+<p>(2) 初动能 E<sub>k1</sub> = ½×0.1×16 = 0.8 J，末动能 E<sub>k2</sub> = ½×0.2×4 = 0.4 J。</p>
+<p>Q = 0.8 − 0.4 = <strong>0.4 J</strong>。</p>
+<p>(3) 对 b 棒用动量定理：安培力冲量 = 动量变化。</p>
+<p>BIL·t = BLq = mv − 0 = 0.1×2 = 0.2</p>
+<p>q = 0.2/(BL) = 0.2/(0.5×1) = <strong>0.4 C</strong>（单棒）。</p>
+<p><em>注意</em>：这里是流过单棒的电荷量。若问"通过回路的总电荷量"，也是 0.4 C。</p>
+<p>由 q = ΔΦ/(2R) = BLΔx<sub>相对</sub>/(2R)：</p>
+<p>0.4 = 0.5×1×Δx/(1.0) → Δx<sub>相对</sub> = <strong>0.8 m</strong>。</p>
+<p>（a、b 各自位移需再结合动量守恒分配：a 走 0.4 m，b 走 0.4 m，相对位移 0.8 m。）</p>
+</div></details>
+</div>

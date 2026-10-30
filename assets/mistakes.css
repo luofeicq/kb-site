@@ -143,3 +143,10 @@
   .mbtn{padding:6px 11px;font-size:12.5px}
   .mrow b{flex-basis:38px}
 }
+
+/* 错题 → 对应知识点 的跳转链接 */
+.mlink{
+  text-decoration:none;display:inline-flex;align-items:center;gap:4px;
+  border-color:#c9d6e8;color:var(--accent);
+}
+.mlink:hover{background:var(--accent-s);border-color:var(--accent);color:var(--accent)}

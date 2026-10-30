@@ -28,7 +28,8 @@ META = {
         lead='按高考高频陷阱挑的八道题：集合空集、导数隐零点、解三角形多解、数列求和方法、立体几何建系、解析几何设而不求、概率统计区分度、基本不等式取等条件。'),
     'physics': dict(
         scope='11 道真实错题',
-        lead='全部来自错题本里记录的原题，集中在静电场、机械振动、机械波和力电综合四块。每题标了错因要点，先自己重做一遍再看解析。'),
+        lead='全部来自错题本里记录的原题，集中在静电场、机械振动、机械波和力电综合四块。'
+             '每题标了错因要点，卡片下方有「去对应知识点」可直达全册对应章节。先自己重做一遍再看解析。'),
     'bio': dict(
         scope='8 道典型易错题',
         lead='覆盖分子组成、物质运输、光合与呼吸、细胞增殖、遗传规律、基因表达、稳态调节、生态系统八块，重点在概念边界而不是计算。'),
@@ -272,8 +273,15 @@ def page_items(k, mode, mis):
     items = []
     if mode == 'knowledge':
         # 收集全部 h2 / h3 / h4 及其正文（到下一个同级或更高级标题为止）
-        heads = [(m.start(), m.end(), int(m.group(1)), m.group(2), m.group(3))
-                 for m in re.finditer(r'<h([234]) id="([^"]+)"[^>]*>(.*?)</h\1>', s, re.S)]
+        # 注意：id 不一定紧跟标签名（如 <h2 class="topic" id="m1">），属性顺序不定，需单独解析
+        heads = []
+        for m in re.finditer(r'<h([234])\b([^>]*)>(.*?)</h\1>', s, re.S):
+            lv = int(m.group(1))
+            attrs = m.group(2)
+            mid = re.search(r'\bid="([^"]+)"', attrs)
+            if not mid:
+                continue
+            heads.append((m.start(), m.end(), lv, mid.group(1), m.group(3)))
         raw = []
         for idx, (st, en, lv, hid, inner) in enumerate(heads):
             end = len(s)
