@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高二物理薄弱点 · 专题精讲（交互版）</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --text:#1b1f24; --muted:#5d646d;
+  --line:#e3e6ec; --soft:#f1f4f8; --soft2:#e9eef6;
+  --blue:#2563eb; --red:#d93a3a; --green:#0f8a5f; --amber:#b45309; --violet:#7c3aed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.9 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.layout{display:flex;max-width:1240px;margin:0 auto;gap:40px;padding:0 24px}
+/* ---------- sidebar ---------- */
+.side{
+  width:212px;flex:0 0 212px;position:sticky;top:0;align-self:flex-start;
+  max-height:100vh;overflow:auto;padding:34px 0 40px;font-size:14px;
+}
+.side .brand{font-weight:700;font-size:15px;letter-spacing:.3px;color:var(--text);margin-bottom:4px}
+.side .sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+.side nav a{
+  display:block;padding:6px 10px;border-radius:7px;color:var(--muted);
+  text-decoration:none;line-height:1.5;margin-bottom:2px;border-left:2px solid transparent;
+}
+.side nav a:hover{background:var(--soft);color:var(--text)}
+.side nav a.on{background:var(--soft2);color:var(--blue);font-weight:600;border-left-color:var(--blue)}
+.side .grp{font-size:11.5px;color:#98a0aa;margin:16px 0 6px;padding-left:10px;letter-spacing:.6px}
+/* ---------- main ---------- */
+main{flex:1;min-width:0;padding:34px 0 120px}
+.hero{background:linear-gradient(155deg,#fff 0%,#eef3fc 100%);border:1px solid var(--line);border-radius:16px;padding:30px 34px;margin-bottom:34px}
+.hero h1{font-size:27px;margin:0 0 10px;letter-spacing:-.2px;line-height:1.35}
+.hero p{margin:0;color:var(--muted);font-size:15px}
+.hero .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .flow span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 13px;font-size:13px;color:var(--muted)}
+.hero .flow span b{color:var(--blue);margin-right:5px}
+
+h2.topic{
+  font-size:22px;margin:64px 0 8px;padding-left:14px;border-left:4px solid var(--blue);
+  line-height:1.5;letter-spacing:-.2px;
+}
+h2.topic .no{color:var(--blue);font-weight:800;margin-right:8px}
+.topic-meta{color:var(--muted);font-size:13.5px;padding-left:18px;margin:0 0 8px}
+h3{font-size:16.5px;margin:34px 0 10px;color:var(--text);position:relative;padding-left:16px}
+h3::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:2px;background:var(--blue);opacity:.55}
+h4{font-size:15px;margin:22px 0 8px;color:#2c333b}
+p{margin:12px 0}
+strong{font-weight:650}
+em{font-style:normal;color:var(--amber);font-weight:600}
+a{color:var(--blue)}
+ul,ol{margin:12px 0;padding-left:26px}
+li{margin:6px 0}
+hr{border:none;border-top:1px solid var(--line);margin:56px 0}
+code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:14px;font-family:ui-monospace,Consolas,monospace}
+
+.formula{
+  background:var(--soft);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:11px 16px;margin:14px 0;font-family:"Cambria Math","Latin Modern Math","Times New Roman",serif;
+  font-size:16.5px;overflow-x:auto;line-height:2;
+}
+.callout{
+  background:#fdf7ec;border:1px solid #f0dfc0;border-radius:10px;padding:14px 18px;margin:16px 0;font-size:15px;
+}
+.callout.blue{background:#eff5ff;border-color:#d3e2fb}
+.callout.green{background:#eefaf4;border-color:#c9ecdd}
+.callout .tag{font-weight:700;font-size:13px;letter-spacing:.4px;color:var(--amber);display:block;margin-bottom:4px}
+.callout.blue .tag{color:var(--blue)}
+.callout.green .tag{color:var(--green)}
+
+table.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+table.tbl th{background:var(--soft);text-align:left;padding:10px 13px;font-weight:650;font-size:14px;border-bottom:1px solid var(--line)}
+table.tbl td{padding:9px 13px;border-bottom:1px solid #eff2f6;vertical-align:top;line-height:1.75}
+table.tbl tr:last-child td{border-bottom:none}
+table.tbl td:first-child{color:#333c46;font-weight:600;width:34%}
+
+/* ---------- widget ---------- */
+.widget{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px 16px;margin:22px 0;
+  box-shadow:0 1px 3px rgba(16,24,40,.045);
+}
+.widget .whead{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.widget .whead h4{margin:0;font-size:15px;color:var(--text)}
+.widget .whead .badge{font-size:11.5px;background:#eaf1fe;color:var(--blue);border-radius:20px;padding:2px 9px;font-weight:600}
+.widget .cap{font-size:13.5px;color:var(--muted);margin:2px 0 12px;line-height:1.7}
+canvas{display:block;border-radius:9px;background:#fbfcfd;border:1px solid #eef1f5}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;margin-top:14px;font-size:14px;color:#39424d}
+.ctrl label{display:flex;align-items:center;gap:9px}
+.ctrl input[type=range]{width:158px;accent-color:var(--blue);cursor:pointer}
+.ctrl .val{display:inline-block;min-width:52px;font-variant-numeric:tabular-nums;color:var(--blue);font-weight:650}
+.seg{display:inline-flex;background:var(--soft);border-radius:8px;padding:2px;gap:2px}
+.seg button{
+  border:none;background:transparent;padding:4px 13px;border-radius:6px;cursor:pointer;
+  font-size:13.5px;color:var(--muted);font-family:inherit;transition:.15s;
+}
+.seg button.on{background:#fff;color:var(--blue);font-weight:650;box-shadow:0 1px 2px rgba(16,24,40,.1)}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:9px;margin-top:14px}
+.readout div{background:var(--soft);border-radius:9px;padding:9px 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.readout b{display:block;font-size:17px;color:var(--blue);font-variant-numeric:tabular-nums;font-weight:650;margin-top:2px;letter-spacing:-.3px}
+.readout div.warn b{color:var(--red)}
+.readout div.ok b{color:var(--green)}
+.btn{
+  border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 16px;cursor:pointer;
+  font-size:13.5px;font-family:inherit;color:#39424d;transition:.15s;
+}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#1d4fd8}
+.btn.primary:disabled{background:#a9bde8;border-color:#a9bde8;cursor:default}
+
+/* cards for 静电 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:18px 0}
+.card{border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:#fff;cursor:pointer;transition:.18s}
+.card:hover{border-color:#b9cdf3;box-shadow:0 2px 8px rgba(37,99,235,.08)}
+.card h5{margin:0 0 6px;font-size:14.5px;color:var(--text)}
+.card .k{font-size:13px;color:var(--muted);line-height:1.7}
+.card .ans{display:none;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:13px;color:var(--green);font-weight:600}
+.card.open .ans{display:block}
+.card .hint{font-size:12px;color:#a8b0ba;margin-top:6px}
+
+details{border:1px solid var(--line);border-radius:10px;background:#fff;margin:16px 0;overflow:hidden}
+details summary{
+  cursor:pointer;padding:11px 16px;font-size:14px;font-weight:600;color:var(--blue);
+  background:var(--soft);list-style:none;user-select:none;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸  ";font-size:12px}
+details[open] summary::before{content:"▾  "}
+details .inner{padding:6px 16px 14px}
+kbd{background:#fff;border:1px solid #cfd6e0;border-bottom-width:2px;border-radius:4px;padding:0 5px;font-size:12px;font-family:inherit}
+
+footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:#98a0aa;font-size:13px;line-height:1.8}
+
+@media (max-width:1020px){
+  .side{display:none}
+  .layout{padding:0 16px}
+  main{padding-top:22px}
+  .hero{padding:22px 20px}
+  .hero h1{font-size:22px}
+  table.tbl{font-size:13.5px}
+  table.tbl td:first-child{width:40%}
+}
+@media print{
+  body{background:#fff}
+  .side{display:none}
+  .widget{page-break-inside:avoid}
+  h2.topic{page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="side">
+  <div class="brand">高二物理 · 薄弱点精讲</div>
+  <div class="sub">按错题诊断排序 · 交互版</div>
+  <nav>
+    <a href="#t1">专题一　波的图像与多解</a>
+    <a href="#t2">专题二　两个等量点电荷</a>
+    <a href="#t3">专题三　库仑力 + 圆弧</a>
+    <a href="#t4">专题四　单摆</a>
+    <a href="#t5">专题五　弹簧振子</a>
+    <a href="#t6">专题六　静电概念</a>
+    <div class="grp">附　录</div>
+    <a href="#apx1">通用解题检查清单</a>
+    <a href="#apx2">两周学习计划</a>
+  </nav>
+</aside>
+
+<main>
+
+<div class="hero">
+  <h1>高二物理薄弱点 · 专题精讲</h1>
+  <p>对着错题写的一份材料。每个专题都走同一条路：先弄明白这题在考什么，再用大白话把原理说通，然后看命题人的套路和固定的解题动作，最后重做原题。</p>
+  <div class="flow">
+    <span><b>1</b>这题在考什么</span>
+    <span><b>2</b>用人话讲</span>
+    <span><b>3</b>出题人的套路</span>
+    <span><b>4</b>解题固定动作</span>
+    <span><b>5</b>原题复盘</span>
+    <span><b>6</b>练习与解析</span>
+  </div>
+</div>
+
+<div class="callout blue">
+  <span class="tag">先说清楚一件事</span>
+  文中关于“历年试题规律”的部分，是对这类题在高考卷和各地模拟卷里常见出法的归纳，不是某一年某道真题的转述。题型十几年没怎么变，规律是稳的；但别把“某年某卷考过”当成背书的理由——能自己推出通式，比记住结论管用。
+</div>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t1"><span class="no">专题一</span>波的图像与多解</h2>
+<p class="topic-meta">对应错题：第 11、14 题（两个时刻的波形图）、第 12 题（两个波源）。这是重复出错次数最多的考点。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>给你两张“波形照片”，问你中间这段时间发生了什么。</p>
+<p>照片只有两张，中间过去的时间你并不知道挪了几个完整的波。所以答案天然是一族、不是一个。<strong>能不能把所有可能都想到，就是这类题的区分点。</strong></p>
+
+<h3>二、用人话讲</h3>
+<h4>波到底在干什么</h4>
+<p>想象运动会看台上的人浪。一波人依次站起来又坐下，那个“站起来”的鼓包在往前跑，但每个人自己没挪位置——他一直坐在自己的座位上。</p>
+<p>波就是这样：跑的是波形（那个鼓包），也带着能量跑；质点自己只在座位附近上下晃，绝不跟着跑。</p>
+<p>所以“波传播多远”和“质点走了多远”完全是两码事。这是第一个必须钉死的地方，考试里“质点随波迁移”就是专门用来骗人的错项。</p>
+
+<h4>多解从哪来</h4>
+<p>你在 t₁ 拍一张照片（实线），t₂ 再拍一张（虚线）。你看到虚线整体往右挪了一小段，比如挪了 λ/4。</p>
+<p>问题是：在你看不见的这段时间里，它到底挪了几个整圈？挪 0 圈再挪 λ/4 是一个可能；先挪 1 整圈再挪 λ/4 也是可能；2 圈、3 圈全都说得通。照片上看起来一模一样，因为整圈挪完波形长得跟原来完全重合。</p>
+<p>就像你只看分针的位置猜时间：分针从“指 12”转到“指 3”，可能是过了 15 分钟，也可能是 1 小时 15 分、2 小时 15 分。只凭“指 3”这一条，你只能答“15 分钟加若干小时”。</p>
+<p>物理上这个“若干整圈”就写成 nλ（n = 0, 1, 2, …）。<strong>这个 n，就是多解的全部来源。</strong></p>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 1-1　同一张照片，对应多少种可能</h4><span class="badge">拖动滑块看看</span></div>
+  <p class="cap">上半部分是你眼睛看到的“波形照片”，下半部分是实际经过的时间。把 n 从 0 拖到 3——<strong>上面的图一点没变，下面的时间轴越拉越长</strong>。这就是多解。</p>
+  <canvas id="cv-wave"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="w1-dir">
+      <button data-d="1">沿 +x</button>
+      <button data-d="-1" class="on">沿 −x</button>
+    </div>
+    <label>整圈数 n <input type="range" id="w1-n" min="0" max="3" step="1" value="0"><span class="val" id="w1-nv">0</span></label>
+  </div>
+  <div class="readout">
+    <div>周期 T<b id="w1-T">—</b></div>
+    <div>波速 v<b id="w1-v">—</b></div>
+    <div>周期通式<b id="w1-f">—</b></div>
+    <div>Δt 内挪了<b id="w1-shift">—</b></div>
+  </div>
+</div>
+
+<h4>方向的麻烦</h4>
+<p>还有个雪上加霜的地方：你不知道波是往左跑还是往右跑。</p>
+<p>因为波形左右对称，往左挪 3λ/4 和往右挪 λ/4，落在纸上是同一张图。所以题目不说方向的时候，左右两个方向各有一族解，一共两族。这就是为什么第 11、14 题会做漏——只算了一个方向。</p>
+
+<h3>三、出题人的套路</h3>
+<p>这类题十几年没怎么变，就三种长相。</p>
+<table class="tbl">
+  <tr><th>长相</th><th>具体是这么出的</th></tr>
+  <tr><td>给两张波形图，问周期或波速</td><td>“实线为 t=0 的波形，虚线为 t=Δt 的波形，求波速的可能值”。选项里通常放 2 个对的（对应两个方向）加 2 个编出来的数。</td></tr>
+  <tr><td>给两张图再加一个限制，逼你筛 n</td><td>限制常见三种：周期大于 Δt（只能取 n=0）；波速在某个范围（解不等式卡 n）；已知波速求方向（哪个方向的通式能解出整数 n，方向就是哪个）。</td></tr>
+  <tr><td>不问波形，问某个质点</td><td>“这段时间内质点 P 通过的路程是多少”，考的是一个周期走 4A，跟多解捆在一起。</td></tr>
+</table>
+
+<p>挖坑的位置就这四个：</p>
+<table class="tbl">
+  <tr><th>坑</th><th>长什么样</th></tr>
+  <tr><td>只算一个方向</td><td>题目压根没说往哪边传，你默认往右</td></tr>
+  <tr><td>忘了写 “n = 0, 1, 2, …”</td><td>不是形式主义，这是过程分，漏了要扣</td></tr>
+  <tr><td>算出通式不代回检验</td><td>限制条件在题干里，不是装饰</td></tr>
+  <tr><td>把“峰峰间距”当周期</td><td>波形图上相邻两个波峰的距离是 λ，不是 T；振动图（F–t、x–t）上相邻峰间隔才可能是 T/2</td></tr>
+</table>
+
+<h3>四、解题固定动作</h3>
+<p>拿到题别急着算，按这四步走。这套动作练到闭眼能做，这类题就不会再丢分。</p>
+
+<h4>第 1 步：量出“多挪了多少”</h4>
+<p>找到实线的某个特征点（比如波峰），再看虚线最近的那个同位特征点，量出中间差了多大一段 x₀，折算成 λ 的几分之几。</p>
+
+<h4>第 2 步：两个方向各摆一族</h4>
+<table class="tbl">
+  <tr><th>假设方向</th><th>时间关系 / 周期通式</th></tr>
+  <tr><td>沿 +x</td><td>Δt = (n + x₀/λ)·T　→　T = Δt / (n + x₀/λ)</td></tr>
+  <tr><td>沿 −x</td><td>Δt = (n + 1 − x₀/λ)·T　→　T = Δt / (n + 1 − x₀/λ)</td></tr>
+</table>
+<p>不用背表，就一句话：沿正方向是“零头加整圈”，沿负方向是“从另一头绕回来”，零头换成 1 − x₀/λ。</p>
+<p>x₀ = λ/4 时，两族就是：</p>
+<div class="formula">
+沿 +x：T = 4Δt / (4n+1)　，　v = λ(4n+1) / (4Δt)<br>
+沿 −x：T = 4Δt / (4n+3)　，　v = λ(4n+3) / (4Δt)
+</div>
+
+<h4>第 3 步：拿限制条件筛 n</h4>
+<table class="tbl">
+  <tr><th>题目给了什么</th><th>怎么筛</th></tr>
+  <tr><td>T &gt; Δt</td><td>逐族取 n=0 算，看哪个满足，通常只留一个</td></tr>
+  <tr><td>波速范围</td><td>把 v 的通式写出来，解不等式找整数 n</td></tr>
+  <tr><td>已知 v 求方向</td><td>两个通式各解一次 n，哪个能解出非负整数 n，方向就是哪个</td></tr>
+</table>
+
+<h4>第 4 步：判断方向有个不推公式的捷径</h4>
+<p>如果是问“某个质点在往哪动”，用上下坡法：沿着波的传播方向看过去，处在“上坡”的质点往下走，处在“下坡”的质点往上走。</p>
+<div class="callout"><span class="tag">记法</span>上坡下、下坡上。上坡的人累得往下走。</div>
+
+<h4>双波源的题另有一套，但也只有三行</h4>
+<ol>
+  <li>算波长 λ = vT（先由 ω 求 T = 2π/ω）；</li>
+  <li>算两列波到该点的波程差 Δr，换成“几个 λ”；</li>
+  <li>把两样加一起：<strong>总相位差 = 波源初相差 + 2π·Δr/λ</strong>，看是 2kπ（加强，振幅相加）还是 (2k+1)π（减弱，振幅相减）。</li>
+</ol>
+<div class="callout"><span class="tag">提醒</span>“波程差等于整数个波长就加强”只对同相波源成立。波源本身初相不一样，必须两项都算。第 12 题就是靠这个设的陷阱——波程差是 λ/2（按套路该减弱），但波源本身反相，合起来反而加强。</div>
+
+<h3>五、原题复盘</h3>
+<h4>原题 14（第五周，解答题）</h4>
+<p>实线为某时刻波形，0.25 s 后为虚线，λ = 24 cm，虚线相对实线沿 −x 平移 λ/4 = 6 cm。</p>
+<p><strong>第 1 步</strong>：x₀ = λ/4。</p>
+<p><strong>第 2 步</strong>：两族摆出来。</p>
+<div class="formula">
+沿 −x：0.25 = (n + 1/4)T　→　T = 1/(4n+1) s<br>
+沿 +x：0.25 = (n + 3/4)T　→　T = 1/(4n+3) s
+</div>
+<p><strong>第 3 步</strong>：</p>
+<p>(1) 波沿 −x 传播时写周期系列解 —— 就是上面第一行，<strong>后面必须带 “n = 0, 1, 2, …”</strong>。</p>
+<p>(2) T &gt; 0.25 s 时的波速：</p>
+<ul>
+  <li>沿 −x：n=0 → T = 1 s，v = 0.24/1 = <strong>0.24 m/s</strong></li>
+  <li>沿 +x：n=0 → T = 1/3 s，v = 0.24 ÷ (1/3) = <strong>0.72 m/s</strong></li>
+  <li>n=1 时两族分别是 0.2 s 和 1/7 s，都不到 0.25 s，舍掉。</li>
+</ul>
+<p>(3) v = 2.16 m/s 时波往哪传。把速度通式摆出来（4Δt = 1 s）：</p>
+<ul>
+  <li>沿 −x：v = 0.24(4n+1)。令 0.24(4n+1) = 2.16 → 4n+1 = 9 → <strong>n = 2，整数 ✓</strong></li>
+  <li>沿 +x：v = 0.24(4n+3)。4n+3 = 9 → n = 1.5，<strong>不是整数 ✗</strong></li>
+</ul>
+<p><strong>结论：波沿 x 轴负方向传播。</strong></p>
+<div class="callout"><span class="tag">这题的教训</span>第 3 问最省事的做法不是“猜方向再验算”，而是“两族都算，n 能取整的那个就是答案”。这样不可能漏。</div>
+
+<h4>原题 11（第五周，多选题，答案 BC）</h4>
+<p>t=0 实线、t=0.5 s 虚线，λ = 4 m，A = 2 cm，虚线相对实线沿 +x 平移 1 m，T &gt; 0.5 s。</p>
+<ul>
+  <li>x₀ = 1 m = λ/4</li>
+  <li>沿 +x：0.5 = (n+1/4)T → n=0 得 T = 2 s（n=1 得 0.4 s &lt; 0.5，舍）→ v = 4/2 = <strong>2 m/s</strong></li>
+  <li>沿 −x：0.5 = (n+3/4)T → n=0 得 T = 2/3 s → v = 4 ÷ (2/3) = <strong>6 m/s</strong></li>
+</ul>
+<p>逐个选项对：</p>
+<ul>
+  <li><strong>B：“周期可能是 2 s” ✓</strong>　就是沿 +x、n=0 那支</li>
+  <li><strong>D：“波速可能是 10 m/s” ✗</strong>　速度只有 2 和 6 两种可能，10 不在里面</li>
+  <li><strong>C：沿 −x 时 T = 2/3 s，1 s 内路程</strong>：1 ÷ (2/3) = 1.5 个周期，一个周期走 4A = 8 cm，1.5 个 → <strong>12 cm ✓</strong></li>
+  <li><strong>A：振动方程 y = 2sin(πt/4)</strong>　对应周期 2π ÷ (π/4) = 8 s，两个方向都弄不出 8 s，✗</li>
+</ul>
+
+<h4>原题 12（第五周，多选题，答案 BC）</h4>
+<p>S₁(−3√3, 0)、S₂(3√3, 0)、Q(−3√3, 6)；z₁ = 0.1sin(10πt/3 + π/3)，z₂ = 0.1sin(10πt/3 − 2π/3)，v = 20 m/s。</p>
+<ol>
+  <li><strong>周期波长先算</strong>：ω = 10π/3 → T = 2π/ω = 0.6 s，λ = vT = 20×0.6 = 12 m。</li>
+  <li><strong>波程差</strong>：Q 到 S₁ 距离 6 m；Q 到 S₂ 是 √((6√3)² + 6²) = √(108+36) = 12 m。Δr = 12 − 6 = 6 m = <strong>λ/2</strong>。</li>
+  <li><strong>合成</strong>：波源初相差 = (−2π/3) − (π/3) = <strong>−π</strong>（反相）。总相位差 = π + 2π×(6/12) = π + π = 2π → <strong>Q 点是加强点</strong>，振幅 0.1 + 0.1 = 0.2 m。</li>
+</ol>
+<div class="callout"><span class="tag">最容易翻车的一步</span>只盯波程差 λ/2，会误判“减弱”，答案整个反掉。</div>
+<ol start="4">
+  <li><strong>C 项</strong>：0.6 s 到 1.2 s 正好一个周期，走 4A = 4×0.2 = 0.8 m ✓；D 项说 1.6 m ✗。</li>
+  <li><strong>A、B 项</strong>（考加速度方向，加速度方向与位移方向相反）：
+    <ul>
+      <li>t=0：sin(π/3) &gt; 0，sin(−2π/3) &lt; 0 → 两个波源位移一正一负 → 加速度方向相反，A ✗</li>
+      <li>t=0.3 s：相位分别是 4π/3 和 π/3，sin 值一负一正 → 加速度方向仍相反，B ✓</li>
+    </ul>
+  </li>
+</ol>
+
+<h3>六、变式与练习</h3>
+<h4>变式（先做，别急着看解）</h4>
+<p>一列简谐横波沿 x 轴传播，t=0 与 t=0.2 s 的波形为实线、虚线，虚线相对实线沿 +x 平移了 1 m，λ = 4 m。求：(1) 若波沿 +x 传播，周期是多少；(2) 若 T &gt; 0.2 s，波速是多少；(3) 若波速为 25 m/s，往哪个方向传。</p>
+<details><summary>看这个变式的解析</summary><div class="inner">
+<p><strong>① 定零头</strong>：x₀ = λ/4。</p>
+<p><strong>② 摆两族</strong>：沿 +x：0.2 = (n+1/4)T → <strong>T = 0.8/(4n+1) s</strong>。</p>
+<p><strong>③ 用限制筛</strong>：T &gt; 0.2 s 时，沿 +x 取 n=0 → T = 0.8 s，v = 4/0.8 = <strong>5 m/s</strong>；沿 −x 取 n=0 → T = 0.8/3 s，v = 4×3/0.8 = <strong>15 m/s</strong>。</p>
+<p><strong>④ 反推方向</strong>：两族速度通式</p>
+<ul>
+  <li>沿 +x：v = 4(4n+1)/0.8 = 5(4n+1) = 5, <strong>25</strong>, 45…</li>
+  <li>沿 −x：v = 5(4n+3) = 15, 35…</li>
+</ul>
+<p>25 只在 +x 那族里出现（n=1）→ <strong>波沿 +x 传播</strong>。</p>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（多选）一列简谐横波沿 x 轴传播，t=0 与 t=0.1 s 的波形分别为实线、虚线，虚线相对实线沿 +x 平移 1 m，λ = 4 m，周期大于 0.1 s。波速可能为（　）<br>A. 10 m/s　B. 20 m/s　C. 30 m/s　D. 40 m/s</p>
+<p><strong>基础 2</strong>（解答）一列简谐横波沿 +x 传播，某质点在 t=0 时位于平衡位置且向上振动，振幅 4 cm，周期 0.4 s。(1) 写出该质点的振动方程；(2) 求 0～1 s 内通过的路程；(3) 若波长为 2 m，求波速。</p>
+<p><strong>提升 1</strong>（解答）均匀介质中 S₁、S₂ 为同相相干波源，位于 x 轴上相距 8 m（S₁ 在原点），频率 2 Hz，波速 8 m/s。(1) 求波长；(2) 判断 x 轴上 x=6 m 与 x=5 m 两点是加强点还是减弱点；(3) 若两波源变为反相，结论如何变化？</p>
+<p><strong>提升 2</strong>（解答，仿原题 14）一列简谐横波沿 x 轴传播，t=0 与 t=0.05 s 的波形分别为实线、虚线，虚线相对实线沿 −x 平移 0.5 m，λ = 2 m。(1) 若波沿 −x 传播，写出周期的系列解；(2) 若 T &gt; 0.05 s，求波速；(3) 若波速为 50 m/s，判断传播方向。</p>
+
+<details><summary>基础 1 解析 —— 答案 AC</summary><div class="inner">
+<p>沿 +x：0.1 = (n+1/4)T → T = 0.4/(4n+1)。n=0 → T = 0.4 s → v = 10 m/s ✓；n=1 → T = 0.08 s &lt; 0.1 s 舍。</p>
+<p>沿 −x：0.1 = (n+3/4)T → T = 0.4/(4n+3)。n=0 → T = 0.4/3 s（约 0.133 s &gt; 0.1 s）→ v = 4×3/0.4 = 30 m/s ✓；n=1 舍。</p>
+<p>所以可能是 10 或 30 m/s。</p>
+</div></details>
+
+<details><summary>基础 2 解析</summary><div class="inner">
+<p>(1) ω = 2π/0.4 = 5π rad/s；t=0 在平衡位置且向上 → <strong>y = 4sin(5πt) cm</strong>。</p>
+<p>(2) 1 s = 2.5 个周期。一个周期 4A = 16 cm → 2.5×16 = <strong>40 cm</strong>。</p>
+<p>(3) v = λ/T = 2/0.4 = <strong>5 m/s</strong>。</p>
+</div></details>
+
+<details><summary>提升 1 解析</summary><div class="inner">
+<p>(1) λ = v/f = 8/2 = <strong>4 m</strong>。</p>
+<p>(2) x=6 处：到 S₁ 6 m、到 S₂ 2 m，波程差 4 m = 1λ → 同相源、整数波长 → <strong>加强</strong>。<br>
+x=5 处：到 S₁ 5 m、到 S₂ 3 m，波程差 2 m = λ/2 → <strong>减弱</strong>。</p>
+<p>(3) 反相源相当于额外加 π：x=6 → π + 2π = 3π（奇数倍）→ 变<strong>减弱</strong>；x=5 → π + π = 2π（偶数倍）→ 变<strong>加强</strong>。结论正好对调。</p>
+</div></details>
+
+<details><summary>提升 2 解析</summary><div class="inner">
+<p>(1) 沿 −x：0.05 = (n+1/4)T → <strong>T = 0.2/(4n+1) s，n = 0,1,2,…</strong></p>
+<p>(2) 沿 −x 取 n=0 → T = 0.2 s → v = 2/0.2 = <strong>10 m/s</strong>；沿 +x：0.05 = (n+3/4)T → n=0 得 T = 0.2/3 s → v = 2×3/0.2 = <strong>30 m/s</strong>。</p>
+<p>(3) 速度通式：沿 −x 为 v = 2(4n+1)/0.05 = 10(4n+1) = 10, <strong>50</strong>, 90…（n=1 取到 50 ✓）；沿 +x 为 10(4n+3) = 30, 70…（没有 50）。→ <strong>波沿 −x 传播</strong>，此时 T = 0.2/5 = 0.04 s（该问没限周期，合法）。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>波跑，质点不跑。</li>
+  <li>多解 = 看不见的整圈数 n，<strong>方向不定就有两族</strong>。</li>
+  <li>两个通式：沿 +x 用 x₀/λ，沿 −x 用 1 − x₀/λ。</li>
+  <li>三个限制条件：T 范围、v 范围、已知 v 反推方向（看谁解出整数 n）。</li>
+  <li>双波源：初相差和波程差都要算，缺一个就错。</li>
+  <li>写答案必须带 “n = 0, 1, 2, …”。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t2"><span class="no">专题二</span>两个等量点电荷的电场</h2>
+<p class="topic-meta">对应错题：第 1 题。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>两个一模一样的电荷摆在那儿，中间那一带的电场长什么样。</p>
+<p>它不考你算某个具体点的场强，考的是整片空间的分布规律：哪里为零、哪里最大、方向朝哪、往外走是变大还是变小。</p>
+
+<h3>二、用人话讲</h3>
+<h4>先建立画面：两个正电荷，像两口泉眼</h4>
+<p>泉眼往外喷水（电场线向外发散）。两口泉正中间那个位置，两股水正好对撞、互相抵消，所以中点 O 处场强恰好为 0。走远了，两个泉眼在你眼里合成一个，“水压”也变小，所以远处场强也趋近 0。</p>
+<p>那中间呢？中间某处最猛。因为靠近某一个泉眼时，它近、另一个远；走远了两个都显得弱。所以从 O 往远处走，场强是先变大、后变小，存在一个最大值点。</p>
+<div class="callout"><span class="tag">这就是第 1 题 A 选项的全部内容</span>题目说“从 P 到 O 加速度一定减小”——错在“一定”。如果 P 恰好站在最大值点外面，往 O 走的这段路上场强还先涨了一段，加速度是先变大后变小。</div>
+
+<h4>中垂线为什么要单独说</h4>
+<p>两个电荷的连线是对称轴，中垂线是另一条对称轴。在这条线上，两边的拉扯左右对称抵消，所以：</p>
+<ul>
+  <li><strong>两个同种正电荷</strong>：中垂线上的场强沿着中垂线、背离 O 向外。因为两个正电荷都把它往外推，推的方向合起来就是往外。</li>
+  <li><strong>两个异种电荷</strong>：中垂线上的场强平行于连线、从正指向负。因为正电荷推它、负电荷拉它，两个力方向一致，合力指向负电荷那边。</li>
+</ul>
+<p>这两种情况方向完全不同，是考试最爱混的地方。</p>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 2-1　把试探点沿中垂线拖一拖</h4><span class="badge">切换同种 / 异种</span></div>
+  <p class="cap">红色箭头是两个电荷各自产生的场强，绿色是它们的合成。往左推就是靠近 O、往右推就是远离。看绿色箭头：<strong>同种电荷在中点被抵消为零，异种电荷在中点反而最猛</strong>。</p>
+  <canvas id="cv-field"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="w2-mode">
+      <button data-m="same" class="on">同种正电荷</button>
+      <button data-m="diff">异种电荷 +Q / −Q</button>
+    </div>
+    <label>离中点 O 的距离 h <input type="range" id="w2-h" min="0" max="150" step="1" value="40"><span class="val" id="w2-hv">—</span></label>
+  </div>
+  <div class="readout">
+    <div>合成场强 E<b id="w2-E">—</b></div>
+    <div>方向<b id="w2-dir">—</b></div>
+    <div>场强变化趋势<b id="w2-trend">—</b></div>
+    <div>该点电势 φ<b id="w2-phi">—</b></div>
+  </div>
+</div>
+
+<h4>电势和场强不是一回事</h4>
+<p>这是本节最大的一个观念坎：</p>
+<div class="callout blue"><span class="tag">一句话分清</span>场强是“坡有多陡”，电势是“海拔多高”。坡陡的地方海拔不一定高，坡平的地方海拔也不一定低。</div>
+<p>所以：</p>
+<ul>
+  <li><strong>两个正电荷的中点 O</strong>：场强 = 0（最平），但电势最高（海拔最高）。因为两个正电荷都往那儿抬水位。</li>
+  <li><strong>两个异种电荷的中垂线</strong>：处处电势为零（正电荷抬多少负电荷就压多少，正好扯平），这条线是等势线。</li>
+</ul>
+<p>第 1 题的 D 选项也在这里：中垂面是个等势面，但它对负电荷来说，合场强是指向圆心的，所以只要给负电荷一个合适的侧向初速度，它就能在这个面上绕着 O 做匀速圆周运动。题目说“不可能”，就错了。</p>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 2-2　场强随距离怎么变</h4><span class="badge">看曲线的形状</span></div>
+  <p class="cap">横轴是离 O 的距离，纵轴是合成场强。粗线是当前模式，细线是另一种模式作对照。同种电荷的曲线会鼓起来一个包（先增后减），异种电荷从 O 点一路往下掉。</p>
+  <canvas id="cv-curve"></canvas>
+</div>
+
+<h3>三、出题人的套路</h3>
+<p>这类题在选择题里很稳，主要四个问法。</p>
+<ol>
+  <li>“O 点场强、电势是多少” —— 考场强为零、电势不一定为零。</li>
+  <li>“从 O 沿中垂线往外，场强怎么变” —— 考先增后减还是单调减。</li>
+  <li>“把电荷从 A 移到 B，电场力做多少功” —— 考等势线上不做功。</li>
+  <li>“在 P 点释放一个电荷，它怎么动” —— 考力和加速度的方向，正负电荷结论相反。</li>
+</ol>
+<table class="tbl">
+  <tr><th>坑</th><th>正确的说法</th></tr>
+  <tr><td>中垂线上场强“一直减小”</td><td>同种电荷先增后减；异种电荷才单调减</td></tr>
+  <tr><td>O 点场强为零，所以电势也为零</td><td>同种电荷 O 点电势最高；异种电荷才是零</td></tr>
+  <tr><td>把“电场线密”当“电势高”</td><td>两个概念，别绑一起</td></tr>
+  <tr><td>只看纸面，忽略立体</td><td>同种电荷周围有旋转对称性，中垂面里可以有匀速圆周运动</td></tr>
+</table>
+
+<h3>四、解题固定动作</h3>
+<p><strong>第 1 步：先确定是同种还是异种。</strong>这一步决定了后面所有结论，看错一个字全盘皆错。</p>
+<p><strong>第 2 步：把这张表默出来。</strong></p>
+<table class="tbl">
+  <tr><th>比较项</th><th>两个等量同种正电荷</th><th>两个等量异种电荷（+ 在左，− 在右）</th></tr>
+  <tr><td>连线中点 O 场强</td><td>0</td><td>8kQ/d²（两个各 4kQ/d²，同向相加）</td></tr>
+  <tr><td>连线中点 O 电势</td><td>最高（正）</td><td>0</td></tr>
+  <tr><td>连线上场强变化</td><td>由 O 向两侧先增后减</td><td>由正到负先减后增，O 处最小</td></tr>
+  <tr><td>中垂线场强方向</td><td>沿中垂线，背离 O</td><td>平行于连线，从 + 指向 −</td></tr>
+  <tr><td>中垂线场强变化</td><td>从 O 向外先增后减，r = d/(2√2) 处最大</td><td>从 O 向外单调减小</td></tr>
+  <tr><td>中垂线电势</td><td>O 处最大，向外降低</td><td>处处为零（等势线）</td></tr>
+</table>
+<div class="callout"><span class="tag">别背成文字</span>背成两张图：同种像两口对喷的泉眼（中间抵消）；异种像一条从左到右的河流（中间最急的地方反而最缓）。</div>
+
+<p><strong>第 3 步：算具体点的场强，一律用分解再叠加。</strong>三个小动作：</p>
+<ol>
+  <li>各自算大小：E = kQ/r²（r 是该点到电荷的真实距离，别拿坐标差当距离）；</li>
+  <li>画出方向（正电荷向外、负电荷向内）；</li>
+  <li>正交分解，看哪个分量互相抵消、哪个分量相加。</li>
+</ol>
+<p>经验：对称轴上，垂直于轴的分量一定抵消，只剩沿轴的分量。所以只算沿轴分量、乘以 2 就行，不用真的分解两次。</p>
+<p><strong>第 4 步：问做功，先看是不是等势线。</strong>中垂线（异种电荷）上移动，做功为零；其他路径老老实实算 W = qU。</p>
+
+<h3>五、原题复盘</h3>
+<h4>原题 1（第七周，答案 B）</h4>
+<p>M、N 为等量同种正点电荷，中垂线上 P 点由静止释放负电荷 q（不计重力）。</p>
+<p>先定性：负电荷在两个正电荷的场里会被吸过去（负电荷受力与场强反向，而中垂线上场强背离 O，所以受力指向 O）。</p>
+<ul>
+  <li><strong>A ✗</strong>：“P 到 O 加速度一定减小”。错在“一定”。中垂线上场强从 O 往外是先增后减的，如果 P 在最大值点（离 O 为 d/(2√2)）之外，往 O 走的头一段场强还在涨，加速度先变大后变小。</li>
+  <li><strong>B ✓</strong>：O 点场强为零 → 加速度为零；从 P 到 O 电场力一直指向 O、一直做正功 → 速度一直增大，到 O 点最大。“加速度为零”和“速度最大”同时发生在 O 点，这不矛盾——加速结束的那一刻，速度正好到顶。</li>
+  <li><strong>C ✗</strong>：越过 O 后运动确实对称，速度会减小；但加速度也是先增后减，不是“一直增大”。</li>
+  <li><strong>D ✗</strong>：关键在于别只看纸面。过 O 且垂直于 MN 的那个面上，合场强沿着从 O 向外的径向、同一圆周上大小处处相等。负电荷在这个面上受到的力指向圆心 O，这就是标准的向心力。给一个大小合适的切向速度，它就能在这个面上做匀速圆周运动。说“不可能”，错。</li>
+</ul>
+<div class="callout"><span class="tag">这题真正考的是</span>能不能想到三维。大多数人脑子的图是“纸上的一个点上下晃”，所以把 D 判错。</div>
+
+<h3>六、变式与练习</h3>
+<h4>变式</h4>
+<p>（多选）M、N 为等量异种点电荷，M 带 +Q、N 带 −Q，相距 d，O 为中点。下列说法正确的是（　）</p>
+<p>A. O 点场强大小为 8kQ/d²，方向由 M 指向 N<br>
+B. 中垂线上各点电势均为零<br>
+C. 负电荷沿中垂线从一侧移到另一侧，电场力做功为零<br>
+D. 沿中垂线由 O 向无穷远，场强先增大后减小</p>
+<details><summary>看解析 —— 答案 ABC</summary><div class="inner">
+<p><strong>A ✓</strong>：每个电荷在 O 点产生 4kQ/d²，方向都是“由 M 指向 N”，加起来 8kQ/d²。</p>
+<p><strong>B ✓</strong>：中垂线上每一点到 M、N 距离相等，+Q 抬的电势和 −Q 压的电势正好抵消。</p>
+<p><strong>C ✓</strong>：沿等势线移动，电势能不变 → 做功为零。</p>
+<p><strong>D ✗</strong>：“先增后减”是同种电荷的规律；异种电荷是单调减小。</p>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（单选）真空中两个等量同种正点电荷相距 d，O 为连线中点。下列说法正确的是（　）<br>
+A. O 点场强为零，电势也为零<br>
+B. 中垂线上 O 点场强最大<br>
+C. 中垂线上离 O 足够远处，场强趋近于零<br>
+D. 将正试探电荷从 O 沿中垂线移到无穷远，电场力做功为零</p>
+<p><strong>基础 2</strong>（解答）真空中两个等量正点电荷电量均为 Q、相距 r，P 点位于连线的中垂线上、到 O 点距离为 r/2。求 P 点场强的大小和方向。</p>
+<p><strong>提升 1</strong>（多选）M、N 为等量同种正点电荷，P 为中垂线上一点。在 P 点由静止释放一带正电的微粒（不计重力）。下列说法正确的是（　）<br>
+A. 微粒将向远离 O 的方向运动且速度增大<br>
+B. 微粒的加速度可能先增大后减小<br>
+C. 微粒将向 O 点加速运动并越过 O 来回振动<br>
+D. 微粒运动过程中电势能先减小后增大</p>
+<p><strong>提升 2</strong>（解答）M(+Q)、N(−Q) 位于 x 轴上，坐标分别为 (−L, 0)、(L, 0)。P 点坐标 (0, L)。求：(1) P 点场强的大小和方向；(2) P 点的电势。</p>
+
+<details><summary>基础 1 解析 —— 答案 C</summary><div class="inner">
+<p>A ✗：O 点场强为零，但两个正电荷都在抬电势，所以 O 点电势是最大的。</p>
+<p>B ✗：O 点场强为零，是最小不是最大。</p>
+<p>C ✓：离得远了，两个电荷相当于一个 2Q，E ≈ k·2Q/r² → 0。</p>
+<p>D ✗：中垂线不是等势线，正电荷从 O 往外移是顺着场强方向走，电场力做正功。</p>
+</div></details>
+
+<details><summary>基础 2 解析</summary><div class="inner">
+<p>两电荷在 (±r/2, 0)，P 在 (0, r/2)。P 到每个电荷的距离 = √(r²/4 + r²/4) = (√2/2)r。</p>
+<p>每个电荷在 P 的场强 = kQ ÷ (r²/2) = 2kQ/r²。</p>
+<p>水平分量左右抵消，竖直分量相加：E = 2 × 2kQ/r² × cos45° = <strong>2√2·kQ/r²，方向沿中垂线背离 O</strong>。</p>
+</div></details>
+
+<details><summary>提升 1 解析 —— 答案 AB</summary><div class="inner">
+<p>正电荷受力沿场强方向 → 沿中垂线向外，远离 O，A ✓；C ✗（“越过 O 来回振动”是负电荷才有的）。</p>
+<p>B ✓：如果 P 在场强最大值点（离 O 为 d/(2√2)）之外，向外走时场强先增后减，加速度就“先增后减”。</p>
+<p>D ✗：正电荷一直顺着场强方向走，电场力一直做正功，电势能一直减小，不会回头变大。</p>
+</div></details>
+
+<details><summary>提升 2 解析</summary><div class="inner">
+<p>(1) P 到 M、N 的距离都是 √(L² + L²) = √2·L，各自场强大小 kQ/(2L²)。</p>
+<p>两个场强方向：+Q 推（背离 M，指向右上方），−Q 拉（指向 N，指向右下方）。竖直分量抵消，水平分量都向右，相加：</p>
+<p>E = 2 × kQ/(2L²) × cos45° = <strong>(√2/2)·kQ/L²，方向沿 +x（由 M 指向 N）</strong>。</p>
+<p>(2) P 在中垂线上 → 到两电荷等距、电荷等量异号 → <strong>电势为零</strong>。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>先分清同种还是异种，一切结论从这里分岔。</li>
+  <li>同种：中点 E = 0、电势最高；中垂线场强先增后减。</li>
+  <li>异种：中点 E = 8kQ/d²、电势为 0；中垂线场强单调减、中垂线是等势线。</li>
+  <li>场强看坡陡不陡，电势看海拔高不高，两码事。</li>
+  <li>算具体点：各算大小 → 画方向 → 看谁抵消谁相加（对称轴上垂直分量必抵消）。</li>
+  <li>别只画平面图，同种电荷中垂面上能做匀速圆周运动。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t3"><span class="no">专题三</span>库仑力 + 圆弧轨道的综合题（压轴）</h2>
+<p class="topic-meta">对应错题：第 4、15 题——两道压轴大题。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>把一个带电小球放在固定电荷的势力范围里，让它沿轨道跑，问你各点的速度、受力、做功。</p>
+<p>它之所以放在压轴，不是因为知识点多，而是因为步骤多、容易漏项。但步骤其实是固定的：四步，一步不多一步不少。</p>
+
+<h3>二、用人话讲</h3>
+<h4>库仑力像一根看不见的橡皮筋</h4>
+<p>一端拴在圆心 O 的电荷上，另一端拴在跑动的小球上。</p>
+<ul>
+  <li>小球要是沿着以 O 为圆心的圆弧跑，橡皮筋的长度一直没变，它不伸不缩，<strong>不做功</strong>。这是白送的条件，遇到就划掉。</li>
+  <li>小球要是沿半径方向靠近或远离 O，橡皮筋被放松或拉长，<strong>做功了</strong>，得算。</li>
+</ul>
+<div class="callout green"><span class="tag">记住这句</span>绕圈不干活，进出才干活。第 4 题、第 15 题的圆弧段，库仑力做功全都直接写 0，一分力气不花。</div>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 3-1　绕圈不干活，进出才干活</h4><span class="badge">两种模式对比</span></div>
+  <p class="cap">左键切模式。<strong>沿圆弧</strong>：小球绕圈走，红色库仑力永远和蓝色速度垂直，夹角 90°，做功累计一直是 0。<strong>沿半径</strong>：小球直线往里走，力和速度同向，做功一下就上去了。</p>
+  <canvas id="cv-arc"></canvas>
+  <div class="ctrl">
+    <div class="seg" id="w3-mode">
+      <button data-m="arc" class="on">沿圆弧跑（等半径）</button>
+      <button data-m="radial">沿半径靠近 O</button>
+    </div>
+    <label id="w3-lab">位置角 θ <input type="range" id="w3-s" min="0" max="90" step="1" value="35"><span class="val" id="w3-sv">—</span></label>
+  </div>
+  <div class="readout">
+    <div>到圆心距离 r<b id="w3-r">—</b></div>
+    <div>库仑力 F<b id="w3-F">—</b></div>
+    <div>力与速度夹角<b id="w3-ang">—</b></div>
+    <div>库仑力累计做功<b id="w3-W">—</b></div>
+  </div>
+</div>
+
+<h4>摩擦力和重力、库仑力不是一类东西</h4>
+<ul>
+  <li>重力、库仑力、弹簧力这类（叫<strong>保守力</strong>）有个好性质：从 A 到 B 和从 B 回 A，做功刚好抵消。走一圈回原地，净功为零。</li>
+  <li>摩擦力不行。摩擦力永远和运动方向反着来，不管你往哪走它都做负功。所以<strong>来回一趟，摩擦功是去程加回程，两份都算，绝不抵消</strong>。</li>
+</ul>
+<div class="callout"><span class="tag">压轴题最大的失分点</span>第 4 题 A→C 再 C→A，摩擦热是 2W₂，写成 0 就全错了。</div>
+
+<h4>C 点为什么不在圆弧上</h4>
+<p>这是纯几何的坑。题目说“最高到 C 点，∠COB = 30°”，很多人下意识以为 C 也在那段圆弧上，于是认为 OC = R。</p>
+<p>但圆弧只到 B 就结束、后面接的是倾斜直杆，C 在那根直杆上。所以 C 到圆心的距离是</p>
+<div class="formula">OC = R / cos∠COB　（斜边比邻边）</div>
+<p>这个数大于 R（R/cos30° = 2√3R/3 ≈ 1.15R）。库仑力按 1/r² 衰减，距离变了力就变了，所以这一步绝不能想当然。</p>
+<div class="callout"><span class="tag">怎么避免</span>画图。把 O、B、C 三个点画出来，看清楚 C 到底在圆弧上还是直杆上。压轴题值得多花 1 分钟画图。</div>
+
+<h3>三、出题人的套路</h3>
+<p>压轴题的问法十几年不变，就这四个：</p>
+<table class="tbl">
+  <tr><th>问法</th><th>考什么 / 用什么工具</th></tr>
+  <tr><td>求经过 B 点时的速度或动能</td><td>能量账本。用动能定理或机械能守恒</td></tr>
+  <tr><td>求某点的库仑力大小</td><td>库仑定律加几何。F = kQq/r²，r 是真实距离</td></tr>
+  <tr><td>求小球对轨道的压力</td><td>径向牛顿第二定律。向心方向合力 = mv²/R</td></tr>
+  <tr><td>求克服某力做的功</td><td>动能定理逆用</td></tr>
+</table>
+<table class="tbl">
+  <tr><th>坑（按踩坑频率排）</th><th>后果</th></tr>
+  <tr><td>摩擦功往返抵消</td><td>最后一问答案全废</td></tr>
+  <tr><td>C 点距离当成 R</td><td>库仑力算错，后面连锁错</td></tr>
+  <tr><td>库仑力做功的正负搞反</td><td>符号错，能量账不平</td></tr>
+  <tr><td>“对轨道的压力”只算竖直分量</td><td>漏了水平方向的库仑力，压力值偏小</td></tr>
+</table>
+
+<h3>四、解题固定动作</h3>
+<p><strong>第 1 步：几何还原。</strong>把角度、边长全部翻译成“高度差”和“距离”。</p>
+<ul>
+  <li>圆弧上任意一点到圆心的距离 = R（这是圆弧的定义，白送）；</li>
+  <li>直杆上的点，用直角三角形算，多半是 R/cosθ；</li>
+  <li>求“上升了多少”，就找竖直方向投影的差。</li>
+</ul>
+<p><strong>第 2 步：分段记账。</strong>把整条路径切成段（A→B 一段，B→C 一段），每段单独列一个动能定理：</p>
+<div class="formula">末动能 − 初动能 = 重力做功 + 库仑力做功 − 摩擦力做功</div>
+<p>每一项都问自己三个问题：这个力在不在？做正功还是负功？数值多少？</p>
+<ul>
+  <li>圆弧段：库仑力项直接写 0；</li>
+  <li>靠近 O：库仑力（如果是吸引）做正功；远离 O：做负功（也就是“克服库仑力做功”）；</li>
+  <li>摩擦力：只要是滑动，永远负功。</li>
+</ul>
+<p><strong>第 3 步：径向写牛顿第二定律。</strong>在要算力的那个点，规定“指向圆心”为正方向，把所有力按这个方向定正负号：</p>
+<div class="formula">N ± 重力分量 ± 库仑力 = mv²/R</div>
+<p>N 的正负号先不管，让方程自己算出来。算出来是负的，就说明这个力其实背离圆心，方向自然出来了，不用提前判断。</p>
+<p><strong>第 4 步：牛顿第三定律收尾。</strong>题目问的是“球对杆或管道的压力”，你算出来的是“杆对球的力”，方向必须反过来写一句，这句是过程分。</p>
+<div class="callout blue"><span class="tag">通用技巧</span>先求速度，再求力。因为 mv²/R 需要 v，v 需要能量账。顺序反了会卡住。</div>
+
+<h3>五、原题复盘</h3>
+<h4>原题 4（第七周，压轴大题）</h4>
+<p>竖直面内 1/6 光滑圆弧（半径 R，圆心 O 处固定 +Q），与水平杆切于 A、与粗糙倾斜杆切于 B；带负电小球 m 从水平杆以 v = √(8gR/3) 过 A，最高到 C（∠COB = 30°，OC 平行于水平杆）；第一次过 A 后瞬间对杆向下弹力 8mg/3；A 至 C 克服库仑力做功 W₁ = (2−√3)/2·mgR。</p>
+<p><strong>先理清几何</strong>：A 在圆弧最低点（圆弧与水平杆相切，所以 OA 竖直）；B 在圆弧上，OB 与 OA 夹角 60°（1/6 圆弧 = 60°），所以 B 比 A 高出 R − R·cos60° = R/2。C 在倾斜直杆上，OC 平行于水平杆，说明 C 和 O 一样高，比 A 高 R。</p>
+
+<p><strong>(1) 求第一次到 B 的动能</strong></p>
+<p>A→B 走的是圆弧，到 O 的距离恒为 R → 库仑力不做功（划掉）。圆弧光滑 → 也没有摩擦。只剩重力：上升 R/2，做负功 mgR/2。</p>
+<div class="formula">½mv_B² = ½m·(8gR/3) − mg·(R/2) = 4mgR/3 − mgR/2 = 5mgR/6</div>
+
+<p><strong>(2) 求 C 点的库仑力</strong></p>
+<p>库仑力大小只和距离有关，所以先求 A 点的力，反推出 kQq 这个常数，再用它算 C 点。</p>
+<p>A 点径向方程（指向上方的 O 为正）：N + F − mg = mv²/R。题目说 A 点弹力 N = 8mg/3，v² = 8gR/3：</p>
+<div class="formula">8mg/3 + F − mg = m·(8gR/3)/R = 8mg/3　→　F = mg</div>
+<p>也就是 kQq/R² = mg。</p>
+<p>再看 C：C 到 O 的距离 OC = R/cos30° = 2√3R/3。库仑力按 1/r² 变：</p>
+<div class="formula">F_C = kQq/OC² = mg·(R/OC)² = mg·(3/4) = 3mg/4</div>
+<div class="callout"><span class="tag">常见死法</span>有人看到“C 点”就直接代 r = R，得 F_C = mg，错了。C 不在圆上，距离是 1.15R，力小了 1/4。</div>
+
+<p><strong>(3) 求返回 A 前瞬间对杆的弹力</strong></p>
+<p>这一步要走完整往返，是摩擦功最容易出错的地方。先求 A→C 这段的摩擦功。A→C 动能定理（初动能 4mgR/3，末动能 0，升高 R）：</p>
+<div class="formula">4mgR/3 = mgR + W₁ + W₂</div>
+<p>其中 W₁ 是克服库仑力做的功（已知），W₂ 是克服摩擦做的功：</p>
+<div class="formula">W₂ = 4mgR/3 − mgR − (2−√3)/2·mgR = (3√3 − 4)/6 · mgR</div>
+<p>再看 C→A：重力做正功 mgR（下落 R），库仑力是吸引（靠近 O，做正功 W₁），摩擦仍然做负功 W₂：</p>
+<div class="formula">½mv′² = mgR + W₁ − W₂ = (8 − 3√3)/3 · mgR</div>
+<p>A 点径向方程（仍以指向上方 O 为正）：N′ + F − mg = mv′²/R，F = mg：</p>
+<div class="formula">N′ = mv′²/R = 2(8 − 3√3)/3 · mg ≈ 1.87mg</div>
+<p>方向为正，说明杆对球的力向上。由牛顿第三定律，<strong>球对杆的弹力大小为 2(8−3√3)mg/3，方向向下</strong>。</p>
+<div class="callout"><span class="tag">这一问的三个检查点</span>① 摩擦功出现了两次（W₂ 前后各一次，没抵消）；② 库仑力去程做负功、回程做正功（对称，各算一次）；③ 最后一句方向必须写“向下”。</div>
+
+<h4>原题 15（第五周，压轴大题）</h4>
+<p>竖直绝缘管道，AB 为半径 R 光滑圆弧、BCD 为水平光滑直管道，切于 B；水平面内 M、N、B 构成边长 L 的等边三角形，MN 过 C 且垂直于 BCD，M 处 +Q、N 处 −Q；小球 (m, +q) 从 A 静止释放。</p>
+
+<p><strong>(1) B 处库仑力</strong></p>
+<p>B 到 M、N 距离都是 L（等边三角形）。两个力大小都是 F₁ = kQq/L²。但注意这是三维的：M、N、B 都在水平面上，三个点构成等边三角形，两个力的夹角是 120°（不是 60°，这是坑）。</p>
+<div class="formula">合力 F = 2F₁·cos60° = kQq/L²，垂直于管道、指向负电荷 N 那一侧</div>
+<div class="callout"><span class="tag">怎么记 120°</span>等边三角形内角 60°，从 B 看 M 和看 N 是“张开”的角度，等于 120°。画个图就对了。</div>
+
+<p><strong>(2) B 处对管道的压力</strong></p>
+<p>关键是压力有两个方向的分量，得合成。竖直方向：A→B 只有重力做功（库仑力到 O 距离恒为 R，不做功）：</p>
+<div class="formula">mgR = ½mv_B²　→　v_B² = 2gR</div>
+<p>B 点是圆弧最低点，向心方向（向上）：N_By − mg = mv_B²/R = 2mg → N_By = 3mg。</p>
+<p>水平方向：管道壁要顶住库仑力，所以 N_Bx = kQq/L²。</p>
+<div class="formula">N_B = √(N_By² + N_Bx²) = √(9m²g² + k²Q²q²/L⁴)</div>
+
+<p><strong>(3) 直管道段上的压力随角度变化</strong></p>
+<p>球跑到管道上任一点时，到 M、N 距离相等（因为 MN 垂直于管道且过 C，管道是 MN 的中垂线）。设该点与 MN 的夹角为 θ，则 r = L/(2cosθ)。两个库仑力合力沿垂直管道方向：</p>
+<div class="formula">F_静 = 2·kQq/r²·cosθ = 8kQq·cos³θ / L²</div>
+<p>竖直方向管壁扛重力 mg，水平方向管壁扛静电力，两者垂直：</p>
+<div class="formula">F_N = √[(8kQq·cos³θ/L²)² + (mg)²]</div>
+<p>θ 从 60°（B 点）减到 0°（C 点）。</p>
+
+<h3>六、变式与练习</h3>
+<h4>变式</h4>
+<p>光滑绝缘竖直圆环（半径 R，圆心 O）上套一个质量 m、带电 −q 的小球，O 处固定 +Q。小球从最高点 A 由静止滑下。求：(1) A 到最低点 B 过程中库仑力做的功；(2) B 点速度；(3) B 点球对杆的弹力；(4) 若改从 A 点以初速度 v₀ 滑下，B 点球对杆弹力多大。</p>
+<details><summary>看解析</summary><div class="inner">
+<p><strong>(1)</strong> 小球一直在圆环上，到 O 距离恒为 R → 橡皮筋没伸缩 → <strong>库仑力做功为零</strong>。</p>
+<p><strong>(2)</strong> 只有重力做功，下降 2R：mg·2R = ½mv_B² → <strong>v_B = 2√(gR)</strong>。</p>
+<p><strong>(3)</strong> B 点径向（指向圆心 O，即向上为正）：N + F_C − mg = mv_B²/R = 4mg，F_C = kQq/R²：</p>
+<div class="formula">N = 5mg − kQq/R²</div>
+<p>N 为正 → 杆对球向上 → 由牛顿第三定律，<strong>球对杆弹力大小 5mg − kQq/R²，方向向下</strong>。</p>
+<p><strong>(4)</strong> 有初速度时，能量账要加上初动能：½mv_B² = ½mv₀² + 2mgR → v_B² = v₀² + 4gR：</p>
+<div class="formula">N = m(v₀² + 4gR)/R + mg − kQq/R²</div>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（解答）真空中固定点电荷 +Q，一个质量 m、带电 −q 的粒子绕它做半径 r 的匀速圆周运动。(1) 求线速度；(2) 库仑力做多少功？(3) 若轨道半径增大为原来的 2 倍，线速度如何变化？</p>
+<p><strong>基础 2</strong>（解答）竖直平面内固定光滑绝缘圆弧杆（半径 R，圆心 O 处固定 +Q），圆弧从“与 O 等高的 A 点”一直到最低点 B。带电 −q、质量 m 的小球穿在杆上，从 A 由静止滑到 B。已知 kQq/R² &lt; 3mg。求 B 点小球对杆弹力的大小和方向。</p>
+<p><strong>提升 1</strong>（解答，压轴）光滑绝缘细杆弯成半径 R 的竖直圆环，圆心 O 固定 +Q，质量 m、带电 −q 的小球穿在杆上。小球在最低点 A 获得沿杆向上的初速度 v₀ = 2√(gR)，恰好到达最高点 B。求：(1) 说明“恰好到达”的含义并验证；(2) B 点刚到达瞬间小球对杆的弹力；(3) 小球返回 A 点时对杆的弹力。</p>
+
+<details><summary>基础 1 解析</summary><div class="inner">
+<p>(1) 库仑力当向心力：kQq/r² = mv²/r → <strong>v = √(kQq/(mr))</strong>。</p>
+<p>(2) 库仑力始终垂直于速度 → <strong>做功为零</strong>。</p>
+<p>(3) v ∝ 1/√r，r 变 2 倍 → v′ = v/√2，<strong>线速度变为原来的 1/√2</strong>。</p>
+</div></details>
+
+<details><summary>基础 2 解析</summary><div class="inner">
+<p>A 与 O 等高、B 在最低点 → 下降高度为 <strong>R</strong>（不是 2R，先把这个几何关系看清楚）。</p>
+<p>A→B 沿圆弧，到 O 距离恒为 R → 库仑力不做功，只剩重力：mgR = ½mv² → <strong>mv²/R = 2mg</strong>。</p>
+<p>B 点径向（指向圆心 O，即向上为正）：N + kQq/R² − mg = 2mg → N = 3mg − kQq/R²。</p>
+<p>已知 kQq/R² &lt; 3mg → N &gt; 0，杆对球向上。由牛顿第三定律：<strong>球对杆弹力大小 3mg − kQq/R²，方向向下</strong>。</p>
+</div></details>
+
+<details><summary>提升 1 解析</summary><div class="inner">
+<p><strong>(1) “恰好到达” = 到达 B 时速度刚好为零</strong>（再少一点点就到不了）。</p>
+<p>验证：½mv₀² = ½m·4gR = 2mgR；A 到 B 升高 2R，需要 2mgR 的重力势能；库仑力不做功。正好耗尽，<strong>v_B = 0 ✓</strong>。</p>
+<p><strong>(2)</strong> B 点速度为零 → 向心加速度为零。设杆对球的力 N 以“指向圆心（向下）”为正：</p>
+<div class="formula">N + mg + kQq/R² = 0　→　N = −(mg + kQq/R²)</div>
+<p>负号说明杆对球的力实际上背离圆心（向上），大小 mg + kQq/R²。由牛顿第三定律，<strong>球对杆的弹力大小 mg + kQq/R²，方向指向圆心（向下）</strong>。</p>
+<div class="callout blue"><span class="tag">这一问的教训</span>不要提前猜方向。设正方向，让方程给符号，符号就是方向的答案。</div>
+<p><strong>(3)</strong> 返回 A：从 B 到 A 下降 2R，2mgR = ½mv_A′² → v_A′² = 4gR，mv_A′²/R = 4mg。</p>
+<p>A 点径向（向上为正）：N′ + kQq/R² − mg = 4mg → N′ = 5mg − kQq/R²（题设保证为正）→ <strong>球对杆弹力 5mg − kQq/R²，方向向下</strong>。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>绕圈不干活，进出才干活（等半径库仑力不做功）。</li>
+  <li>摩擦力往返不抵消，保守力往返抵消——这是压轴题第一杀手。</li>
+  <li>四步：几何还原 → 分段记账 → 径向牛顿第二定律 → 牛顿第三定律反向。</li>
+  <li>求力之前先求速度（能量账），顺序别倒。</li>
+  <li>直杆上的点距离不是 R，用 R/cosθ 算。</li>
+  <li>压力有多个分量时要矢量合成，不是取一个。</li>
+  <li>方向拿不准就设正方向让方程给符号，最后补一句“由牛顿第三定律，方向反向”。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t4"><span class="no">专题四</span>单摆（理论 + 实验）</h2>
+<p class="topic-meta">对应错题：第 3 题（理论大题）、第 13 题（实验题）。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>荡秋千这一件事，能出两道题：一道问“绳子最紧最松时各是什么状态”，一道问“怎么把 g 测准”。</p>
+
+<h3>二、用人话讲</h3>
+<h4>先想秋千</h4>
+<p>你荡到最低点时，速度最快，绳子被拉得最紧——这时候绳子既要托住你的体重，还得多掏一份力来让你拐弯（向心力）。所以：</p>
+<div class="formula">最低点　F_max = mg + mv²/L</div>
+<p>你荡到最高点时，速度为零，不用拐弯了，绳子只承担体重的一个分量（因为绳子是斜的），所以最松：</p>
+<div class="formula">最高点　F_min = mg·cosθ</div>
+<p>一松一紧，一高一低，正好对应。这就是第 3 题 F–t 图的两个读数。</p>
+
+<h4>峰和峰的间隔不是周期</h4>
+<p>一个来回（一个周期）里，秋千两次经过最低点——一次往这边、一次往那边。绳子每次经过最低点都被拉到最紧一次，所以：</p>
+<div class="callout"><span class="tag">最容易错的一点</span>一个周期里拉力出现两个峰，相邻两个峰之间只隔了半个周期（T/2）。同理，两个谷（最高点）之间也是 T/2。<br><strong>记法：一周期过最低点两次，所以峰峰间隔是半个周期。</strong>这一步错，后面所有计算连锁全错。</div>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 4-1　一边荡一边画 F–t 图</h4><span class="badge">看峰峰之间的箭头</span></div>
+  <p class="cap">左边是摆，右边是绳拉力随时间的变化。注意虚线的标注：<strong>相邻两个峰之间只隔半个周期</strong>，一个完整周期里有两个峰。拖动摆长看周期怎么变，拖动摆角看拉力峰值怎么变。</p>
+  <canvas id="cv-pend"></canvas>
+  <div class="ctrl">
+    <label>摆长 L <input type="range" id="p-L" min="0.2" max="1.4" step="0.05" value="1"><span class="val" id="p-Lv">—</span></label>
+    <label>最大摆角 θ₀ <input type="range" id="p-a" min="4" max="14" step="1" value="10"><span class="val" id="p-av">—</span></label>
+    <button class="btn" id="p-run">暂停</button>
+  </div>
+  <div class="readout">
+    <div>周期 T<b id="p-T">—</b></div>
+    <div>拉力最大值 F_max<b id="p-Fmax">—</b></div>
+    <div>拉力最小值 F_min<b id="p-Fmin">—</b></div>
+    <div>相邻峰间隔<b id="p-gap">—</b></div>
+  </div>
+</div>
+
+<h4>为什么周期只跟摆长和 g 有关</h4>
+<div class="formula">T = 2π√(L/g)</div>
+<p>里面没有 m，也没有振幅——这叫等时性：同一个单摆，荡得高一点低一点（只要角度小），快慢完全一样。伽利略在教堂看吊灯晃就是这个发现。</p>
+<div class="callout"><span class="tag">选择题里会反复出现</span>“振幅变小，周期变不变？”——不变（只要还是小角度）。</div>
+
+<h4>实验其实只有一个核心问题：摆长从哪量到哪</h4>
+<p>答案：从悬点，量到球心。也就是</p>
+<div class="formula">L = 线长 + 球半径</div>
+<p>绝大多数人错在这里：要么只量了线长（少了半径），要么量了球直径（多了半径）。这就是第 13 题那个截距的来源。</p>
+
+<h4>那个 T²–L 图的截距，怎么一眼看出测大还是测小</h4>
+<p>图像法是把 T² = (4π²/g)·L 画成一条过原点的直线，斜率 = 4π²/g。但如果摆长量错了，直线就不过原点了：</p>
+<ul>
+  <li>如果量多了（比如把直径当半径加进去了），你以为的 L 比真实的大，画出来的点在图上偏右，直线往左延伸到 L 轴时会有个<strong>正的截距</strong>。</li>
+  <li>如果量少了（漏了球半径），直线在 <strong>T² 轴上会有正的截距</strong>。</li>
+</ul>
+<div class="callout green"><span class="tag">一句话记法</span>截距落在 L 轴正半轴 → 摆长量大了；截距落在 T² 轴正半轴 → 摆长量小了。</div>
+<p>第 13 题就是“L 轴正截距”这种情况 → 量大了 → 把直径当半径加了 → 选 C。</p>
+
+<h3>三、出题人的套路</h3>
+<p><strong>理论题</strong>常见三问：</p>
+<ol>
+  <li>给 F–t 图，读周期和摆长（峰峰间隔是 T/2）；</li>
+  <li>给 F_min、F_max，求质量、摆角、最大速度（三个方程联立）；</li>
+  <li>问周期和什么有关（只与 L、g 有关）。</li>
+</ol>
+<p><strong>实验题</strong>常见四问：</p>
+<ol>
+  <li>摆长怎么量（悬点到球心）；</li>
+  <li>计时起点选在哪（平衡位置，那里速度最大、误差最小）；</li>
+  <li>由 T、L 算 g（g = 4π²L/T²）；</li>
+  <li>图像截距分析（测大还是测小）。</li>
+</ol>
+<table class="tbl">
+  <tr><th>坑</th><th>正确做法</th></tr>
+  <tr><td>峰峰间隔当周期</td><td>是 T/2，要乘 2</td></tr>
+  <tr><td>摆长 = 线长</td><td>= 线长 + 球半径</td></tr>
+  <tr><td>从最高点开始计时</td><td>从平衡位置开始（速度大，起停误差小）</td></tr>
+  <tr><td>数周期数错</td><td>从平衡位置第一次经过时开始计时，之后每两次过平衡位置算一个周期，数够 30～50 个再停</td></tr>
+</table>
+
+<h3>四、解题固定动作</h3>
+<p><strong>遇到 F–t 图：</strong></p>
+<ol>
+  <li><strong>先乘 2</strong>：读出相邻峰（或相邻谷）的间隔，×2 得周期 T。</li>
+  <li>由 T 反推摆长：L = gT²/(4π²)。</li>
+  <li>读两个极值：F_min 对应最高点，F_max 对应最低点。</li>
+  <li>三个方程联立：最高点 mg·cosθ = F_min；最低点 mg + mv²/L = F_max；能量 mgL(1−cosθ) = ½mv²，即 mv²/L = 2mg(1−cosθ)。</li>
+  <li>联立的技巧：把能量式的 mv²/L 代进最低点式，再减去最高点式，能一步消掉两个未知量。</li>
+</ol>
+<p><strong>遇到实验题：</strong></p>
+<ol>
+  <li>摆长 = 线长 + 球半径（先写这一句，再代数字）；</li>
+  <li>计时：平衡位置起、平衡位置停，数 30～50 个周期；</li>
+  <li>g = 4π²L/T²；</li>
+  <li>有图像就看截距，判量大还是量小。</li>
+</ol>
+
+<h3>五、原题复盘</h3>
+<h4>原题 3（第七周，理论大题）</h4>
+<p>测力传感器测摆线拉力，F–t 图相邻峰间隔 0.2π s，F_min = 0.495 N，F_max = 0.510 N，g = 10 m/s²。</p>
+<p><strong>(1) 周期和摆长</strong>。峰峰间隔 0.2π s，这是一半的周期：</p>
+<div class="formula">T = 2 × 0.2π = 0.4π s<br>
+L = gT²/(4π²) = 10 × (0.4π)² / (4π²) = 10 × 0.16π² / (4π²) = 0.4 m</div>
+<p><strong>(2) 质量</strong>。三个方程：</p>
+<ul>
+  <li>最高点：mg·cosθ = 0.495</li>
+  <li>最低点：mg + mv²/L = 0.510</li>
+  <li>能量：mv²/L = 2mg(1 − cosθ)</li>
+</ul>
+<p>第 2 式减第 1 式：mg(1−cosθ) + mv²/L = 0.015。把能量式代进去：</p>
+<div class="formula">3mg(1−cosθ) = 0.015　→　mg(1−cosθ) = 0.005</div>
+<p>再和第 1 式相加：mg·cosθ + mg(1−cosθ) = 0.495 + 0.005 → mg = 0.5 → <strong>m = 0.05 kg</strong>，顺手得 cosθ = 0.99（θ ≈ 8.1°，小角度成立）。</p>
+<p><strong>(3) 最大速度</strong>（在最低点）：</p>
+<div class="formula">v² = 2gL(1−cosθ) = 2 × 10 × 0.4 × 0.01 = 0.08　→　v ≈ 0.28 m/s</div>
+
+<h4>原题 13（第五周，实验题）</h4>
+<p><strong>(1) 磁感应强度最大的时刻</strong> —— 传感器测的是磁场强弱，小球离传感器最近时最强。摆球离悬点（传感器所在处）最近的位置就是最低点。</p>
+<p><strong>(2) 周期</strong> —— 5 s 到 15 s 共 10 s，内有 5 个周期 → T = 2 s。</p>
+<p><strong>(3) 算 g</strong> —— g = 4π²L/T²，取 π² = 9.87、L ≈ 0.995 m → g = 4 × 9.87 × 0.995 / 4 = 9.82 m/s²。</p>
+<p><strong>(4) 截距分析</strong> —— T²–L 图线的延长线在 L 轴正半轴有截距 → 说明测出来的 L 比真实的大 → 把“线长 + 球直径”当成了摆长 → <strong>选 C</strong>。</p>
+
+<h3>六、变式与练习</h3>
+<h4>变式</h4>
+<p>单摆摆长 1 m，地面附近 g = π² ≈ 9.87 m/s²，测得周期 T₀。(1) 求 T₀；(2) 移到 g′ = g/4 的高空，周期多大？(3) 放入以 a = g/2 竖直向上加速的电梯，周期多大？</p>
+<details><summary>看解析</summary><div class="inner">
+<p><strong>(1)</strong> T₀ = 2π√(L/g) = 2π√(1/π²) = <strong>2 s</strong>。</p>
+<p><strong>(2)</strong> T ∝ 1/√g，g 变 1/4 → T 变 2 倍：T′ = <strong>4 s</strong>。</p>
+<p><strong>(3)</strong> 等效重力 g_eff = g + a = 1.5g（电梯往上加速，摆球“变重”）：T″ = 2π√(L/1.5g) = T₀/√1.5 ≈ <strong>1.63 s</strong>。</p>
+<div class="callout"><span class="tag">电梯口诀</span>往上加速 g 变大、周期变短；往下加速 g 变小、周期变长。</div>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（解答）单摆摆线拉力 F–t 图中，相邻两个拉力峰值间隔 0.5 s。取 g = π² m/s²。(1) 求周期；(2) 若摆长 0.25 m，用周期公式求 g，验证是否一致。</p>
+<p><strong>基础 2</strong>（多选）关于单摆周期，下列说法正确的是（　）<br>
+A. 周期与摆球质量成正比<br>
+B. 同一单摆振幅减小（仍为小角度），周期不变<br>
+C. 摆长增大为原来的 4 倍，周期增大为原来的 2 倍<br>
+D. 从重庆（g ≈ 9.79）带到赤道（g 更小），周期变大</p>
+<p><strong>提升 1</strong>（解答，仿原题 3）单摆摆球质量 0.2 kg、摆长 0.5 m，g = 10 m/s²。力传感器测得摆线拉力最小值 1.98 N、最大值 2.04 N。求：(1) 最大摆角的余弦值；(2) 最大速度；(3) 最低点的向心加速度。</p>
+<p><strong>提升 2</strong>（解答，实验图像）某组同学作 T²–L 图线：直线斜率为 4 s²/m，延长线与 T² 轴交于 0.08 s²（L = 0 处）。(1) 由斜率求当地 g；(2) 由截距判断摆长测多了还是测少了、差多少，指出可能的操作错误。</p>
+
+<details><summary>基础 1 解析</summary><div class="inner">
+<p>(1) 峰峰间隔 = T/2 → <strong>T = 1 s</strong>。</p>
+<p>(2) g = 4π²L/T² = 4π² × 0.25 / 1 = π² m/s²，<strong>与给定值一致 ✓</strong>。</p>
+</div></details>
+
+<details><summary>基础 2 解析 —— 答案 BCD</summary><div class="inner">
+<p>A ✗：周期公式里没有质量，与质量无关。</p>
+<p>B ✓：这就是等时性。</p>
+<p>C ✓：T ∝ √L，L 变 4 倍 → T 变 2 倍。</p>
+<p>D ✓：T ∝ 1/√g，g 变小 → T 变大。</p>
+</div></details>
+
+<details><summary>提升 1 解析</summary><div class="inner">
+<p>(1) 最高点速度为零，只有体重的分量：F_min = mg·cosθ → cosθ = 1.98/(0.2×10) = <strong>0.99</strong>。</p>
+<p>(2) 能量守恒：v² = 2gL(1−cosθ) = 2 × 10 × 0.5 × 0.01 = 0.1 → <strong>v ≈ 0.32 m/s</strong>。</p>
+<p>(3) 向心加速度 a = v²/L = 0.1/0.5 = <strong>0.2 m/s²</strong>。（验算：F_max = mg + ma = 2 + 0.2×0.2 = 2.04 N，与题给一致 ✓）</p>
+</div></details>
+
+<details><summary>提升 2 解析</summary><div class="inner">
+<p>(1) 斜率 = 4π²/g = 4 → g = π² ≈ <strong>9.87 m/s²</strong>。</p>
+<p>(2) 有截距的方程：T² = 4L + 0.08 = 4(L + 0.02)。而理论上 T² = 4·L_真。所以 L_真 = L_测 + 0.02 m，即<strong>测量值比真实值小 0.02 m = 2 cm</strong>。</p>
+<p>→ 摆长测少了 2 cm，最可能的原因：只量了摆线长度，漏加球半径（球半径 2 cm）。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>秋千：最低点最紧（F = mg + mv²/L），最高点最松（F = mg·cosθ）。</li>
+  <li>峰峰间隔 = T/2，别忘乘 2。</li>
+  <li>周期只和 L、g 有关，与质量、与小角度下的振幅无关。</li>
+  <li>摆长 = 线长 + 球半径，量到球心。</li>
+  <li>计时从平衡位置起，数 30～50 个周期。</li>
+  <li>截距在 L 轴正半轴 → 量大了；在 T² 轴正半轴 → 量小了。</li>
+  <li>电梯问题：等效重力 g ± a。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t5"><span class="no">专题五</span>弹簧振子与简谐运动</h2>
+<p class="topic-meta">对应错题：第 10 题。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>挂着弹簧上下晃的球，晃到什么程度弹簧会受不了。</p>
+<p>核心只有一个观念：<strong>振幅是相对“平衡位置”量的，不是相对“原长”量的。</strong></p>
+
+<h3>二、用人话讲</h3>
+<h4>先把三个位置分清楚，这是本节全部的难点</h4>
+<p>一根弹簧上端挂在天花板 O，下端挂个球：</p>
+<ol>
+  <li><strong>弹簧原长</strong>：什么都没挂时，弹簧自然地那么长。</li>
+  <li><strong>平衡位置</strong>：挂上球，弹簧被拉长 x₀ = mg/k，球静止停在那里。平衡位置在原长下面 x₀ 处。</li>
+  <li><strong>振动</strong>：从平衡位置拉开一段距离再松手，球就绕平衡位置上下晃。</li>
+</ol>
+<div class="callout"><span class="tag">关键</span>振动永远绕“平衡位置”对称，不是绕“原长位置”。量振幅必须从平衡位置量到最远点；量到原长就多算了 x₀，全错。</div>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 5-1　三种位置别搞混</h4><span class="badge">拖动振幅看边界</span></div>
+  <p class="cap">灰色虚线是<strong>原长</strong>，绿线是<strong>平衡位置</strong>（比原长低 x₀ = mg/k）。橙色的上下两条线是振动的<strong>边界</strong>，它们是以绿线为中心对称的，不是以灰线为中心。把振幅拖大，看下方弹力条什么时候超红线。</p>
+  <canvas id="cv-spring"></canvas>
+  <div class="ctrl">
+    <label>振幅 A <input type="range" id="s-A" min="0" max="2" step="0.05" value="0.5"><span class="val" id="s-Av">—</span></label>
+    <button class="btn" id="s-run">暂停</button>
+  </div>
+  <div class="readout">
+    <div>平衡伸长 x₀<b id="s-x0">1.0 cm</b></div>
+    <div>最大伸长 x₀+A<b id="s-xm">—</b></div>
+    <div>最大弹力 mg+kA<b id="s-Fm">—</b></div>
+    <div id="s-state">是否脱落<b id="s-det">—</b></div>
+  </div>
+</div>
+
+<h4>那弹簧最大被拉多长</h4>
+<p>从平衡位置往下最多走 A（振幅），而平衡位置本身已经在原长下面 x₀ 了，所以：</p>
+<div class="formula">最大伸长量 = x₀ + A　　最大弹力 = k(x₀ + A) = mg + kA</div>
+<p>这个式子要刻进脑子：mg + kA。第一部分 mg 是“托住球不掉的力”，第二部分 kA 是“让它拐弯回头”的力。</p>
+
+<h4>“弹簧会不会掉”怎么算</h4>
+<p>题目说“O 处受力超过 2mg 弹簧就脱落”。O 处受的力就是弹簧的弹力（弹簧的拉力处处相等），最大出现在最低点，就是 mg + kA。所以：</p>
+<div class="formula">不脱落 ⇔ mg + kA ≤ 2mg ⇔ A ≤ mg/k</div>
+<div class="callout"><span class="tag">为什么不是 A ≤ 2mg/k</span>因为 2mg 这个上限里，已经有 mg 被“托住球”用掉了，只剩 mg 可以用来晃。能晃的幅度就是 mg/k。这个“扣掉本钱再看余量”的思路，是这类题的精髓。</div>
+
+<h4>球向上晃到最高点时，弹簧是被拉长还是被压缩</h4>
+<p>看 A 和 x₀ 谁大：A &lt; x₀ 时最高点还没到原长，弹簧仍然是伸长的；A &gt; x₀ 时最高点超过了原长，弹簧被压缩了（两端接着的弹簧是可以压的）。第 10 题的 D 选项就卡在这里。</p>
+
+<h3>三、出题人的套路</h3>
+<p>这类题在选择题里就三种问法：</p>
+<ol>
+  <li>“以下说法正确的是”——选项里埋“振幅等于最大伸长量”“不做简谐运动”“加速度方向”这类判断。</li>
+  <li>给一个约束（拉力上限、不脱离），问最大振幅——就是 A ≤ mg/k。</li>
+  <li>给振幅，问加速度最大值、弹力范围——a_max = kA/m，弹力范围 mg ± kA。</li>
+</ol>
+<table class="tbl">
+  <tr><th>坑</th><th>正确说法</th></tr>
+  <tr><td>“下拉释放就不做简谐运动了”</td><td>照样做。只要回复力满足 F = −kx，怎么启动都一样</td></tr>
+  <tr><td>振幅 = 最大伸长量</td><td>振幅相对平衡位置；最大伸长 = x₀ + A</td></tr>
+  <tr><td>O 端拉力一直是 mg</td><td>mg 只是静止时的值，振动中在 mg ± kA 之间变</td></tr>
+  <tr><td>最高点弹簧一定还伸着</td><td>A &gt; x₀ 时就被压缩了</td></tr>
+  <tr><td>半个周期走 4A</td><td>2A；4A 是一个周期</td></tr>
+</table>
+
+<h3>四、解题固定动作</h3>
+<ol>
+  <li><strong>先把三个位置在纸上标出来</strong>——原长、平衡位置（下方 x₀ = mg/k 处）、振动范围（平衡位置上下各 A）。</li>
+  <li><strong>算 x₀ = mg/k</strong>。这一步永远要做，后面全靠它。</li>
+  <li><strong>翻译题目里的约束</strong>。“拉力不超过 F₀” ⇔ k(x₀ + A) ≤ F₀ ⇔ A ≤ (F₀ − mg)/k。别直接拿 F₀/k 当振幅，要先减掉 mg。</li>
+  <li><strong>要算加速度，用 a_max = kA/m</strong>。出现在最高点和最低点两处，方向分别向下、向上。</li>
+  <li><strong>问“最高点弹簧状态”，比较 A 和 x₀</strong>。A &lt; x₀ 伸长，A &gt; x₀ 压缩，A = x₀ 恰好原长。</li>
+</ol>
+
+<h3>五、原题复盘</h3>
+<h4>原题 10（第五周，多选题，答案 BD）</h4>
+<p>质量 m 的小球经劲度系数 k 的轻弹簧连接上端 O，静止后竖直下拉释放。O 处拉力大于 2mg 时弹簧脱落。</p>
+<ul>
+  <li><strong>A ✗</strong>：“释放后不做简谐运动”。错。挂上重物静止时的位置就是新的平衡位置，从这里下拉释放，回复力依然满足 F = −kx（x 是相对平衡位置的位移），所以照样是简谐运动。“竖直的、有重力的”不影响简谐性，只改变平衡位置。</li>
+  <li><strong>B ✓</strong>：最大加速度 a_max = kA/m。由 D 的推导 A ≤ mg/k，所以 a_max ≤ k(mg/k)/m = g。而最高点处弹簧被拉得最少，合力方向向下，加速度竖直向下。</li>
+  <li><strong>C ✗</strong>：把“最大振幅”写成 2mg/k，错。</li>
+  <li><strong>D ✓</strong>：不脱落条件 k(x₀ + A) ≤ 2mg，而 x₀ = mg/k，所以 kA ≤ mg → A ≤ mg/k。</li>
+</ul>
+<div class="callout"><span class="tag">错的人是怎么想的</span>他们写 k·A_max = 2mg → A = 2mg/k。错在把“弹簧最大弹力 2mg”直接对应到了“振幅”，忘了平衡位置本身已经让弹簧伸长了 mg/k。</div>
+
+<h3>六、变式与练习</h3>
+<h4>变式</h4>
+<p>水平弹簧振子：k = 100 N/m，m = 0.25 kg，振幅 A = 0.05 m。求：(1) 周期；(2) 最大速度；(3) 最大加速度；(4) 一个周期与半个周期的路程。</p>
+<details><summary>看解析</summary><div class="inner">
+<p>(1) ω = √(k/m) = √(100/0.25) = √400 = 20 rad/s → T = 2π/ω = 0.1π ≈ <strong>0.31 s</strong>。</p>
+<p>(2) ½kA² = ½mv_max² → v_max = √(k/m)·A = 20 × 0.05 = <strong>1 m/s</strong>。</p>
+<p>(3) a_max = kA/m = 100 × 0.05 / 0.25 = <strong>20 m/s²</strong>（也可用 a_max = ω²A = 400 × 0.05）。</p>
+<p>(4) 一个周期 <strong>4A = 0.2 m</strong>；半个周期 <strong>2A = 0.1 m</strong>。</p>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（多选）关于简谐运动，下列说法正确的是（　）<br>
+A. 回复力大小保持恒定<br>
+B. 加速度与位移大小成正比、方向相反<br>
+C. 经过平衡位置时速度最大、加速度为零<br>
+D. 无论从什么时刻开始计时，半个周期内通过的路程都是 2A</p>
+<p><strong>基础 2</strong>（解答）劲度系数 100 N/m 的轻弹簧上端固定，下端连接质量 0.1 kg 的小球（g = 10 m/s²），静止后下拉 2 cm 由静止释放。(1) 平衡位置处弹簧伸长多少？振幅多大？(2) 最大加速度多大？(3) 最高点处弹簧处于伸长还是压缩状态？(4) 上端作用力的变化范围。</p>
+<p><strong>提升 1</strong>（解答，仿原题 10）劲度系数 50 N/m 的轻弹簧上端固定于 O，下端连质量 0.5 kg 的小球（g = 10 m/s²）。若 O 处作用力超过 15 N 弹簧会脱落。将小球竖直下拉 8 cm 后由静止释放。(1) 判断弹簧是否脱落；(2) 最大加速度；(3) O 端拉力的变化范围；(4) 要使弹簧脱落，至少需要从平衡位置下拉多少？</p>
+
+<details><summary>基础 1 解析 —— 答案 BCD</summary><div class="inner">
+<p>A ✗：F = −kx，随位移一直变，不是恒定。</p>
+<p>B ✓：a = −(k/m)x，正是这个意思。</p>
+<p>C ✓：平衡位置 x = 0 → F = 0 → a = 0；同时这里速度最大。</p>
+<p>D ✓：从任意相位开始，半个周期里质点恰好从 x₀ 走到 −x₀，路程恒为 2A。</p>
+</div></details>
+
+<details><summary>基础 2 解析</summary><div class="inner">
+<p>(1) x₀ = mg/k = (0.1×10)/100 = 0.01 m = <strong>1 cm</strong>；振幅 = 下拉的距离 = <strong>2 cm</strong>。</p>
+<p>(2) a_max = kA/m = 100 × 0.02 / 0.1 = <strong>20 m/s²</strong>。</p>
+<p>(3) 最高点相对平衡位置向上 2 cm，而平衡位置在原长下方 1 cm → 最高点在原长上方 1 cm → <strong>被压缩 1 cm</strong>。</p>
+<p>(4) 弹簧力 = mg ± kA = 1 ± 2 N。最低点拉力最大 <strong>3 N</strong>；最高点变成<strong>压力 1 N</strong>。</p>
+</div></details>
+
+<details><summary>提升 1 解析</summary><div class="inner">
+<p>(1) x₀ = mg/k = 5/50 = 0.1 m。最大弹力 = k(x₀ + A) = 50 × (0.1 + 0.08) = <strong>9 N &lt; 15 N，不脱落</strong>。</p>
+<p>(2) a_max = kA/m = 50 × 0.08 / 0.5 = <strong>8 m/s²</strong>。</p>
+<p>(3) mg ± kA = 5 ± 4 → 拉力在 <strong>1 N ～ 9 N</strong> 之间（因为 A = 8 cm &lt; x₀ = 10 cm，全程都是伸长的）。</p>
+<p>(4) 脱落条件：k(x₀ + A) &gt; 15 → x₀ + A &gt; 0.3 m → A &gt; 0.2 m。即至少要从平衡位置<strong>下拉超过 20 cm</strong>。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>振动绕平衡位置，不绕原长；平衡位置在下方 x₀ = mg/k 处。</li>
+  <li>最大弹力 = mg + kA（这是最高频的公式）。</li>
+  <li>约束条件要先扣掉 mg：A ≤ (F₀ − mg)/k。</li>
+  <li>a_max = kA/m，最高点向下、最低点向上。</li>
+  <li>A 和 x₀ 比大小，决定最高点弹簧是伸长还是压缩。</li>
+  <li>一个周期 4A，半个周期 2A。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="t6"><span class="no">专题六</span>静电基础概念</h2>
+<p class="topic-meta">对应错题：第 9 题（摩擦起电）、第 2 题（静电的应用）。</p>
+
+<h3>一、这道题在考什么</h3>
+<p>不下计算的纯概念题，考的是“物理图景对不对”。</p>
+<p>这类题不难，但特别容易因为想当然丢分。它们的共同特点是：选项听起来都很顺耳，只有一个在物理上站不住。</p>
+
+<h3>二、用人话讲</h3>
+<h4>摩擦起电到底发生了什么</h4>
+<p>想象两个原子，一个把电子抓得紧，一个抓得松。把它们贴在一起蹭，抓得紧的就把对方的电子抢过来几个。</p>
+<p>所以：被抢走的那个少了电子，带正电；抢到的那个多了电子，带负电。</p>
+<div class="callout"><span class="tag">关键</span>跑掉的只有电子。原子核（质子）死死待在原地，绝对不会跑到另一个物体上去。这一点是最高频的错项来源——“玻璃棒带正电是因为得到了质子”是错的，带正电从来都是“失去电子”。</div>
+
+<div class="widget">
+  <div class="whead"><h4>交互图 6-1　摩擦的时候，到底谁在动</h4><span class="badge">点一下试试</span></div>
+  <p class="cap">点“摩擦一次”，看电子从毛皮跑到橡胶棒。注意两件事：<strong>飞过去的只有带负号的小圆点（电子），方块本身没动</strong>；摩擦前后，两边的电荷加起来始终是 0。</p>
+  <canvas id="cv-static"></canvas>
+  <div class="ctrl">
+    <button class="btn primary" id="st-go">摩擦一次</button>
+    <button class="btn" id="st-reset">重置</button>
+    <span style="color:var(--muted);font-size:13px">摩擦次数：<b id="st-times" style="color:var(--blue)">0</b></span>
+  </div>
+  <div class="readout">
+    <div>毛皮<b id="st-a">不带电</b></div>
+    <div>橡胶棒<b id="st-b">不带电</b></div>
+    <div class="ok">系统总电荷<b id="st-total">0</b></div>
+  </div>
+</div>
+
+<h4>创造电荷是绝对错的</h4>
+<p>电荷不能凭空产生，只能搬家。摩擦前后，两个物体上的总电荷量还是零，只是重新分配了一下。这就叫电荷守恒。</p>
+
+<h4>电荷还是“论个”的</h4>
+<p>一个电子带电 e = 1.6×10⁻¹⁹ C。任何带电体的电荷量只能是 e 的整数倍——1 个、2 个、3 个电子的电量，但不能是半个电子。</p>
+<p>所以“某物体带 0.8×10⁻¹⁹ C”这种选项一定是错的，因为 0.8×10⁻¹⁹ = e/2，半个电子不存在。这叫电荷量子化。</p>
+<div class="callout green"><span class="tag">一条实用判据</span>把一个电荷量除以 1.6×10⁻¹⁹，能除尽就是合法的，除不尽就一定是错的。</div>
+
+<h4>生活中的静电装置，各自在用什么原理</h4>
+<p>先自己猜一下，点开卡片看答案。</p>
+<div class="cards" id="st-cards">
+  <div class="card"><h5>超高压带电作业服</h5><div class="k">工人摸几十万伏的电线为什么没事？</div><div class="ans">静电屏蔽。衣服是导电材料织的，把人体包成一个等势体，身上各处电势相同 → 没有电势差 → 没有电流过身体。是导电服，不是绝缘服。</div><div class="hint">点击看答案</div></div>
+  <div class="card"><h5>静电除尘</h5><div class="k">烟囱里的黑烟怎么被弄干净的？</div><div class="ans">电晕放电使空气电离，尘埃荷负电，被带正电的集尘板吸走。</div><div class="hint">点击看答案</div></div>
+  <div class="card"><h5>煤气灶点火器 / 避雷针</h5><div class="k">啪的一声火花从哪来？</div><div class="ans">尖端放电。尖端电荷特别密集、场强特别大，把空气击穿产生电火花。避雷针则是把雷电流引下来导入大地。</div><div class="hint">点击看答案</div></div>
+  <div class="card"><h5>静电喷漆</h5><div class="k">漆为什么贴得匀、还不乱飞？</div><div class="ans">漆滴和工件带异种电荷，互相吸引。同种电荷会互相排斥，漆根本喷不上去。</div><div class="hint">点击看答案</div></div>
+  <div class="card"><h5>油罐车拖地铁链</h5><div class="k">这根链子是在除尘吗？</div><div class="ans">不是。铁链把摩擦积累的静电导进大地，避免电火花引爆油气。它是在导走静电，不是利用静电。</div><div class="hint">点击看答案</div></div>
+</div>
+<div class="callout"><span class="tag">最后这张卡是第 2 题 D 项的坑</span>很多人看到“静电”两个字就往上套“除尘”，实际上铁链是导走静电，不是利用静电。</div>
+
+<h3>三、出题人的套路</h3>
+<p>这类题基本上就是“四选一挑错”，套路高度固定。四个必考判断：</p>
+<ol>
+  <li>摩擦起电是“产生电荷”还是“转移电荷”？→ 转移，只有电子动。</li>
+  <li>带正电是“得质子”还是“失电子”？→ 失电子。</li>
+  <li>电荷量能不能是任意值？→ 不能，必须是 e 的整数倍。</li>
+  <li>各装置用的什么原理？→ 查上表，最容易错的是“高压作业穿绝缘服”和“拖地铁链当除尘”。</li>
+</ol>
+
+<h3>四、解题固定动作</h3>
+<ol>
+  <li><strong>圈出题干里的关键词</strong>。是“摩擦起电”还是“静电应用”？是问“正确的”还是“不正确的”？（“不正确”三个字每年都坑人）</li>
+  <li><strong>摩擦起电题，只盯三件事</strong>：谁失去电子（带正）、谁得到电子（带负）；两个物体带的是等量异种电荷；总电荷量不变。</li>
+  <li><strong>电荷量合法性，一律做除法</strong>。除以 1.6×10⁻¹⁹ 看能不能除尽。</li>
+  <li><strong>应用类题，把每个选项往原理表里对</strong>。对不上就是错的。</li>
+  <li><strong>绝对化的词要警惕</strong>。“一定”“不可能”“任意”“都”——这类词出现，八成就是错的。</li>
+</ol>
+
+<h3>五、原题复盘</h3>
+<h4>原题 9（第五周，答案 B）</h4>
+<p>梳子摩擦起电。</p>
+<ul>
+  <li><strong>A ✗</strong>：“摩擦创造了电荷”。违反电荷守恒——电荷只能转移，不能无中生有。</li>
+  <li><strong>B ✓</strong>：摩擦后两个物体带等量异种电荷。这个是电荷守恒的直接结论（总共还是零）。</li>
+  <li><strong>C ✗</strong>：带正电是失去电子，不是得到质子。原子核不搬家。</li>
+  <li><strong>D ✗</strong>：电荷量是量子化的，只能是 e 的整数倍，不能取任意值。</li>
+</ul>
+
+<h4>原题 2（第七周，答案 BC）</h4>
+<p>电学联系生活。</p>
+<ul>
+  <li><strong>A ✗</strong>：超高压带电作业应穿导电材料的屏蔽服（让人体和导线等电势），而不是绝缘服。</li>
+  <li><strong>B ✓</strong>：尘埃荷负电，被正极集尘板捕获。</li>
+  <li><strong>C ✓</strong>：点火装置利用尖端放电产生电火花。</li>
+  <li><strong>D ✗</strong>：静电喷漆中工件与漆滴带异种电荷相互吸引（同种电荷会互相排斥，漆根本喷不上去）。</li>
+</ul>
+
+<h3>六、变式与练习</h3>
+<h4>变式</h4>
+<p>两个完全相同的金属小球，甲带 +q、乙带 −3q，相距 r（远大于球半径）。(1) 接触后分开，各带多少电荷？(2) 接触前后库仑力的大小之比、方向如何变化？</p>
+<details><summary>看解析</summary><div class="inner">
+<p><strong>(1)</strong> 接触时先算总电荷：q + (−3q) = −2q。两个球完全相同 → 平分 → 各带 <strong>−q</strong>。</p>
+<p><strong>(2)</strong> 接触前：F₁ = k·|q|·|3q|/r² = <strong>3kq²/r²</strong>，异种电荷，相互吸引；接触后：F₂ = <strong>kq²/r²</strong>，同种电荷，相互排斥。</p>
+<p>大小之比 F₂/F₁ = <strong>1/3</strong>，方向由吸引变为排斥。</p>
+</div></details>
+
+<h4>练习</h4>
+<p><strong>基础 1</strong>（单选）关于摩擦起电，下列说法正确的是（　）<br>
+A. 摩擦使物体产生了新的电荷<br>
+B. 玻璃棒与丝绸摩擦后带正电，是因为玻璃棒失去了电子<br>
+C. 摩擦起电后物体带的电荷量可以是 0.8×10⁻¹⁹ C<br>
+D. 两个物体摩擦后一定带同种电荷</p>
+<p><strong>基础 2</strong>（单选）下列说法<strong>不正确</strong>的是（　）<br>
+A. 避雷针利用尖端放电原理将雷电流导入大地<br>
+B. 燃气灶的电子点火器利用尖端放电产生电火花<br>
+C. 油罐车用铁链拖地是利用了静电除尘原理<br>
+D. 印染车间保持空气潮湿是为了防止静电积累</p>
+<p><strong>提升 1</strong>（解答）用毛皮摩擦橡胶棒，橡胶棒带 −3.2×10⁻⁹ C。(1) 有多少个电子发生了转移？向哪个方向？(2) 毛皮带电多少？(3) 摩擦前后“毛皮 + 橡胶棒”系统的总电荷量各是多少？</p>
+
+<details><summary>基础 1 解析 —— 答案 B</summary><div class="inner">
+<p>A ✗：电荷守恒，不能创造。</p>
+<p>B ✓：失去电子 → 带正电。</p>
+<p>C ✗：0.8×10⁻¹⁹ C = e/2，半个电子不存在。</p>
+<p>D ✗：一定带等量异种电荷。</p>
+</div></details>
+
+<details><summary>基础 2 解析 —— 答案 C</summary><div class="inner">
+<p>C <strong>不正确</strong> → 就是答案。拖地铁链是把静电导走、防止火花，不是静电除尘。</p>
+<p>A、B、D 的表述都是对的，所以不能选。</p>
+</div></details>
+
+<details><summary>提升 1 解析</summary><div class="inner">
+<p>(1) n = 3.2×10⁻⁹ ÷ 1.6×10⁻¹⁹ = <strong>2×10¹⁰ 个电子</strong>。方向：橡胶棒带负电 = 得到电子 → 电子从毛皮转移到橡胶棒。</p>
+<p>(2) 等量异种 → 毛皮带 <strong>+3.2×10⁻⁹ C</strong>。</p>
+<p>(3) 摩擦前：都是中性，总电荷量 <strong>0</strong>。摩擦后：(+3.2×10⁻⁹) + (−3.2×10⁻⁹) = <strong>0</strong>。系统总电荷量始终为零。</p>
+</div></details>
+
+<h3>七、一页纸小结</h3>
+<ul>
+  <li>摩擦起电：只搬电子，原子核不动。</li>
+  <li>带正电 = 失去电子；带负电 = 得到电子；两者等量异种。</li>
+  <li>总量守恒（前后都是零）。</li>
+  <li>电荷量必须是 e 的整数倍，判据就是“除以 1.6×10⁻¹⁹ 能否除尽”。</li>
+  <li>高压作业服导电（屏蔽），不是绝缘。</li>
+  <li>拖地铁链是导走静电，不是除尘。</li>
+  <li>喷漆靠异种电荷相吸。</li>
+  <li>看到“一定、任意、不可能”先怀疑。</li>
+</ul>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 class="topic" id="apx1"><span class="no">附录一</span>通用解题检查清单</h2>
+<p>考试时或做完题，按这张单子过一遍，能挡掉大部分低级失分。</p>
+
+<div class="callout blue">
+<span class="tag">一、读题</span>
+问的是“正确的”还是“不正确的”？单位统一了吗（cm→m，g→kg，mA→A）？有效数字要求几位？
+</div>
+<div class="callout blue">
+<span class="tag">二、波的问题</span>
+两个方向都算了吗？“n = 0, 1, 2, …”写了吗？限制条件代回筛 n 了吗？双波源时，初相差和波程差都算了吗？
+</div>
+<div class="callout blue">
+<span class="tag">三、力的问题</span>
+距离是真实距离吗（直杆上的点不是 R，是 R/cosθ）？设正方向了吗？问的是“球对杆”还是“杆对球”，方向反了吗？摩擦力往返算了两次吗？
+</div>
+<div class="callout blue">
+<span class="tag">四、振动的题</span>
+峰峰间隔乘 2 了吗？振幅是相对平衡位置量的吗？最大弹力用的是 mg + kA 吗？摆长加球半径了吗？
+</div>
+<div class="callout blue">
+<span class="tag">五、电场的题</span>
+先分清同种还是异种了吗？场强为零 ≠ 电势为零，分清了吗？算做功前，先看是不是等势线？
+</div>
+<div class="callout blue">
+<span class="tag">六、收尾</span>
+每个答案都带单位吗？数值结果合理吗（速度几十 m/s、质量几十克）？大题有没有漏写“由牛顿第三定律”这类必要的文字说明？
+</div>
+
+<h2 class="topic" id="apx2"><span class="no">附录二</span>两周学习计划</h2>
+<table class="tbl">
+  <tr><th>时间</th><th>任务</th></tr>
+  <tr><td>第 1–2 天</td><td>专题一：先读“用人话讲”和“固定动作”，再遮住解答重做原题 11、14</td></tr>
+  <tr><td>第 3 天</td><td>专题一变式加全部练习；隔天重做原题 12</td></tr>
+  <tr><td>第 4–6 天</td><td>专题三：每天一道压轴（原题 4、15），完整写出四步过程，不许跳步</td></tr>
+  <tr><td>第 7–8 天</td><td>专题三变式与练习；专题四精讲加原题 3、13 重做</td></tr>
+  <tr><td>第 9–10 天</td><td>专题四练习；专题二、五、六（选择题为主，可加快）</td></tr>
+  <tr><td>第 11–12 天</td><td>所有“提升”层练习重做一遍错题；原题 4、15 限时重做</td></tr>
+  <tr><td>第 13–14 天</td><td>对照诊断报告逐条自测：每个易错点能不能用自己的话讲给同学听</td></tr>
+</table>
+
+<h4>判定“真的会了”的标准</h4>
+<p>不是“看懂了解答”。要同时满足三条：</p>
+<ol>
+  <li>遮住答案，能独立、完整地写出过程；</li>
+  <li>写得出 “n = 0, 1, 2, …”、单位、方向和牛顿第三定律那句说明；</li>
+  <li>能把这道题的坑讲给同学听，并且说清“为什么会掉进去”。</li>
+</ol>
+<p>第 3 条最难，也最能说明问题。讲不清楚，就是还没真懂。</p>
+
+<footer>
+  H:\WrokBuddy\高中知识整理\物理错题分析\02_薄弱知识点专题学习资料.html<br>
+  交互图全部为本地绘制，不联网、不需要额外插件。原题插图见同目录 <code>原题插图/</code> 文件夹。
+</footer>
+
+</main>
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+   通用工具
+   ============================================================ */
+var COL = {
+  text:'#1b1f24', muted:'#5d646d', line:'#e4e7ec', soft:'#f1f4f8',
+  blue:'#2563eb', red:'#d93a3a', green:'#0f8a5f', amber:'#b45309', violet:'#7c3aed'
+};
+function prep(id, W, H){
+  var c = document.getElementById(id);
+  if(!c) return null;
+  c.width = W*2; c.height = H*2;
+  c.style.width = '100%'; c.style.height = 'auto';
+  var g = c.getContext('2d');
+  g.setTransform(2,0,0,2,0,0);
+  g.clearRect(0,0,W,H);
+  g.font = '13px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textBaseline = 'middle';
+  return g;
+}
+function arrow(g, x1,y1,x2,y2, color, w, head){
+  head = head || 9;
+  var dx=x2-x1, dy=y2-y1, L=Math.hypot(dx,dy);
+  if(L < 0.5) return;
+  var ux=dx/L, uy=dy/L;
+  g.strokeStyle=color; g.fillStyle=color; g.lineWidth=w||2;
+  g.beginPath(); g.moveTo(x1,y1);
+  g.lineTo(x2-ux*head*0.85, y2-uy*head*0.85); g.stroke();
+  g.beginPath();
+  g.moveTo(x2,y2);
+  g.lineTo(x2-ux*head - uy*head*0.42, y2-uy*head + ux*head*0.42);
+  g.lineTo(x2-ux*head + uy*head*0.42, y2-uy*head - ux*head*0.42);
+  g.closePath(); g.fill();
+}
+function label(g, txt, x, y, color, align, size){
+  g.fillStyle = color || COL.text;
+  g.font = (size||12) + 'px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  g.textAlign = align || 'center';
+  g.fillText(txt, x, y);
+  g.textAlign = 'left';
+}
+function roundRect(g,x,y,w,h,r){
+  g.beginPath();
+  g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r);
+  g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath();
+}
+
+/* ============================================================
+   图 1-1  波的平移与多解
+   ============================================================ */
+(function(){
+  var W=680, H=352;
+  var lam=200, A=46, baseY=104, dt=0.25, lamM=0.24, xf=0.25;
+  var dir=-1, n=0;
+
+  function period(){
+    var f = dir > 0 ? xf : 1-xf;
+    return dt/(n+f);
+  }
+
+  function draw(){
+    var g = prep('cv-wave', W, H);
+    if(!g) return;
+
+    /* ---- 上半：波形照片 ---- */
+    g.fillStyle = '#fbfcfd'; g.fillRect(0,0,W,205);
+
+    g.strokeStyle = COL.line; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(28, baseY); g.lineTo(W-18, baseY); g.stroke();
+    arrow(g, W-24, baseY, W-12, baseY, COL.line, 1, 7);
+
+    /* 波长刻度 */
+    for(var k=0;k<4;k++){
+      var xx = 40 + k*lam;
+      g.strokeStyle = '#dfe4ea'; g.setLineDash([3,4]);
+      g.beginPath(); g.moveTo(xx, 34); g.lineTo(xx, 172); g.stroke();
+      g.setLineDash([]);
+      if(k<3) label(g, 'λ', xx+lam/2, 192, '#9aa4b2', 'center', 12);
+    }
+    /* 实线 */
+    g.strokeStyle = COL.blue; g.lineWidth = 2.4; g.beginPath();
+    for(var x=40; x<=W-24; x++){
+      var y = baseY - A*Math.sin(2*Math.PI*(x-40)/lam);
+      if(x===40) g.moveTo(x,y); else g.lineTo(x,y);
+    }
+    g.stroke();
+
+    /* 虚线 */
+    var sh = dir * xf * lam;
+    g.strokeStyle = COL.red; g.lineWidth = 2; g.setLineDash([7,5]); g.beginPath();
+    for(var x2=40; x2<=W-24; x2++){
+      var y2 = baseY - A*Math.sin(2*Math.PI*(x2-40-sh)/lam);
+      if(x2===40) g.moveTo(x2,y2); else g.lineTo(x2,y2);
+    }
+    g.stroke(); g.setLineDash([]);
+
+    label(g, '实线 t₁', 66, 44, COL.blue, 'left', 12);
+    label(g, '虚线 t₂', 130, 44, COL.red, 'left', 12);
+
+    /* 提示条 */
+    g.fillStyle = 'rgba(37,99,235,.06)';
+    roundRect(g, 440, 32, 212, 30, 7); g.fill();
+    label(g, 'n 换成任何值，这张图都一模一样', 546, 47, COL.blue, 'center', 11.5);
+
+    /* ---- 下半：时间轴 ---- */
+    var y0 = 262, xL = 46, xR = W-24;
+    var per = (xR-xL-20)/4;
+    var f2 = dir > 0 ? xf : 1-xf;
+    var t2x = xL + (n + f2)*per;
+
+    /* 跨越的整周期（先画底色，别盖住刻度） */
+    if(n>0){
+      g.fillStyle = 'rgba(217,58,58,.07)';
+      g.fillRect(xL, y0-16, n*per, 32);
+    }
+
+    g.strokeStyle = COL.line; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(xL, y0); g.lineTo(xR, y0); g.stroke();
+    arrow(g, xR-10, y0, xR, y0, COL.line, 1, 7);
+
+    for(var i=0;i<=4;i++){
+      var xp = xL + i*per;
+      g.strokeStyle = '#d5dbe3';
+      g.beginPath(); g.moveTo(xp, y0-6); g.lineTo(xp, y0+6); g.stroke();
+      label(g, i===0?'0':(i+'T'), xp, y0+20, '#98a0aa', 'center', 11.5);
+    }
+    if(n>0){
+      for(var j=0;j<n;j++){
+        label(g, 'ΔT', xL + (j+0.5)*per, y0-26, '#d99a9a', 'center', 10.5);
+      }
+    }
+
+    /* t1 */
+    g.fillStyle = COL.blue;
+    g.beginPath(); g.arc(xL, y0, 5, 0, 7); g.fill();
+    label(g, 't₁', xL, y0-34, COL.blue, 'center', 12);
+
+    /* t2 */
+    g.fillStyle = COL.red;
+    g.beginPath(); g.arc(t2x, y0, 5, 0, 7); g.fill();
+    label(g, 't₂', t2x, y0-34, COL.red, 'center', 12);
+
+    /* 尺寸线 */
+    var yA = y0 + 52;
+    g.strokeStyle = COL.red; g.lineWidth = 1.3;
+    g.beginPath(); g.moveTo(xL, yA); g.lineTo(t2x, yA); g.stroke();
+    arrow(g, t2x-8, yA, t2x, yA, COL.red, 1.3, 7);
+    g.strokeStyle = 'rgba(217,58,58,.35)'; g.setLineDash([2,3]);
+    g.beginPath(); g.moveTo(xL, y0+6); g.lineTo(xL, yA); g.stroke();
+    g.beginPath(); g.moveTo(t2x, y0+6); g.lineTo(t2x, yA); g.stroke();
+    g.setLineDash([]);
+
+    var txt = dir>0 ? ('Δt = (n + 1/4)T') : ('Δt = (n + 3/4)T');
+    label(g, txt, (xL+t2x)/2, yA+20, COL.red, 'center', 12);
+
+    label(g, '实际过去的时间', 46, 210, '#98a0aa', 'left', 11.5);
+
+    /* 读数 */
+    var T = period();
+    var v = lamM / T;
+    document.getElementById('w1-T').textContent = T.toFixed(3) + ' s';
+    document.getElementById('w1-v').textContent = v.toFixed(2) + ' m/s';
+    document.getElementById('w1-f').textContent = dir>0 ? '4Δt/(4n+1)' : '4Δt/(4n+3)';
+    document.getElementById('w1-shift').textContent = dir>0
+      ? 'λ/4 + ' + n + 'λ'
+      : 'λ/4 + ' + n + 'λ（向左）';
+    document.getElementById('w1-nv').textContent = n;
+  }
+
+  var seg = document.getElementById('w1-dir');
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); dir = +b.dataset.d; draw();
+  });
+  document.getElementById('w1-n').addEventListener('input', function(e){
+    n = +e.target.value; draw();
+  });
+  draw();
+})();
+
+/* ============================================================
+   图 2-1 / 2-2  等量点电荷
+   ============================================================ */
+(function(){
+  var W=680, H=410;
+  var O = {x:340, y:252}, a = 90;
+  var mode = 'same', h = 40;
+  var a2 = a*a;
+  var lines = null, linesMode = null;
+
+  function Esame(hh){ return 2*hh/Math.pow(hh*hh+a2, 1.5); }
+  function Ediff(hh){ return 2*a/Math.pow(hh*hh+a2, 1.5); }
+  var ESC = 74/(2/a2);            /* 异种电荷在 O 点的合场强画成 74px */
+
+  var cA = {x:O.x-a, y:O.y}, cB = {x:O.x+a, y:O.y};
+
+  /* ---------- 电场线：按库仑场方向逐步追踪 ---------- */
+  function fieldAt(x,y){
+    var ex=0, ey=0, i, dx, dy, d2, d3, q;
+    var src=[{c:cA,q:1},{c:cB,q:(mode==='same'?1:-1)}];
+    for(i=0;i<2;i++){
+      dx = x-src[i].c.x; dy = y-src[i].c.y;
+      d2 = dx*dx+dy*dy; if(d2<1) d2=1;
+      d3 = Math.pow(d2,1.5); q = src[i].q;
+      ex += q*dx/d3; ey += q*dy/d3;
+    }
+    return {x:ex, y:ey};
+  }
+
+  function trace(x,y){
+    var path=[[x,y]], k, step=3.2;
+    for(k=0;k<900;k++){
+      var e = fieldAt(x,y), m = Math.hypot(e.x,e.y);
+      if(!isFinite(m) || m<1e-12) break;
+      x += e.x/m*step; y += e.y/m*step;
+      path.push([x,y]);
+      if(Math.hypot(x-cA.x,y-cA.y) < 17) break;
+      if(Math.hypot(x-cB.x,y-cB.y) < 17) break;
+      if(x<-40||x>W+40||y<-40||y>H+40) break;
+    }
+    return path;
+  }
+
+  function buildLines(){
+    var arr=[], src=[cA, cB], i, k, ang, r=18;
+    if(mode==='diff'){ src=[cA]; }        /* 异种：全部从正电荷出发 */
+    for(k=0;k<src.length;k++){
+      for(i=0;i<15;i++){
+        ang = -Math.PI/2 + i*(2*Math.PI/15);
+        arr.push(trace(src[k].x + r*Math.cos(ang), src[k].y + r*Math.sin(ang)));
+      }
+    }
+    return arr;
+  }
+
+  function draw(){
+    var g = prep('cv-field', W, H);
+    if(!g) return;
+
+    g.fillStyle = '#fbfcfd'; g.fillRect(0,0,W,H);
+
+    /* 电场线（先画，压在最底层） */
+    if(!lines || linesMode !== mode){ lines = buildLines(); linesMode = mode; }
+    g.strokeStyle = 'rgba(120,150,190,.42)'; g.lineWidth = 1.05;
+    for(var q=0;q<lines.length;q++){
+      var L = lines[q];
+      g.beginPath();
+      g.moveTo(L[0][0], L[0][1]);
+      for(var s=1;s<L.length;s++){ g.lineTo(L[s][0], L[s][1]); }
+      g.stroke();
+    }
+
+    /* 中垂线 */
+    g.strokeStyle = '#c9d3e0'; g.lineWidth = 1; g.setLineDash([5,5]);
+    g.beginPath(); g.moveTo(O.x, 28); g.lineTo(O.x, H-26); g.stroke();
+    g.setLineDash([]);
+    label(g, '中垂线', O.x+9, 40, '#a8b0ba', 'left', 11);
+
+    /* 连线 */
+    g.strokeStyle = '#e6eaef'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(O.x-168, O.y); g.lineTo(O.x+168, O.y); g.stroke();
+
+    /* 电荷 */
+    function charge(c, sgn){
+      g.fillStyle = sgn>0 ? COL.red : COL.blue;
+      g.beginPath(); g.arc(c.x, c.y, 15, 0, 7); g.fill();
+      label(g, sgn>0?'+':'−', c.x, c.y+1, '#fff', 'center', 18);
+    }
+    charge(cA, 1);
+    charge(cB, mode==='same' ? 1 : -1);
+    label(g, 'M', cA.x, cA.y+30, COL.muted, 'center', 12);
+    label(g, 'N', cB.x, cB.y+30, COL.muted, 'center', 12);
+
+    /* 中点 O */
+    g.fillStyle = COL.green;
+    g.beginPath(); g.arc(O.x, O.y, 4, 0, 7); g.fill();
+    label(g, 'O', O.x-13, O.y+15, COL.green, 'center', 12);
+
+    /* 试探点 P */
+    var P = {x:O.x, y:O.y - h};
+    g.strokeStyle = '#cfd6e0'; g.setLineDash([2,4]);
+    g.beginPath(); g.moveTo(O.x, O.y); g.lineTo(P.x, P.y); g.stroke();
+    g.setLineDash([]);
+    if(h > 22){ label(g, 'h', O.x+13, (O.y+P.y)/2, '#98a0aa', 'left', 11.5); }
+
+    /* 两个分场强 */
+    var r = Math.hypot(h, a);
+    var eMag = 1/(r*r);
+    var len = Math.min(eMag*ESC, 110);
+    var ux = a/r, uy = -h/r;
+    if(mode === 'same'){
+      arrow(g, P.x, P.y, P.x + ux*len, P.y + uy*len, COL.red, 1.8, 8);
+      arrow(g, P.x, P.y, P.x - ux*len, P.y + uy*len, COL.red, 1.8, 8);
+    } else {
+      arrow(g, P.x, P.y, P.x + ux*len, P.y + uy*len, COL.red, 1.8, 8);
+      arrow(g, P.x, P.y, P.x + ux*len, P.y - uy*len, COL.red, 1.8, 8);
+    }
+
+    /* 合场强 */
+    var E, dx, dy, Emax = 2/a2;
+    if(mode === 'same'){ E = Esame(h); dx = 0; dy = -1; }
+    else { E = Ediff(h); dx = 1; dy = 0; }
+    var rl = Math.min(E*ESC, 120);
+
+    if(rl > 3){
+      arrow(g, P.x, P.y, P.x + dx*rl, P.y + dy*rl, COL.green, 2.6, 10);
+      if(dx){ label(g, 'E合', P.x + rl + 24, P.y + 4, COL.green, 'center', 12); }
+      else  { label(g, 'E合', P.x, P.y - rl - 17, COL.green, 'center', 12); }
+    } else {
+      label(g, 'E合 = 0', P.x + 46, P.y + 4, COL.green, 'center', 12);
+    }
+
+    /* 试探点 */
+    g.fillStyle = '#fff'; g.strokeStyle = COL.text; g.lineWidth = 1.6;
+    g.beginPath(); g.arc(P.x, P.y, 5, 0, 7); g.fill(); g.stroke();
+
+    /* 读数 */
+    var eVal = E / Emax;
+    document.getElementById('w2-hv').textContent = (h/92).toFixed(2) + 'd';
+    document.getElementById('w2-E').textContent = eVal.toFixed(2) + ' E₀';
+    document.getElementById('w2-dir').textContent = mode==='same' ? '沿中垂线向外' : '由 + 指向 −';
+    document.getElementById('w2-trend').textContent =
+      mode==='same' ? (h < a/Math.SQRT2 ? '正在增大' : '正在减小') : '一直在减小';
+    document.getElementById('w2-phi').textContent = mode==='same' ? '最大（不为零）' : '0（等势线）';
+
+    drawCurve();
+  }
+
+  /* ---------- 图 2-2：E–h 曲线 ---------- */
+  function drawCurve(){
+    var w=680, hh=248;
+    var g = prep('cv-curve', w, hh);
+    if(!g) return;
+    g.fillStyle = '#fbfcfd'; g.fillRect(0,0,w,hh);
+
+    var x0=84, x1=w-36, yb=hh-42, yt=30, hmax=150;
+    var Emax = 2/a2;
+    var C_S = '#d93a3a', C_D = '#2563eb';
+
+    function px(hv){ return x0 + (hv/hmax)*(x1-x0); }
+    function py(ev){ return yb - (ev/Emax)*(yb-yt-6); }
+
+    /* 网格与刻度（d = 两电荷间距的一半） */
+    var ticks=[[0,'0'],[45,'0.5d'],[90,'1d'],[135,'1.5d']];
+    g.strokeStyle='#eef2f7'; g.lineWidth=1;
+    ticks.forEach(function(t){
+      g.beginPath(); g.moveTo(px(t[0]), yt); g.lineTo(px(t[0]), yb); g.stroke();
+    });
+
+    /* 坐标轴 */
+    g.strokeStyle = COL.line; g.lineWidth=1.2;
+    g.beginPath(); g.moveTo(x0, yt-4); g.lineTo(x0, yb); g.lineTo(x1, yb); g.stroke();
+
+    g.strokeStyle='#c9d3e0';
+    ticks.forEach(function(t){
+      g.beginPath(); g.moveTo(px(t[0]), yb); g.lineTo(px(t[0]), yb+5); g.stroke();
+      label(g, t[1], px(t[0]), yb+19, '#98a0aa', 'center', 11);
+    });
+    label(g, 'h', x1+8, yb+19, '#98a0aa', 'left', 11.5);
+    label(g, 'E', x0-16, yt+2, COL.muted, 'center', 12);
+
+    function plot(fn, color, lw, alpha){
+      g.strokeStyle = color; g.globalAlpha = alpha; g.lineWidth = lw; g.beginPath();
+      for(var i=0;i<=hmax;i+=1){
+        var y = py(fn(i));
+        if(i===0) g.moveTo(px(i), y); else g.lineTo(px(i), y);
+      }
+      g.stroke(); g.globalAlpha = 1;
+    }
+
+    /* 非当前的曲线画淡 */
+    plot(Esame, C_S, 1.8, mode==='same' ? 1 : 0.22);
+    plot(Ediff, C_D, 1.8, mode==='diff' ? 1 : 0.22);
+
+    /* 同种电荷的峰值点 */
+    var hp = a/Math.SQRT2;
+    g.fillStyle = C_S;
+    g.beginPath(); g.arc(px(hp), py(Esame(hp)), 3.6, 0, 7); g.fill();
+    g.setLineDash([3,4]); g.strokeStyle='rgba(217,58,58,.45)'; g.lineWidth=1;
+    g.beginPath(); g.moveTo(px(hp), py(Esame(hp))); g.lineTo(px(hp), yb); g.stroke();
+    g.setLineDash([]);
+    label(g, '同种在这里最大', px(hp), py(Esame(hp))-17, C_S, 'center', 11);
+
+    /* 当前点 */
+    var fn = mode==='same' ? Esame : Ediff;
+    var cur = fn(h);
+    g.fillStyle = COL.green;
+    g.beginPath(); g.arc(px(h), py(cur), 5, 0, 7); g.fill();
+    g.strokeStyle = 'rgba(15,138,95,.4)'; g.lineWidth=1.2; g.setLineDash([3,4]);
+    g.beginPath(); g.moveTo(px(h), py(cur)); g.lineTo(px(h), yb); g.stroke();
+    g.setLineDash([]);
+
+    /* 图例 */
+    g.fillStyle = C_S; g.fillRect(x1-132, yt+2, 14, 3);
+    label(g, '同种电荷', x1-112, yt+4, C_S, 'left', 11);
+    g.fillStyle = C_D; g.fillRect(x1-132, yt+20, 14, 3);
+    label(g, '异种电荷', x1-112, yt+22, C_D, 'left', 11);
+    label(g, '粗线 = 当前模式', x1-132, yt+40, '#a8b0ba', 'left', 10.5);
+  }
+
+  var seg = document.getElementById('w2-mode');
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); mode = b.dataset.m; lines = null; draw();
+  });
+  document.getElementById('w2-h').addEventListener('input', function(e){
+    h = +e.target.value; draw();
+  });
+  draw();
+})();
+
+/* ============================================================
+   图 3-1  库仑力做功
+   ============================================================ */
+(function(){
+  var W=680, H=390;
+  var O={x:340, y:180}, R=132;
+  var mode='arc', s=35;
+
+  function draw(){
+    var g = prep('cv-arc', W, H);
+    if(!g) return;
+    g.fillStyle='#fbfcfd'; g.fillRect(0,0,W,H);
+
+    /* 圆 */
+    g.strokeStyle='#dfe5ec'; g.lineWidth=2;
+    g.beginPath(); g.arc(O.x, O.y, R, 0, 7); g.stroke();
+    g.fillStyle='#f6f9fd';
+    g.beginPath(); g.arc(O.x, O.y, R, 0, 7); g.fill();
+    g.strokeStyle='#dfe5ec'; g.lineWidth=2;
+    g.beginPath(); g.arc(O.x, O.y, R, 0, 7); g.stroke();
+
+    /* 圆心电荷 */
+    g.fillStyle=COL.red;
+    g.beginPath(); g.arc(O.x, O.y, 13, 0, 7); g.fill();
+    label(g,'+Q', O.x, O.y+1, '#fff','center',12);
+
+    if(mode==='arc'){
+      /* 起点半径（虚线） */
+      g.strokeStyle='#cfd6e0'; g.setLineDash([4,5]); g.lineWidth=1;
+      g.beginPath(); g.moveTo(O.x,O.y); g.lineTo(O.x, O.y+R); g.stroke();
+      g.setLineDash([]);
+      label(g,'起点', O.x-16, O.y+R-6, '#a8b0ba','right',11);
+
+      var th = s*Math.PI/180;
+      var P = {x:O.x + R*Math.sin(th), y:O.y + R*Math.cos(th)};
+
+      /* 力：指向 O */
+      var fx = (O.x-P.x)/R, fy=(O.y-P.y)/R;
+      arrow(g, P.x, P.y, P.x + fx*70, P.y + fy*70, COL.red, 2.6, 10);
+      label(g,'F', P.x + fx*84, P.y + fy*84, COL.red,'center',13);
+
+      /* 速度：切向 */
+      var vx = Math.cos(th), vy = -Math.sin(th);
+      arrow(g, P.x, P.y, P.x + vx*84, P.y + vy*84, COL.blue, 2.6, 10);
+      label(g,'v', P.x + vx*98, P.y + vy*98, COL.blue,'center',13);
+
+      /* 直角标记 */
+      g.strokeStyle='#9aa4af'; g.lineWidth=1.4;
+      var q=13;
+      g.beginPath();
+      g.moveTo(P.x + fx*q, P.y + fy*q);
+      g.lineTo(P.x + fx*q + vx*q, P.y + fy*q + vy*q);
+      g.lineTo(P.x + vx*q, P.y + vy*q);
+      g.stroke();
+      label(g,'90°', P.x + (fx+vx)*30, P.y + (fy+vy)*30, '#7a838d','center',11);
+
+      /* 小球 */
+      g.fillStyle='#fff'; g.strokeStyle=COL.text; g.lineWidth=2;
+      g.beginPath(); g.arc(P.x,P.y,8,0,7); g.fill(); g.stroke();
+      label(g,'−q', P.x, P.y+26, COL.text,'center',11);
+
+      /* 弧长标记 */
+      g.strokeStyle=COL.green; g.lineWidth=2;
+      g.beginPath(); g.arc(O.x,O.y,R, Math.PI/2 - th, Math.PI/2); g.stroke();
+
+      document.getElementById('w3-r').textContent = 'R（不变）';
+      document.getElementById('w3-F').textContent = 'kQq/R²（不变）';
+      document.getElementById('w3-ang').textContent = '90°（垂直）';
+      document.getElementById('w3-W').textContent = '0.00';
+      document.getElementById('w3-lab').firstChild.textContent = '位置角 θ ';
+
+    } else {
+      /* 沿半径靠近 */
+      var rNorm = 1 - (s/90)*0.62;
+      var rpx = R*rNorm;
+      var P2 = {x:O.x + rpx, y:O.y};
+
+      g.strokeStyle='#cfd6e0'; g.setLineDash([4,5]); g.lineWidth=1;
+      g.beginPath(); g.moveTo(O.x,O.y); g.lineTo(O.x+R+30, O.y); g.stroke();
+      g.setLineDash([]);
+
+      /* 已走过的路径 */
+      g.strokeStyle='rgba(15,138,95,.5)'; g.lineWidth=3;
+      g.beginPath(); g.moveTo(O.x+R, O.y); g.lineTo(P2.x, O.y); g.stroke();
+
+      arrow(g, P2.x, P2.y, P2.x-80, P2.y, COL.red, 2.6, 10);
+      label(g,'F', P2.x-94, P2.y-14, COL.red,'center',13);
+      arrow(g, P2.x, P2.y, P2.x-92, P2.y, COL.blue, 2.6, 10);
+      label(g,'v', P2.x-60, P2.y+22, COL.blue,'center',13);
+
+      g.fillStyle='#fff'; g.strokeStyle=COL.text; g.lineWidth=2;
+      g.beginPath(); g.arc(P2.x,P2.y,8,0,7); g.fill(); g.stroke();
+
+      label(g,'两者同向，夹角 0°', O.x, O.y+70, COL.amber,'center',12);
+
+      var Wv = (1/rNorm - 1);
+      document.getElementById('w3-r').textContent = rNorm.toFixed(2) + ' R';
+      document.getElementById('w3-F').textContent = (1/(rNorm*rNorm)).toFixed(2) + ' F₀';
+      document.getElementById('w3-ang').textContent = '0°（同向）';
+      var el = document.getElementById('w3-W');
+      el.textContent = Wv.toFixed(2) + ' kQq/R';
+      el.style.color = COL.red;
+      if(mode==='arc') el.style.color = COL.blue;
+      document.getElementById('w3-lab').firstChild.textContent = '往里挪的距离 ';
+    }
+    if(mode==='arc'){
+      document.getElementById('w3-W').style.color = COL.green;
+    }
+
+    document.getElementById('w3-sv').textContent = s + (mode==='arc'?'°':'%');
+  }
+
+  var seg = document.getElementById('w3-mode');
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); mode = b.dataset.m;
+    s = 35; document.getElementById('w3-s').value = 35;
+    draw();
+  });
+  document.getElementById('w3-s').addEventListener('input', function(e){
+    s = +e.target.value; draw();
+  });
+  draw();
+})();
+
+/* ============================================================
+   图 4-1  单摆 + F-t 图
+   ============================================================ */
+(function(){
+  var g = 9.8, m = 0.2;
+  var L = 1.0, theta0 = 10*Math.PI/180;
+  var t = 0, running = true, last = 0;
+  var buf = [];      /* {t, F} */
+  var win = 0;       /* 显示多少秒 */
+
+  function T(){ return 2*Math.PI*Math.sqrt(L/g); }
+
+  function drawPend(){
+    var c = document.getElementById('cv-pend');
+    if(!c){ return; }
+    var W=680, H=290;
+    if(c.width !== W*2){
+      c.width=W*2; c.height=H*2; c.style.width='100%'; c.style.height='auto';
+    }
+    var x = c.getContext('2d');
+    x.setTransform(2,0,0,2,0,0);
+    x.clearRect(0,0,W,H);
+    x.fillStyle='#fbfcfd'; x.fillRect(0,0,W,H);
+
+    /* 左半：摆 */
+    var px = 190, py = 40;
+    var Lpx = 40 + L*120;
+    var th = theta0*Math.cos(2*Math.PI*t/T());
+    var bx = px + Lpx*Math.sin(th), by = py + Lpx*Math.cos(th);
+
+    /* 支架 */
+    x.strokeStyle='#cbd3dc'; x.lineWidth=3;
+    x.beginPath(); x.moveTo(px-46,py); x.lineTo(px+46,py); x.stroke();
+    x.strokeStyle='#dfe5ec'; x.lineWidth=1;
+    for(var i=-44;i<46;i+=8){ x.beginPath(); x.moveTo(px+i,py); x.lineTo(px+i+6,py-8); x.stroke(); }
+
+    /* 角度弧与摆角 */
+    x.strokeStyle='#c9d2dc'; x.setLineDash([4,4]);
+    x.beginPath(); x.moveTo(px,py); x.lineTo(px, py+Lpx+30); x.stroke();
+    x.setLineDash([]);
+    x.strokeStyle='#cfd6e0'; x.lineWidth=1.2;
+    x.beginPath(); x.arc(px, py, Lpx*0.72, Math.PI/2-th, Math.PI/2); x.stroke();
+
+    /* 摆线 */
+    x.strokeStyle='#8b96a3'; x.lineWidth=1.8;
+    x.beginPath(); x.moveTo(px,py); x.lineTo(bx,by); x.stroke();
+
+    /* 摆球 */
+    var rad = 13;
+    var grd = x.createRadialGradient(bx-4,by-5,2,bx,by,rad);
+    grd.addColorStop(0,'#6f9bf5'); grd.addColorStop(1,'#2a5fd0');
+    x.fillStyle=grd;
+    x.beginPath(); x.arc(bx,by,rad,0,7); x.fill();
+
+    /* 拉力箭头 */
+    var vx=(px-bx), vy=(py-by), vl=Math.hypot(vx,vy);
+    arrow(x, bx + vx/vl*rad, by + vy/vl*rad, bx + vx/vl*(rad+42), by + vy/vl*(rad+42), COL.red, 2, 8);
+    label(x,'F', bx + vx/vl*(rad+30) - vy/vl*13, by + vy/vl*(rad+30) + vx/vl*13, COL.red,'center',12);
+
+    label(x,'悬点', px, py-20, '#98a0aa','center',11);
+    label(x,'L = '+L.toFixed(2)+' m', px-34, py + Lpx*0.62, '#98a0aa','right',11);
+
+    /* 右半：F-t */
+    var gx0=396, gx1=W-24, gy0=44, gy1=H-42;
+    x.strokeStyle='#e8ecf1'; x.lineWidth=1;
+    x.beginPath(); x.moveTo(gx0,gy1); x.lineTo(gx1,gy1); x.stroke();
+    x.beginPath(); x.moveTo(gx0,gy0); x.lineTo(gx0,gy1); x.stroke();
+
+    var Fmax = m*g*(3-2*Math.cos(theta0));
+    var Fmin = m*g*Math.cos(theta0);
+    var pad = (Fmax-Fmin)*0.35 + 0.02;
+    var yMax = Fmax+pad, yMin = Fmin-pad;
+    function fy(F){ return gy1 - (F-yMin)/(yMax-yMin)*(gy1-gy0); }
+
+    /* 极值参考线 */
+    x.setLineDash([4,4]); x.lineWidth=1;
+    x.strokeStyle='rgba(217,58,58,.35)';
+    x.beginPath(); x.moveTo(gx0, fy(Fmax)); x.lineTo(gx1, fy(Fmax)); x.stroke();
+    x.strokeStyle='rgba(37,99,235,.3)';
+    x.beginPath(); x.moveTo(gx0, fy(Fmin)); x.lineTo(gx1, fy(Fmin)); x.stroke();
+    x.setLineDash([]);
+    label(x,'F_max', gx0-6, fy(Fmax), COL.red,'right',10.5);
+    label(x,'F_min', gx0-6, fy(Fmin), COL.blue,'right',10.5);
+
+    /* 曲线 */
+    win = 2.4*T();
+    var now = t;
+    x.strokeStyle=COL.green; x.lineWidth=2; x.beginPath();
+    var started=false;
+    for(var i=0;i<buf.length;i++){
+      var p=buf[i];
+      if(p.t < now - win) continue;
+      var xx = gx1 - (now - p.t)/win*(gx1-gx0);
+      var yy = fy(p.F);
+      if(!started){ x.moveTo(xx,yy); started=true; } else x.lineTo(xx,yy);
+    }
+    if(started) x.stroke();
+
+    /* 找最近的两个峰 */
+    var peaks=[];
+    for(var j=1;j<buf.length-1;j++){
+      if(buf[j].F > buf[j-1].F && buf[j].F >= buf[j+1].F && buf[j].t > now-win) peaks.push(buf[j]);
+    }
+    if(peaks.length>=2){
+      var p1=peaks[peaks.length-2], p2=peaks[peaks.length-1];
+      var X1 = gx1-(now-p1.t)/win*(gx1-gx0);
+      var X2 = gx1-(now-p2.t)/win*(gx1-gx0);
+      var Y = gy0+14;
+      /* 从峰顶引虚线上去 */
+      x.setLineDash([2,3]); x.strokeStyle='rgba(217,58,58,.45)'; x.lineWidth=1;
+      x.beginPath(); x.moveTo(X1, fy(p1.F)); x.lineTo(X1, Y); x.stroke();
+      x.beginPath(); x.moveTo(X2, fy(p2.F)); x.lineTo(X2, Y); x.stroke();
+      x.setLineDash([]);
+      /* 尺寸线 */
+      x.strokeStyle=COL.red; x.lineWidth=1.4;
+      x.beginPath(); x.moveTo(X1,Y); x.lineTo(X2-7,Y); x.stroke();
+      arrow(x, X2-7, Y, X2, Y, COL.red, 1.4, 7);
+      label(x,'T/2', (X1+X2)/2, Y-13, COL.red,'center',11.5);
+      x.fillStyle=COL.red;
+      x.beginPath(); x.arc(X1,Y,3,0,7); x.fill();
+      x.beginPath(); x.arc(X2,Y,3,0,7); x.fill();
+    }
+
+    label(x,'绳拉力 F', gx0-6, gy0-4, COL.muted,'right',11);
+    label(x,'时间 t', gx1-4, gy1+16, COL.muted,'right',11);
+
+    /* 读数 */
+    document.getElementById('p-T').textContent = T().toFixed(2) + ' s';
+    document.getElementById('p-Fmax').textContent = Fmax.toFixed(3) + ' N';
+    document.getElementById('p-Fmin').textContent = Fmin.toFixed(3) + ' N';
+    document.getElementById('p-gap').textContent = (T()/2).toFixed(2) + ' s';
+  }
+
+  /* 预填一整窗的曲线，打开页面就能看到完整波形，而不是从右边一点点长出来 */
+  function seed(){
+    buf = [];
+    var W3 = 2.4*T(), n = 300, tt;
+    var Fv = function(tt2){ return m*g*(3*Math.cos(theta0*Math.cos(2*Math.PI*tt2/T())) - 2*Math.cos(theta0)); };
+    for(var i=0;i<=n;i++){ tt = -W3 + W3*i/n; buf.push({t:tt, F:Fv(tt)}); }
+  }
+
+  function loop(ts){
+    if(!last) last = ts;
+    var dt = Math.min((ts-last)/1000, 0.05);
+    last = ts;
+    if(running){
+      t += dt;
+      buf.push({t:t, F: m*g*(3*Math.cos(theta0*Math.cos(2*Math.PI*t/T())) - 2*Math.cos(theta0))});
+      /* 裁剪 */
+      if(buf.length > 4000) buf = buf.slice(-2000);
+    }
+    drawPend();
+    requestAnimationFrame(loop);
+  }
+
+  document.getElementById('p-L').addEventListener('input', function(e){
+    L = +e.target.value;
+    document.getElementById('p-Lv').textContent = L.toFixed(2) + ' m';
+    t = 0; seed();
+  });
+  document.getElementById('p-a').addEventListener('input', function(e){
+    theta0 = (+e.target.value)*Math.PI/180;
+    document.getElementById('p-av').textContent = e.target.value + '°';
+    t = 0; seed();
+  });
+  document.getElementById('p-run').addEventListener('click', function(e){
+    running = !running;
+    e.target.textContent = running ? '暂停' : '继续';
+  });
+  document.getElementById('p-Lv').textContent = L.toFixed(2) + ' m';
+  document.getElementById('p-av').textContent = '10°';
+  seed();
+  requestAnimationFrame(loop);
+})();
+
+/* ============================================================
+   图 5-1  弹簧振子
+   ============================================================ */
+(function(){
+  var g = 10, m = 0.1, k = 100;
+  var x0cm = m*g/k*100;            /* 1 cm */
+  var A = 0.5;                     /* cm */
+  var running = true, t = 0, last = 0;
+  var K = 64;                      /* 1 cm = 64 px */
+
+  function draw(){
+    var W=680, H=400;
+    var c = document.getElementById('cv-spring');
+    if(c.width !== W*2){ c.width=W*2; c.height=H*2; c.style.width='100%'; c.style.height='auto'; }
+    var x = c.getContext('2d');
+    x.setTransform(2,0,0,2,0,0); x.clearRect(0,0,W,H);
+    x.fillStyle='#fbfcfd'; x.fillRect(0,0,W,H);
+
+    var cx = 250, ceil = 44;
+    var yNat = ceil + 106;               /* 原长下端 */
+    var yEq  = yNat + x0cm*K;            /* 平衡位置 */
+    var Apx  = A*K;
+
+    /* 天花板 */
+    x.strokeStyle='#cbd3dc'; x.lineWidth=3;
+    x.beginPath(); x.moveTo(cx-90,ceil); x.lineTo(cx+90,ceil); x.stroke();
+    for(var i=-88;i<92;i+=9){ x.strokeStyle='#dfe5ec'; x.lineWidth=1;
+      x.beginPath(); x.moveTo(cx+i,ceil); x.lineTo(cx+i+6,ceil-8); x.stroke(); }
+    label(x,'O', cx-104, ceil, '#98a0aa','center',12);
+
+    /* 三条参考线 */
+    /* 原长 */
+    x.strokeStyle='#b9c0c9'; x.lineWidth=1.4; x.setLineDash([6,5]);
+    x.beginPath(); x.moveTo(cx-130, yNat); x.lineTo(cx+148, yNat); x.stroke();
+    x.setLineDash([]);
+    label(x,'原长', cx+156, yNat-9, '#8b96a3','left',11.5);
+
+    /* 平衡位置 */
+    x.strokeStyle=COL.green; x.lineWidth=2;
+    x.beginPath(); x.moveTo(cx-130, yEq); x.lineTo(cx+148, yEq); x.stroke();
+    label(x,'平衡位置', cx+156, yEq-9, COL.green,'left',11.5);
+
+    /* 振动边界 */
+    var yTop = yEq - Apx, yBot = yEq + Apx;
+    x.strokeStyle = '#e9a860'; x.lineWidth=1.6; x.setLineDash([5,4]);
+    x.beginPath(); x.moveTo(cx-90, yTop); x.lineTo(cx+150, yTop); x.stroke();
+    x.beginPath(); x.moveTo(cx-90, yBot); x.lineTo(cx+150, yBot); x.stroke();
+    x.setLineDash([]);
+    label(x,'上限', cx+156, yTop-9, '#c98a3c','left',11);
+    label(x,'下限', cx+156, yBot-9, '#c98a3c','left',11);
+
+    /* 振幅标注（双箭头） */
+    if(Apx > 10){
+      arrow(x, cx-52, yEq, cx-52, yTop, '#c98a3c', 1.2, 6);
+      arrow(x, cx-52, yEq, cx-52, yBot, '#c98a3c', 1.2, 6);
+      label(x,'A', cx-66, (yEq+yTop)/2, '#c98a3c','center',12);
+      label(x,'A', cx-66, (yEq+yBot)/2, '#c98a3c','center',12);
+    }
+
+    /* 平衡位置到原长的距离 */
+    arrow(x, cx-92, yEq, cx-92, yNat, COL.green, 1.2, 6);
+    label(x,'x₀', cx-108, (yEq+yNat)/2, COL.green,'center',12);
+
+    /* 小球位置 */
+    var yBall = yEq + Apx*Math.cos(0.18*Math.sqrt(k/m)*t);
+
+    /* 弹簧 */
+    var yStart = ceil, yEnd = yBall-16;
+    var coils = 12, ampS = 13;
+    x.strokeStyle='#8b96a3'; x.lineWidth=1.9; x.beginPath();
+    x.moveTo(cx, yStart);
+    var span = yEnd - yStart;
+    for(var j=1;j<=coils*2;j++){
+      var yy = yStart + span*j/(coils*2);
+      var xx = cx + (j%2 ? ampS : -ampS) * (j===coils*2?0:1);
+      x.lineTo(xx, yy);
+    }
+    x.lineTo(cx, yEnd);
+    x.stroke();
+
+    /* 球 */
+    var grd = x.createRadialGradient(cx-5, yBall-6, 2, cx, yBall, 16);
+    grd.addColorStop(0,'#6f9bf5'); grd.addColorStop(1,'#2a5fd0');
+    x.fillStyle=grd;
+    x.beginPath(); x.arc(cx, yBall, 16, 0, 7); x.fill();
+    label(x,'m', cx, yBall+1, '#fff','center',12);
+
+    /* 右侧弹力条 */
+    var bx0 = 470, bw = 150, by0 = 110, bh = 200;
+    var FmaxN = 2;                      /* 阈值 2mg = 2 N */
+    var scaleN = bh/(FmaxN*1.25);
+
+    x.fillStyle='#eef1f5';
+    roundRect(x, bx0, by0, bw, bh, 8); x.fill();
+
+    /* 阈值线 */
+    var yTh = by0+bh - FmaxN*scaleN;
+    x.strokeStyle=COL.red; x.lineWidth=1.8; x.setLineDash([5,4]);
+    x.beginPath(); x.moveTo(bx0-8, yTh); x.lineTo(bx0+bw+8, yTh); x.stroke();
+    x.setLineDash([]);
+    label(x,'2mg 脱落线', bx0+bw/2, yTh-11, COL.red,'center',11);
+    label(x,'2.0 N', bx0+bw+10, yTh, COL.red,'left',10.5);
+
+    /* 当前最大弹力 */
+    var Fm = m*g + k*(A/100);
+    var hgt = Math.min(Fm*scaleN, bh);
+    var over = Fm > FmaxN + 1e-6;
+    x.fillStyle = over ? 'rgba(217,58,58,.75)' : 'rgba(37,99,235,.7)';
+    roundRect(x, bx0, by0+bh-hgt, bw, hgt, 8); x.fill();
+
+    label(x,'最大弹力 mg+kA', bx0+bw/2, by0-14, COL.muted,'center',11.5);
+    label(x, Fm.toFixed(2)+' N', bx0+bw/2, by0+bh-Math.max(hgt-20,22), '#fff','center',14);
+
+    /* 说明 */
+    label(x,'灰色虚线：原长', 470, 340, '#8b96a3','left',11.5);
+    label(x,'绿色实线：平衡位置', 470, 360, COL.green,'left',11.5);
+    label(x,'振幅从绿线量，不是从灰线量', 470, 380, COL.amber,'left',11.5);
+
+    /* 读数 */
+    document.getElementById('s-Av').textContent = A.toFixed(2) + ' cm';
+    document.getElementById('s-xm').textContent = (x0cm + A).toFixed(2) + ' cm';
+    document.getElementById('s-Fm').textContent = Fm.toFixed(2) + ' N';
+    var det = document.getElementById('s-det');
+    if(over){ det.textContent = '会脱落'; det.parentElement.className='warn'; }
+    else { det.textContent = '安全'; det.parentElement.className='ok'; }
+  }
+
+  function loop(ts){
+    if(!last) last = ts;
+    var dt = Math.min((ts-last)/1000, 0.05); last = ts;
+    if(running) t += dt;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  document.getElementById('s-A').addEventListener('input', function(e){
+    A = +e.target.value; draw();
+  });
+  document.getElementById('s-run').addEventListener('click', function(e){
+    running = !running; e.target.textContent = running?'暂停':'继续';
+  });
+  requestAnimationFrame(loop);
+})();
+
+/* ============================================================
+   图 6-1  摩擦起电
+   ============================================================ */
+(function(){
+  var W=680, H=272;
+  var times = 0, MAXT = 3;
+  var flying = [];      /* {x,y,tx,ty,p} */
+  var last = 0;
+
+  /* 每个物体 3 列 × 2 行，每个格子里一个原子核(+)加一个电子(−) */
+  var LB = 100, RB = 442, COLW = 52, ROWY = [92, 134], EXY = 168;
+
+  function atomPos(base){
+    var out = [];
+    for(var j=0;j<2;j++){
+      for(var i=0;i<3;i++){ out.push({x: base + i*COLW, y: ROWY[j]}); }
+    }
+    return out;
+  }
+  function extraPos(k){ return {x: RB + k*COLW + 11, y: EXY}; }
+
+  function draw(){
+    var g = prep('cv-static', W, H);
+    if(!g) return;
+    g.fillStyle='#fbfcfd'; g.fillRect(0,0,W,H);
+
+    var moved = Math.min(times, MAXT);
+
+    /* 两个物体 */
+    g.fillStyle = moved>0 ? '#fdf1f1' : '#f4f6f9';
+    g.strokeStyle = moved>0 ? '#e8b4b4' : '#d6dce4';
+    g.lineWidth = 1.6;
+    roundRect(g, 66, 48, 206, 148, 12); g.fill(); g.stroke();
+
+    g.fillStyle = moved>0 ? '#eef2fb' : '#f4f6f9';
+    g.strokeStyle = moved>0 ? '#b4c4e8' : '#d6dce4';
+    roundRect(g, 408, 48, 206, 148, 12); g.fill(); g.stroke();
+
+    label(g,'毛皮', 169, 212, COL.muted,'center',13);
+    label(g,'橡胶棒', 511, 212, COL.muted,'center',13);
+
+    function plus(p){
+      g.fillStyle = '#d05a5a';
+      g.beginPath(); g.arc(p.x-11, p.y, 8, 0, 7); g.fill();
+      label(g,'+', p.x-11, p.y+1, '#fff','center',11);
+    }
+    function minus(p){
+      g.fillStyle = '#3b6ed4';
+      g.beginPath(); g.arc(p.x+11, p.y, 8, 0, 7); g.fill();
+      label(g,'−', p.x+11, p.y+1, '#fff','center',11);
+    }
+
+    /* 左：毛皮，失去 moved 个电子 */
+    var L = atomPos(LB);
+    L.forEach(function(p, i){
+      plus(p);
+      if(i >= L.length - moved) return;      /* 先跑掉最后几个 */
+      minus(p);
+    });
+
+    /* 右：橡胶棒，得到 moved 个电子 */
+    var R = atomPos(RB);
+    R.forEach(function(p){ plus(p); minus(p); });
+    for(var k=0;k<moved;k++){
+      var e = extraPos(k);
+      g.fillStyle = '#3b6ed4';
+      g.beginPath(); g.arc(e.x, e.y, 8, 0, 7); g.fill();
+      label(g,'−', e.x, e.y+1, '#fff','center',11);
+    }
+
+    /* 飞行中的电子 */
+    flying.forEach(function(f){
+      var x = f.x + (f.tx-f.x)*f.p;
+      var y = f.y + (f.ty-f.y)*f.p - Math.sin(Math.PI*f.p)*46;
+      g.fillStyle = '#3b6ed4';
+      g.beginPath(); g.arc(x, y, 8, 0, 7); g.fill();
+      label(g,'−', x, y+1, '#fff','center',11);
+    });
+
+    /* 标注 */
+    if(moved>0){
+      label(g,'失去 '+moved+' 个电子', 169, 32, COL.red,'center',12.5);
+      label(g,'带 +'+moved+'e', 169, 236, COL.red,'center',13);
+      label(g,'得到 '+moved+' 个电子', 511, 32, COL.blue,'center',12.5);
+      label(g,'带 −'+moved+'e', 511, 236, COL.blue,'center',13);
+
+      arrow(g, 280, 112, 402, 112, '#9aa6b4', 1.6, 9);
+      label(g,'只有电子在跑', 340, 96, '#8b96a3','center',11.5);
+      label(g,'正电荷不动', 340, 132, '#8b96a3','center',11.5);
+    } else {
+      label(g,'不带电', 169, 236, '#98a0aa','center',12.5);
+      label(g,'不带电', 511, 236, '#98a0aa','center',12.5);
+      label(g,'正负电荷一样多', 340, 104, '#a8b0ba','center',12);
+      label(g,'点「摩擦一次」', 340, 126, '#a8b0ba','center',12);
+    }
+
+    /* 读数 */
+    var a = document.getElementById('st-a');
+    var b = document.getElementById('st-b');
+    a.textContent = moved>0 ? '失电子，带正电' : '不带电';
+    a.style.color = moved>0 ? COL.red : '';
+    b.textContent = moved>0 ? '得电子，带负电' : '不带电';
+    b.style.color = moved>0 ? COL.blue : '';
+    document.getElementById('st-total').textContent = '0';
+    document.getElementById('st-times').textContent = times;
+  }
+
+  function loop(ts){
+    if(!last) last = ts;
+    var dt = Math.min((ts-last)/1000, 0.05); last = ts;
+
+    var any = false;
+    flying.forEach(function(f){ if(f.p < 1){ f.p = Math.min(f.p + dt*1.5, 1); any = true; } });
+    var before = flying.length;
+    flying = flying.filter(function(f){ return f.p < 1; });
+    if(any || before !== flying.length) draw();
+    requestAnimationFrame(loop);
+  }
+
+  document.getElementById('st-go').addEventListener('click', function(){
+    if(times >= MAXT) return;
+    var L = atomPos(LB);
+    var src = L[L.length - 1 - times];
+    var dst = extraPos(times);
+    flying.push({x:src.x+11, y:src.y, tx:dst.x, ty:dst.y, p:0});
+    times++;
+    draw();
+  });
+  document.getElementById('st-reset').addEventListener('click', function(){
+    times = 0; flying = []; draw();
+  });
+  document.querySelectorAll('#st-cards .card').forEach(function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('open'); });
+  });
+  draw();
+  requestAnimationFrame(loop);
+})();
+
+/* ============================================================
+   侧栏高亮
+   ============================================================ */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.side nav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var y = window.scrollY + 140;
+    var idx = 0;
+    for(var i=0;i<secs.length;i++){
+      if(secs[i] && secs[i].offsetTop <= y) idx = i;
+    }
+    links.forEach(function(a,i){ a.classList.toggle('on', i===idx); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

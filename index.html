@@ -3,43 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>高中化学 · 生物 知识点与考点精讲</title>
+<title>高中物理 · 化学 · 生物　知识点与考点精讲</title>
 <style>
 *{box-sizing:border-box}
 body{
   margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-  background:#f5f6f8;color:#1b1f24;padding:32px 20px;
-  font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#f5f6f8;color:#1b1f24;padding:36px 20px;
+  font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{width:100%;max-width:820px}
+.wrap{width:100%;max-width:1080px}
 h1{font-size:25px;margin:0 0 8px;letter-spacing:-.2px}
-.sub{color:#5d646d;font-size:14.5px;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sub{color:#5d646d;font-size:14.5px;margin:0 0 28px;max-width:780px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px}
 a.card{
   display:block;text-decoration:none;color:inherit;background:#fff;
-  border:1px solid #e3e6ec;border-radius:16px;padding:26px 26px 22px;
+  border:1px solid #e3e6ec;border-radius:16px;padding:24px 24px 20px;
   transition:.18s;box-shadow:0 1px 3px rgba(16,24,40,.045);
 }
-a.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(16,24,40,.09);border-color:#c9d6e8}
-.card .sym{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1}
-.card h2{font-size:19px;margin:14px 0 8px}
-.card p{margin:0 0 14px;color:#5d646d;font-size:13.5px;line-height:1.75}
-.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+a.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(16,24,40,.09)}
+.card .sym{font-size:26px;font-weight:800;letter-spacing:-.8px;line-height:1}
+.card h2{font-size:18px;margin:13px 0 8px}
+.card p{margin:0 0 13px;color:#5d646d;font-size:13.5px;line-height:1.75}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
 .card .tags span{font-size:11.5px;background:#f1f4f8;color:#5d646d;border-radius:20px;padding:2px 10px}
 .card .go{font-size:13.5px;font-weight:600}
+.phy .sym,.phy .go{color:#7c3aed}
+.phy:hover{border-color:#d6c9f5}
 .chem .sym,.chem .go{color:#2563eb}
+.chem:hover{border-color:#c9d6e8}
 .bio .sym,.bio .go{color:#15803d}
 .bio:hover{border-color:#c3dfcb}
 footer{margin-top:26px;color:#98a0aa;font-size:12.5px;line-height:1.8}
-@media (max-width:620px){.grid{grid-template-columns:1fr}h1{font-size:21px}}
+@media (max-width:620px){h1{font-size:21px}body{padding:24px 16px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>高中化学 · 生物　知识点与考点精讲</h1>
-  <p class="sub">按人教版教材顺序编排。每节含知识主线、高频考点、易错辨析、口诀、例题精解与分层练习，练习答案默认折叠。带图标的专题内有可交互的图，可拖动、点击操作。</p>
+  <h1>高中物理 · 化学 · 生物　知识点与考点精讲</h1>
+  <p class="sub">三份学习材料，均为单文件网页。每节含知识主线、高频考点、易错辨析、口诀、例题精解与分层练习，练习答案默认折叠。带图标的页面内有可交互的图，可以拖动滑块、点击图中元素直接操作。</p>
   <div class="grid">
+    <a class="card phy" href="physics.html">
+      <div class="sym">Phys</div>
+      <h2>物理</h2>
+      <p>按错题诊断排序的六个专题：波的图像与多解、等量点电荷、库仑力与圆弧、单摆、弹簧振子、静电概念，另附解题检查清单与两周计划。</p>
+      <div class="tags"><span>6 专题</span><span>2 附录</span><span>7 张交互图</span></div>
+      <div class="go">打开 →</div>
+    </a>
     <a class="card chem" href="chem.html">
       <div class="sym">Chem</div>
       <h2>化学</h2>
@@ -55,7 +65,7 @@ footer{margin-top:26px;color:#98a0aa;font-size:12.5px;line-height:1.8}
       <div class="go">打开 →</div>
     </a>
   </div>
-  <footer>两张页面均为单文件，不依赖外部网络与第三方库，离线同样可用。</footer>
+  <footer>三份页面均为单文件，不依赖外部网络与第三方库，离线同样可用。</footer>
 </div>
 </body>
 </html>
